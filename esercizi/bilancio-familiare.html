@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bilancio Familiare — Corso Excel</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">📊</span>
+        <span class="logo-text">CorsoExcel</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../index.html#esercizi">Esercizi</a>
+        <a href="../index.html#argomenti">Argomenti</a>
+        <a href="../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>›</span>
+        <a href="../index.html#esercizi">Esercizi</a>
+        <span>›</span>
+        Bilancio Familiare
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Esercizio #1</span>
+      </div>
+      <h1>Creare un Bilancio Familiare in Excel</h1>
+      <div class="ex-meta">
+        <span>⏱ 45 minuti</span>
+        <span>·</span>
+        <span>SOMMA.SE · Grafici · Formattazione Condizionale</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai a creare un bilancio familiare in Excel.
+          Il foglio di calcolo ti aiuterà a monitorare entrate e spese,
+          categorizzare i costi e visualizzare i risultati con grafici per
+          una gestione finanziaria efficace.
+        </p>
+
+        <h2>Passo 1 — Struttura del foglio di calcolo</h2>
+        <p>Crea un nuovo foglio di lavoro chiamato <strong>Bilancio Familiare</strong> e imposta le seguenti colonne:</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Colonna</th>
+              <th>Intestazione</th>
+              <th>Contenuto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>A</code></td><td>Data</td><td>Data della transazione</td></tr>
+            <tr><td><code>B</code></td><td>Descrizione</td><td>Breve descrizione</td></tr>
+            <tr><td><code>C</code></td><td>Categoria</td><td>Casa, Cibo, Utenze…</td></tr>
+            <tr><td><code>D</code></td><td>Importo</td><td>Valore numerico in €</td></tr>
+            <tr><td><code>E</code></td><td>Tipo</td><td><code>Entrata</code> oppure <code>Spesa</code></td></tr>
+          </tbody>
+        </table>
+
+        <p>Inserisci questi dati di esempio nelle righe 2–10:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Data</th><th>Descrizione</th><th>Categoria</th><th>Importo</th><th>Tipo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>01/04/2025</td><td>Stipendio</td><td>Entrate</td><td>3000</td><td>Entrata</td></tr>
+            <tr><td>02/04/2025</td><td>Affitto</td><td>Casa</td><td>1000</td><td>Spesa</td></tr>
+            <tr><td>05/04/2025</td><td>Spesa Alimentare</td><td>Cibo</td><td>250</td><td>Spesa</td></tr>
+            <tr><td>07/04/2025</td><td>Bollette</td><td>Utenze</td><td>150</td><td>Spesa</td></tr>
+            <tr><td>10/04/2025</td><td>Cinema</td><td>Divertimento</td><td>50</td><td>Spesa</td></tr>
+            <tr><td>15/04/2025</td><td>Trasporto Pubblico</td><td>Trasporti</td><td>100</td><td>Spesa</td></tr>
+            <tr><td>20/04/2025</td><td>Cena fuori</td><td>Divertimento</td><td>80</td><td>Spesa</td></tr>
+            <tr><td>25/04/2025</td><td>Interessi Conto Corrente</td><td>Entrate</td><td>10</td><td>Entrata</td></tr>
+            <tr><td>30/04/2025</td><td>Manutenzione Auto</td><td>Trasporti</td><td>200</td><td>Spesa</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 2 — Calcolo di entrate, spese e saldo</h2>
+        <p>
+          In una zona libera del foglio (ad esempio colonna <code>F</code>),
+          inserisci le seguenti formule per calcolare i totali:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">F2 — Totale Entrate</div>
+          =SOMMA.SE(E2:E10; "Entrata"; D2:D10)
+        </div>
+        <p>Risultato atteso: <strong>3.010 €</strong></p>
+
+        <div class="formula-block">
+          <div class="formula-label">F3 — Totale Spese</div>
+          =SOMMA.SE(E2:E10; "Spesa"; D2:D10)
+        </div>
+        <p>Risultato atteso: <strong>1.830 €</strong></p>
+
+        <div class="formula-block">
+          <div class="formula-label">F4 — Saldo Netto</div>
+          =F2-F3
+        </div>
+        <p>Risultato atteso: <strong>1.180 €</strong></p>
+
+        <h2>Passo 3 — Riepilogo per categoria</h2>
+        <p>
+          In colonna <code>H</code> elenca le categorie di spesa (da H2 a H6),
+          poi in colonna <code>I</code> calcola il totale per ciascuna:
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>H — Categoria</th><th>I — Formula</th><th>Risultato</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Casa</td><td><code>=SOMMA.SE(C2:C10; H2; D2:D10)</code></td><td>1.000 €</td></tr>
+            <tr><td>Cibo</td><td><code>=SOMMA.SE(C2:C10; H3; D2:D10)</code></td><td>250 €</td></tr>
+            <tr><td>Utenze</td><td><code>=SOMMA.SE(C2:C10; H4; D2:D10)</code></td><td>150 €</td></tr>
+            <tr><td>Divertimento</td><td><code>=SOMMA.SE(C2:C10; H5; D2:D10)</code></td><td>130 €</td></tr>
+            <tr><td>Trasporti</td><td><code>=SOMMA.SE(C2:C10; H6; D2:D10)</code></td><td>300 €</td></tr>
+          </tbody>
+        </table>
+        <p>
+          La formula in <code>I2</code> fa riferimento alla cella <code>H2</code>
+          come criterio, così puoi copiarla verso il basso senza modificarla.
+        </p>
+
+        <h2>Passo 4 — Grafici</h2>
+
+        <p><strong>Grafico a linee — Andamento nel tempo:</strong></p>
+        <ol>
+          <li>Seleziona le colonne <code>A2:A10</code> (Date) e <code>D2:D10</code> (Importo) tenendo premuto <code>Ctrl</code>.</li>
+          <li>Vai su <em>Inserisci → Grafico a linee</em>.</li>
+          <li>Il grafico mostrerà l'andamento delle transazioni nel tempo.</li>
+        </ol>
+
+        <p><strong>Grafico a torta — Distribuzione spese per categoria:</strong></p>
+        <ol>
+          <li>Seleziona l'intervallo <code>H2:I6</code> (categorie + totali).</li>
+          <li>Vai su <em>Inserisci → Grafico a torta</em>.</li>
+          <li>Vedrai la suddivisione percentuale delle spese per categoria.</li>
+        </ol>
+
+        <h2>Passo 5 — Formattazione condizionale</h2>
+        <p>Evidenzia automaticamente il saldo netto in base al segno:</p>
+        <ol>
+          <li>Seleziona la cella <code>F4</code> (Saldo Netto).</li>
+          <li>Vai su <em>Home → Formattazione condizionale → Nuova regola</em>.</li>
+          <li>Scegli <em>Utilizza una formula per determinare le celle da formattare</em>.</li>
+        </ol>
+
+        <div class="formula-block">
+          <div class="formula-label">Regola verde (saldo positivo)</div>
+          =F4&gt;0
+        </div>
+        <div class="formula-block">
+          <div class="formula-label">Regola rossa (saldo negativo)</div>
+          =F4&lt;0
+        </div>
+        <p>Imposta il colore di riempimento verde per la prima regola e rosso per la seconda.</p>
+
+        <h2>Soluzione completa — Riepilogo formule</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Cella</th><th>Formula</th><th>Scopo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>F2</code></td><td><code>=SOMMA.SE(E2:E10;"Entrata";D2:D10)</code></td><td>Totale entrate</td></tr>
+            <tr><td><code>F3</code></td><td><code>=SOMMA.SE(E2:E10;"Spesa";D2:D10)</code></td><td>Totale spese</td></tr>
+            <tr><td><code>F4</code></td><td><code>=F2-F3</code></td><td>Saldo netto</td></tr>
+            <tr><td><code>I2:I6</code></td><td><code>=SOMMA.SE(C2:C10;H2;D2:D10)</code></td><td>Totale per categoria</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura del foglio</a></li>
+            <li><a href="#passo-2">Entrate, spese e saldo</a></li>
+            <li><a href="#passo-3">Riepilogo per categoria</a></li>
+            <li><a href="#passo-4">Grafici</a></li>
+            <li><a href="#passo-5">Formattazione condizionale</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Funzioni utilizzate</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>SOMMA.SE</code></li>
+            <li style="margin-bottom:8px;">Grafici a linee</li>
+            <li style="margin-bottom:8px;">Grafici a torta</li>
+            <li>Formattazione condizionale</li>
+          </ul>
+        </div>
+        <a href="../index.html#esercizi" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Tutti gli esercizi
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoExcel — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

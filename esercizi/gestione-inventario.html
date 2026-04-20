@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestione Inventario — Corso Excel</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">📊</span>
+        <span class="logo-text">CorsoExcel</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../index.html#esercizi">Esercizi</a>
+        <a href="../index.html#argomenti">Argomenti</a>
+        <a href="../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>›</span>
+        <a href="../index.html#esercizi">Esercizi</a>
+        <span>›</span>
+        Gestione Inventario
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Esercizio #3</span>
+      </div>
+      <h1>Creare un Sistema di Gestione dell'Inventario in Excel</h1>
+      <div class="ex-meta">
+        <span>⏱ 40 minuti</span>
+        <span>·</span>
+        <span>SOMMA.SE · Formattazione Condizionale · Grafici a barre</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai a creare un sistema di gestione dell'inventario in Excel.
+          Lo strumento ti permetterà di monitorare le scorte di prodotti, gestire acquisti e vendite,
+          calcolare il valore dell'inventario e segnalare visivamente le scorte in esaurimento.
+        </p>
+
+        <h2>Passo 1 — Struttura del foglio di calcolo</h2>
+        <p>Crea un nuovo foglio chiamato <strong>Gestione Inventario</strong> con le seguenti colonne:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Colonna</th><th>Intestazione</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>A1</code></td><td>Codice Prodotto</td></tr>
+            <tr><td><code>B1</code></td><td>Nome Prodotto</td></tr>
+            <tr><td><code>C1</code></td><td>Categoria</td></tr>
+            <tr><td><code>D1</code></td><td>Quantità Iniziale</td></tr>
+            <tr><td><code>E1</code></td><td>Acquisti</td></tr>
+            <tr><td><code>F1</code></td><td>Vendite</td></tr>
+            <tr><td><code>G1</code></td><td>Quantità Attuale</td></tr>
+            <tr><td><code>H1</code></td><td>Prezzo Unitario</td></tr>
+            <tr><td><code>I1</code></td><td>Valore Totale</td></tr>
+          </tbody>
+        </table>
+
+        <p>Inserisci questi dati di esempio nelle righe 2–6:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Codice</th><th>Nome</th><th>Categoria</th><th>Q.Ini</th><th>Acq.</th><th>Vend.</th><th>Prezzo €</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>P001</td><td>Prodotto A</td><td>Elettronica</td><td>100</td><td>50</td><td>30</td><td>20</td></tr>
+            <tr><td>P002</td><td>Prodotto B</td><td>Elettronica</td><td>200</td><td>20</td><td>100</td><td>15</td></tr>
+            <tr><td>P003</td><td>Prodotto C</td><td>Abbigliamento</td><td>150</td><td>30</td><td>50</td><td>10</td></tr>
+            <tr><td>P004</td><td>Prodotto D</td><td>Abbigliamento</td><td>80</td><td>10</td><td>40</td><td>25</td></tr>
+            <tr><td>P005</td><td>Prodotto E</td><td>Cancelleria</td><td>300</td><td>100</td><td>150</td><td>5</td></tr>
+          </tbody>
+        </table>
+        <p><em>Nota: le colonne G (Quantità Attuale) e I (Valore Totale) verranno calcolate con formule al passo successivo.</em></p>
+
+        <h2>Passo 2 — Quantità attuale e valore totale</h2>
+
+        <div class="formula-block">
+          <div class="formula-label">G2 — Quantità Attuale</div>
+          =D2+E2-F2
+        </div>
+        <p>Quantità iniziale + acquisti − vendite. Copia la formula fino a <code>G6</code>.</p>
+
+        <div class="formula-block">
+          <div class="formula-label">I2 — Valore Totale</div>
+          =G2*H2
+        </div>
+        <p>Quantità attuale × prezzo unitario. Copia la formula fino a <code>I6</code>.</p>
+
+        <p>Risultati attesi dopo le formule:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Prodotto</th><th>Quantità Attuale</th><th>Valore Totale</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Prodotto A</td><td>120</td><td>2.400 €</td></tr>
+            <tr><td>Prodotto B</td><td>120</td><td>1.800 €</td></tr>
+            <tr><td>Prodotto C</td><td>130</td><td>1.300 €</td></tr>
+            <tr><td>Prodotto D</td><td>50</td><td>1.250 €</td></tr>
+            <tr><td>Prodotto E</td><td>250</td><td>1.250 €</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 3 — Riepilogo per categoria</h2>
+        <p>In colonna <code>K</code> elenca le categorie, poi in colonna <code>L</code> calcola il totale delle quantità per ciascuna:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>K — Categoria</th><th>L — Formula</th><th>Risultato</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Elettronica</td><td><code>=SOMMA.SE(C2:C6;K2;G2:G6)</code></td><td>240</td></tr>
+            <tr><td>Abbigliamento</td><td><code>=SOMMA.SE(C2:C6;K3;G2:G6)</code></td><td>180</td></tr>
+            <tr><td>Cancelleria</td><td><code>=SOMMA.SE(C2:C6;K4;G2:G6)</code></td><td>250</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Grafici</h2>
+
+        <p><strong>Grafico a barre — Valore totale per categoria:</strong></p>
+        <ol>
+          <li>Seleziona <code>K2:L4</code> (categorie e totali quantità).</li>
+          <li>Inserisci un <em>grafico a barre orizzontali</em>.</li>
+          <li>Il grafico mostra a colpo d'occhio quale categoria ha più stock.</li>
+        </ol>
+
+        <p><strong>Grafico a colonne — Quantità attuale per prodotto:</strong></p>
+        <ol>
+          <li>Seleziona <code>B2:B6</code> (nomi prodotti) e <code>G2:G6</code> (quantità) con <code>Ctrl</code>.</li>
+          <li>Inserisci un <em>grafico a colonne verticali</em>.</li>
+          <li>Visualizza il confronto delle scorte tra prodotti.</li>
+        </ol>
+
+        <h2>Passo 5 — Formattazione condizionale per scorte basse</h2>
+        <p>Evidenzia automaticamente in rosso i prodotti con meno di 50 unità disponibili:</p>
+        <ol>
+          <li>Seleziona l'intervallo <code>G2:G6</code> (Quantità Attuale).</li>
+          <li>Vai su <em>Home → Formattazione condizionale → Nuova regola</em>.</li>
+          <li>Scegli <em>Utilizza una formula per determinare le celle da formattare</em>.</li>
+        </ol>
+        <div class="formula-block">
+          <div class="formula-label">Regola — Scorta bassa (meno di 50 unità)</div>
+          =G2&lt;50
+        </div>
+        <p>Imposta il colore di riempimento rosso. Con i dati di esempio, <strong>Prodotto D</strong> (50 unità) è al limite — prova ad abbassare la soglia a 60 per vederla evidenziare.</p>
+
+        <h2>Soluzione completa — Riepilogo formule</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Cella</th><th>Formula</th><th>Scopo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>G2:G6</code></td><td><code>=D2+E2-F2</code></td><td>Quantità attuale</td></tr>
+            <tr><td><code>I2:I6</code></td><td><code>=G2*H2</code></td><td>Valore totale per prodotto</td></tr>
+            <tr><td><code>L2:L4</code></td><td><code>=SOMMA.SE(C2:C6;K2;G2:G6)</code></td><td>Quantità totale per categoria</td></tr>
+            <tr><td><code>G2:G6</code></td><td><code>=G2&lt;50</code> (regola condizionale)</td><td>Evidenzia scorte basse</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#">Struttura del foglio</a></li>
+            <li><a href="#">Quantità e valore totale</a></li>
+            <li><a href="#">Riepilogo per categoria</a></li>
+            <li><a href="#">Grafici</a></li>
+            <li><a href="#">Scorte basse</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Funzioni utilizzate</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>SOMMA.SE</code></li>
+            <li style="margin-bottom:8px;">Operazioni aritmetiche</li>
+            <li style="margin-bottom:8px;">Grafici a barre/colonne</li>
+            <li>Formattazione condizionale</li>
+          </ul>
+        </div>
+        <a href="../index.html#esercizi" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Tutti gli esercizi
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoExcel — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>
