@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista con Dimensioni Personalizzate — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../index.html#argomenti">Argomenti</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Lista con Dimensioni Personalizzate
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Esercizio CSS #3</span>
+      </div>
+      <h1>Lista con Dimensioni Personalizzate</h1>
+      <div class="ex-meta">
+        <span>⏱ 25 minuti</span>
+        <span>·</span>
+        <span>ul · li · Dimensioni elementi · list-style-type · margin</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai a stilizzare gli elementi di una lista non ordinata (<code>&lt;ul&gt;</code>)
+          applicando dimensioni personalizzate, vincoli di min/max, e altre proprietà CSS per creare
+          una lista visivamente più accattivante.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML con una lista non ordinata contenente tre elementi:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio 8&lt;/title&gt;
+              &lt;style&gt;
+                /* Il CSS andrà qui */
+              &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;ul&gt;
+                &lt;li&gt;Elemento 1&lt;/li&gt;
+                &lt;li&gt;Elemento 2&lt;/li&gt;
+                &lt;li&gt;Elemento 3&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Stilizzare gli elementi della lista</h2>
+        <p>
+          All'interno del tag <code>&lt;style&gt;</code>, definisci le regole CSS per gli elementi <code>&lt;li&gt;</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">CSS — Stile degli elementi lista</div>
+          <pre>
+          li {
+            width: 180px;
+            height: 40px;
+            min-height: 30px;
+            max-width: 200px;
+            background-color: lightpink;
+            margin: 5px;
+            list-style-type: none;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere le proprietà applicate</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Proprietà</th>
+              <th>Valore</th>
+              <th>Significato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>width</code></td>
+              <td>180px</td>
+              <td>Ogni elemento della lista è largo 180 pixel</td>
+            </tr>
+            <tr>
+              <td><code>height</code></td>
+              <td>40px</td>
+              <td>Ogni elemento della lista è alto 40 pixel</td>
+            </tr>
+            <tr>
+              <td><code>min-height</code></td>
+              <td>30px</td>
+              <td>L'altezza minima garantita è 30px</td>
+            </tr>
+            <tr>
+              <td><code>max-width</code></td>
+              <td>200px</td>
+              <td>La larghezza massima consentita è 200px</td>
+            </tr>
+            <tr>
+              <td><code>background-color</code></td>
+              <td>lightpink</td>
+              <td>Sfondo rosa chiaro per evidenziare gli elementi</td>
+            </tr>
+            <tr>
+              <td><code>margin</code></td>
+              <td>5px</td>
+              <td>Spazio esterno di 5px attorno a ogni elemento</td>
+            </tr>
+            <tr>
+              <td><code>list-style-type</code></td>
+              <td>none</td>
+              <td>Rimuove i pallini/marker della lista</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Testare i vincoli</h2>
+        <p>Prova a modificare i valori per vedere come si comportano i vincoli:</p>
+        <ol>
+          <li>Imposta <code>width: 250px;</code> — l'elemento resterà 200px (max-width)</li>
+          <li>Imposta <code>height: 20px;</code> — l'elemento resterà 30px (min-height)</li>
+          <li>Imposta <code>width: 150px;</code> — l'elemento sarà 150px (valore valido)</li>
+        </ol>
+
+        <h2>Passo 5 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Puoi aggiungere altre proprietà per migliorare l'aspetto:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">CSS — Stilizzazione avanzata</div>
+          <pre>
+          li {
+            width: 180px;
+            height: 40px;
+            min-height: 30px;
+            max-width: 200px;
+            background-color: lightpink;
+            margin: 5px;
+            list-style-type: none;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+          }
+          </pre>
+        </div>
+
+        <p><strong>Nuove proprietà aggiunte:</strong></p>
+        <ul>
+          <li><code>padding: 10px;</code> — Spazio interno tra il bordo e il contenuto</li>
+          <li><code>border-radius: 5px;</code> — Angoli arrotondati</li>
+          <li><code>box-shadow:</code> — Ombra leggera per dare profondità</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Gli elementi della lista avranno:
+        </p>
+        <ul>
+          <li>Larghezza di 180px, con massimo di 200px</li>
+          <li>Altezza di 40px, con minimo di 30px</li>
+          <li>Sfondo rosa chiaro</li>
+          <li>Spaziatura tra gli elementi (5px)</li>
+          <li>Nessun marker/pallino (list-style-type: none)</li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Altre proprietà utili per le liste:</strong></p>
+        <ul>
+          <li><code>list-style-type: disc;</code> — Pallino pieno (default)</li>
+          <li><code>list-style-type: circle;</code> — Pallino vuoto</li>
+          <li><code>list-style-type: square;</code> — Quadrato</li>
+          <li><code>list-style-position: inside;</code> — Marker all'interno dell'elemento</li>
+          <li><code>list-style-image: url('icon.png');</code> — Icona personalizzata come marker</li>
+        </ul>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">Stilizzare gli elementi</a></li>
+            <li><a href="#passo-3">Comprendere le proprietà</a></li>
+            <li><a href="#passo-4">Testare i vincoli</a></li>
+            <li><a href="#passo-5">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Proprietà CSS</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>width/height</code></li>
+            <li style="margin-bottom:8px;"><code>min/max</code></li>
+            <li style="margin-bottom:8px;"><code>list-style-type</code></li>
+            <li style="margin-bottom:8px;"><code>margin</code></li>
+            <li><code>background-color</code></li>
+          </ul>
+        </div>
+        <a href="../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

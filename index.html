@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Corso Excel — Esercizi e Materiali</title>
+  <title>Corso Web — Excel e CSS</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -12,11 +13,12 @@
   <header class="site-header">
     <div class="container">
       <div class="logo">
-        <span class="logo-icon">📊</span>
-        <span class="logo-text">CorsoExcel</span>
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
       </div>
       <nav class="main-nav">
-        <a href="#esercizi">Esercizi</a>
+        <a href="#esercizi-excel">Esercizi Excel</a>
+        <a href="#esercizi-css">Esercizi CSS</a>
         <a href="#argomenti">Argomenti</a>
         <a href="#contatti">Contatti</a>
       </nav>
@@ -26,26 +28,22 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <h1>Impara Excel<br /><span class="accent">passo dopo passo</span></h1>
-      <p class="hero-sub">Esercizi pratici, spiegazioni chiare e materiali sempre disponibili per i miei studenti.</p>
-      <a href="#esercizi" class="btn-primary">Vai agli esercizi</a>
+      <h1>Impara Excel e CSS<br /><span class="accent">passo dopo passo</span></h1>
+      <p class="hero-sub">Esercizi pratici di Excel e CSS, spiegazioni chiare e materiali sempre disponibili per i miei studenti.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#esercizi-excel" class="btn-primary">Esercizi Excel</a>
+        <a href="#esercizi-css" class="btn-primary">Esercizi CSS</a>
+      </div>
     </div>
   </section>
 
-  <!-- SEZIONE ESERCIZI -->
-  <section class="section" id="esercizi">
+  <!-- SEZIONE ESERCIZI EXCEL -->
+  <section class="section" id="esercizi-excel">
     <div class="container">
-      <h2 class="section-title">Esercizi</h2>
-      <p class="section-sub">Scegli il livello e inizia a praticare.</p>
+      <h2 class="section-title">Esercizi Excel</h2>
+      <p class="section-sub">Impara a usare Excel con esercizi pratici e guidati.</p>
 
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="tutti">Tutti</button>
-        <button class="filter-btn" data-filter="base">Base</button>
-        <button class="filter-btn" data-filter="intermedio">Intermedio</button>
-        <button class="filter-btn" data-filter="avanzato">Avanzato</button>
-      </div>
-
-      <div class="cards-grid" id="exercise-grid">
+      <div class="cards-grid">
 
         <div class="card" data-level="base">
           <div class="card-badge base">Base</div>
@@ -53,7 +51,7 @@
           <p class="card-desc">Crea un foglio per monitorare entrate e spese, calcola saldo netto, analizza le categorie con grafici e formattazione condizionale.</p>
           <div class="card-footer">
             <span class="card-meta">⏱ 45 min</span>
-            <a href="esercizi/bilancio-familiare.html" class="btn-card">Inizia</a>
+            <a href="esercizi/esercizi_excel/bilancio-familiare.html" class="btn-card">Inizia</a>
           </div>
         </div>
 
@@ -63,7 +61,7 @@
           <p class="card-desc">Calcola rata mensile, totale interessi e costo complessivo di un mutuo. Costruisci un piano di ammortamento con 360 rate e grafici a linee.</p>
           <div class="card-footer">
             <span class="card-meta">⏱ 50 min</span>
-            <a href="esercizi/calcolatore-mutuo.html" class="btn-card">Inizia</a>
+            <a href="esercizi/esercizi_excel/calcolatore-mutuo.html" class="btn-card">Inizia</a>
           </div>
         </div>
 
@@ -73,7 +71,59 @@
           <p class="card-desc">Monitora scorte di prodotti, calcola quantità e valore per categoria, visualizza i dati con grafici e segnala le scorte in esaurimento.</p>
           <div class="card-footer">
             <span class="card-meta">⏱ 40 min</span>
-            <a href="esercizi/gestione-inventario.html" class="btn-card">Inizia</a>
+            <a href="esercizi/esercizi_excel/gestione-inventario.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE ESERCIZI CSS -->
+  <section class="section section-alt" id="esercizi-css">
+    <div class="container">
+      <h2 class="section-title">Esercizi CSS</h2>
+      <p class="section-sub">Impara a stilizzare pagine web con CSS attraverso esercizi pratici.</p>
+
+      <div class="cards-grid">
+
+        <div class="card" data-level="base">
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Collegare File CSS Esterno</h3>
+          <p class="card-desc">Impara a collegare un file CSS esterno al tuo documento HTML e applica il tuo primo stile con la proprietà color per i paragrafi.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/collegare-file-css.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Dimensioni di un Div</h3>
+          <p class="card-desc">Controlla le dimensioni di un elemento div con width, height, min-height e max-width per creare layout responsive e controllati.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/dimensioni-div.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Lista con Dimensioni</h3>
+          <p class="card-desc">Stilizza una lista non ordinata applicando dimensioni personalizzate agli elementi, rimuovi i marker e aggiungi spaziatura.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 25 min</span>
+            <a href="esercizi/esercizi_css/lista-dimensioni.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Stilizzare un Link</h3>
+          <p class="card-desc">Trasforma un link in un pulsante utilizzando display, dimensioni, text-decoration, text-align e line-height. Aggiungi effetti hover.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 25 min</span>
+            <a href="esercizi/esercizi_css/link-stile.html" class="btn-card">Inizia</a>
           </div>
         </div>
 
@@ -82,7 +132,7 @@
   </section>
 
   <!-- SEZIONE ARGOMENTI -->
-  <section class="section section-alt" id="argomenti">
+  <section class="section" id="argomenti">
     <div class="container">
       <h2 class="section-title">Argomenti del corso</h2>
       <p class="section-sub">Una panoramica di tutto quello che affrontiamo insieme.</p>
@@ -90,40 +140,54 @@
         <div class="topic-item">
           <span class="topic-num">01</span>
           <div>
-            <strong>Interfaccia e navigazione</strong>
+            <strong>Interfaccia e navigazione Excel</strong>
             <p>Barra multifunzione, fogli, righe, colonne e scorciatoie da tastiera.</p>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-num">02</span>
           <div>
-            <strong>Formule e funzioni</strong>
+            <strong>Formule e funzioni Excel</strong>
             <p>Dalla semplice somma alle funzioni logiche, di testo e data.</p>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-num">03</span>
           <div>
-            <strong>Gestione dei dati</strong>
+            <strong>Gestione dei dati Excel</strong>
             <p>Ordinamento, filtri, convalida e formattazione condizionale.</p>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-num">04</span>
           <div>
-            <strong>Grafici e visualizzazioni</strong>
+            <strong>Grafici e visualizzazioni Excel</strong>
             <p>Creare grafici efficaci per comunicare i dati in modo chiaro.</p>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-num">05</span>
           <div>
-            <strong>Tabelle Pivot</strong>
-            <p>Analisi e sintesi di grandi quantità di dati con pochi click.</p>
+            <strong>Fondamenti di HTML e CSS</strong>
+            <p>Struttura HTML, tag principali, collegamento CSS e primi stili.</p>
           </div>
         </div>
         <div class="topic-item">
           <span class="topic-num">06</span>
+          <div>
+            <strong>Selettori e proprietà CSS</strong>
+            <p>Dimensioni, colori, spaziatura, tipografia e layout responsive.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-num">07</span>
+          <div>
+            <strong>Layout CSS avanzato</strong>
+            <p>Flexbox, Grid, posizionamento e creazione di layout moderni.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <span class="topic-num">08</span>
           <div>
             <strong>Automazione con VBA</strong>
             <p>Macro e programmazione di base per automatizzare il lavoro.</p>
@@ -137,7 +201,7 @@
   <footer class="site-footer" id="contatti">
     <div class="container">
       <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
-      <p class="footer-copy">&copy; 2026 CorsoExcel — Tutti i diritti riservati</p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
     </div>
   </footer>
 

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dimensioni di un Div — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../index.html#argomenti">Argomenti</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Dimensioni di un Div
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Esercizio CSS #2</span>
+      </div>
+      <h1>Dimensioni di un Div con min/max</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>width · height · min-height · max-width</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai a controllare le dimensioni di un elemento <code>&lt;div&gt;</code>
+          utilizzando le proprietà CSS <code>width</code>, <code>height</code>, <code>min-height</code> e
+          <code>max-width</code>. Queste proprietà sono fondamentali per creare layout responsive e controllati.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML con un div contenente del testo:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio 7&lt;/title&gt;
+              &lt;style&gt;
+                /* Il CSS andrà qui */
+              &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;div&gt;
+                Questo div ha una larghezza di 800px e un'altezza di 200px,
+                ma non scende mai sotto i 150px in altezza e non supera
+                mai i 900px in larghezza.
+              &lt;/div&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Applicare le dimensioni base</h2>
+        <p>
+          All'interno del tag <code>&lt;style&gt;</code>, definisci le dimensioni del div:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">CSS — Dimensioni base</div>
+          <pre>
+          div {
+            width: 800px;
+            height: 200px;
+            background-color: lightgreen;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Risultato parziale:</strong> Il div avrà una larghezza di 800px e un'altezza di 200px con sfondo verde chiaro.</p>
+
+        <h2>Passo 3 — Aggiungere i vincoli min/max</h2>
+        <p>
+          Ora aggiungi le proprietà <code>min-height</code> e <code>max-width</code> per creare dei limiti
+          che il div non può superare:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">CSS — Con vincoli</div>
+          <pre>
+          div {
+            width: 800px;
+            height: 200px;
+            min-height: 150px;
+            max-width: 900px;
+            background-color: lightgreen;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 4 — Comprendere i vincoli</h2>
+        <p><strong>Cosa significa ogni proprietà:</strong></p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Proprietà</th>
+              <th>Valore</th>
+              <th>Significato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>width</code></td>
+              <td>800px</td>
+              <td>Il div è largo 800 pixel</td>
+            </tr>
+            <tr>
+              <td><code>height</code></td>
+              <td>200px</td>
+              <td>Il div è alto 200 pixel</td>
+            </tr>
+            <tr>
+              <td><code>min-height</code></td>
+              <td>150px</td>
+              <td>L'altezza minima garantita è 150px (non può essere più basso)</td>
+            </tr>
+            <tr>
+              <td><code>max-width</code></td>
+              <td>900px</td>
+              <td>La larghezza massima consentita è 900px (non può essere più largo)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 5 — Testare i vincoli</h2>
+        <p>Per verificare che i vincoli funzionino correttamente, prova a:</p>
+        <ol>
+          <li>Cambiare <code>width: 1000px;</code> — il div resterà comunque 900px perché è il massimo consentito</li>
+          <li>Cambiare <code>height: 100px;</code> — il div resterà comunque 150px perché è il minimo consentito</li>
+          <li>Cambiare <code>width: 700px;</code> — il div sarà 700px (valore valido, sotto il massimo)</li>
+        </ol>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Il div avrà una larghezza di 800px e un'altezza di 200px con sfondo verde chiaro.
+          Se provi a ridimensionarlo con altri valori, rispetterà sempre i vincoli:
+        </p>
+        <ul>
+          <li>Non scenderà mai sotto i <strong>150px di altezza</strong></li>
+          <li>Non supererà mai i <strong>900px di larghezza</strong></li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Quando usare min/max?</strong></p>
+        <ul>
+          <li><strong>min-height:</strong> Utile quando il contenuto potrebbe variare, ma vuoi garantire un'altezza minima</li>
+          <li><strong>max-width:</strong> Fondamentale per layout responsive, impedisce che gli elementi diventino troppo larghi su schermi grandi</li>
+          <li><strong>min-width:</strong> Garantisce che un elemento non diventi troppo stretto</li>
+          <li><strong>max-height:</strong> Limita l'altezza massima di un elemento</li>
+        </ul>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">Dimensioni base</a></li>
+            <li><a href="#passo-3">Vincoli min/max</a></li>
+            <li><a href="#passo-4">Comprendere i vincoli</a></li>
+            <li><a href="#passo-5">Testare i vincoli</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Proprietà CSS</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>width</code></li>
+            <li style="margin-bottom:8px;"><code>height</code></li>
+            <li style="margin-bottom:8px;"><code>min-height</code></li>
+            <li style="margin-bottom:8px;"><code>max-width</code></li>
+            <li><code>background-color</code></li>
+          </ul>
+        </div>
+        <a href="../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

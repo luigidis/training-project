@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stilizzare un Link — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../index.html#argomenti">Argomenti</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Stilizzare un Link
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Esercizio CSS #4</span>
+      </div>
+      <h1>Stilizzare un Link con CSS</h1>
+      <div class="ex-meta">
+        <span>⏱ 25 minuti</span>
+        <span>·</span>
+        <span>display · text-decoration · text-align · line-height</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai a trasformare un semplice link in un elemento visivamente
+          più interessante, simile a un pulsante, utilizzando varie proprietà CSS come
+          <code>display</code>, <code>width</code>, <code>height</code>, <code>text-decoration</code>,
+          <code>text-align</code>, e <code>line-height</code>.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML con un semplice link:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio 10&lt;/title&gt;
+              &lt;style&gt;
+                /* Il CSS andrà qui */
+              &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;a href="#"&gt;Clicca qui&lt;/a&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Trasformare il link in blocco</h2>
+        <p>
+          Per default, i link (<code>&lt;a&gt;</code>) sono elementi <strong>inline</strong>, il che significa
+          che non accettano proprietà come <code>width</code> e <code>height</code>. Per poterle applicare,
+          dobbiamo trasformarlo in un elemento <strong>inline-block</strong>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">CSS — Display inline-block</div>
+          <pre>
+          a {
+            display: inline-block;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Differenza tra inline e inline-block:</strong></p>
+        <ul>
+          <li><code>inline</code> — Non accetta width/height, si adatta al contenuto</li>
+          <li><code>inline-block</code> — Accetta width/height ma resta in riga con altri elementi</li>
+          <li><code>block</code> — Occupa tutta la larghezza disponibile, va a capo</li>
+        </ul>
+
+        <h2>Passo 3 — Applicare dimensioni e vincoli</h2>
+        <p>
+          Ora che il link è <code>inline-block</code>, possiamo applicare le dimensioni:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">CSS — Dimensioni</div>
+          <pre>
+          a {
+            display: inline-block;
+            width: 300px;
+            height: 60px;
+            min-height: 50px;
+            max-width: 350px;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 4 — Stilizzazione del testo e layout</h2>
+        <p>
+          Aggiungiamo proprietà per migliorare l'aspetto del link:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">CSS — Stile completo</div>
+          <pre>
+          a {
+            display: inline-block;
+            width: 300px;
+            height: 60px;
+            min-height: 50px;
+            max-width: 350px;
+            background-color: yellow;
+            color: blue;
+            text-decoration: none;
+            text-align: center;
+            line-height: 60px;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 5 — Comprendere ogni proprietà</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Proprietà</th>
+              <th>Valore</th>
+              <th>Significato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>display</code></td>
+              <td>inline-block</td>
+              <td>Permette di applicare width/height mantenendo il comportamento inline</td>
+            </tr>
+            <tr>
+              <td><code>width</code></td>
+              <td>300px</td>
+              <td>Il link è largo 300 pixel</td>
+            </tr>
+            <tr>
+              <td><code>height</code></td>
+              <td>60px</td>
+              <td>Il link è alto 60 pixel</td>
+            </tr>
+            <tr>
+              <td><code>min-height</code></td>
+              <td>50px</td>
+              <td>L'altezza minima garantita è 50px</td>
+            </tr>
+            <tr>
+              <td><code>max-width</code></td>
+              <td>350px</td>
+              <td>La larghezza massima consentita è 350px</td>
+            </tr>
+            <tr>
+              <td><code>background-color</code></td>
+              <td>yellow</td>
+              <td>Sfondo giallo per il link</td>
+            </tr>
+            <tr>
+              <td><code>color</code></td>
+              <td>blue</td>
+              <td>Testo di colore blu</td>
+            </tr>
+            <tr>
+              <td><code>text-decoration</code></td>
+              <td>none</td>
+              <td>Rimuove la sottolineatura predefinita dei link</td>
+            </tr>
+            <tr>
+              <td><code>text-align</code></td>
+              <td>center</td>
+              <td>Centra il testo orizzontalmente</td>
+            </tr>
+            <tr>
+              <td><code>line-height</code></td>
+              <td>60px</td>
+              <td>Altezza della riga uguale all'altezza del link per centrare verticalmente il testo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 6 — Aggiungere effetti hover (opzionale)</h2>
+        <p>
+          Per rendere il link più interattivo, puoi aggiungere uno stile che cambia quando il mouse ci passa sopra:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">CSS — Con effetto hover</div>
+          <pre>
+          a {
+            display: inline-block;
+            width: 300px;
+            height: 60px;
+            min-height: 50px;
+            max-width: 350px;
+            background-color: yellow;
+            color: blue;
+            text-decoration: none;
+            text-align: center;
+            line-height: 60px;
+            transition: background-color 0.3s;
+          }
+
+          a:hover {
+            background-color: orange;
+          }
+          </pre>
+        </div>
+
+        <p>
+          La pseudo-classe <code>:hover</code> si applica quando il mouse passa sopra l'elemento.
+          La proprietà <code>transition</code> crea un'animazione fluida del cambio di colore.
+        </p>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Il link avrà l'aspetto di un pulsante con:
+        </p>
+        <ul>
+          <li>Larghezza di 300px (massimo 350px)</li>
+          <li>Altezza di 60px (minimo 50px)</li>
+          <li>Sfondo giallo e testo blu</li>
+          <li>Nessuna sottolineatura</li>
+          <li>Testo centrato sia orizzontalmente che verticalmente</li>
+          <li>Effetto hover che cambia lo sfondo in arancione (opzionale)</li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Il trucco di line-height per centrare verticalmente:</strong></p>
+        <p>
+          Quando <code>line-height</code> è uguale all'<code>height</code> del contenitore e il testo
+          è su una sola riga, il testo viene automaticamente centrato verticalmente. Questo è un trucco
+          CSS molto utilizzato per elementi come pulsanti e badge.
+        </p>
+
+        <p><strong>Altre pseudo-classi utili per i link:</strong></p>
+        <ul>
+          <li><code>a:link</code> — Link non visitati</li>
+          <li><code>a:visited</code> — Link già visitati</li>
+          <li><code>a:hover</code> — Link quando il mouse ci passa sopra</li>
+          <li><code>a:active</code> — Link nel momento del click</li>
+        </ul>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">Display inline-block</a></li>
+            <li><a href="#passo-3">Dimensioni e vincoli</a></li>
+            <li><a href="#passo-4">Stilizzazione completa</a></li>
+            <li><a href="#passo-5">Comprendere le proprietà</a></li>
+            <li><a href="#passo-6">Effetti hover</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Proprietà CSS</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>display</code></li>
+            <li style="margin-bottom:8px;"><code>text-decoration</code></li>
+            <li style="margin-bottom:8px;"><code>text-align</code></li>
+            <li style="margin-bottom:8px;"><code>line-height</code></li>
+            <li><code>:hover</code></li>
+          </ul>
+        </div>
+        <a href="../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>
