@@ -1,217 +1,344 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calcolatore Mutuo — Corso Excel</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-  <link rel="stylesheet" href="../css/style.css" />
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <div class="logo">
-        <span class="logo-icon">💻</span>
-        <span class="logo-text">CorsoWeb</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcolatore Mutuo — Corso Excel</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">CorsoWeb</span>
+        </div>
+        <nav class="main-nav">
+          <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
+          <a href="../../index.html#esercizi-css">Esercizi CSS</a>
+          <a href="../../index.html#argomenti">Argomenti</a>
+          <a href="../../index.html#contatti">Contatti</a>
+        </nav>
       </div>
-      <nav class="main-nav">
-        <a href="../index.html#esercizi-excel">Esercizi Excel</a>
-        <a href="../index.html#esercizi-css">Esercizi CSS</a>
-        <a href="../index.html#argomenti">Argomenti</a>
-        <a href="../index.html#contatti">Contatti</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <!-- BREADCRUMB -->
-  <div class="ex-header">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="../index.html">Home</a>
-        <span>›</span>
-        <a href="../index.html#esercizi-excel">Esercizi Excel</a>
-        <span>›</span>
-        Calcolatore Mutuo
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO ESERCIZIO -->
-  <section class="ex-hero">
-    <div class="container">
-      <div class="badge-row">
-        <span class="card-badge intermedio">Intermedio</span>
-        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Esercizio #2</span>
-      </div>
-      <h1>Creare un Calcolatore di Mutuo in Excel</h1>
-      <div class="ex-meta">
-        <span>⏱ 50 minuti</span>
-        <span>·</span>
-        <span>RATA · Piano di ammortamento · Grafici a linee</span>
+    <!-- BREADCRUMB -->
+    <div class="ex-header">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span>›</span>
+          <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
+          <span>›</span>
+          Calcolatore Mutuo
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- CORPO ESERCIZIO -->
-  <section class="ex-body">
-    <div class="container">
-
-      <!-- CONTENUTO PRINCIPALE -->
-      <div class="ex-content">
-
-        <h2>Descrizione</h2>
-        <p>
-          In questo esercizio imparerai a creare un calcolatore di mutuo in Excel.
-          Lo strumento calcolerà la rata mensile, il totale degli interessi pagati
-          e il costo complessivo del mutuo. Costruirai inoltre un piano di ammortamento
-          completo per visualizzare come ogni pagamento riduce il capitale residuo.
-        </p>
-
-        <h2>Passo 1 — Dati iniziali</h2>
-        <p>Crea un nuovo foglio chiamato <strong>Calcolatore Mutuo</strong> e inserisci le seguenti etichette e valori:</p>
-        <table class="data-table">
-          <thead>
-            <tr><th>Cella</th><th>Etichetta (colonna A)</th><th>Valore (colonna B)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>A1 / B1</code></td><td>Importo del Mutuo</td><td>200000</td></tr>
-            <tr><td><code>A2 / B2</code></td><td>Tasso di Interesse Annuale</td><td>5%</td></tr>
-            <tr><td><code>A3 / B3</code></td><td>Numero di Anni</td><td>30</td></tr>
-            <tr><td><code>A4 / B4</code></td><td>Numero di Rate all'Anno</td><td>12</td></tr>
-          </tbody>
-        </table>
-
-        <h2>Passo 2 — Calcolo della rata mensile</h2>
-        <p>In <code>A6</code> scrivi l'etichetta <strong>Rata Mensile</strong>, poi in <code>B6</code> inserisci la funzione <code>RATA</code>:</p>
-        <div class="formula-block">
-          <div class="formula-label">B6 — Rata Mensile</div>
-          =RATA(B2/B4; B3*B4; -B1)
+    <!-- HERO ESERCIZIO -->
+    <section class="ex-hero">
+      <div class="container">
+        <div class="badge-row">
+          <span class="card-badge intermedio">Intermedio</span>
+          <span
+            class="card-badge"
+            style="
+              background: #1a2540;
+              color: #93c5fd;
+              border: 1px solid #2a3a60;
+            "
+            >Esercizio #2</span
+          >
         </div>
-        <p>
-          La funzione <code>RATA</code> accetta: tasso per periodo, numero totale di rate e valore attuale (importo negativo).
-          Risultato atteso: <strong>1.073,64 €</strong> al mese.
-        </p>
-
-        <h2>Passo 3 — Totale interessi e costo complessivo</h2>
-
-        <div class="formula-block">
-          <div class="formula-label">B7 — Totale Interessi Pagati</div>
-          =B6*B3*B4-B1
+        <h1>Creare un Calcolatore di Mutuo in Excel</h1>
+        <div class="ex-meta">
+          <span>⏱ 50 minuti</span>
+          <span>·</span>
+          <span>RATA · Piano di ammortamento · Grafici a linee</span>
         </div>
-        <p>Moltiplica la rata per il numero totale di rate e sottrae il capitale iniziale. Risultato atteso: <strong>186.511,57 €</strong></p>
-
-        <div class="formula-block">
-          <div class="formula-label">B8 — Costo Complessivo del Mutuo</div>
-          =B6*B3*B4
-        </div>
-        <p>Rata mensile × numero totale di rate. Risultato atteso: <strong>386.511,57 €</strong></p>
-
-        <h2>Passo 4 — Piano di ammortamento</h2>
-        <p>A partire dalla riga 10, crea la tabella del piano di ammortamento con queste intestazioni:</p>
-        <table class="data-table">
-          <thead>
-            <tr><th>Colonna</th><th>Intestazione</th><th>Contenuto</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>A10</code></td><td>Numero Rata</td><td>Da 1 a 360</td></tr>
-            <tr><td><code>B10</code></td><td>Rata</td><td>Importo fisso mensile</td></tr>
-            <tr><td><code>C10</code></td><td>Interessi Pagati</td><td>Quota interessi della rata</td></tr>
-            <tr><td><code>D10</code></td><td>Capitale Pagato</td><td>Quota capitale della rata</td></tr>
-            <tr><td><code>E10</code></td><td>Capitale Residuo</td><td>Debito rimanente</td></tr>
-          </tbody>
-        </table>
-
-        <p>In <code>A11</code> inserisci <code>1</code> e trascina verso il basso fino a 360. Poi inserisci queste formule nella riga 11:</p>
-
-        <div class="formula-block">
-          <div class="formula-label">B11 — Rata (riferimento fisso)</div>
-          =$B$6
-        </div>
-        <div class="formula-block">
-          <div class="formula-label">C11 — Interessi Pagati</div>
-          =B$1*(B$2/B$4)
-        </div>
-        <div class="formula-block">
-          <div class="formula-label">D11 — Capitale Pagato</div>
-          =B11-C11
-        </div>
-        <div class="formula-block">
-          <div class="formula-label">E11 — Capitale Residuo</div>
-          =B$1-D11
-        </div>
-        <p>Copia le formule da B11:E11 verso il basso fino alla riga 370 per completare le 360 rate.</p>
-
-        <h2>Passo 5 — Grafici</h2>
-
-        <p><strong>Grafico del Capitale Residuo nel tempo:</strong></p>
-        <ol>
-          <li>Seleziona <code>A11:A370</code> (Numero Rata) e <code>E11:E370</code> (Capitale Residuo) con <code>Ctrl</code>.</li>
-          <li>Inserisci un <em>grafico a linee</em>.</li>
-          <li>Vedrai la curva decrescente del debito residuo nel tempo.</li>
-        </ol>
-
-        <p><strong>Grafico interessi vs. capitale nel tempo:</strong></p>
-        <ol>
-          <li>Seleziona <code>A11:A370</code>, <code>C11:C370</code> (Interessi) e <code>D11:D370</code> (Capitale) con <code>Ctrl</code>.</li>
-          <li>Inserisci un <em>grafico a linee</em> con due serie.</li>
-          <li>Osserva come la quota interessi scende e la quota capitale sale nel tempo.</li>
-        </ol>
-
-        <h2>Soluzione completa — Riepilogo formule</h2>
-        <table class="data-table">
-          <thead>
-            <tr><th>Cella</th><th>Formula</th><th>Scopo</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>B6</code></td><td><code>=RATA(B2/B4;B3*B4;-B1)</code></td><td>Rata mensile</td></tr>
-            <tr><td><code>B7</code></td><td><code>=B6*B3*B4-B1</code></td><td>Totale interessi pagati</td></tr>
-            <tr><td><code>B8</code></td><td><code>=B6*B3*B4</code></td><td>Costo complessivo mutuo</td></tr>
-            <tr><td><code>C11</code></td><td><code>=B$1*(B$2/B$4)</code></td><td>Interessi quota rata</td></tr>
-            <tr><td><code>D11</code></td><td><code>=B11-C11</code></td><td>Capitale quota rata</td></tr>
-            <tr><td><code>E11</code></td><td><code>=B$1-D11</code></td><td>Capitale residuo</td></tr>
-          </tbody>
-        </table>
-
       </div>
+    </section>
 
-      <!-- SIDEBAR -->
-      <aside class="ex-sidebar">
-        <div class="sidebar-box">
-          <h3>Indice dei passi</h3>
+    <!-- CORPO ESERCIZIO -->
+    <section class="ex-body">
+      <div class="container">
+        <!-- CONTENUTO PRINCIPALE -->
+        <div class="ex-content">
+          <h2>Descrizione</h2>
+          <p>
+            In questo esercizio imparerai a creare un calcolatore di mutuo in
+            Excel. Lo strumento calcolerà la rata mensile, il totale degli
+            interessi pagati e il costo complessivo del mutuo. Costruirai
+            inoltre un piano di ammortamento completo per visualizzare come ogni
+            pagamento riduce il capitale residuo.
+          </p>
+
+          <h2>Passo 1 — Dati iniziali</h2>
+          <p>
+            Crea un nuovo foglio chiamato <strong>Calcolatore Mutuo</strong> e
+            inserisci le seguenti etichette e valori:
+          </p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cella</th>
+                <th>Etichetta (colonna A)</th>
+                <th>Valore (colonna B)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>A1 / B1</code></td>
+                <td>Importo del Mutuo</td>
+                <td>200000</td>
+              </tr>
+              <tr>
+                <td><code>A2 / B2</code></td>
+                <td>Tasso di Interesse Annuale</td>
+                <td>5%</td>
+              </tr>
+              <tr>
+                <td><code>A3 / B3</code></td>
+                <td>Numero di Anni</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td><code>A4 / B4</code></td>
+                <td>Numero di Rate all'Anno</td>
+                <td>12</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Passo 2 — Calcolo della rata mensile</h2>
+          <p>
+            In <code>A6</code> scrivi l'etichetta <strong>Rata Mensile</strong>,
+            poi in <code>B6</code> inserisci la funzione <code>RATA</code>:
+          </p>
+          <div class="formula-block">
+            <div class="formula-label">B6 — Rata Mensile</div>
+            =RATA(B2/B4; B3*B4; -B1)
+          </div>
+          <p>
+            La funzione <code>RATA</code> accetta: tasso per periodo, numero
+            totale di rate e valore attuale (importo negativo). Risultato
+            atteso: <strong>1.073,64 €</strong> al mese.
+          </p>
+
+          <h2>Passo 3 — Totale interessi e costo complessivo</h2>
+
+          <div class="formula-block">
+            <div class="formula-label">B7 — Totale Interessi Pagati</div>
+            =B6*B3*B4-B1
+          </div>
+          <p>
+            Moltiplica la rata per il numero totale di rate e sottrae il
+            capitale iniziale. Risultato atteso: <strong>186.511,57 €</strong>
+          </p>
+
+          <div class="formula-block">
+            <div class="formula-label">B8 — Costo Complessivo del Mutuo</div>
+            =B6*B3*B4
+          </div>
+          <p>
+            Rata mensile × numero totale di rate. Risultato atteso:
+            <strong>386.511,57 €</strong>
+          </p>
+
+          <h2>Passo 4 — Piano di ammortamento</h2>
+          <p>
+            A partire dalla riga 10, crea la tabella del piano di ammortamento
+            con queste intestazioni:
+          </p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Colonna</th>
+                <th>Intestazione</th>
+                <th>Contenuto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>A10</code></td>
+                <td>Numero Rata</td>
+                <td>Da 1 a 360</td>
+              </tr>
+              <tr>
+                <td><code>B10</code></td>
+                <td>Rata</td>
+                <td>Importo fisso mensile</td>
+              </tr>
+              <tr>
+                <td><code>C10</code></td>
+                <td>Interessi Pagati</td>
+                <td>Quota interessi della rata</td>
+              </tr>
+              <tr>
+                <td><code>D10</code></td>
+                <td>Capitale Pagato</td>
+                <td>Quota capitale della rata</td>
+              </tr>
+              <tr>
+                <td><code>E10</code></td>
+                <td>Capitale Residuo</td>
+                <td>Debito rimanente</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            In <code>A11</code> inserisci <code>1</code> e trascina verso il
+            basso fino a 360. Poi inserisci queste formule nella riga 11:
+          </p>
+
+          <div class="formula-block">
+            <div class="formula-label">B11 — Rata (riferimento fisso)</div>
+            =$B$6
+          </div>
+          <div class="formula-block">
+            <div class="formula-label">C11 — Interessi Pagati</div>
+            =B$1*(B$2/B$4)
+          </div>
+          <div class="formula-block">
+            <div class="formula-label">D11 — Capitale Pagato</div>
+            =B11-C11
+          </div>
+          <div class="formula-block">
+            <div class="formula-label">E11 — Capitale Residuo</div>
+            =B$1-D11
+          </div>
+          <p>
+            Copia le formule da B11:E11 verso il basso fino alla riga 370 per
+            completare le 360 rate.
+          </p>
+
+          <h2>Passo 5 — Grafici</h2>
+
+          <p><strong>Grafico del Capitale Residuo nel tempo:</strong></p>
           <ol>
-            <li><a href="#">Dati iniziali</a></li>
-            <li><a href="#">Rata mensile (RATA)</a></li>
-            <li><a href="#">Interessi e costo totale</a></li>
-            <li><a href="#">Piano di ammortamento</a></li>
-            <li><a href="#">Grafici</a></li>
+            <li>
+              Seleziona <code>A11:A370</code> (Numero Rata) e
+              <code>E11:E370</code> (Capitale Residuo) con <code>Ctrl</code>.
+            </li>
+            <li>Inserisci un <em>grafico a linee</em>.</li>
+            <li>Vedrai la curva decrescente del debito residuo nel tempo.</li>
           </ol>
+
+          <p><strong>Grafico interessi vs. capitale nel tempo:</strong></p>
+          <ol>
+            <li>
+              Seleziona <code>A11:A370</code>, <code>C11:C370</code> (Interessi)
+              e <code>D11:D370</code> (Capitale) con <code>Ctrl</code>.
+            </li>
+            <li>Inserisci un <em>grafico a linee</em> con due serie.</li>
+            <li>
+              Osserva come la quota interessi scende e la quota capitale sale
+              nel tempo.
+            </li>
+          </ol>
+
+          <h2>Soluzione completa — Riepilogo formule</h2>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Cella</th>
+                <th>Formula</th>
+                <th>Scopo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>B6</code></td>
+                <td><code>=RATA(B2/B4;B3*B4;-B1)</code></td>
+                <td>Rata mensile</td>
+              </tr>
+              <tr>
+                <td><code>B7</code></td>
+                <td><code>=B6*B3*B4-B1</code></td>
+                <td>Totale interessi pagati</td>
+              </tr>
+              <tr>
+                <td><code>B8</code></td>
+                <td><code>=B6*B3*B4</code></td>
+                <td>Costo complessivo mutuo</td>
+              </tr>
+              <tr>
+                <td><code>C11</code></td>
+                <td><code>=B$1*(B$2/B$4)</code></td>
+                <td>Interessi quota rata</td>
+              </tr>
+              <tr>
+                <td><code>D11</code></td>
+                <td><code>=B11-C11</code></td>
+                <td>Capitale quota rata</td>
+              </tr>
+              <tr>
+                <td><code>E11</code></td>
+                <td><code>=B$1-D11</code></td>
+                <td>Capitale residuo</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="sidebar-box">
-          <h3>Funzioni utilizzate</h3>
-          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
-            <li style="margin-bottom:8px;"><code>RATA</code></li>
-            <li style="margin-bottom:8px;">Riferimenti assoluti <code>$</code></li>
-            <li style="margin-bottom:8px;">Grafici a linee</li>
-            <li>Piano di ammortamento</li>
-          </ul>
-        </div>
-        <a href="../index.html#esercizi-excel" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
-          ← Esercizi Excel
-        </a>
-      </aside>
 
-    </div>
-  </section>
+        <!-- SIDEBAR -->
+        <aside class="ex-sidebar">
+          <div class="sidebar-box">
+            <h3>Indice dei passi</h3>
+            <ol>
+              <li><a href="#">Dati iniziali</a></li>
+              <li><a href="#">Rata mensile (RATA)</a></li>
+              <li><a href="#">Interessi e costo totale</a></li>
+              <li><a href="#">Piano di ammortamento</a></li>
+              <li><a href="#">Grafici</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-box">
+            <h3>Funzioni utilizzate</h3>
+            <ul
+              style="
+                list-style: none;
+                padding: 0;
+                font-size: 0.88rem;
+                color: var(--text-muted);
+              "
+            >
+              <li style="margin-bottom: 8px"><code>RATA</code></li>
+              <li style="margin-bottom: 8px">
+                Riferimenti assoluti <code>$</code>
+              </li>
+              <li style="margin-bottom: 8px">Grafici a linee</li>
+              <li>Piano di ammortamento</li>
+            </ul>
+          </div>
+          <a
+            href="../../index.html#esercizi-excel"
+            class="btn-card"
+            style="display: block; text-align: center; margin-top: 4px"
+          >
+            ← Esercizi Excel
+          </a>
+        </aside>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" id="contatti">
-    <div class="container">
-      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
-      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
-    </div>
-  </footer>
-
-</body>
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contatti">
+      <div class="container">
+        <p>
+          Hai domande? Scrivimi a
+          <a href="mailto:info@esempio.it">info@esempio.it</a>
+        </p>
+        <p class="footer-copy">
+          &copy; 2026 CorsoWeb — Tutti i diritti riservati
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

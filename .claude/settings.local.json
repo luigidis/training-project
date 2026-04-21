@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python3 -c*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(grep -n \"href\\\\|src\" D:/dev/training-project/esercizi/esercizi_css/*.html)"
     ]
   }
 }
