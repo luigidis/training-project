@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Margin e Padding su un Link — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Margin e Padding su un Link
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Margin e Padding #1</span>
+      </div>
+      <h1>Margin e Padding su un Link</h1>
+      <div class="ex-meta">
+        <span>⏱ 25 minuti</span>
+        <span>·</span>
+        <span>margin · padding · box model · text-decoration</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai la differenza tra <strong>margin</strong> (margine esterno)
+          e <strong>padding</strong> (spaziatura interna). Applicherai queste proprietà a un link
+          per capire come influenzano l'aspetto e lo spazio occupato dall'elemento.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un link:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio 2&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;a href="#"&gt;Clicca qui&lt;/a&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+        </p>
+
+        <h2>Passo 3 — Applicare margin e padding</h2>
+        <p>
+          All'interno del file <strong>style.css</strong>, applica le proprietà margin e padding al link:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          a {
+            margin: 0;
+            padding: 15px;
+            color: black;
+            text-decoration: none;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Spiegazione delle proprietà:</strong></p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Proprietà</th>
+              <th>Valore</th>
+              <th>Significato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>margin</code></td>
+              <td>0</td>
+              <td>Margine esterno (spazio fuori dal bordo dell'elemento) impostato a 0</td>
+            </tr>
+            <tr>
+              <td><code>padding</code></td>
+              <td>15px</td>
+              <td>Spaziatura interna (spazio tra il bordo e il contenuto) di 15 pixel</td>
+            </tr>
+            <tr>
+              <td><code>color</code></td>
+              <td>black</td>
+              <td>Colore del testo nero</td>
+            </tr>
+            <tr>
+              <td><code>text-decoration</code></td>
+              <td>none</td>
+              <td>Rimuove la sottolineatura del link</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Visualizzare il box model</h2>
+        <p>
+          Per capire meglio l'effetto del padding, aggiungi un colore di sfondo al link:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Con background</div>
+          <pre>
+          a {
+            margin: 0;
+            padding: 15px;
+            color: black;
+            text-decoration: none;
+            background-color: lightblue;
+          }
+          </pre>
+        </div>
+
+        <p>
+          Ora puoi vedere chiaramente come il <code>padding</code> crea uno spazio interno
+          tra il testo "Clicca qui" e il bordo dello sfondo azzurro.
+        </p>
+
+        <h2>Passo 5 — Sperimentare con il margin</h2>
+        <p>
+          Prova a modificare il valore del margin per vedere la differenza:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Con margin</div>
+          <pre>
+          a {
+            margin: 20px;
+            padding: 15px;
+            color: black;
+            text-decoration: none;
+            background-color: lightblue;
+          }
+          </pre>
+        </div>
+
+        <p>
+          Il <code>margin: 20px;</code> crea uno spazio di 20 pixel <strong>attorno</strong>
+          all'intero elemento (fuori dallo sfondo azzurro).
+        </p>
+
+        <h2>Risultato atteso</h2>
+        <p>Con il codice del Passo 4, dovresti vedere:</p>
+        <ul>
+          <li>Un link "Clicca qui" senza sottolineatura</li>
+          <li>Sfondo azzurro attorno al testo</li>
+          <li>Spazio di 15px tra il testo e il bordo dello sfondo (padding)</li>
+          <li>Nessuno spazio esterno (margin a 0)</li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Il Box Model CSS:</strong></p>
+        <p>
+          Ogni elemento HTML può essere visualizzato come una scatola (box) composta da diversi livelli:
+        </p>
+        <ol>
+          <li><strong>Content</strong> — Il contenuto dell'elemento (es. il testo)</li>
+          <li><strong>Padding</strong> — Spazio interno tra il contenuto e il bordo</li>
+          <li><strong>Border</strong> — Il bordo dell'elemento</li>
+          <li><strong>Margin</strong> — Spazio esterno tra l'elemento e gli altri elementi</li>
+        </ol>
+
+        <div class="formula-block">
+          <div class="formula-label">Visualizzazione Box Model</div>
+          <pre>
+          ┌─────────────────────────────────┐
+          │        MARGIN (esterno)         │
+          │  ┌───────────────────────────┐  │
+          │  │      BORDER (bordo)       │  │
+          │  │  ┌─────────────────────┐  │  │
+          │  │  │  PADDING (interno)  │  │  │
+          │  │  │  ┌───────────────┐  │  │  │
+          │  │  │  │   CONTENT     │  │  │  │
+          │  │  │  │  (contenuto)  │  │  │  │
+          │  │  │  └───────────────┘  │  │  │
+          │  │  └─────────────────────┘  │  │
+          │  └───────────────────────────┘  │
+          └─────────────────────────────────┘
+          </pre>
+        </div>
+
+        <p><strong>Sintassi margin e padding:</strong></p>
+        <ul>
+          <li><code>margin: 10px;</code> — 10px su tutti i lati</li>
+          <li><code>margin: 10px 20px;</code> — 10px sopra/sotto, 20px destra/sinistra</li>
+          <li><code>margin: 10px 20px 15px 25px;</code> — Sopra, Destra, Sotto, Sinistra (senso orario)</li>
+          <li><code>margin-top: 10px;</code> — Solo il margine superiore</li>
+        </ul>
+
+        <p>La stessa sintassi vale per il <code>padding</code>.</p>
+
+        <p><strong>Differenza pratica:</strong></p>
+        <ul>
+          <li><strong>Padding</strong> — Aumenta l'area cliccabile del link e lo spazio interno dello sfondo</li>
+          <li><strong>Margin</strong> — Crea distanza tra il link e altri elementi vicini</li>
+        </ul>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">Creare il file CSS</a></li>
+            <li><a href="#passo-3">Applicare margin/padding</a></li>
+            <li><a href="#passo-4">Visualizzare box model</a></li>
+            <li><a href="#passo-5">Sperimentare con margin</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Box Model CSS</li>
+            <li style="margin-bottom:8px;"><code>margin</code> (esterno)</li>
+            <li style="margin-bottom:8px;"><code>padding</code> (interno)</li>
+            <li>Spazio e layout</li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

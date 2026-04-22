@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dimensioni di un Div — Corso Web</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
 </head>
 <body>
 
@@ -17,10 +17,10 @@
         <span class="logo-text">CorsoWeb</span>
       </div>
       <nav class="main-nav">
-        <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
-        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
-        <a href="../../index.html#argomenti">Argomenti</a>
-        <a href="../../index.html#contatti">Contatti</a>
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
       </nav>
     </div>
   </header>
@@ -29,9 +29,9 @@
   <div class="ex-header">
     <div class="container">
       <div class="breadcrumb">
-        <a href="../../index.html">Home</a>
+        <a href="../../../index.html">Home</a>
         <span>›</span>
-        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
         <span>›</span>
         Dimensioni di un Div
       </div>
@@ -69,7 +69,7 @@
         </p>
 
         <h2>Passo 1 — Creare la struttura HTML</h2>
-        <p>Crea un nuovo file HTML con un div contenente del testo:</p>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un div contenente del testo:</p>
 
         <div class="formula-block">
           <div class="formula-label">index.html</div>
@@ -78,9 +78,7 @@
           &lt;html&gt;
             &lt;head&gt;
               &lt;title&gt;Esercizio 7&lt;/title&gt;
-              &lt;style&gt;
-                /* Il CSS andrà qui */
-              &lt;/style&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
             &lt;/head&gt;
             &lt;body&gt;
               &lt;div&gt;
@@ -93,13 +91,14 @@
           </pre>
         </div>
 
-        <h2>Passo 2 — Applicare le dimensioni base</h2>
+        <h2>Passo 2 — Creare il file CSS</h2>
         <p>
-          All'interno del tag <code>&lt;style&gt;</code>, definisci le dimensioni del div:
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          All'interno del file CSS, definisci le dimensioni del div:
         </p>
 
         <div class="formula-block">
-          <div class="formula-label">CSS — Dimensioni base</div>
+          <div class="formula-label">style.css</div>
           <pre>
           div {
             width: 800px;
@@ -113,12 +112,12 @@
 
         <h2>Passo 3 — Aggiungere i vincoli min/max</h2>
         <p>
-          Ora aggiungi le proprietà <code>min-height</code> e <code>max-width</code> per creare dei limiti
+          Ora modifica il file <strong>style.css</strong> aggiungendo le proprietà <code>min-height</code> e <code>max-width</code> per creare dei limiti
           che il div non può superare:
         </p>
 
         <div class="formula-block">
-          <div class="formula-label">CSS — Con vincoli</div>
+          <div class="formula-label">style.css — Con vincoli</div>
           <pre>
           div {
             width: 800px;
@@ -215,7 +214,7 @@
             <li><code>background-color</code></li>
           </ul>
         </div>
-        <a href="../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
           ← Esercizi CSS
         </a>
       </aside>

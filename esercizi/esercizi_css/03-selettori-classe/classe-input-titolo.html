@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selettori di Classe per Input e Titolo — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Selettori di Classe per Input e Titolo
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Selettori Classe #2</span>
+      </div>
+      <h1>Selettori di Classe per Input e Titolo</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>Selettori di classe · color · input · h2</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio continuerai a praticare con i <strong>selettori di classe</strong>
+          applicandoli a diversi tipi di elementi HTML. Assegnerai la classe "campo-input" a un
+          campo di input e la classe "titolo" a un'intestazione, quindi userai i selettori CSS
+          per cambiare il colore del testo.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un input e un'intestazione:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio 3&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;input
+                type="text"
+                class="campo-input"
+                placeholder="Inserisci il testo qui" /&gt;
+              &lt;h2 class="titolo"&gt;Titolo dell'intestazione&lt;/h2&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <p><strong>Elementi HTML utilizzati:</strong></p>
+        <ul>
+          <li><code>&lt;input type="text"&gt;</code> — Campo di testo dove l'utente può inserire dati</li>
+          <li><code>placeholder</code> — Testo di esempio che appare nel campo vuoto</li>
+          <li><code>class="campo-input"</code> — Classe assegnata al campo di input</li>
+          <li><code>class="titolo"</code> — Classe assegnata all'intestazione</li>
+        </ul>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+        </p>
+
+        <h2>Passo 3 — Applicare stili con selettori di classe</h2>
+        <p>
+          All'interno del file <strong>style.css</strong>, scrivi le regole CSS per stilizzare
+          gli elementi usando i selettori di classe:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          .campo-input {
+            color: blue;
+          }
+
+          .titolo {
+            color: green;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Spiegazione:</strong></p>
+        <ul>
+          <li><code>.campo-input</code> — Seleziona l'elemento con <code>class="campo-input"</code> (il campo di input)</li>
+          <li><code>.titolo</code> — Seleziona l'elemento con <code>class="titolo"</code> (l'intestazione h2)</li>
+          <li>Il colore applicato agli input influenza il testo che l'utente digita</li>
+        </ul>
+
+        <h2>Passo 4 — Migliorare lo stile del campo di input (opzionale)</h2>
+        <p>
+          Puoi aggiungere altre proprietà CSS per rendere il campo di input più accattivante:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Con stili aggiuntivi</div>
+          <pre>
+          .campo-input {
+            color: blue;
+            font-size: 16px;
+            padding: 10px;
+            border: 2px solid blue;
+            border-radius: 5px;
+            width: 300px;
+          }
+
+          .titolo {
+            color: green;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Nuove proprietà aggiunte:</strong></p>
+        <ul>
+          <li><code>font-size: 16px;</code> — Dimensione del carattere</li>
+          <li><code>padding: 10px;</code> — Spazio interno nel campo</li>
+          <li><code>border: 2px solid blue;</code> — Bordo blu di 2 pixel</li>
+          <li><code>border-radius: 5px;</code> — Angoli arrotondati</li>
+          <li><code>width: 300px;</code> — Larghezza del campo</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>Aprendo il file HTML nel browser, dovresti vedere:</p>
+        <ul>
+          <li>Un campo di input con testo di colore <strong style="color:blue;">blu</strong> (quando digiti)</li>
+          <li>Un'intestazione "Titolo dell'intestazione" con testo di colore <strong style="color:green;">verde</strong></li>
+          <li>Con gli stili opzionali: un campo di input stilizzato con bordo blu e angoli arrotondati</li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Stilizzare campi di input:</strong></p>
+        <p>
+          I campi di input possono essere stilizzati con molte proprietà CSS per migliorare l'esperienza utente.
+          È importante rendere i campi di input chiaramente visibili e facili da usare.
+        </p>
+
+        <p><strong>Nomi di classi significativi:</strong></p>
+        <p>
+          Nota come la classe <code>campo-input</code> usa un nome descrittivo che spiega cosa rappresenta
+          l'elemento. Questa è una buona pratica che rende il codice più leggibile e manutenibile.
+          Evita nomi generici come <code>blu</code> o <code>elemento1</code>.
+        </p>
+
+        <p><strong>Pseudo-classi per input:</strong></p>
+        <ul>
+          <li><code>input:focus</code> — Stile quando l'input è selezionato</li>
+          <li><code>input:hover</code> — Stile quando il mouse passa sopra</li>
+          <li><code>input:disabled</code> — Stile quando l'input è disabilitato</li>
+        </ul>
+
+        <p><strong>Esempio con pseudo-classe focus:</strong></p>
+        <div class="formula-block">
+          <div class="formula-label">CSS — Con effetto focus</div>
+          <pre>
+          .campo-input:focus {
+            outline: none;
+            border-color: darkblue;
+            box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+          }
+          </pre>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">Creare il file CSS</a></li>
+            <li><a href="#passo-3">Selettori di classe</a></li>
+            <li><a href="#passo-4">Stili aggiuntivi</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Selettori di classe</li>
+            <li style="margin-bottom:8px;">Elementi <code>input</code></li>
+            <li style="margin-bottom:8px;">Stilizzazione campi</li>
+            <li>Nomi classi descrittivi</li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

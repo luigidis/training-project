@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selettore di Classe per Paragrafi — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Selettore di Classe per Paragrafi
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Selettori Classe #3</span>
+      </div>
+      <h1>Selettore di Classe per Paragrafi</h1>
+      <div class="ex-meta">
+        <span>⏱ 15 minuti</span>
+        <span>·</span>
+        <span>Selettori di classe · color · riutilizzo classi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai un concetto fondamentale: la <strong>riutilizzabilità delle classi</strong>.
+          Assegnerai la stessa classe "paragrafo" a tre diversi paragrafi, dimostrando come una singola
+          regola CSS possa stilizzare più elementi contemporaneamente.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con tre paragrafi:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio 5&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;p class="paragrafo"&gt;Questo è un paragrafo.&lt;/p&gt;
+              &lt;p class="paragrafo"&gt;Questo è un altro paragrafo.&lt;/p&gt;
+              &lt;p class="paragrafo"&gt;E ancora un altro paragrafo.&lt;/p&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <p><strong>Nota importante:</strong></p>
+        <ul>
+          <li>Tutti e tre i paragrafi hanno <code>class="paragrafo"</code></li>
+          <li>La stessa classe può essere usata su più elementi</li>
+          <li>Una singola regola CSS si applicherà a tutti e tre i paragrafi</li>
+        </ul>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+        </p>
+
+        <h2>Passo 3 — Applicare stili con il selettore di classe</h2>
+        <p>
+          All'interno del file <strong>style.css</strong>, scrivi una regola CSS per la classe "paragrafo":
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          .paragrafo {
+            color: blue;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Cosa succede:</strong></p>
+        <ul>
+          <li><code>.paragrafo</code> seleziona <strong>tutti</strong> gli elementi con <code>class="paragrafo"</code></li>
+          <li>Questa singola regola CSS si applica ai tre paragrafi contemporaneamente</li>
+          <li>Modificando lo stile in un solo punto, cambiano tutti e tre i paragrafi</li>
+        </ul>
+
+        <h2>Passo 4 — Sperimentare con la riutilizzabilità</h2>
+        <p>
+          Per capire meglio il vantaggio delle classi, prova ad aggiungere altre proprietà:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Con più proprietà</div>
+          <pre>
+          .paragrafo {
+            color: blue;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Risultato:</strong></p>
+        <p>
+          Tutte le proprietà vengono applicate ai tre paragrafi automaticamente.
+          Questo dimostra l'efficienza delle classi: scrivi una volta, applica a molti elementi.
+        </p>
+
+        <h2>Risultato atteso</h2>
+        <p>Aprendo il file HTML nel browser, dovresti vedere:</p>
+        <ul>
+          <li>Tre paragrafi, tutti con testo di colore <strong style="color:blue;">blu</strong></li>
+          <li>Con gli stili opzionali: testo più grande, spaziatura tra le righe e margine sotto ogni paragrafo</li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Vantaggi della riutilizzabilità delle classi:</strong></p>
+        <ul>
+          <li><strong>Manutenibilità:</strong> Modifichi lo stile in un solo punto invece che in tre</li>
+          <li><strong>Coerenza:</strong> Garantisce che elementi simili abbiano lo stesso aspetto</li>
+          <li><strong>Efficienza:</strong> Meno codice CSS da scrivere e mantenere</li>
+          <li><strong>Scalabilità:</strong> Puoi aggiungere altri elementi con la stessa classe senza modificare il CSS</li>
+        </ul>
+
+        <p><strong>Confronto con selettori di tipo:</strong></p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Approccio</th>
+              <th>Codice CSS</th>
+              <th>Effetto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Selettore di tipo</td>
+              <td><code>p { color: blue; }</code></td>
+              <td>Colora <strong>tutti</strong> i paragrafi della pagina in blu</td>
+            </tr>
+            <tr>
+              <td>Selettore di classe</td>
+              <td><code>.paragrafo { color: blue; }</code></td>
+              <td>Colora solo i paragrafi con <code>class="paragrafo"</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Quando usare classi vs selettori di tipo:</strong></p>
+        <ul>
+          <li>Usa <strong>selettori di tipo</strong> quando vuoi stilizzare tutti gli elementi di un tipo (es. tutti i link)</li>
+          <li>Usa <strong>selettori di classe</strong> quando vuoi stilizzare solo alcuni elementi specifici</li>
+        </ul>
+
+        <p><strong>Esempio pratico:</strong></p>
+        <div class="formula-block">
+          <div class="formula-label">HTML — Paragrafi con e senza classe</div>
+          <pre>
+          &lt;p class="paragrafo"&gt;Questo sarà blu&lt;/p&gt;
+          &lt;p&gt;Questo avrà lo stile di default&lt;/p&gt;
+          &lt;p class="paragrafo"&gt;Anche questo sarà blu&lt;/p&gt;
+          </pre>
+        </div>
+
+        <p>
+          Con <code>.paragrafo { color: blue; }</code>, solo il primo e terzo paragrafo saranno blu.
+          Il secondo paragrafo, che non ha la classe, manterrà il colore predefinito.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">Creare il file CSS</a></li>
+            <li><a href="#passo-3">Selettore di classe</a></li>
+            <li><a href="#passo-4">Sperimentare</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Riutilizzabilità classi</li>
+            <li style="margin-bottom:8px;">Selettori di classe</li>
+            <li style="margin-bottom:8px;">Manutenibilità CSS</li>
+            <li>DRY (Don't Repeat Yourself)</li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

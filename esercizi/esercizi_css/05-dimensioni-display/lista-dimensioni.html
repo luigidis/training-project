@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lista con Dimensioni Personalizzate — Corso Web</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
 </head>
 <body>
 
@@ -17,10 +17,10 @@
         <span class="logo-text">CorsoWeb</span>
       </div>
       <nav class="main-nav">
-        <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
-        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
-        <a href="../../index.html#argomenti">Argomenti</a>
-        <a href="../../index.html#contatti">Contatti</a>
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
       </nav>
     </div>
   </header>
@@ -29,9 +29,9 @@
   <div class="ex-header">
     <div class="container">
       <div class="breadcrumb">
-        <a href="../../index.html">Home</a>
+        <a href="../../../index.html">Home</a>
         <span>›</span>
-        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
         <span>›</span>
         Lista con Dimensioni Personalizzate
       </div>
@@ -69,7 +69,7 @@
         </p>
 
         <h2>Passo 1 — Creare la struttura HTML</h2>
-        <p>Crea un nuovo file HTML con una lista non ordinata contenente tre elementi:</p>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con una lista non ordinata contenente tre elementi:</p>
 
         <div class="formula-block">
           <div class="formula-label">index.html</div>
@@ -78,9 +78,7 @@
           &lt;html&gt;
             &lt;head&gt;
               &lt;title&gt;Esercizio 8&lt;/title&gt;
-              &lt;style&gt;
-                /* Il CSS andrà qui */
-              &lt;/style&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
             &lt;/head&gt;
             &lt;body&gt;
               &lt;ul&gt;
@@ -93,13 +91,14 @@
           </pre>
         </div>
 
-        <h2>Passo 2 — Stilizzare gli elementi della lista</h2>
+        <h2>Passo 2 — Creare il file CSS e stilizzare gli elementi della lista</h2>
         <p>
-          All'interno del tag <code>&lt;style&gt;</code>, definisci le regole CSS per gli elementi <code>&lt;li&gt;</code>:
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          All'interno del file CSS, definisci le regole CSS per gli elementi <code>&lt;li&gt;</code>:
         </p>
 
         <div class="formula-block">
-          <div class="formula-label">CSS — Stile degli elementi lista</div>
+          <div class="formula-label">style.css</div>
           <pre>
           li {
             width: 180px;
@@ -170,10 +169,10 @@
         </ol>
 
         <h2>Passo 5 — Personalizzazione avanzata (opzionale)</h2>
-        <p>Puoi aggiungere altre proprietà per migliorare l'aspetto:</p>
+        <p>Puoi aggiungere altre proprietà al file <strong>style.css</strong> per migliorare l'aspetto:</p>
 
         <div class="formula-block">
-          <div class="formula-label">CSS — Stilizzazione avanzata</div>
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
           <pre>
           li {
             width: 180px;
@@ -243,7 +242,7 @@
             <li><code>background-color</code></li>
           </ul>
         </div>
-        <a href="../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
           ← Esercizi CSS
         </a>
       </aside>

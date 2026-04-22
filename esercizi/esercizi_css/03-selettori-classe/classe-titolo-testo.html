@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selettori di Classe per Titolo e Testo — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Selettori di Classe per Titolo e Testo
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Selettori Classe #1</span>
+      </div>
+      <h1>Selettori di Classe per Titolo e Testo</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>Selettori di classe · color · class attribute</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai a utilizzare i <strong>selettori di classe</strong> per applicare
+          stili CSS a elementi specifici. Assegnerai la classe "titolo" a un'intestazione e la classe
+          "testo" a un paragrafo, quindi userai i selettori CSS per cambiare il colore del titolo in
+          blu e del testo in verde.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un'intestazione e un paragrafo:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio 1&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;h1 class="titolo"&gt;Titolo dell'intestazione&lt;/h1&gt;
+              &lt;p class="testo"&gt;Questo è un paragrafo.&lt;/p&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <p><strong>Nota importante:</strong></p>
+        <ul>
+          <li>L'attributo <code>class="titolo"</code> assegna la classe "titolo" all'intestazione</li>
+          <li>L'attributo <code>class="testo"</code> assegna la classe "testo" al paragrafo</li>
+          <li>Le classi permettono di identificare e stilizzare elementi specifici</li>
+        </ul>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+        </p>
+
+        <h2>Passo 3 — Applicare stili con selettori di classe</h2>
+        <p>
+          All'interno del file <strong>style.css</strong>, scrivi le regole CSS usando i selettori di classe:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          .titolo {
+            color: blue;
+          }
+
+          .testo {
+            color: green;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Spiegazione:</strong></p>
+        <ul>
+          <li><code>.titolo</code> — Il punto (.) indica un selettore di classe che seleziona tutti gli elementi con <code>class="titolo"</code></li>
+          <li><code>.testo</code> — Seleziona tutti gli elementi con <code>class="testo"</code></li>
+          <li>Il punto è fondamentale: senza di esso, CSS cercherebbe un elemento HTML chiamato "titolo" o "testo"</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>Aprendo il file HTML nel browser, dovresti vedere:</p>
+        <ul>
+          <li>L'intestazione "Titolo dell'intestazione" con testo di colore <strong style="color:blue;">blu</strong></li>
+          <li>Il paragrafo "Questo è un paragrafo." con testo di colore <strong style="color:green;">verde</strong></li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Differenza tra selettori di tipo e selettori di classe:</strong></p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Tipo di selettore</th>
+              <th>Sintassi</th>
+              <th>Cosa seleziona</th>
+              <th>Esempio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Selettore di tipo</td>
+              <td><code>elemento</code></td>
+              <td>Tutti gli elementi di quel tipo</td>
+              <td><code>p { ... }</code> seleziona tutti i paragrafi</td>
+            </tr>
+            <tr>
+              <td>Selettore di classe</td>
+              <td><code>.classe</code></td>
+              <td>Tutti gli elementi con quella classe</td>
+              <td><code>.testo { ... }</code> seleziona elementi con class="testo"</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Vantaggi dei selettori di classe:</strong></p>
+        <ul>
+          <li><strong>Riutilizzabilità:</strong> La stessa classe può essere applicata a più elementi diversi</li>
+          <li><strong>Specificità:</strong> Puoi stilizzare solo alcuni elementi di un tipo, non tutti</li>
+          <li><strong>Flessibilità:</strong> Un elemento può avere più classi separate da spazi: <code>class="titolo importante"</code></li>
+        </ul>
+
+        <p><strong>Esempi di utilizzo:</strong></p>
+        <div class="formula-block">
+          <div class="formula-label">HTML — Elementi con classi</div>
+          <pre>
+          &lt;p class="evidenziato"&gt;Testo evidenziato&lt;/p&gt;
+          &lt;div class="evidenziato"&gt;Anche questo è evidenziato&lt;/div&gt;
+          &lt;span class="evidenziato rosso"&gt;Con più classi&lt;/span&gt;
+          </pre>
+        </div>
+
+        <div class="formula-block">
+          <div class="formula-label">CSS — Stili per le classi</div>
+          <pre>
+          .evidenziato {
+            background-color: yellow;
+          }
+
+          .rosso {
+            color: red;
+          }
+          </pre>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">Creare il file CSS</a></li>
+            <li><a href="#passo-3">Selettori di classe</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Selettori di classe</li>
+            <li style="margin-bottom:8px;">Attributo <code>class</code></li>
+            <li style="margin-bottom:8px;">Sintassi con punto (.)</li>
+            <li>Proprietà <code>color</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

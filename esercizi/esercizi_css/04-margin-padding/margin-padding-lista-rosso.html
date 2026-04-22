@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Margin e Padding con Lista Personalizzata — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Margin e Padding con Lista Personalizzata
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Margin e Padding #3</span>
+      </div>
+      <h1>Margin e Padding con Lista Personalizzata</h1>
+      <div class="ex-meta">
+        <span>⏱ 25 minuti</span>
+        <span>·</span>
+        <span>margin · padding · color · list-style</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio combinerai le proprietà <strong>margin</strong> e <strong>padding</strong>
+          con la stilizzazione dei marker della lista. Creerai una lista con margine esterno, padding interno,
+          e punti di colore rosso per ottenere un aspetto personalizzato.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con una lista non ordinata:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio 8&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;ul&gt;
+                &lt;li&gt;Elemento 1&lt;/li&gt;
+                &lt;li&gt;Elemento 2&lt;/li&gt;
+                &lt;li&gt;Elemento 3&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+        </p>
+
+        <h2>Passo 3 — Applicare margin, padding e colore ai marker</h2>
+        <p>
+          All'interno del file <strong>style.css</strong>, applica le proprietà agli elementi <code>li</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          li {
+            margin: 5px;
+            padding: 10px;
+            color: red;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Spiegazione delle proprietà:</strong></p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Proprietà</th>
+              <th>Valore</th>
+              <th>Significato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>margin</code></td>
+              <td>5px</td>
+              <td>Margine esterno di 5 pixel attorno a ogni elemento della lista</td>
+            </tr>
+            <tr>
+              <td><code>padding</code></td>
+              <td>10px</td>
+              <td>Spaziatura interna di 10 pixel all'interno di ogni elemento</td>
+            </tr>
+            <tr>
+              <td><code>color</code></td>
+              <td>red</td>
+              <td>Colore rosso applicato al testo E ai marker (punti) della lista</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Nota importante:</strong></p>
+        <p>
+          La proprietà <code>color</code> applicata a un elemento <code>li</code> cambia sia
+          il colore del testo che il colore del marker (pallino) della lista. Questo è il modo
+          più semplice per colorare i punti della lista.
+        </p>
+
+        <h2>Passo 4 — Separare il colore del testo dai marker</h2>
+        <p>
+          Se vuoi che i punti siano rossi ma il testo sia di un altro colore, puoi usare
+          un elemento <code>&lt;span&gt;</code> all'interno del <code>li</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">HTML — Con span per separare i colori</div>
+          <pre>
+          &lt;ul&gt;
+            &lt;li&gt;&lt;span&gt;Elemento 1&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;span&gt;Elemento 2&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;span&gt;Elemento 3&lt;/span&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+          </pre>
+        </div>
+
+        <div class="formula-block">
+          <div class="formula-label">CSS — Colori separati</div>
+          <pre>
+          li {
+            margin: 5px;
+            padding: 10px;
+            color: red;  /* Colore dei marker */
+          }
+
+          li span {
+            color: black;  /* Colore del testo */
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 5 — Visualizzare l'effetto completo</h2>
+        <p>
+          Per vedere chiaramente l'effetto di margin e padding, aggiungi uno sfondo:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Con background</div>
+          <pre>
+          li {
+            margin: 5px;
+            padding: 10px;
+            color: red;
+            background-color: lightyellow;
+          }
+
+          li span {
+            color: black;
+          }
+          </pre>
+        </div>
+
+        <p>Ora puoi vedere chiaramente:</p>
+        <ul>
+          <li>Il <strong>margin</strong> di 5px crea spazio tra un elemento e l'altro (fuori dallo sfondo giallo)</li>
+          <li>Il <strong>padding</strong> di 10px crea spazio interno (dentro lo sfondo giallo)</li>
+          <li>I punti sono rossi, il testo è nero</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>Con il codice del Passo 3, dovresti vedere:</p>
+        <ul>
+          <li>Tre elementi di lista con punti rossi</li>
+          <li>Testo rosso in ogni elemento</li>
+          <li>Spazio esterno di 5px tra gli elementi (margin)</li>
+          <li>Spazio interno di 10px all'interno di ogni elemento (padding)</li>
+        </ul>
+
+        <p>Con il codice del Passo 5:</p>
+        <ul>
+          <li>Punti rossi ma testo nero</li>
+          <li>Sfondo giallo chiaro che mostra chiaramente l'area di padding</li>
+          <li>Spazio visibile tra gli elementi creato dal margin</li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Come funziona il colore dei marker:</strong></p>
+        <p>
+          I marker delle liste (pallini, numeri, ecc.) ereditano il colore dalla proprietà <code>color</code>
+          dell'elemento <code>li</code>. Per questo motivo, quando imposti <code>color: red;</code> su un <code>li</code>,
+          sia il marker che il testo diventano rossi.
+        </p>
+
+        <p><strong>Metodi alternativi per stilizzare i marker:</strong></p>
+        <div class="formula-block">
+          <div class="formula-label">CSS — Marker personalizzato con ::marker</div>
+          <pre>
+          li {
+            margin: 5px;
+            padding: 10px;
+          }
+
+          li::marker {
+            color: red;
+            font-size: 20px;
+          }
+          </pre>
+        </div>
+
+        <p>
+          La pseudo-elemento <code>::marker</code> (supportato nei browser moderni) permette di
+          stilizzare direttamente il marker senza influenzare il testo.
+        </p>
+
+        <p><strong>Tipi di marker disponibili:</strong></p>
+        <ul>
+          <li><code>list-style-type: disc;</code> — Pallino pieno (default)</li>
+          <li><code>list-style-type: circle;</code> — Pallino vuoto</li>
+          <li><code>list-style-type: square;</code> — Quadrato</li>
+          <li><code>list-style-type: decimal;</code> — Numeri (1, 2, 3...)</li>
+          <li><code>list-style-type: lower-alpha;</code> — Lettere minuscole (a, b, c...)</li>
+        </ul>
+
+        <p><strong>Combinazione pratica:</strong></p>
+        <div class="formula-block">
+          <div class="formula-label">CSS — Lista stilizzata completa</div>
+          <pre>
+          ul {
+            list-style-type: square;
+          }
+
+          li {
+            margin: 8px 0;
+            padding: 12px 15px;
+            color: #c00;
+            background-color: #ffe;
+            border-left: 3px solid #c00;
+          }
+
+          li span {
+            color: #333;
+          }
+          </pre>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">Creare il file CSS</a></li>
+            <li><a href="#passo-3">Margin, padding, colore</a></li>
+            <li><a href="#passo-4">Separare i colori</a></li>
+            <li><a href="#passo-5">Visualizzare l'effetto</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>margin</code> esterno</li>
+            <li style="margin-bottom:8px;"><code>padding</code> interno</li>
+            <li style="margin-bottom:8px;">Colore marker</li>
+            <li><code>::marker</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

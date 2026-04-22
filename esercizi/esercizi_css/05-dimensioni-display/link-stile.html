@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stilizzare un Link — Corso Web</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../../css/style.css" />
 </head>
 <body>
 
@@ -17,10 +17,10 @@
         <span class="logo-text">CorsoWeb</span>
       </div>
       <nav class="main-nav">
-        <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
-        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
-        <a href="../../index.html#argomenti">Argomenti</a>
-        <a href="../../index.html#contatti">Contatti</a>
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
       </nav>
     </div>
   </header>
@@ -29,9 +29,9 @@
   <div class="ex-header">
     <div class="container">
       <div class="breadcrumb">
-        <a href="../../index.html">Home</a>
+        <a href="../../../index.html">Home</a>
         <span>›</span>
-        <a href="../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
         <span>›</span>
         Stilizzare un Link
       </div>
@@ -70,7 +70,7 @@
         </p>
 
         <h2>Passo 1 — Creare la struttura HTML</h2>
-        <p>Crea un nuovo file HTML con un semplice link:</p>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un semplice link:</p>
 
         <div class="formula-block">
           <div class="formula-label">index.html</div>
@@ -79,9 +79,7 @@
           &lt;html&gt;
             &lt;head&gt;
               &lt;title&gt;Esercizio 10&lt;/title&gt;
-              &lt;style&gt;
-                /* Il CSS andrà qui */
-              &lt;/style&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
             &lt;/head&gt;
             &lt;body&gt;
               &lt;a href="#"&gt;Clicca qui&lt;/a&gt;
@@ -90,15 +88,16 @@
           </pre>
         </div>
 
-        <h2>Passo 2 — Trasformare il link in blocco</h2>
+        <h2>Passo 2 — Creare il file CSS e trasformare il link in blocco</h2>
         <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
           Per default, i link (<code>&lt;a&gt;</code>) sono elementi <strong>inline</strong>, il che significa
           che non accettano proprietà come <code>width</code> e <code>height</code>. Per poterle applicare,
           dobbiamo trasformarlo in un elemento <strong>inline-block</strong>:
         </p>
 
         <div class="formula-block">
-          <div class="formula-label">CSS — Display inline-block</div>
+          <div class="formula-label">style.css</div>
           <pre>
           a {
             display: inline-block;
@@ -115,11 +114,11 @@
 
         <h2>Passo 3 — Applicare dimensioni e vincoli</h2>
         <p>
-          Ora che il link è <code>inline-block</code>, possiamo applicare le dimensioni:
+          Ora che il link è <code>inline-block</code>, possiamo applicare le dimensioni nel file <strong>style.css</strong>:
         </p>
 
         <div class="formula-block">
-          <div class="formula-label">CSS — Dimensioni</div>
+          <div class="formula-label">style.css — Dimensioni</div>
           <pre>
           a {
             display: inline-block;
@@ -133,11 +132,11 @@
 
         <h2>Passo 4 — Stilizzazione del testo e layout</h2>
         <p>
-          Aggiungiamo proprietà per migliorare l'aspetto del link:
+          Aggiungiamo proprietà al file <strong>style.css</strong> per migliorare l'aspetto del link:
         </p>
 
         <div class="formula-block">
-          <div class="formula-label">CSS — Stile completo</div>
+          <div class="formula-label">style.css — Stile completo</div>
           <pre>
           a {
             display: inline-block;
@@ -219,11 +218,11 @@
 
         <h2>Passo 6 — Aggiungere effetti hover (opzionale)</h2>
         <p>
-          Per rendere il link più interattivo, puoi aggiungere uno stile che cambia quando il mouse ci passa sopra:
+          Per rendere il link più interattivo, puoi aggiungere al file <strong>style.css</strong> uno stile che cambia quando il mouse ci passa sopra:
         </p>
 
         <div class="formula-block">
-          <div class="formula-label">CSS — Con effetto hover</div>
+          <div class="formula-label">style.css — Con effetto hover</div>
           <pre>
           a {
             display: inline-block;
@@ -304,7 +303,7 @@
             <li><code>:hover</code></li>
           </ul>
         </div>
-        <a href="../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
           ← Esercizi CSS
         </a>
       </aside>
