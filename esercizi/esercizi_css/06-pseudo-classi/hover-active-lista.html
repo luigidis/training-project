@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pseudo-classi :hover e :active su Lista — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Pseudo-classi :hover e :active su Lista
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Pseudo-classi #4</span>
+      </div>
+      <h1>Pseudo-classi :hover e :active su Lista</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>ul · li · :hover · :active · pseudo-classi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio combinerai le pseudo-classi <code>:hover</code> e <code>:active</code>
+          su una lista non ordinata (<code>&lt;ul&gt;</code>). Rispetto all'esercizio Pseudo-classi #1,
+          qui aggiungerai anche la reazione al clic: gli elementi diventeranno blu al passaggio del mouse
+          e arancioni nel momento del clic.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con una lista non ordinata:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Pseudo-classi&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;ul&gt;
+                &lt;li&gt;Elemento 1&lt;/li&gt;
+                &lt;li&gt;Elemento 2&lt;/li&gt;
+                &lt;li&gt;Elemento 3&lt;/li&gt;
+                &lt;li&gt;Elemento 4&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con :hover e :active</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Gli elementi della lista devono diventare blu al hover e arancioni al clic:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          li:hover {
+            color: blue;
+          }
+
+          li:active {
+            color: orange;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Confronto con l'esercizio Pseudo-classi #1</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Esercizio</th>
+              <th>:hover</th>
+              <th>:active</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pseudo-classi #1</td>
+              <td><code>color: red</code></td>
+              <td>non presente</td>
+            </tr>
+            <tr>
+              <td>Pseudo-classi #4 (questo)</td>
+              <td><code>color: blue</code></td>
+              <td><code>color: orange</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Aggiungendo <code>:active</code> si ottiene un secondo livello di feedback visivo:
+          l'utente vede prima il cambio di colore al passaggio del cursore, poi un ulteriore
+          cambio nel momento esatto del clic.
+        </p>
+
+        <h2>Passo 4 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Arricchisci la lista con uno stile base e aggiungi effetti di transizione:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          ul {
+            list-style: none;
+            padding: 0;
+          }
+
+          li {
+            padding: 8px 14px;
+            margin: 4px 0;
+            background-color: #f0f4ff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: color 0.15s, background-color 0.15s;
+          }
+
+          li:hover {
+            color: blue;
+            background-color: #dce8ff;
+          }
+
+          li:active {
+            color: orange;
+            background-color: #fff3dc;
+          }
+          </pre>
+        </div>
+
+        <h2>Risultato atteso</h2>
+        <p>Gli elementi della lista si comporteranno così:</p>
+        <ul>
+          <li>Stato normale: testo scuro su sfondo standard</li>
+          <li>Al passaggio del mouse (<code>:hover</code>): testo blu</li>
+          <li>Durante il clic (<code>:active</code>): testo arancione</li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>Perché :active è così breve?</strong> La pseudo-classe <code>:active</code>
+          rimane attiva <em>solo</em> per il tempo in cui il tasto del mouse resta premuto.
+          Su dispositivi touch, corrisponde al momento del tocco sullo schermo. È ideale per
+          simulare l'effetto "pressione" tipico dei pulsanti fisici.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con :hover e :active</a></li>
+            <li><a href="#passo-3">Confronto con #1</a></li>
+            <li><a href="#passo-4">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>:hover</code></li>
+            <li style="margin-bottom:8px;"><code>:active</code></li>
+            <li style="margin-bottom:8px;"><code>color</code></li>
+            <li><code>transition</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

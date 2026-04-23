@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pseudo-elemento ::before su Link — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Pseudo-elemento ::before su Link
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Pseudo-elementi #3</span>
+      </div>
+      <h1>Pseudo-elemento ::before su Link</h1>
+      <div class="ex-meta">
+        <span>⏱ 15 minuti</span>
+        <span>·</span>
+        <span>a · ::before · content · margin-right · pseudo-elementi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio userai il pseudo-elemento <code>::before</code> per aggiungere
+          automaticamente un'icona (freccia) prima del testo di ogni link. Scoprirai come
+          la proprietà <code>content</code> possa contenere non solo testo, ma anche
+          <strong>caratteri Unicode</strong>, aprendo molte possibilità decorative senza
+          librerie di icone esterne.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un link:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Pseudo-elementi&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;a href="#"&gt;Link esterno&lt;/a&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con ::before</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Usa la proprietà <code>content</code> con il codice Unicode della freccia (➔):
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          a::before {
+            content: "\2794";
+            margin-right: 5px;
+          }
+          </pre>
+        </div>
+
+        <p>
+          Il valore <code>"\2794"</code> è il codice Unicode del carattere ➔ (freccia destra pesante).
+          In CSS i codici Unicode si scrivono con il prefisso <code>\</code> seguito dal codice esadecimale.
+        </p>
+
+        <h2>Passo 3 — Caratteri Unicode utili per le icone</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Carattere</th>
+              <th>Codice CSS</th>
+              <th>Descrizione</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>➔</td>
+              <td><code>"\2794"</code></td>
+              <td>Freccia destra pesante</td>
+            </tr>
+            <tr>
+              <td>→</td>
+              <td><code>"\2192"</code></td>
+              <td>Freccia destra semplice</td>
+            </tr>
+            <tr>
+              <td>★</td>
+              <td><code>"\2605"</code></td>
+              <td>Stella piena</td>
+            </tr>
+            <tr>
+              <td>✓</td>
+              <td><code>"\2713"</code></td>
+              <td>Segno di spunta</td>
+            </tr>
+            <tr>
+              <td>•</td>
+              <td><code>"\2022"</code></td>
+              <td>Pallino (bullet)</td>
+            </tr>
+            <tr>
+              <td>»</td>
+              <td><code>"\00BB"</code></td>
+              <td>Doppia parentesi angolare destra</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Combina il pseudo-elemento con altri stili per creare un link più curato:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          a {
+            font-size: 1rem;
+            text-decoration: none;
+            color: steelblue;
+          }
+
+          a::before {
+            content: "\2794";
+            margin-right: 6px;
+            color: orange;
+            font-size: 0.9em;
+          }
+
+          a:hover::before {
+            color: red;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Effetti aggiuntivi:</strong></p>
+        <ul>
+          <li><code>color</code> sul <code>::before</code> — l'icona può avere un colore diverso dal testo</li>
+          <li><code>font-size: 0.9em;</code> — l'icona è leggermente più piccola del testo</li>
+          <li><code>a:hover::before</code> — cambia il colore dell'icona al passaggio del mouse (pseudo-classe + pseudo-elemento combinati!)</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>Il link apparirà con la freccia ➔ automaticamente prima del testo, aggiunta tramite CSS senza modificare l'HTML.</p>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>In alternativa ai codici Unicode</strong>, puoi inserire il carattere direttamente
+          come stringa nella proprietà <code>content</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">Sintassi alternativa</div>
+          <pre>
+          a::before {
+            content: "➔ ";
+          }
+          </pre>
+        </div>
+
+        <p>
+          Entrambe le sintassi producono lo stesso risultato. I codici Unicode sono preferibili
+          quando si vuole evitare problemi di encoding del file.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con ::before</a></li>
+            <li><a href="#passo-3">Caratteri Unicode</a></li>
+            <li><a href="#passo-4">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>::before</code></li>
+            <li style="margin-bottom:8px;"><code>content</code></li>
+            <li style="margin-bottom:8px;"><code>Unicode</code></li>
+            <li><code>margin-right</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

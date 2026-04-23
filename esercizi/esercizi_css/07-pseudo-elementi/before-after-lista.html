@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pseudo-elementi ::before e ::after su Lista — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Pseudo-elementi ::before e ::after su Lista
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Pseudo-elementi #4</span>
+      </div>
+      <h1>Pseudo-elementi ::before e ::after su Lista</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>ul · li · ::before · ::after · content · pseudo-elementi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio combinerai i due pseudo-elementi <code>::before</code> e <code>::after</code>
+          su una lista non ordinata per aggiungere parentesi graffe attorno a ogni elemento.
+          Questo esercizio riassume tutto quello che hai imparato sui pseudo-elementi: vedrai
+          come i due lavorano insieme, uno prima e uno dopo il contenuto di ogni <code>&lt;li&gt;</code>.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con una lista non ordinata:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Pseudo-elementi&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;ul&gt;
+                &lt;li&gt;Elemento 1&lt;/li&gt;
+                &lt;li&gt;Elemento 2&lt;/li&gt;
+                &lt;li&gt;Elemento 3&lt;/li&gt;
+                &lt;li&gt;Elemento 4&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con ::before e ::after</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Definisci due regole separate per i due pseudo-elementi:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          li::before {
+            content: "{ ";
+          }
+
+          li::after {
+            content: " }";
+          }
+          </pre>
+        </div>
+
+        <p>
+          Ogni elemento della lista verrà visualizzato come: <strong>{ Elemento 1 }</strong>,
+          <strong>{ Elemento 2 }</strong>, ecc. Le parentesi graffe sono aggiunte esclusivamente tramite CSS.
+        </p>
+
+        <h2>Passo 3 — Comprendere ::before e ::after a confronto</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Pseudo-elemento</th>
+              <th>Dove si inserisce</th>
+              <th>Valore content usato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>::before</code></td>
+              <td>Prima del contenuto testuale dell'elemento</td>
+              <td><code>"{ "</code> (parentesi graffa aperta + spazio)</td>
+            </tr>
+            <tr>
+              <td><code>::after</code></td>
+              <td>Dopo il contenuto testuale dell'elemento</td>
+              <td><code>" }"</code> (spazio + parentesi graffa chiusa)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Nota gli spazi nella stringa <code>content</code>: <code>"{ "</code> ha uno spazio
+          <em>dopo</em> la parentesi, mentre <code>" }"</code> ha uno spazio <em>prima</em>.
+          Questo crea la spaziatura visiva tra la parentesi e il testo.
+        </p>
+
+        <h2>Passo 4 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Aggiungi stile alle parentesi graffe per farle risaltare rispetto al testo:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          ul {
+            list-style: none;
+            padding: 0;
+          }
+
+          li {
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin: 6px 0;
+            color: #333;
+          }
+
+          li::before {
+            content: "{ ";
+            color: steelblue;
+            font-weight: bold;
+          }
+
+          li::after {
+            content: " }";
+            color: steelblue;
+            font-weight: bold;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Effetti aggiuntivi:</strong></p>
+        <ul>
+          <li><code>font-family: monospace;</code> — font a larghezza fissa (stile codice) che valorizza le parentesi graffe</li>
+          <li><code>color: steelblue;</code> — le parentesi hanno un colore diverso dal testo della lista</li>
+          <li><code>font-weight: bold;</code> — parentesi in grassetto per maggiore visibilità</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>Ogni elemento della lista apparirà nel formato:</p>
+        <ul>
+          <li>{ Elemento 1 }</li>
+          <li>{ Elemento 2 }</li>
+          <li>{ Elemento 3 }</li>
+          <li>{ Elemento 4 }</li>
+        </ul>
+        <p>Le parentesi graffe sono aggiunte automaticamente tramite CSS, senza modificare l'HTML.</p>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Altri usi pratici di ::before e ::after:</strong></p>
+        <ul>
+          <li>Aggiungere virgolette automatiche ai tag <code>&lt;blockquote&gt;</code></li>
+          <li>Inserire icone decorative prima dei titoli di sezione</li>
+          <li>Creare tooltip o badge informativi puri in CSS</li>
+          <li>Aggiungere etichette di tipo (<code>"PDF"</code>, <code>"Esterno"</code>) ai link</li>
+        </ul>
+        <p>
+          La combinazione di <code>::before</code> e <code>::after</code> sullo stesso elemento
+          permette di creare cornici, decorazioni doppie e pattern tipografici complessi,
+          tutto senza aggiungere una sola riga di HTML in più.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con ::before e ::after</a></li>
+            <li><a href="#passo-3">Confronto ::before vs ::after</a></li>
+            <li><a href="#passo-4">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>::before</code></li>
+            <li style="margin-bottom:8px;"><code>::after</code></li>
+            <li style="margin-bottom:8px;"><code>content</code></li>
+            <li><code>font-family</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

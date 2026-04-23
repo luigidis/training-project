@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pseudo-classi :hover e :active su Link — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Pseudo-classi :hover e :active su Link
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Pseudo-classi #3</span>
+      </div>
+      <h1>Pseudo-classi :hover e :active su Link</h1>
+      <div class="ex-meta">
+        <span>⏱ 15 minuti</span>
+        <span>·</span>
+        <span>a · :hover · :active · pseudo-classi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio applicherai le pseudo-classi <code>:hover</code> e <code>:active</code>
+          a un link (<code>&lt;a&gt;</code>) per modificarne il colore del testo in due momenti diversi:
+          quando il cursore vi passa sopra, e quando viene cliccato. I link hanno anche altre
+          pseudo-classi specifiche che scoprirai negli approfondimenti.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un link:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Pseudo-classi&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;a href="#"&gt;Link di esempio&lt;/a&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con :hover e :active</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Il link deve diventare rosso al passaggio del mouse e blu quando viene cliccato:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          a:hover {
+            color: red;
+          }
+
+          a:active {
+            color: blue;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Le pseudo-classi specifiche dei link</h2>
+        <p>
+          I link <code>&lt;a&gt;</code> hanno quattro pseudo-classi dedicate. È importante rispettarne
+          l'ordine nella scrittura del CSS per evitare conflitti:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Pseudo-classe</th>
+              <th>Quando si attiva</th>
+              <th>Ordine consigliato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>:link</code></td>
+              <td>Link non ancora visitato</td>
+              <td>1°</td>
+            </tr>
+            <tr>
+              <td><code>:visited</code></td>
+              <td>Link già visitato in precedenza</td>
+              <td>2°</td>
+            </tr>
+            <tr>
+              <td><code>:hover</code></td>
+              <td>Cursore del mouse sopra il link</td>
+              <td>3°</td>
+            </tr>
+            <tr>
+              <td><code>:active</code></td>
+              <td>Link in fase di clic</td>
+              <td>4°</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Il trucco per ricordare l'ordine corretto è la sigla <strong>LoVe HAte</strong>
+          (<strong>L</strong>ink, <strong>V</strong>isited, <strong>H</strong>over, <strong>A</strong>ctive).
+        </p>
+
+        <h2>Passo 4 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Applica stili più completi al link utilizzando tutte e quattro le pseudo-classi:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          a {
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: bold;
+          }
+
+          a:link {
+            color: navy;
+          }
+
+          a:visited {
+            color: purple;
+          }
+
+          a:hover {
+            color: red;
+            text-decoration: underline;
+          }
+
+          a:active {
+            color: blue;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Proprietà aggiuntive:</strong></p>
+        <ul>
+          <li><code>text-decoration: none;</code> — rimuove la sottolineatura predefinita del link</li>
+          <li><code>text-decoration: underline;</code> — aggiunge la sottolineatura solo al hover</li>
+          <li><code>a:visited</code> — stile per i link già cliccati in precedenza</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>Il link si comporterà così:</p>
+        <ul>
+          <li>Stato normale: colore predefinito del browser (blu)</li>
+          <li>Al passaggio del mouse (<code>:hover</code>): testo rosso</li>
+          <li>Durante il clic (<code>:active</code>): testo blu</li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Perché usare <code>href="#"</code> nell'esercizio?</strong></p>
+        <p>
+          Il valore <code>#</code> crea un link che punta alla stessa pagina, evitando di navigare altrove.
+          È utile per testare gli stili senza uscire dalla pagina. Nei progetti reali si sostituisce
+          con l'URL effettivo della destinazione.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con :hover e :active</a></li>
+            <li><a href="#passo-3">Pseudo-classi dei link</a></li>
+            <li><a href="#passo-4">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>:hover</code></li>
+            <li style="margin-bottom:8px;"><code>:active</code></li>
+            <li style="margin-bottom:8px;"><code>:link</code></li>
+            <li style="margin-bottom:8px;"><code>:visited</code></li>
+            <li><code>text-decoration</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

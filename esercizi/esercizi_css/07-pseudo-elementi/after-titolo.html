@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pseudo-elemento ::after su Titolo — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Pseudo-elemento ::after su Titolo
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Pseudo-elementi #2</span>
+      </div>
+      <h1>Pseudo-elemento ::after su Titolo</h1>
+      <div class="ex-meta">
+        <span>⏱ 15 minuti</span>
+        <span>·</span>
+        <span>h1 · ::after · border-bottom · content · pseudo-elementi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio userai il pseudo-elemento CSS <code>::after</code> per aggiungere
+          automaticamente una linea decorativa sotto ogni titolo <code>&lt;h1&gt;</code>.
+          Questo è uno degli utilizzi più pratici dei pseudo-elementi: decorare elementi HTML
+          senza aggiungere tag extra nell'HTML.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un titolo:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Pseudo-elementi&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;h1&gt;Titolo&lt;/h1&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con ::after</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Il pseudo-elemento <code>::after</code> viene inserito <em>dopo</em> il contenuto del titolo,
+          e lo trasformiamo in un blocco con un bordo inferiore:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          h1::after {
+            content: "";
+            display: block;
+            border-bottom: 1px solid black;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere le proprietà usate</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Proprietà</th>
+              <th>Valore</th>
+              <th>Significato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>content</code></td>
+              <td><code>""</code></td>
+              <td>Obbligatoria per i pseudo-elementi. Stringa vuota: l'elemento è visivo, non testuale</td>
+            </tr>
+            <tr>
+              <td><code>display: block</code></td>
+              <td>block</td>
+              <td>Il pseudo-elemento occupa tutta la larghezza disponibile, permettendo al bordo di estendersi</td>
+            </tr>
+            <tr>
+              <td><code>border-bottom</code></td>
+              <td>1px solid black</td>
+              <td>Disegna una linea nera solida di 1 pixel sotto il pseudo-elemento</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Perché funziona? Il <code>::after</code> viene inserito come ultimo figlio virtuale dell'<code>&lt;h1&gt;</code>.
+          Con <code>display: block</code> si estende per tutta la larghezza del titolo, e il
+          <code>border-bottom</code> crea la linea visiva.
+        </p>
+
+        <h2>Passo 4 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Prova a rendere la linea più decorativa con larghezza, colore e margine personalizzati:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          h1 {
+            display: inline-block;
+          }
+
+          h1::after {
+            content: "";
+            display: block;
+            border-bottom: 3px solid steelblue;
+            margin-top: 6px;
+            width: 60%;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Effetti ottenibili:</strong></p>
+        <ul>
+          <li><code>border-bottom: 3px solid steelblue;</code> — linea più spessa e colorata</li>
+          <li><code>margin-top: 6px;</code> — spazio tra il testo e la linea</li>
+          <li><code>width: 60%;</code> — linea più corta del titolo (effetto decorativo)</li>
+          <li><code>display: inline-block</code> sull'<code>h1</code> — fa sì che la larghezza si adatti al testo</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Sotto il titolo apparirà una linea nera che si estende per tutta la sua larghezza,
+          aggiunta automaticamente tramite CSS senza modificare l'HTML.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>::before vs ::after — quando usarli?</strong></p>
+        <ul>
+          <li><code>::before</code> — inserisce il contenuto virtuale <em>prima</em> del contenuto dell'elemento</li>
+          <li><code>::after</code> — inserisce il contenuto virtuale <em>dopo</em> il contenuto dell'elemento</li>
+        </ul>
+        <p>
+          Entrambi sono figli virtuali dell'elemento a cui sono applicati e possono ricevere
+          qualsiasi proprietà CSS (colori, dimensioni, posizionamento, ecc.).
+          La proprietà <code>content</code> è sempre obbligatoria, anche se vuota.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con ::after</a></li>
+            <li><a href="#passo-3">Comprendere le proprietà</a></li>
+            <li><a href="#passo-4">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>::after</code></li>
+            <li style="margin-bottom:8px;"><code>content</code></li>
+            <li style="margin-bottom:8px;"><code>display: block</code></li>
+            <li><code>border-bottom</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

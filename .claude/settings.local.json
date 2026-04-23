@@ -3,7 +3,9 @@
     "allow": [
       "Bash(python3 -c*)",
       "Bash(tree:*)",
-      "Bash(grep -n \"href\\\\|src\" D:/dev/training-project/esercizi/esercizi_css/*.html)"
+      "Bash(grep -n \"href\\\\|src\" D:/dev/training-project/esercizi/esercizi_css/*.html)",
+      "Bash(mkdir -p \"D:/dev/training-project/esercizi/esercizi_css/06-pseudo-classi\")",
+      "Bash(mkdir -p \"D:/dev/training-project/esercizi/esercizi_css/07-pseudo-elementi\")"
     ]
   }
 }

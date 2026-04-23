@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pseudo-classi :hover e :active su Pulsante — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Pseudo-classi :hover e :active su Pulsante
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Pseudo-classi #2</span>
+      </div>
+      <h1>Pseudo-classi :hover e :active su Pulsante</h1>
+      <div class="ex-meta">
+        <span>⏱ 15 minuti</span>
+        <span>·</span>
+        <span>button · :hover · :active · pseudo-classi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio applicherai due pseudo-classi CSS a un pulsante (<code>&lt;button&gt;</code>):
+          <code>:hover</code> per cambiarne il colore al passaggio del mouse, e <code>:active</code>
+          per cambiarlo di nuovo nel momento in cui viene cliccato. Imparerai così a distinguere
+          due momenti diversi dell'interazione utente.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un pulsante:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Pseudo-classi&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;button&gt;Clicca qui&lt;/button&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con :hover e :active</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Definisci due regole separate: una per il passaggio del mouse e una per il clic:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          button:hover {
+            background-color: blue;
+          }
+
+          button:active {
+            background-color: red;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere :hover e :active a confronto</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Pseudo-classe</th>
+              <th>Quando si attiva</th>
+              <th>Durata</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>:hover</code></td>
+              <td>Quando il cursore del mouse è sopra l'elemento</td>
+              <td>Finché il cursore rimane sull'elemento</td>
+            </tr>
+            <tr>
+              <td><code>:active</code></td>
+              <td>Nel momento esatto in cui l'elemento viene cliccato</td>
+              <td>Solo mentre il tasto del mouse è premuto</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Testa l'esercizio nel browser: passa il cursore sul pulsante (diventa blu) e poi fai clic tenendo
+          premuto il mouse (diventa rosso). Appena rilasci il tasto torna allo stato hover (blu) o normale.
+        </p>
+
+        <h2>Passo 4 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Aggiungi uno stile base al pulsante per un aspetto più curato:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          button {
+            padding: 10px 24px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            background-color: lightgray;
+            cursor: pointer;
+            transition: background-color 0.2s;
+          }
+
+          button:hover {
+            background-color: blue;
+            color: white;
+          }
+
+          button:active {
+            background-color: red;
+            color: white;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Proprietà aggiuntive:</strong></p>
+        <ul>
+          <li><code>border: none;</code> — rimuove il bordo predefinito del pulsante</li>
+          <li><code>border-radius: 6px;</code> — angoli arrotondati</li>
+          <li><code>cursor: pointer;</code> — mostra la manina al passaggio del mouse</li>
+          <li><code>transition: background-color 0.2s;</code> — anima il cambio di colore</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>Il pulsante si comporterà così:</p>
+        <ul>
+          <li>Stato normale: grigio chiaro (o stile predefinito del browser)</li>
+          <li>Al passaggio del mouse (<code>:hover</code>): sfondo blu</li>
+          <li>Durante il clic (<code>:active</code>): sfondo rosso</li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>:active funziona su qualsiasi elemento cliccabile:</strong></p>
+        <ul>
+          <li><code>a:active</code> — link durante il clic</li>
+          <li><code>li:active</code> — elemento di lista durante il clic</li>
+          <li><code>div:active</code> — contenitore generico durante il clic</li>
+        </ul>
+        <p>
+          La pseudo-classe <code>:active</code> è utile per fornire un <strong>feedback visivo immediato</strong>
+          all'utente, confermando che l'elemento ha ricevuto il clic.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con :hover e :active</a></li>
+            <li><a href="#passo-3">Confronto hover vs active</a></li>
+            <li><a href="#passo-4">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>:hover</code></li>
+            <li style="margin-bottom:8px;"><code>:active</code></li>
+            <li style="margin-bottom:8px;"><code>background-color</code></li>
+            <li><code>transition</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pseudo-elemento ::before su Paragrafo — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Pseudo-elemento ::before su Paragrafo
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Pseudo-elementi #1</span>
+      </div>
+      <h1>Pseudo-elemento ::before su Paragrafo</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>p · ::before · position · content · pseudo-elementi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai a usare il pseudo-elemento CSS <code>::before</code>
+          per aggiungere uno sfondo colorato a un paragrafo. A differenza delle pseudo-classi,
+          i <strong>pseudo-elementi</strong> inseriscono contenuto virtuale nel documento senza
+          modificare l'HTML. Il trucco di questo esercizio sta nel combinare
+          <code>position: absolute</code> sul <code>::before</code> con <code>position: relative</code>
+          sul paragrafo padre.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un paragrafo di testo:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Pseudo-elementi&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;p&gt;Questo è un esempio di testo con sfondo colorato.&lt;/p&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con ::before</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Il paragrafo deve avere <code>position: relative</code> per contenere il <code>::before</code>
+          posizionato in modo assoluto:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          p {
+            position: relative;
+          }
+
+          p::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+            position: absolute;
+            z-index: -1;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere le proprietà usate</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Proprietà</th>
+              <th>Valore</th>
+              <th>Significato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>content</code></td>
+              <td><code>""</code></td>
+              <td>Obbligatoria per i pseudo-elementi. Stringa vuota: nessun testo, solo l'elemento visivo</td>
+            </tr>
+            <tr>
+              <td><code>display: block</code></td>
+              <td>block</td>
+              <td>Rende il pseudo-elemento un blocco con dimensioni proprie</td>
+            </tr>
+            <tr>
+              <td><code>width / height</code></td>
+              <td>100%</td>
+              <td>Il pseudo-elemento occupa tutta la larghezza e altezza del paragrafo padre</td>
+            </tr>
+            <tr>
+              <td><code>position: absolute</code></td>
+              <td>absolute</td>
+              <td>Posiziona il pseudo-elemento rispetto al padre (che ha <code>position: relative</code>)</td>
+            </tr>
+            <tr>
+              <td><code>z-index: -1</code></td>
+              <td>-1</td>
+              <td>Mette il pseudo-elemento <em>dietro</em> al testo del paragrafo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Prova a variare colore e forma dello sfondo per effetti decorativi diversi:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          p {
+            position: relative;
+            padding: 12px 16px;
+            font-size: 1.1rem;
+          }
+
+          p::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: #fffacd;
+            border-left: 4px solid gold;
+            border-radius: 4px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Proprietà aggiuntive:</strong></p>
+        <ul>
+          <li><code>top: 0; left: 0;</code> — ancora il pseudo-elemento all'angolo in alto a sinistra del padre</li>
+          <li><code>border-left</code> — aggiunge una barra colorata a sinistra (stile nota/citazione)</li>
+          <li><code>border-radius</code> — angoli arrotondati per lo sfondo</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>Il paragrafo apparirà con uno sfondo giallo dietro al testo, creato esclusivamente tramite CSS senza aggiungere elementi HTML aggiuntivi.</p>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Differenza tra pseudo-classi e pseudo-elementi:</strong></p>
+        <ul>
+          <li><strong>Pseudo-classi</strong> (<code>:hover</code>, <code>:active</code>…) — reagiscono a uno <em>stato</em> dell'elemento</li>
+          <li><strong>Pseudo-elementi</strong> (<code>::before</code>, <code>::after</code>…) — inseriscono contenuto <em>virtuale</em> nel documento</li>
+        </ul>
+        <p>
+          I pseudo-elementi usano la doppia due-punti (<code>::</code>) nella sintassi moderna CSS3,
+          mentre la sintassi legacy con singola due-punti (<code>:before</code>) è ancora accettata
+          dai browser per compatibilità.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con ::before</a></li>
+            <li><a href="#passo-3">Comprendere le proprietà</a></li>
+            <li><a href="#passo-4">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>::before</code></li>
+            <li style="margin-bottom:8px;"><code>content</code></li>
+            <li style="margin-bottom:8px;"><code>position: absolute</code></li>
+            <li style="margin-bottom:8px;"><code>position: relative</code></li>
+            <li><code>z-index</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

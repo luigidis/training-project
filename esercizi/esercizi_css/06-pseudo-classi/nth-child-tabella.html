@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pseudo-classe :nth-child su Tabella — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Pseudo-classe :nth-child su Tabella
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Pseudo-classi #5</span>
+      </div>
+      <h1>Pseudo-classe :nth-child su Tabella</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>table · tr · :nth-child · odd · pseudo-classi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio userai la pseudo-classe <code>:nth-child</code> per colorare
+          alternativamente le righe di una tabella HTML. Questo effetto, chiamato
+          <strong>zebra striping</strong>, migliora la leggibilità delle tabelle con molte righe
+          ed è uno degli utilizzi più comuni delle pseudo-classi strutturali in CSS.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con una tabella contenente almeno cinque righe:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Pseudo-classi&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;table&gt;
+                &lt;tr&gt;&lt;td&gt;Riga 1&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Riga 2&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Riga 3&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Riga 4&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr&gt;&lt;td&gt;Riga 5&lt;/td&gt;&lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con :nth-child(odd)</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          La regola seguente seleziona le righe dispari (1ª, 3ª, 5ª...) e le colora di grigio chiaro:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          tr:nth-child(odd) {
+            background-color: lightgrey;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere :nth-child</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Valore</th>
+              <th>Seleziona</th>
+              <th>Esempio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>odd</code></td>
+              <td>Elementi in posizione dispari (1, 3, 5…)</td>
+              <td><code>tr:nth-child(odd)</code></td>
+            </tr>
+            <tr>
+              <td><code>even</code></td>
+              <td>Elementi in posizione pari (2, 4, 6…)</td>
+              <td><code>tr:nth-child(even)</code></td>
+            </tr>
+            <tr>
+              <td><code>3</code></td>
+              <td>Esattamente il 3° elemento</td>
+              <td><code>tr:nth-child(3)</code></td>
+            </tr>
+            <tr>
+              <td><code>2n</code></td>
+              <td>Ogni 2° elemento (equivale a <code>even</code>)</td>
+              <td><code>tr:nth-child(2n)</code></td>
+            </tr>
+            <tr>
+              <td><code>3n+1</code></td>
+              <td>1°, 4°, 7°, 10°… (ogni 3, partendo dal 1°)</td>
+              <td><code>tr:nth-child(3n+1)</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Aggiungi stili completi alla tabella per un aspetto più professionale:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          table {
+            border-collapse: collapse;
+            width: 400px;
+          }
+
+          td {
+            padding: 10px 16px;
+            border: 1px solid #ccc;
+          }
+
+          tr:nth-child(odd) {
+            background-color: lightgrey;
+          }
+
+          tr:hover {
+            background-color: #d0e8ff;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Proprietà aggiuntive:</strong></p>
+        <ul>
+          <li><code>border-collapse: collapse;</code> — unisce i bordi adiacenti delle celle</li>
+          <li><code>padding</code> su <code>td</code> — spazio interno nelle celle</li>
+          <li><code>tr:hover</code> — evidenzia la riga al passaggio del cursore (combina due pseudo-classi!)</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>La tabella mostrerà:</p>
+        <ul>
+          <li>Righe dispari (1ª, 3ª, 5ª…) con sfondo grigio chiaro</li>
+          <li>Righe pari (2ª, 4ª…) con sfondo bianco (colore predefinito)</li>
+          <li>Alternanza che rende la lettura molto più agevole</li>
+        </ul>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>:nth-child vs :nth-of-type</strong> — <code>:nth-child</code> conta tutti i figli
+          dell'elemento padre indipendentemente dal tipo di tag. <code>:nth-of-type</code> invece
+          conta solo gli elementi dello stesso tipo (ad esempio solo i <code>&lt;tr&gt;</code>).
+          In una tabella semplice i due si comportano allo stesso modo, ma in layout complessi
+          la differenza diventa importante.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con :nth-child</a></li>
+            <li><a href="#passo-3">Varianti di :nth-child</a></li>
+            <li><a href="#passo-4">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>:nth-child</code></li>
+            <li style="margin-bottom:8px;"><code>odd / even</code></li>
+            <li style="margin-bottom:8px;"><code>border-collapse</code></li>
+            <li><code>background-color</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>
