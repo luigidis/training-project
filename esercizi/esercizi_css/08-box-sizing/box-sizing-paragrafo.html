@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box-sizing: border-box su Paragrafo — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Box-sizing: border-box su Paragrafo
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Box-sizing #1</span>
+      </div>
+      <h1>Box-sizing: border-box su Paragrafo</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>p · box-sizing · border-box · width · padding · border</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai a usare la proprietà <code>box-sizing: border-box</code>
+          su un paragrafo. Con questo valore, il <code>width</code> che specifichi rappresenta
+          la <strong>larghezza totale</strong> dell'elemento: padding e bordo vengono
+          sottratti dall'interno, senza aumentare le dimensioni esterne.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un paragrafo:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Box-sizing&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;p&gt;Questo paragrafo ha una larghezza di 200px, incluso padding e bordo.&lt;/p&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con border-box</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Con <code>border-box</code>, il paragrafo occuperà esattamente 200px in totale,
+          bordo e padding compresi:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          p {
+            box-sizing: border-box;
+            width: 200px;
+            padding: 20px;
+            border: 2px solid red;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere il calcolo delle dimensioni</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Valore</th>
+              <th>Con border-box</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>width</code> totale</td>
+              <td>200px</td>
+              <td>Larghezza totale dell'elemento (fissa)</td>
+            </tr>
+            <tr>
+              <td><code>border</code> (× 2 lati)</td>
+              <td>2px × 2 = 4px</td>
+              <td>Sottratti dall'interno</td>
+            </tr>
+            <tr>
+              <td><code>padding</code> (× 2 lati)</td>
+              <td>20px × 2 = 40px</td>
+              <td>Sottratti dall'interno</td>
+            </tr>
+            <tr>
+              <td>Area contenuto effettiva</td>
+              <td>200 − 4 − 40 = <strong>156px</strong></td>
+              <td>Spazio rimasto per il testo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — border-box vs content-box a confronto</h2>
+        <p>
+          Il valore predefinito di <code>box-sizing</code> è <code>content-box</code>.
+          Ecco la differenza con gli stessi valori di <code>width</code>, <code>padding</code> e <code>border</code>:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>box-sizing</th>
+              <th>width specifica…</th>
+              <th>Larghezza totale risultante</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>content-box</code></td>
+              <td>Solo il contenuto (156px)</td>
+              <td>156 + 40 + 4 = <strong>200px</strong> → no, 156 + 40 + 4 = 200 ✓ ma se width=200: 200 + 40 + 4 = <strong>244px</strong></td>
+            </tr>
+            <tr>
+              <td><code>border-box</code></td>
+              <td>Contenuto + padding + border</td>
+              <td>Sempre <strong>200px</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Con <code>content-box</code> e <code>width: 200px</code>, l'elemento occuperebbe
+          <strong>244px</strong> in totale (200 + 40 di padding + 4 di bordo).
+          Con <code>border-box</code> rimane sempre <strong>200px</strong>.
+        </p>
+
+        <h2>Passo 5 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Prova ad aggiungere un secondo paragrafo senza <code>border-box</code> per vedere la differenza visiva:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Confronto visivo</div>
+          <pre>
+          p.border-box {
+            box-sizing: border-box;
+            width: 200px;
+            padding: 20px;
+            border: 2px solid red;
+            background-color: #fee2e2;
+            margin-bottom: 10px;
+          }
+
+          p.content-box {
+            box-sizing: content-box;
+            width: 200px;
+            padding: 20px;
+            border: 2px solid blue;
+            background-color: #dbeafe;
+          }
+          </pre>
+        </div>
+
+        <p>
+          Assegna le classi <code>border-box</code> e <code>content-box</code> a due paragrafi
+          nell'HTML: vedrai che il secondo è visibilmente più largo del primo.
+        </p>
+
+        <h2>Risultato atteso</h2>
+        <p>Il paragrafo avrà una larghezza totale di esattamente <strong>200px</strong>, con bordo rosso e padding interni che non ne aumentano le dimensioni esterne.</p>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>Perché <code>border-box</code> è preferito dai developer?</strong>
+          Molti framework CSS (come Bootstrap) applicano <code>box-sizing: border-box</code>
+          a tutti gli elementi con la regola universale <code>* { box-sizing: border-box; }</code>.
+          Questo rende i calcoli delle dimensioni molto più intuitivi: il valore di <code>width</code>
+          corrisponde sempre a ciò che si vede nel browser.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con border-box</a></li>
+            <li><a href="#passo-3">Calcolo dimensioni</a></li>
+            <li><a href="#passo-4">border-box vs content-box</a></li>
+            <li><a href="#passo-5">Confronto visivo</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>box-sizing</code></li>
+            <li style="margin-bottom:8px;"><code>border-box</code></li>
+            <li style="margin-bottom:8px;"><code>width</code></li>
+            <li style="margin-bottom:8px;"><code>padding</code></li>
+            <li><code>border</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box-sizing: border-box su Titolo — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Box-sizing: border-box su Titolo
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Box-sizing #5</span>
+      </div>
+      <h1>Box-sizing: border-box su Titolo</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>h1 · box-sizing · border-box · height · padding · border</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio applicherai <code>box-sizing: border-box</code> a un titolo
+          <code>&lt;h1&gt;</code> per controllarne l'<strong>altezza</strong> in modo preciso.
+          Con <code>border-box</code>, il valore di <code>height: 80px</code> rappresenta
+          l'altezza totale dell'elemento: padding e bordo sono già inclusi e non aggiungono
+          spazio extra all'esterno.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un titolo:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Box-sizing&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;h1&gt;Questo titolo ha un'altezza di 80px, incluso il padding.&lt;/h1&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con border-box</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Il titolo avrà un'altezza totale di 80px con padding e bordo tratteggiato inclusi:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          h1 {
+            box-sizing: border-box;
+            height: 80px;
+            padding: 10px;
+            border: 1px dashed black;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere il calcolo dell'altezza</h2>
+        <p>
+          Con <code>border-box</code>, l'altezza totale è <strong>sempre 80px</strong>.
+          Padding e bordo si "mangiano" spazio dall'interno, riducendo l'area disponibile per il testo:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Valore</th>
+              <th>Con border-box</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Altezza totale (<code>height</code>)</td>
+              <td>80px</td>
+              <td>Dimensione esterna fissa</td>
+            </tr>
+            <tr>
+              <td><code>border</code> (top + bottom)</td>
+              <td>1px × 2 = 2px</td>
+              <td>Sottratti dall'interno</td>
+            </tr>
+            <tr>
+              <td><code>padding</code> (top + bottom)</td>
+              <td>10px × 2 = 20px</td>
+              <td>Sottratti dall'interno</td>
+            </tr>
+            <tr>
+              <td>Area contenuto effettiva</td>
+              <td>80 − 2 − 20 = <strong>58px</strong></td>
+              <td>Spazio disponibile per il testo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Confronto con content-box</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>box-sizing</th>
+              <th>Altezza contenuto</th>
+              <th>Altezza totale visibile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>content-box</code> (default)</td>
+              <td>80px</td>
+              <td>80 + 20 + 2 = <strong>102px</strong></td>
+            </tr>
+            <tr>
+              <td><code>border-box</code></td>
+              <td>58px</td>
+              <td><strong>80px</strong> (sempre)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Se vuoi che il titolo occupi esattamente 80px nella pagina (utile in header o barre di navigazione),
+          <code>border-box</code> è la scelta corretta. Con <code>content-box</code> il titolo
+          supererebbe gli 80px a causa di padding e bordo.
+        </p>
+
+        <h2>Passo 5 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Prova ad allineare verticalmente il testo al centro dell'altezza fissa usando <code>line-height</code>:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          h1 {
+            box-sizing: border-box;
+            height: 80px;
+            padding: 0 20px;
+            border: 1px dashed black;
+            line-height: 80px;
+            font-size: 1.2rem;
+            background-color: #f1f5f9;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Effetti aggiuntivi:</strong></p>
+        <ul>
+          <li><code>line-height: 80px;</code> — allinea il testo verticalmente al centro (uguale all'altezza totale)</li>
+          <li><code>padding: 0 20px;</code> — padding solo orizzontale, per non disturbare il centramento verticale</li>
+          <li><code>background-color</code> — evidenzia l'area occupata dal titolo</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Il titolo occuperà esattamente <strong>80px</strong> di altezza totale nella pagina,
+          con bordo tratteggiato nero e padding già inclusi in quella misura.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>header e barre di navigazione</strong> sono i casi d'uso più comuni per
+          <code>height</code> + <code>border-box</code>. Quando si costruisce una navbar
+          alta esattamente 60px, usare <code>border-box</code> garantisce che padding e
+          bordi non "sfondino" l'altezza prevista, evitando calcoli manuali.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con border-box</a></li>
+            <li><a href="#passo-3">Calcolo altezza</a></li>
+            <li><a href="#passo-4">Confronto con content-box</a></li>
+            <li><a href="#passo-5">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>box-sizing</code></li>
+            <li style="margin-bottom:8px;"><code>border-box</code></li>
+            <li style="margin-bottom:8px;"><code>height</code></li>
+            <li style="margin-bottom:8px;"><code>line-height</code></li>
+            <li><code>padding / border</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

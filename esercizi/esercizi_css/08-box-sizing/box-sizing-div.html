@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box-sizing: border-box su Div — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Box-sizing: border-box su Div
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Box-sizing #3</span>
+      </div>
+      <h1>Box-sizing: border-box su Div</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>div · box-sizing · border-box · width · padding · border</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio applicherai <code>box-sizing: border-box</code> a un <code>&lt;div&gt;</code>
+          per garantire che la larghezza totale dell'elemento sia esattamente <strong>300px</strong>,
+          indipendentemente dal padding e dal bordo applicati. Il <code>&lt;div&gt;</code> è l'elemento
+          contenitore più usato nel web e capire il suo box model è fondamentale per costruire layout precisi.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un div:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Box-sizing&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;div&gt;Questo div ha una larghezza di 300px, inclusi padding e bordo.&lt;/div&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con border-box</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Il div avrà larghezza totale di 300px, con padding e bordo verde già inclusi:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          div {
+            box-sizing: border-box;
+            width: 300px;
+            padding: 20px;
+            border: 2px solid green;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere il calcolo delle dimensioni</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Valore</th>
+              <th>Con border-box</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Larghezza totale (<code>width</code>)</td>
+              <td>300px</td>
+              <td>Dimensione esterna fissa</td>
+            </tr>
+            <tr>
+              <td><code>border</code> (× 2 lati)</td>
+              <td>2px × 2 = 4px</td>
+              <td>Sottratti dall'interno</td>
+            </tr>
+            <tr>
+              <td><code>padding</code> (× 2 lati)</td>
+              <td>20px × 2 = 40px</td>
+              <td>Sottratti dall'interno</td>
+            </tr>
+            <tr>
+              <td>Area contenuto effettiva</td>
+              <td>300 − 4 − 40 = <strong>256px</strong></td>
+              <td>Spazio disponibile per il testo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Il box model a confronto</h2>
+        <p>Stesso div con <code>width: 300px</code> ma comportamento diverso secondo il <code>box-sizing</code>:</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>box-sizing</th>
+              <th>Larghezza contenuto</th>
+              <th>Larghezza totale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>content-box</code> (default)</td>
+              <td>300px</td>
+              <td>300 + 40 + 4 = <strong>344px</strong></td>
+            </tr>
+            <tr>
+              <td><code>border-box</code></td>
+              <td>256px</td>
+              <td><strong>300px</strong> (sempre)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 5 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Aggiungi sfondo e margine per rendere il div visivamente più chiaro:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          div {
+            box-sizing: border-box;
+            width: 300px;
+            padding: 20px;
+            border: 2px solid green;
+            background-color: #d1fae5;
+            margin: 20px auto;
+            font-family: sans-serif;
+          }
+          </pre>
+        </div>
+
+        <p><strong>Proprietà aggiuntive:</strong></p>
+        <ul>
+          <li><code>background-color: #d1fae5;</code> — sfondo verde chiaro per evidenziare il div</li>
+          <li><code>margin: 20px auto;</code> — centra il div orizzontalmente nella pagina</li>
+        </ul>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Il div occuperà esattamente <strong>300px</strong> di larghezza totale nel browser,
+          con bordo verde e padding che non ne aumentano le dimensioni esterne.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>Applicare border-box globalmente:</strong> nei progetti reali è comune
+          usare il selettore universale per applicare <code>border-box</code> a tutti gli elementi,
+          semplificando il calcolo dei layout:
+        </p>
+        <div class="formula-block">
+          <div class="formula-label">Regola globale consigliata</div>
+          <pre>
+          *, *::before, *::after {
+            box-sizing: border-box;
+          }
+          </pre>
+        </div>
+        <p>
+          Questa regola è inclusa nei CSS reset più diffusi e si trova all'inizio del file
+          <code>style.css</code> nella maggior parte dei progetti moderni.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con border-box</a></li>
+            <li><a href="#passo-3">Calcolo dimensioni</a></li>
+            <li><a href="#passo-4">Confronto content-box</a></li>
+            <li><a href="#passo-5">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>box-sizing</code></li>
+            <li style="margin-bottom:8px;"><code>border-box</code></li>
+            <li style="margin-bottom:8px;"><code>width</code></li>
+            <li style="margin-bottom:8px;"><code>padding</code></li>
+            <li><code>border</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

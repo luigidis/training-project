@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box-sizing: content-box su Lista — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Box-sizing: content-box su Lista
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Box-sizing #4</span>
+      </div>
+      <h1>Box-sizing: content-box su Lista</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>ul · li · box-sizing · content-box · height · padding</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio applicherai <code>box-sizing: content-box</code> agli elementi
+          di una lista per controllarne l'<strong>altezza</strong>. Con <code>content-box</code>,
+          il valore di <code>height</code> specifica solo l'altezza dell'area contenuto:
+          padding e bordo vengono aggiunti sopra e sotto, aumentando l'altezza totale visibile.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con una lista non ordinata:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Box-sizing&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;ul&gt;
+                &lt;li&gt;Elemento 1&lt;/li&gt;
+                &lt;li&gt;Elemento 2&lt;/li&gt;
+                &lt;li&gt;Elemento 3&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con content-box</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Con <code>content-box</code>, i 40px di <code>height</code> misurano solo il contenuto:
+          padding e bordo si aggiungono in verticale:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          li {
+            box-sizing: content-box;
+            height: 40px;
+            padding: 10px;
+            list-style-type: none;
+            border: 2px solid blue;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere il calcolo dell'altezza</h2>
+        <p>
+          Con <code>content-box</code>, l'altezza totale di ogni elemento <code>&lt;li&gt;</code>
+          è la somma di tutte le componenti verticali:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Valore</th>
+              <th>Effetto sull'altezza totale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Area contenuto (<code>height</code>)</td>
+              <td>40px</td>
+              <td>Altezza specificata (solo contenuto)</td>
+            </tr>
+            <tr>
+              <td><code>padding</code> (top + bottom)</td>
+              <td>10px × 2 = 20px</td>
+              <td>Aggiunti <em>fuori</em> dal contenuto</td>
+            </tr>
+            <tr>
+              <td><code>border</code> (top + bottom)</td>
+              <td>2px × 2 = 4px</td>
+              <td>Aggiunti <em>fuori</em> dal contenuto</td>
+            </tr>
+            <tr>
+              <td>Altezza totale</td>
+              <td>40 + 20 + 4 = <strong>64px</strong></td>
+              <td>Altezza visibile nel browser</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Confronto: cosa cambierebbe con border-box</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>box-sizing</th>
+              <th>Altezza contenuto</th>
+              <th>Altezza totale visibile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>content-box</code></td>
+              <td>40px</td>
+              <td>40 + 20 + 4 = <strong>64px</strong></td>
+            </tr>
+            <tr>
+              <td><code>border-box</code></td>
+              <td>40 − 20 − 4 = 16px</td>
+              <td><strong>40px</strong> (sempre)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Con <code>border-box</code> e <code>height: 40px</code>, l'area contenuto si riduce a soli
+          <strong>16px</strong>, lasciando poco spazio al testo. Con <code>content-box</code> invece,
+          il testo ha 40px garantiti e l'elemento si allarga ulteriormente con padding e bordo.
+        </p>
+
+        <h2>Passo 5 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Aggiungi stili per rendere gli elementi della lista più visibili:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Stilizzazione avanzata</div>
+          <pre>
+          ul {
+            padding: 0;
+            width: 250px;
+          }
+
+          li {
+            box-sizing: content-box;
+            height: 40px;
+            padding: 10px;
+            list-style-type: none;
+            border: 2px solid blue;
+            background-color: #dbeafe;
+            margin-bottom: 4px;
+            font-family: sans-serif;
+          }
+          </pre>
+        </div>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Ogni elemento della lista avrà un'area contenuto di <strong>40px</strong> e
+          un'altezza totale visibile di <strong>64px</strong>. Gli elementi avranno
+          bordo blu tratteggiato e nessun marker di lista.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>Quando usare content-box sull'altezza?</strong> È utile quando vuoi
+          garantire che il testo abbia sempre una certa altezza minima di respiro,
+          indipendentemente dal padding decorativo. Se vuoi invece che l'elemento
+          abbia un'altezza fissa e precisa (ad esempio per elementi di un menù o di
+          una barra), <code>border-box</code> è la scelta più prevedibile.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con content-box</a></li>
+            <li><a href="#passo-3">Calcolo altezza</a></li>
+            <li><a href="#passo-4">Confronto con border-box</a></li>
+            <li><a href="#passo-5">Personalizzazione avanzata</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>box-sizing</code></li>
+            <li style="margin-bottom:8px;"><code>content-box</code></li>
+            <li style="margin-bottom:8px;"><code>height</code></li>
+            <li style="margin-bottom:8px;"><code>padding</code></li>
+            <li><code>list-style-type</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box-sizing: content-box con Bordo su Link — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Box-sizing: content-box con Bordo su Link
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Box-sizing #6</span>
+      </div>
+      <h1>Box-sizing: content-box con Bordo su Link</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>a · box-sizing · content-box · width · padding · border</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio applicherai <code>box-sizing: content-box</code> a un link con
+          <code>width: 120px</code>. Rispetto all'esercizio Box-sizing #2, qui il concetto
+          da osservare è l'effetto del <strong>bordo</strong> sulla larghezza totale:
+          con <code>content-box</code>, anche il bordo si aggiunge al di fuori del
+          <code>width</code> specificato, allargando ulteriormente l'elemento.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un link:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Box-sizing&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;a href="#"&gt;Clicca qui&lt;/a&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con content-box</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Ricorda che per applicare <code>width</code> a un link serve <code>display: inline-block</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          a {
+            box-sizing: content-box;
+            display: inline-block;
+            width: 120px;
+            padding: 20px;
+            color: black;
+            text-decoration: none;
+            border: 1px dashed blue;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere il calcolo completo</h2>
+        <p>
+          Con <code>content-box</code> ogni componente del box model si somma esternamente.
+          La larghezza totale del link è:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Valore</th>
+              <th>Effetto sulla larghezza totale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Area contenuto (<code>width</code>)</td>
+              <td>120px</td>
+              <td>Base di partenza</td>
+            </tr>
+            <tr>
+              <td><code>padding</code> (× 2 lati)</td>
+              <td>20px × 2 = 40px</td>
+              <td>Aggiunti all'esterno</td>
+            </tr>
+            <tr>
+              <td><code>border</code> (× 2 lati)</td>
+              <td>1px × 2 = 2px</td>
+              <td>Aggiunti all'esterno</td>
+            </tr>
+            <tr>
+              <td>Larghezza totale</td>
+              <td>120 + 40 + 2 = <strong>162px</strong></td>
+              <td>Dimensione reale nel browser</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Riepilogo finale: content-box vs border-box</h2>
+        <p>
+          Dopo aver completato tutti gli esercizi della sezione Box-sizing, ecco la differenza
+          fondamentale tra i due valori, applicata al link di questo esercizio:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>box-sizing</th>
+              <th>width specifica</th>
+              <th>Larghezza contenuto</th>
+              <th>Larghezza totale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>content-box</code></td>
+              <td>Solo il contenuto</td>
+              <td>120px</td>
+              <td><strong>162px</strong></td>
+            </tr>
+            <tr>
+              <td><code>border-box</code></td>
+              <td>Tutto (contenuto + padding + border)</td>
+              <td>120 − 40 − 2 = 78px</td>
+              <td><strong>120px</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 5 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Metti a confronto i due comportamenti nella stessa pagina aggiungendo un secondo link:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html — Due link a confronto</div>
+          <pre>
+          &lt;a href="#" class="content"&gt;content-box (162px)&lt;/a&gt;
+          &lt;a href="#" class="border"&gt;border-box (120px)&lt;/a&gt;
+          </pre>
+        </div>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Confronto visivo</div>
+          <pre>
+          a {
+            display: block;
+            width: 120px;
+            padding: 20px;
+            color: black;
+            text-decoration: none;
+            border: 1px dashed blue;
+            margin-bottom: 10px;
+          }
+
+          a.content {
+            box-sizing: content-box;
+            background-color: #fee2e2;
+          }
+
+          a.border {
+            box-sizing: border-box;
+            background-color: #d1fae5;
+          }
+          </pre>
+        </div>
+
+        <p>Il link rosso sarà visibilmente più largo del link verde, pur avendo lo stesso <code>width: 120px</code>.</p>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Il link avrà un'area contenuto di <strong>120px</strong> e una larghezza totale
+          di <strong>162px</strong>, con bordo tratteggiato blu, padding di 20px e testo nero
+          senza sottolineatura.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>Quando si nota di più la differenza?</strong> In layout con colonne affiancate
+          (es. Flexbox o Grid), usare <code>content-box</code> con padding e border può far
+          "traboccare" gli elementi oltre il loro contenitore. Questo è il motivo principale per
+          cui molti developer iniziano ogni progetto con la regola globale
+          <code>* { box-sizing: border-box; }</code>.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con content-box</a></li>
+            <li><a href="#passo-3">Calcolo dimensioni</a></li>
+            <li><a href="#passo-4">Riepilogo content-box vs border-box</a></li>
+            <li><a href="#passo-5">Confronto visivo</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>box-sizing</code></li>
+            <li style="margin-bottom:8px;"><code>content-box</code></li>
+            <li style="margin-bottom:8px;"><code>width</code></li>
+            <li style="margin-bottom:8px;"><code>padding</code></li>
+            <li><code>border</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

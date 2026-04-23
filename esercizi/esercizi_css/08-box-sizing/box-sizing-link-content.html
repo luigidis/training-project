@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box-sizing: content-box su Link — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Box-sizing: content-box su Link
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Box-sizing #2</span>
+      </div>
+      <h1>Box-sizing: content-box su Link</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>a · box-sizing · content-box · width · padding · border</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio applicherai <code>box-sizing: content-box</code> a un link,
+          il valore <strong>predefinito</strong> del browser. Con <code>content-box</code>,
+          il <code>width</code> specifica solo la larghezza dell'area contenuto: padding e
+          bordo vengono aggiunti <em>al di fuori</em>, aumentando la dimensione totale dell'elemento.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>Crea un nuovo file HTML chiamato <strong>index.html</strong> con un link:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Box-sizing&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;a href="#"&gt;Clicca qui&lt;/a&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con content-box</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella del file HTML.
+          Per rendere visibili <code>width</code> e <code>padding</code> su un link è necessario
+          impostarlo come elemento a blocco con <code>display: inline-block</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          a {
+            box-sizing: content-box;
+            display: inline-block;
+            width: 100px;
+            padding: 20px;
+            color: black;
+            text-decoration: none;
+            border: 1px dashed blue;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Comprendere il calcolo delle dimensioni</h2>
+        <p>
+          Con <code>content-box</code>, il <code>width: 100px</code> misura solo il contenuto.
+          La larghezza totale visibile nel browser è maggiore:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Valore</th>
+              <th>Effetto sulla larghezza totale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Area contenuto (<code>width</code>)</td>
+              <td>100px</td>
+              <td>Larghezza specificata (solo contenuto)</td>
+            </tr>
+            <tr>
+              <td><code>padding</code> (× 2 lati)</td>
+              <td>20px × 2 = 40px</td>
+              <td>Aggiunti <em>fuori</em> dal contenuto</td>
+            </tr>
+            <tr>
+              <td><code>border</code> (× 2 lati)</td>
+              <td>1px × 2 = 2px</td>
+              <td>Aggiunti <em>fuori</em> dal contenuto</td>
+            </tr>
+            <tr>
+              <td>Larghezza totale</td>
+              <td>100 + 40 + 2 = <strong>142px</strong></td>
+              <td>Ciò che occupa realmente nella pagina</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Perché display: inline-block?</h2>
+        <p>
+          Il tag <code>&lt;a&gt;</code> è per default un elemento <strong>inline</strong>.
+          Gli elementi inline ignorano le proprietà <code>width</code> e <code>height</code>.
+          Impostando <code>display: inline-block</code> si ottiene il meglio dei due mondi:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>display</th>
+              <th>Va a capo da solo?</th>
+              <th>Accetta width/height?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>inline</code></td>
+              <td>No</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td><code>block</code></td>
+              <td>Sì (occupa tutta la riga)</td>
+              <td>Sì</td>
+            </tr>
+            <tr>
+              <td><code>inline-block</code></td>
+              <td>No (resta in linea)</td>
+              <td>Sì</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 5 — Personalizzazione avanzata (opzionale)</h2>
+        <p>Sperimenta cambiando il valore di <code>box-sizing</code> a <code>border-box</code> per confrontare:</p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Con border-box</div>
+          <pre>
+          a {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 100px;
+            padding: 20px;
+            color: black;
+            text-decoration: none;
+            border: 1px dashed blue;
+          }
+          </pre>
+        </div>
+
+        <p>
+          Con <code>border-box</code>, la larghezza totale rimane <strong>100px</strong> e il
+          testo si comprimerà in uno spazio più stretto (100 − 40 − 2 = 58px di contenuto).
+        </p>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Il link apparirà con un'area contenuto di <strong>100px</strong> e una larghezza
+          totale visibile di <strong>142px</strong> (100px + 40px di padding + 2px di bordo).
+          Il bordo è tratteggiato blu e il testo è nero senza sottolineatura.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong><code>content-box</code> è il default del browser</strong> per ragioni storiche:
+          corrisponde al modello originale del CSS. Tuttavia nella pratica moderna quasi tutti i
+          progetti impostano <code>border-box</code> globalmente perché semplifica il calcolo
+          dei layout. Se non scrivi <code>box-sizing</code> nel CSS, il browser usa
+          automaticamente <code>content-box</code>.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con content-box</a></li>
+            <li><a href="#passo-3">Calcolo dimensioni</a></li>
+            <li><a href="#passo-4">display: inline-block</a></li>
+            <li><a href="#passo-5">Confronto con border-box</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>box-sizing</code></li>
+            <li style="margin-bottom:8px;"><code>content-box</code></li>
+            <li style="margin-bottom:8px;"><code>display: inline-block</code></li>
+            <li style="margin-bottom:8px;"><code>width</code></li>
+            <li><code>padding / border</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>
