@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progetto: Meet Our Team — Corso HTML &amp; CSS</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>"
+    />
+    <link rel="stylesheet" href="../../../css/style.css" />
+    <style>
+      /* PDF viewer */
+      .pdf-section {
+        background: var(--bg-alt, #f8fafc);
+        border: 1px solid var(--border, #e2e8f0);
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+      }
+      .pdf-section h2 {
+        margin-top: 0;
+      }
+      .pdf-wrapper {
+        position: relative;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--border, #e2e8f0);
+        background: #fff;
+      }
+      .pdf-wrapper object {
+        display: block;
+        width: 100%;
+        height: 680px;
+      }
+      .pdf-fallback {
+        display: none;
+        padding: 2rem;
+        text-align: center;
+        color: var(--text-muted);
+      }
+      .pdf-wrapper object:not([data]) + .pdf-fallback {
+        display: block;
+      }
+
+      /* Download buttons row */
+      .download-row {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.25rem;
+        flex-wrap: wrap;
+      }
+      .btn-download {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.65rem 1.25rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: opacity 0.15s;
+      }
+      .btn-download:hover {
+        opacity: 0.85;
+      }
+      .btn-download-pdf {
+        background: #e53e3e;
+        color: #fff;
+      }
+
+      /* Goal callout */
+      .goal-box {
+        background: linear-gradient(135deg, #1e3a5f 0%, #1a2540 100%);
+        border: 1px solid #2a4a7f;
+        border-left: 4px solid #60a5fa;
+        border-radius: 10px;
+        padding: 1.5rem 1.75rem;
+        margin: 2rem 0;
+        color: #e2e8f0;
+      }
+      .goal-box h3 {
+        margin: 0 0 0.6rem;
+        color: #93c5fd;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .goal-box p {
+        margin: 0;
+        font-size: 0.97rem;
+        line-height: 1.6;
+      }
+
+      /* Float callout — evidenziato in arancione */
+      .float-callout {
+        background: linear-gradient(135deg, #3d2000 0%, #2d1800 100%);
+        border: 1px solid #7c3a00;
+        border-left: 4px solid #f97316;
+        border-radius: 10px;
+        padding: 1.5rem 1.75rem;
+        margin: 1rem 0;
+        color: #fed7aa;
+      }
+      .float-callout h4 {
+        margin: 0 0 0.5rem;
+        color: #fb923c;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .float-callout p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+      .float-callout a {
+        color: #fdba74;
+        font-weight: 600;
+      }
+      .float-callout code {
+        background: rgba(249, 115, 22, 0.2);
+        color: #fed7aa;
+        padding: 1px 5px;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
+
+      /* Tips list */
+      .tips-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .tips-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.7rem 0;
+        border-bottom: 1px solid var(--border, #e2e8f0);
+        font-size: 0.93rem;
+        color: var(--text-secondary, #64748b);
+        line-height: 1.5;
+      }
+      .tips-list li:last-child {
+        border-bottom: none;
+      }
+      .tip-icon {
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">CorsoWeb</span>
+        </div>
+        <nav class="main-nav">
+          <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+          <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+          <a href="../../../index.html#argomenti">Argomenti</a>
+          <a href="../../../index.html#contatti">Contatti</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="ex-header">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../../../index.html">Home</a>
+          <span>›</span>
+          <a href="../../../index.html#esercizi-html-css">Esercizi HTML &amp; CSS</a>
+          <span>›</span>
+          Progetto: Meet Our Team
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO ESERCIZIO -->
+    <section class="ex-hero">
+      <div class="container">
+        <div class="badge-row">
+          <span class="card-badge intermedio">Intermedio</span>
+          <span
+            class="card-badge"
+            style="background: #1a2540; color: #93c5fd; border: 1px solid #2a3a60;"
+          >Progetto #3</span>
+        </div>
+        <h1>Ricrea la Pagina Meet Our Team</h1>
+        <div class="ex-meta">
+          <span>⏱ 90 minuti</span>
+          <span>·</span>
+          <span>HTML · CSS · Float · Grid · Layout</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORPO ESERCIZIO -->
+    <section class="ex-body">
+      <div class="container">
+        <!-- CONTENUTO PRINCIPALE -->
+        <div class="ex-content">
+          <!-- OBIETTIVO -->
+          <div class="goal-box">
+            <h3>Obiettivo</h3>
+            <p>
+              Osserva attentamente la pagina web mostrata nel documento PDF qui
+              sotto e ricreala il più fedelmente possibile usando solo
+              <strong>HTML</strong> e <strong>CSS</strong>. La pagina presenta
+              una griglia di schede team con un'immagine e le informazioni di
+              contatto di ogni membro. Per l'immagine nelle card puoi usare
+              qualsiasi foto (anche un placeholder) delle stesse dimensioni
+              approssimative.
+            </p>
+          </div>
+
+          <!-- ANTEPRIMA PDF -->
+          <div class="pdf-section">
+            <h2>Anteprima della pagina da ricreare</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
+              Studia la pagina nel dettaglio: osserva la struttura, i colori, il
+              layout a griglia, le card e come è posizionata l'immagine rispetto
+              al testo all'interno di ogni card.
+            </p>
+
+            <div class="pdf-wrapper">
+              <object
+                data="./files/Meet Our Team.pdf"
+                type="application/pdf"
+                aria-label="Anteprima della pagina Meet Our Team da ricreare"
+              >
+                <div class="pdf-fallback">
+                  Il tuo browser non supporta la visualizzazione inline del PDF.
+                  Scaricalo usando il pulsante qui sotto.
+                </div>
+              </object>
+            </div>
+
+            <div class="download-row">
+              <a
+                href="./files/Meet Our Team.pdf"
+                download
+                class="btn-download btn-download-pdf"
+              >
+                &#8595; Scarica il PDF
+              </a>
+            </div>
+          </div>
+
+          <!-- ISTRUZIONI -->
+          <h2>Come svolgere l'esercizio</h2>
+          <p>
+            Crea una cartella sul tuo computer chiamata
+            <code>meet-our-team</code> e al suo interno organizza i file così:
+          </p>
+          <div class="formula-block">
+            <div class="formula-label">Struttura consigliata</div>
+            <pre>
+meet-our-team/
+├── index.html
+├── style.css
+└── img/
+    └── photo.jpg
+            </pre>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Per l'immagine <code>photo.jpg</code> puoi usare qualsiasi foto
+            quadrata o rettangolare che hai già sul computer, oppure scaricare
+            un'immagine placeholder da internet. Sarà la stessa per tutte e sei
+            le card.
+          </p>
+
+          <h2>Suggerimenti</h2>
+          <ul class="tips-list">
+            <li>
+              <span class="tip-icon">👁</span>
+              <span>Analizza prima l'intera pagina nel PDF prima di scrivere una
+                sola riga di codice. Identifica le sezioni principali: intestazione
+                con titolo e testo introduttivo, griglia di card, footer.</span>
+            </li>
+            <li>
+              <span class="tip-icon">📐</span>
+              <span>Le card sono disposte in una <strong>griglia a 3 colonne</strong>.
+                Puoi usare <code>display: grid</code> con
+                <code>grid-template-columns: repeat(3, 1fr)</code> sul
+                contenitore delle card, oppure usare i float anche per il layout
+                a colonne.</span>
+            </li>
+            <li>
+              <span class="tip-icon">🖼</span>
+              <span>
+                Ogni card ha uno sfondo scuro e l'immagine del cane posizionata
+                nella parte superiore sinistra della card, con il testo che si
+                dispone accanto e sotto di essa.
+              </span>
+            </li>
+          </ul>
+
+          <!-- FLOAT CALLOUT — il suggerimento principale -->
+          <div class="float-callout">
+            <h4>Suggerimento chiave: CSS Float</h4>
+            <p>
+              Per posizionare l'immagine all'interno della card, la tecnica da
+              usare è il <strong>CSS float</strong>. Applicando
+              <code>float: left</code> all'immagine, il testo del membro del
+              team (nome, ruolo, email) scorrerà automaticamente accanto ad essa
+              sul lato destro, esattamente come si vede nel PDF.
+              <br /><br />
+              Prima di procedere, <strong>studia la proprietà
+              <code>float</code> in CSS</strong>: come funziona, cosa significa
+              "togliere l'elemento dal flusso normale" e perché il contenitore
+              della card potrebbe "collassare" (altezza zero). Cerca anche
+              la tecnica del <strong>clearfix</strong> per risolvere questo
+              problema classico — è una delle cose più importanti da capire
+              quando si lavora con i float.
+              <br /><br />
+              Risorse utili: cerca su Google
+              <em>"CSS float clearfix"</em> oppure
+              <em>"MDN CSS float"</em>.
+            </p>
+          </div>
+
+          <ul class="tips-list" style="margin-top: 1.5rem;">
+            <li>
+              <span class="tip-icon">🎨</span>
+              <span>Prova a estrarre i colori principali osservando sfondi, testi e
+                link. Lo sfondo delle card è molto scuro (quasi nero), il titolo
+                della pagina è in rosa/rosso acceso, le email sono in blu.</span>
+            </li>
+            <li>
+              <span class="tip-icon">🔤</span>
+              <span>I nomi dei membri sono in
+                <strong>maiuscolo</strong> e in grassetto. Puoi scrivere il
+                testo in maiuscolo direttamente nell'HTML, oppure usare la
+                proprietà CSS <code>text-transform: uppercase</code>.</span>
+            </li>
+            <li>
+              <span class="tip-icon">📱</span>
+              <span>Non preoccuparti della versione mobile per ora: concentrati sul
+                layout desktop.</span>
+            </li>
+            <li>
+              <span class="tip-icon">✅</span>
+              <span>Costruisci una sola card per prima, verificala nel browser e
+                poi duplicala per le restanti cinque. Non aspettare di aver
+                finito tutto prima di controllare il risultato.</span>
+            </li>
+          </ul>
+
+          <h2>Struttura di una singola card</h2>
+          <p>
+            Per aiutarti a ragionare sulla struttura HTML, ecco come potresti
+            impostare il markup di ogni scheda membro:
+          </p>
+          <div class="formula-block">
+            <div class="formula-label">HTML di esempio per una card</div>
+            <pre>
+&lt;div class="card"&gt;
+  &lt;img src="img/photo.jpg" alt="Foto membro" class="card-img" /&gt;
+  &lt;div class="card-info"&gt;
+    &lt;h2&gt;MARCO BIANCHI&lt;/h2&gt;
+    &lt;p class="role"&gt;Designer&lt;/p&gt;
+    &lt;a href="mailto:marcobianchi@team.com"&gt;marcobianchi@team.com&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Ricorda: per far sì che il testo scorra accanto all'immagine,
+            dovrai applicare <code>float: left</code> all'elemento
+            <code>.card-img</code>. E sulla <code>.card</code> dovrai gestire
+            il clearfix per evitare il collasso dell'altezza.
+          </p>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="ex-sidebar">
+          <div class="sidebar-box">
+            <h3>Checklist finale</h3>
+            <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--text-muted);">
+              <li style="margin-bottom: 10px">&#9744; Struttura HTML semantica</li>
+              <li style="margin-bottom: 10px">&#9744; CSS in file esterno collegato</li>
+              <li style="margin-bottom: 10px">&#9744; Titolo e sottotitolo presenti</li>
+              <li style="margin-bottom: 10px">&#9744; 6 card nella griglia a 3 colonne</li>
+              <li style="margin-bottom: 10px">&#9744; Immagine con <code>float: left</code></li>
+              <li style="margin-bottom: 10px">&#9744; Clearfix applicato alla card</li>
+              <li style="margin-bottom: 10px">&#9744; Nome, ruolo ed email visibili</li>
+              <li style="margin-bottom: 10px">&#9744; Colori e font simili all'originale</li>
+              <li>&#9744; Pagina leggibile nel browser</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Concetti usati</h3>
+            <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--text-muted);">
+              <li style="margin-bottom: 8px">Struttura HTML</li>
+              <li style="margin-bottom: 8px">Selettori CSS</li>
+              <li style="margin-bottom: 8px">Box Model</li>
+              <li style="margin-bottom: 8px"><strong style="color: #fb923c;">CSS Float</strong></li>
+              <li style="margin-bottom: 8px">Clearfix</li>
+              <li style="margin-bottom: 8px">Grid layout</li>
+              <li>Colori e tipografia</li>
+            </ul>
+          </div>
+          <a
+            href="../../../index.html#esercizi-html-css"
+            class="btn-card"
+            style="display: block; text-align: center; margin-top: 4px"
+          >
+            ← Esercizi HTML &amp; CSS
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contatti">
+      <div class="container">
+        <p>
+          Hai domande? Scrivimi a
+          <a href="mailto:info@esempio.it">info@esempio.it</a>
+        </p>
+        <p class="footer-copy">
+          &copy; 2026 CorsoWeb — Tutti i diritti riservati
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
