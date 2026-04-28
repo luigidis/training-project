@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Background Image su Link — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Background Image su Link
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Background #1</span>
+      </div>
+      <h1>Background Image su Link</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>a · background-image · background-repeat · background-size · padding</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai a usare la proprietà <code>background-image</code>
+          per inserire un'immagine di sfondo all'interno di un link. Vedremo anche come controllarne
+          la ripetizione, le dimensioni e come usare il padding per fare spazio all'icona.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>index.html</strong>. Inserisci un link
+          e collega il file CSS esterno <strong>style.css</strong>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Background Link&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;a href="#"&gt;Questo link ha un'icona come sfondo.&lt;/a&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella.
+          Usa <code>background-image</code> per aggiungere un'icona come sfondo al link,
+          e il <code>padding-left</code> per fare spazio all'immagine a sinistra del testo:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          a {
+            background-image: url("icona.png");
+            background-repeat: no-repeat;
+            background-size: 30px 30px;
+            padding: 5px 5px 5px 35px;
+            color: black;
+            text-decoration: none;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Capire ogni proprietà</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Proprietà</th>
+              <th>Valore usato</th>
+              <th>Effetto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>background-image</code></td>
+              <td><code>url("icona.png")</code></td>
+              <td>Imposta l'immagine di sfondo</td>
+            </tr>
+            <tr>
+              <td><code>background-repeat</code></td>
+              <td><code>no-repeat</code></td>
+              <td>L'immagine appare una volta sola, senza ripetersi</td>
+            </tr>
+            <tr>
+              <td><code>background-size</code></td>
+              <td><code>30px 30px</code></td>
+              <td>Ridimensiona l'immagine a 30×30 pixel</td>
+            </tr>
+            <tr>
+              <td><code>padding</code></td>
+              <td><code>5px 5px 5px 35px</code></td>
+              <td>Crea spazio a sinistra per non coprire l'icona con il testo</td>
+            </tr>
+            <tr>
+              <td><code>text-decoration</code></td>
+              <td><code>none</code></td>
+              <td>Rimuove la sottolineatura del link</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Aggiungere un'immagine di test</h2>
+        <p>
+          Per testare l'esercizio hai bisogno di un file immagine chiamato <strong>icona.png</strong>
+          nella stessa cartella del file HTML. Puoi usare qualsiasi icona di piccole dimensioni
+          (ad esempio scaricarne una gratuita da una libreria di icone).
+        </p>
+        <p>
+          Se preferisci testare senza un file esterno, puoi usare un colore al posto
+          dell'immagine e verificare il comportamento del padding:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — versione con colore di test</div>
+          <pre>
+          a {
+            background-color: #dbeafe;
+            padding: 5px 5px 5px 35px;
+            color: black;
+            text-decoration: none;
+          }
+          </pre>
+        </div>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Il link mostrerà un'icona a sinistra del testo. L'icona non si ripete, ha dimensioni fisse
+          di 30×30px, e il testo è spostato a destra per non sovrapporsi all'immagine.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>Perché usare background-image invece di un tag &lt;img&gt;?</strong>
+          Le immagini di sfondo sono considerate decorative: non fanno parte del contenuto semantico
+          della pagina. Per questo si usano via CSS e non nell'HTML. Un'icona puramente visuale
+          accanto a un testo è il caso d'uso perfetto per <code>background-image</code>.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS</a></li>
+            <li><a href="#passo-3">Le proprietà</a></li>
+            <li><a href="#passo-4">Immagine di test</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>background-image</code></li>
+            <li style="margin-bottom:8px;"><code>background-repeat</code></li>
+            <li style="margin-bottom:8px;"><code>background-size</code></li>
+            <li style="margin-bottom:8px;"><code>padding</code></li>
+            <li><code>text-decoration</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

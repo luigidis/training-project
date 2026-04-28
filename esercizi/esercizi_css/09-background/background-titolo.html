@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Background Image su Titolo — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Background Image su Titolo
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Background #3</span>
+      </div>
+      <h1>Background Image su Titolo</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>h1 · background-image · background-repeat · repeat-x · padding · color</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio imparerai a impostare un'immagine di sfondo su un titolo
+          <code>h1</code> usando la proprietà <code>background-image</code>, e a farla
+          ripetere solo orizzontalmente con <code>background-repeat: repeat-x</code>.
+          Aggiungerai anche del padding per creare spazio intorno al testo.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>index.html</strong> con un titolo
+          e il collegamento al file CSS esterno <strong>style.css</strong>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Background Titolo&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;h1&gt;Questo è un titolo con un'immagine di sfondo ripetuta orizzontalmente.&lt;/h1&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella.
+          Imposta l'immagine di sfondo sull'elemento <code>h1</code> e usa
+          <code>repeat-x</code> per farla ripetere solo in orizzontale:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          h1 {
+            background-image: url("sfondo-titolo.jpg");
+            background-repeat: repeat-x;
+            padding: 20px;
+            color: white;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — I valori di background-repeat</h2>
+        <p>
+          La proprietà <code>background-repeat</code> controlla se e come l'immagine
+          di sfondo si ripete. Questi sono i valori principali:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Valore</th>
+              <th>Comportamento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>repeat</code></td>
+              <td>L'immagine si ripete sia in orizzontale che in verticale (valore predefinito)</td>
+            </tr>
+            <tr>
+              <td><code>repeat-x</code></td>
+              <td>L'immagine si ripete solo orizzontalmente</td>
+            </tr>
+            <tr>
+              <td><code>repeat-y</code></td>
+              <td>L'immagine si ripete solo verticalmente</td>
+            </tr>
+            <tr>
+              <td><code>no-repeat</code></td>
+              <td>L'immagine appare una sola volta, senza ripetizioni</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Perché il padding è importante</h2>
+        <p>
+          Senza <code>padding</code>, il testo del titolo si sovrappone al bordo dell'immagine
+          di sfondo, risultando difficile da leggere. Con <code>padding: 20px</code> crei uno
+          spazio interno che separa il testo dai bordi dell'elemento, migliorando
+          la leggibilità.
+        </p>
+        <p>
+          La proprietà <code>color: white</code> rende il testo leggibile su sfondi scuri.
+          Adatta il colore in base all'immagine che utilizzi.
+        </p>
+
+        <h2>Passo 5 — Aggiungere un'immagine di test</h2>
+        <p>
+          Per testare l'esercizio avrai bisogno di un file immagine chiamato
+          <strong>sfondo-titolo.jpg</strong> nella stessa cartella dell'HTML.
+          Usa un'immagine più stretta della larghezza del titolo per vedere
+          l'effetto di ripetizione.
+        </p>
+        <p>
+          Per verificare la struttura senza un'immagine reale, puoi usare un
+          gradiente CSS come sfondo:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — versione con gradiente di test</div>
+          <pre>
+          h1 {
+            background-image: linear-gradient(to right, #1d4ed8, #7c3aed);
+            padding: 20px;
+            color: white;
+          }
+          </pre>
+        </div>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Il titolo mostrerà l'immagine di sfondo ripetuta orizzontalmente per tutta
+          la sua larghezza. Il testo bianco sarà leggibile grazie al padding e al colore.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>Differenza tra <code>repeat-x</code> e <code>repeat</code>:</strong>
+          con <code>repeat</code> l'immagine riempie completamente l'elemento sia in larghezza
+          che in altezza. Con <code>repeat-x</code> si ripete solo orizzontalmente e rimane
+          ancorata al bordo superiore. Questo la rende ideale per effetti come barre
+          decorative o header con texture.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS</a></li>
+            <li><a href="#passo-3">Valori di background-repeat</a></li>
+            <li><a href="#passo-4">Padding e colore</a></li>
+            <li><a href="#passo-5">Immagine di test</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>background-image</code></li>
+            <li style="margin-bottom:8px;"><code>background-repeat</code></li>
+            <li style="margin-bottom:8px;"><code>repeat-x</code></li>
+            <li style="margin-bottom:8px;"><code>padding</code></li>
+            <li><code>color</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progetto: Dropbox Business — Corso HTML &amp; CSS</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>"
+    />
+    <link rel="stylesheet" href="../../../css/style.css" />
+    <style>
+      /* PDF viewer */
+      .pdf-section {
+        background: var(--bg-alt, #f8fafc);
+        border: 1px solid var(--border, #e2e8f0);
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+      }
+      .pdf-section h2 { margin-top: 0; }
+      .pdf-wrapper {
+        position: relative;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--border, #e2e8f0);
+        background: #fff;
+      }
+      .pdf-wrapper object {
+        display: block;
+        width: 100%;
+        height: 680px;
+      }
+      .pdf-fallback {
+        display: none;
+        padding: 2rem;
+        text-align: center;
+        color: var(--text-muted);
+      }
+      .pdf-wrapper object:not([data]) + .pdf-fallback { display: block; }
+
+      /* Download buttons */
+      .download-row {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.25rem;
+        flex-wrap: wrap;
+      }
+      .btn-download {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.65rem 1.25rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: opacity 0.15s;
+      }
+      .btn-download:hover { opacity: 0.85; }
+      .btn-download-pdf  { background: #e53e3e; color: #fff; }
+      .btn-download-zip  { background: #0061ff; color: #fff; }
+
+      /* Goal callout */
+      .goal-box {
+        background: linear-gradient(135deg, #1e3a5f 0%, #1a2540 100%);
+        border: 1px solid #2a4a7f;
+        border-left: 4px solid #60a5fa;
+        border-radius: 10px;
+        padding: 1.5rem 1.75rem;
+        margin: 2rem 0;
+        color: #e2e8f0;
+      }
+      .goal-box h3 {
+        margin: 0 0 0.6rem;
+        color: #93c5fd;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .goal-box p { margin: 0; font-size: 0.97rem; line-height: 1.6; }
+
+      /* Advanced callout (blu Dropbox) */
+      .adv-callout {
+        background: linear-gradient(135deg, #002b7a 0%, #001a4d 100%);
+        border: 1px solid #0040b8;
+        border-left: 4px solid #0061ff;
+        border-radius: 10px;
+        padding: 1.5rem 1.75rem;
+        margin: 1rem 0;
+        color: #bfdbfe;
+      }
+      .adv-callout h4 {
+        margin: 0 0 0.5rem;
+        color: #60a5fa;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .adv-callout p { margin: 0; font-size: 0.95rem; line-height: 1.65; }
+      .adv-callout code {
+        background: rgba(0, 97, 255, 0.2);
+        color: #bfdbfe;
+        padding: 1px 5px;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
+
+      /* Warning callout (arancione) */
+      .warn-callout {
+        background: linear-gradient(135deg, #3d2000 0%, #2d1800 100%);
+        border: 1px solid #7c3a00;
+        border-left: 4px solid #f97316;
+        border-radius: 10px;
+        padding: 1.5rem 1.75rem;
+        margin: 1rem 0;
+        color: #fed7aa;
+      }
+      .warn-callout h4 {
+        margin: 0 0 0.5rem;
+        color: #fb923c;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .warn-callout p { margin: 0; font-size: 0.95rem; line-height: 1.65; }
+      .warn-callout code {
+        background: rgba(249, 115, 22, 0.2);
+        color: #fed7aa;
+        padding: 1px 5px;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
+
+      /* Tips list */
+      .tips-list { list-style: none; padding: 0; margin: 0; }
+      .tips-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.7rem 0;
+        border-bottom: 1px solid var(--border, #e2e8f0);
+        font-size: 0.93rem;
+        color: var(--text-secondary, #64748b);
+        line-height: 1.5;
+      }
+      .tips-list li:last-child { border-bottom: none; }
+      .tip-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+      /* Sezioni progetto */
+      .section-map {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 0.5rem 1rem;
+        align-items: center;
+        background: var(--bg-alt, #f8fafc);
+        border: 1px solid var(--border, #e2e8f0);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem;
+        margin: 1.5rem 0;
+        font-size: 0.88rem;
+      }
+      .section-map .num {
+        font-weight: 700;
+        color: #0061ff;
+        font-size: 1rem;
+        line-height: 1;
+      }
+      .section-map .name { font-weight: 600; color: var(--text-primary); }
+      .section-map .hint { color: var(--text-muted); font-size: 0.83rem; }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">CorsoWeb</span>
+        </div>
+        <nav class="main-nav">
+          <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+          <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+          <a href="../../../index.html#esercizi-html-css">Esercizi HTML &amp; CSS</a>
+          <a href="../../../index.html#argomenti">Argomenti</a>
+          <a href="../../../index.html#contatti">Contatti</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="ex-header">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../../../index.html">Home</a>
+          <span>›</span>
+          <a href="../../../index.html#esercizi-html-css">Esercizi HTML &amp; CSS</a>
+          <span>›</span>
+          Progetto: Dropbox Business
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO ESERCIZIO -->
+    <section class="ex-hero">
+      <div class="container">
+        <div class="badge-row">
+          <span class="card-badge avanzato">Avanzato</span>
+          <span
+            class="card-badge"
+            style="background: #001a4d; color: #93c5fd; border: 1px solid #0040b8;"
+          >Progetto #4</span>
+        </div>
+        <h1>Ricrea la Landing Page di Dropbox Business</h1>
+        <div class="ex-meta">
+          <span>⏱ 150 minuti</span>
+          <span>·</span>
+          <span>HTML · CSS · Flexbox · Grid · Layout multi-sezione</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORPO ESERCIZIO -->
+    <section class="ex-body">
+      <div class="container">
+        <!-- CONTENUTO PRINCIPALE -->
+        <div class="ex-content">
+
+          <!-- OBIETTIVO -->
+          <div class="goal-box">
+            <h3>Obiettivo</h3>
+            <p>
+              Osserva attentamente la landing page di Dropbox Business mostrata nel PDF qui sotto
+              e ricreala il più fedelmente possibile usando solo <strong>HTML</strong> e
+              <strong>CSS</strong>. Hai a disposizione tutti gli assets grafici: logo, immagini
+              delle funzionalità, loghi dei brand partner e lo screenshot del prodotto.
+              Questa è una pagina reale e complessa: affronta una sezione alla volta.
+            </p>
+          </div>
+
+          <!-- ANTEPRIMA PDF -->
+          <div class="pdf-section">
+            <h2>Anteprima della pagina da ricreare</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
+              Studia la pagina nel dettaglio: osserva la struttura generale, le sezioni,
+              i colori, la navbar, il layout hero, la griglia dei prezzi, la sezione
+              features e il footer multi-colonna.
+            </p>
+
+            <div class="pdf-wrapper">
+              <object
+                data="./files/dropbox_htmlcss.pdf"
+                type="application/pdf"
+                aria-label="Anteprima della landing page Dropbox Business da ricreare"
+              >
+                <div class="pdf-fallback">
+                  Il tuo browser non supporta la visualizzazione inline del PDF.
+                  Scaricalo usando il pulsante qui sotto.
+                </div>
+              </object>
+            </div>
+
+            <div class="download-row">
+              <a
+                href="./files/dropbox_htmlcss.pdf"
+                download
+                class="btn-download btn-download-pdf"
+              >
+                &#8595; Scarica il PDF
+              </a>
+              <a
+                href="./files/assets.zip"
+                download
+                class="btn-download btn-download-zip"
+              >
+                &#8595; Scarica tutti gli Assets (ZIP)
+              </a>
+            </div>
+          </div>
+
+          <!-- STRUTTURA DELLA PAGINA -->
+          <h2>Le sezioni della pagina</h2>
+          <p>
+            Prima di scrivere una sola riga di codice, analizza il PDF e identifica
+            tutte le sezioni. La pagina è composta da <strong>9 blocchi distinti</strong>:
+          </p>
+
+          <div class="section-map">
+            <span class="num">1</span>
+            <span class="name">Navbar</span>
+            <span class="hint">Logo + link di navigazione + pulsanti CTA</span>
+
+            <span class="num">2</span>
+            <span class="name">Hero</span>
+            <span class="hint">Sfondo celeste, headline grande, due CTA, screenshot del prodotto</span>
+
+            <span class="num">3</span>
+            <span class="name">Piani prezzi</span>
+            <span class="hint">3 card affiancate: Professionali, Standard, Enterprise</span>
+
+            <span class="num">4</span>
+            <span class="name">Partner</span>
+            <span class="hint">Immagine a sinistra + testo a destra (layout a due colonne)</span>
+
+            <span class="num">5</span>
+            <span class="name">Funzionalità</span>
+            <span class="hint">Titolo + griglia 3×2 con immagine, titolo e descrizione per ogni feature</span>
+
+            <span class="num">6</span>
+            <span class="name">Social proof (loghi)</span>
+            <span class="hint">Titolo + griglia di tile colorati con loghi brand</span>
+
+            <span class="num">7</span>
+            <span class="name">CTA banner</span>
+            <span class="hint">Testo + pulsante su sfondo chiaro</span>
+
+            <span class="num">8</span>
+            <span class="name">FAQ</span>
+            <span class="hint">Domande frequenti con risposta visibile sotto</span>
+
+            <span class="num">9</span>
+            <span class="name">Footer</span>
+            <span class="hint">4–5 colonne di link su sfondo scuro</span>
+          </div>
+
+          <!-- ISTRUZIONI -->
+          <h2>Come organizzare i file</h2>
+          <p>
+            Crea una cartella sul tuo computer chiamata <code>dropbox</code> e
+            al suo interno organizza i file così:
+          </p>
+          <div class="formula-block">
+            <div class="formula-label">Struttura consigliata</div>
+            <pre>
+dropbox/
+├── index.html
+├── style.css
+└── img/
+    ├── logo-small.png
+    ├── jumbo.png
+    ├── partner.png
+    ├── business-feature-coordinate-it.png
+    ├── business-feature-integrations-it.png
+    ├── business-feature-multi-device.png
+    ├── business-feature-security.png
+    ├── business-feature-send-files-it.png
+    ├── business-feature-switching-tools.png
+    ├── check-solid.svg
+    ├── arizona_state_university.svg
+    ├── designit.svg
+    ├── hearst_corp.svg
+    ├── lonely_planet.svg
+    ├── topps.svg
+    ├── university_of_florida.svg
+    └── world_bicycle_relief.svg
+            </pre>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Tutti i file immagine sono scaricabili tramite i pulsanti nella sezione
+            "Assets inclusi" più in basso.
+          </p>
+
+          <!-- SUGGERIMENTO FLEXBOX/GRID -->
+          <div class="adv-callout">
+            <h4>Concetto chiave: Flexbox e CSS Grid</h4>
+            <p>
+              Questa pagina usa intensivamente due sistemi di layout moderni che devi
+              studiare prima di procedere:
+              <br /><br />
+              <strong>Flexbox</strong> (<code>display: flex</code>) è ideale per
+              allineare elementi in una <em>singola direzione</em> — riga o colonna.
+              Usalo per la navbar (logo + link + pulsanti sulla stessa riga),
+              per la sezione partner (immagine affiancata al testo) e per i pulsanti CTA.
+              <br /><br />
+              <strong>CSS Grid</strong> (<code>display: grid</code>) è ideale per
+              layout in <em>due dimensioni</em> — righe e colonne insieme.
+              Usalo per la griglia dei prezzi (3 colonne uguali), per la sezione
+              features (3 colonne × 2 righe) e per la griglia dei loghi partner.
+              <br /><br />
+              Studia entrambi prima di iniziare. Risorse consigliate: cerca
+              <em>"MDN Flexbox"</em> e <em>"MDN CSS Grid"</em>, oppure
+              <em>"CSS Grid vs Flexbox"</em>.
+            </p>
+          </div>
+
+          <h2>Suggerimenti per ogni sezione</h2>
+          <ul class="tips-list">
+            <li>
+              <span class="tip-icon">👁</span>
+              <span>
+                Analizza l'intero PDF prima di scrivere codice. Identifica tutti e 9 i blocchi
+                e abbozzali su carta se ti aiuta. La chiarezza mentale prima vale il doppio
+                del tempo speso a correggere dopo.
+              </span>
+            </li>
+            <li>
+              <span class="tip-icon">🧱</span>
+              <span>
+                <strong>Navbar:</strong> usa <code>display: flex</code> con
+                <code>justify-content: space-between</code> sul contenitore.
+                Il logo va a sinistra, i link al centro, i pulsanti a destra.
+              </span>
+            </li>
+            <li>
+              <span class="tip-icon">🖼</span>
+              <span>
+                <strong>Hero:</strong> lo sfondo celeste è un <code>background-color</code>
+                sull'intera sezione. Il testo è a sinistra, lo screenshot del prodotto
+                (<code>jumbo.png</code>) è a destra. Usa flex o grid con due colonne.
+              </span>
+            </li>
+            <li>
+              <span class="tip-icon">💳</span>
+              <span>
+                <strong>Piani prezzi:</strong> tre card in griglia con
+                <code>grid-template-columns: repeat(3, 1fr)</code>. Una card è evidenziata
+                (sfondo scuro o bordo blu) rispetto alle altre. Ogni card ha titolo,
+                prezzo, lista di funzionalità con spunta e un pulsante CTA.
+              </span>
+            </li>
+            <li>
+              <span class="tip-icon">↔️</span>
+              <span>
+                <strong>Sezione partner:</strong> layout a due colonne con flex o grid.
+                L'immagine (<code>partner.png</code>) occupa circa metà larghezza,
+                il testo l'altra metà.
+              </span>
+            </li>
+            <li>
+              <span class="tip-icon">⚡</span>
+              <span>
+                <strong>Griglia features:</strong> 6 elementi disposti su 3 colonne e 2 righe.
+                Ogni elemento ha un'immagine illustrativa, un titolo breve e una
+                descrizione di 2–3 righe.
+              </span>
+            </li>
+            <li>
+              <span class="tip-icon">🏷</span>
+              <span>
+                <strong>Loghi brand:</strong> ogni logo è un tile colorato con sfondo
+                pieno. Usa una griglia con <code>grid-template-columns: repeat(4, 1fr)</code>
+                e assegna un colore di sfondo diverso a ciascun tile tramite classi CSS.
+              </span>
+            </li>
+            <li>
+              <span class="tip-icon">❓</span>
+              <span>
+                <strong>FAQ:</strong> per ora mostra semplicemente domanda e risposta
+                entrambe visibili (senza JavaScript per l'accordion). Il layout è
+                semplice: una lista di coppie domanda/risposta con bordo separatore.
+              </span>
+            </li>
+            <li>
+              <span class="tip-icon">🔲</span>
+              <span>
+                <strong>Footer:</strong> sfondo quasi nero (<code>#1e1919</code> o simile),
+                testo chiaro. Usa una griglia con 4–5 colonne per i blocchi di link.
+                Ogni colonna ha un titolo in maiuscolo e una lista di link sotto.
+              </span>
+            </li>
+            <li>
+              <span class="tip-icon">🎨</span>
+              <span>
+                <strong>Colori principali:</strong> il blu Dropbox è
+                <code>#0061ff</code>, lo sfondo hero è intorno a <code>#e8f0fe</code>
+                o <code>#dce9fc</code>, il testo principale è quasi nero
+                <code>#1e1919</code>.
+              </span>
+            </li>
+            <li>
+              <span class="tip-icon">✅</span>
+              <span>
+                Costruisci una sezione alla volta, verifica nel browser e poi passa
+                alla successiva. Non aspettare di aver finito tutto: vedere il
+                risultato parziale è parte del processo.
+              </span>
+            </li>
+          </ul>
+
+          <!-- WARN: Approccio graduale -->
+          <div class="warn-callout">
+            <h4>Approccio consigliato</h4>
+            <p>
+              Inizia dalla struttura HTML di tutte le 9 sezioni <em>senza ancora scrivere
+              CSS</em>: solo tag, testi e immagini. Quando la struttura è completa e
+              visibile nel browser (anche brutta), apri il file CSS e aggiungi gli stili
+              una sezione alla volta dall'alto verso il basso. Questo approccio evita
+              di perdersi e ti permette di mantenere il controllo su una pagina
+              di questa complessità.
+            </p>
+          </div>
+
+          <!-- STRUTTURA HTML SUGGERITA -->
+          <h2>Struttura HTML di riferimento</h2>
+          <p>
+            Ecco la struttura di base dell'HTML con i tag semantici principali.
+            Usala come punto di partenza:
+          </p>
+          <div class="formula-block">
+            <div class="formula-label">index.html — scheletro</div>
+            <pre>
+&lt;body&gt;
+
+  &lt;!-- 1. NAVBAR --&gt;
+  &lt;nav class="navbar"&gt;
+    &lt;div class="nav-logo"&gt;...&lt;/div&gt;
+    &lt;ul class="nav-links"&gt;...&lt;/ul&gt;
+    &lt;div class="nav-cta"&gt;...&lt;/div&gt;
+  &lt;/nav&gt;
+
+  &lt;!-- 2. HERO --&gt;
+  &lt;section class="hero"&gt;
+    &lt;div class="hero-text"&gt;...&lt;/div&gt;
+    &lt;div class="hero-image"&gt;...&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- 3. PIANI PREZZI --&gt;
+  &lt;section class="pricing"&gt;
+    &lt;h2&gt;Trova il piano business che fa per te&lt;/h2&gt;
+    &lt;div class="pricing-grid"&gt;
+      &lt;div class="plan"&gt;...&lt;/div&gt;
+      &lt;div class="plan plan-featured"&gt;...&lt;/div&gt;
+      &lt;div class="plan"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- 4. PARTNER --&gt;
+  &lt;section class="partner"&gt;
+    &lt;img src="img/partner.png" alt="Partner" /&gt;
+    &lt;div class="partner-text"&gt;...&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- 5. FUNZIONALITÀ --&gt;
+  &lt;section class="features"&gt;
+    &lt;h2&gt;Esegui più operazioni con Dropbox Business&lt;/h2&gt;
+    &lt;div class="features-grid"&gt;
+      &lt;div class="feature"&gt;
+        &lt;img src="img/business-feature-coordinate-it.png" alt="..." /&gt;
+        &lt;h3&gt;...&lt;/h3&gt;
+        &lt;p&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;!-- × 6 --&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- 6. LOGHI PARTNER --&gt;
+  &lt;section class="social-proof"&gt;
+    &lt;h2&gt;Più di 500.000 team utilizzano Dropbox Business&lt;/h2&gt;
+    &lt;div class="logos-grid"&gt;
+      &lt;div class="logo-tile logo-asu"&gt;&lt;img src="img/arizona_state_university.svg" /&gt;&lt;/div&gt;
+      &lt;!-- × 8 --&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- 7. CTA BANNER --&gt;
+  &lt;section class="cta-banner"&gt;
+    &lt;p&gt;Porta Dropbox Business nella tua azienda.&lt;/p&gt;
+    &lt;a href="#" class="btn-primary"&gt;Scopri i prezzi&lt;/a&gt;
+  &lt;/section&gt;
+
+  &lt;!-- 8. FAQ --&gt;
+  &lt;section class="faq"&gt;
+    &lt;h2&gt;Domande frequenti&lt;/h2&gt;
+    &lt;div class="faq-item"&gt;
+      &lt;h3&gt;Domanda?&lt;/h3&gt;
+      &lt;p&gt;Risposta.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- 9. FOOTER --&gt;
+  &lt;footer class="site-footer"&gt;
+    &lt;div class="footer-col"&gt;
+      &lt;h4&gt;Dropbox&lt;/h4&gt;
+      &lt;ul&gt;...&lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;!-- × 4 colonne --&gt;
+  &lt;/footer&gt;
+
+&lt;/body&gt;
+            </pre>
+          </div>
+
+          <!-- ASSETS INCLUSI -->
+          <h2>Assets inclusi</h2>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>File</th>
+                <th>Sezione</th>
+                <th>Download</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>logo-small.png</code></td>
+                <td>Navbar</td>
+                <td><a href="./files/img/logo-small.png" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>jumbo.png</code></td>
+                <td>Hero (screenshot prodotto)</td>
+                <td><a href="./files/img/jumbo.png" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>partner.png</code></td>
+                <td>Sezione partner</td>
+                <td><a href="./files/img/partner.png" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>business-feature-coordinate-it.png</code></td>
+                <td>Features (coordina il lavoro)</td>
+                <td><a href="./files/img/business-feature-coordinate-it.png" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>business-feature-integrations-it.png</code></td>
+                <td>Features (integrazioni)</td>
+                <td><a href="./files/img/business-feature-integrations-it.png" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>business-feature-multi-device.png</code></td>
+                <td>Features (multi-device)</td>
+                <td><a href="./files/img/business-feature-multi-device.png" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>business-feature-security.png</code></td>
+                <td>Features (sicurezza)</td>
+                <td><a href="./files/img/business-feature-security.png" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>business-feature-send-files-it.png</code></td>
+                <td>Features (invia file)</td>
+                <td><a href="./files/img/business-feature-send-files-it.png" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>business-feature-switching-tools.png</code></td>
+                <td>Features (abbandona altri strumenti)</td>
+                <td><a href="./files/img/business-feature-switching-tools.png" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>check-solid.svg</code></td>
+                <td>Spunte nelle card prezzi</td>
+                <td><a href="./files/img/check-solid.svg" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>arizona_state_university.svg</code></td>
+                <td>Loghi partner</td>
+                <td><a href="./files/img/arizona_state_university.svg" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>designit.svg</code></td>
+                <td>Loghi partner</td>
+                <td><a href="./files/img/designit.svg" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>hearst_corp.svg</code></td>
+                <td>Loghi partner</td>
+                <td><a href="./files/img/hearst_corp.svg" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>lonely_planet.svg</code></td>
+                <td>Loghi partner</td>
+                <td><a href="./files/img/lonely_planet.svg" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>topps.svg</code></td>
+                <td>Loghi partner</td>
+                <td><a href="./files/img/topps.svg" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>university_of_florida.svg</code></td>
+                <td>Loghi partner</td>
+                <td><a href="./files/img/university_of_florida.svg" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>world_bicycle_relief.svg</code></td>
+                <td>Loghi partner</td>
+                <td><a href="./files/img/world_bicycle_relief.svg" download>&#8595; Scarica</a></td>
+              </tr>
+              <tr>
+                <td><code>clear_channel.svg</code></td>
+                <td>Loghi partner</td>
+                <td><a href="./files/img/clear_channel.svg" download>&#8595; Scarica</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="ex-sidebar">
+          <div class="sidebar-box">
+            <h3>Checklist finale</h3>
+            <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--text-muted);">
+              <li style="margin-bottom: 10px">&#9744; Struttura HTML semantica</li>
+              <li style="margin-bottom: 10px">&#9744; CSS in file esterno collegato</li>
+              <li style="margin-bottom: 10px">&#9744; Navbar con logo + link + CTA</li>
+              <li style="margin-bottom: 10px">&#9744; Hero con sfondo e screenshot</li>
+              <li style="margin-bottom: 10px">&#9744; 3 card prezzi in griglia</li>
+              <li style="margin-bottom: 10px">&#9744; Sezione partner a 2 colonne</li>
+              <li style="margin-bottom: 10px">&#9744; Griglia 6 features (3×2)</li>
+              <li style="margin-bottom: 10px">&#9744; Tiles loghi brand colorati</li>
+              <li style="margin-bottom: 10px">&#9744; CTA banner</li>
+              <li style="margin-bottom: 10px">&#9744; Sezione FAQ</li>
+              <li style="margin-bottom: 10px">&#9744; Footer multi-colonna scuro</li>
+              <li>&#9744; Colori e font simili all'originale</li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Concetti usati</h3>
+            <ul style="list-style: none; padding: 0; font-size: 0.88rem; color: var(--text-muted);">
+              <li style="margin-bottom: 8px"><strong style="color: #0061ff;">CSS Flexbox</strong></li>
+              <li style="margin-bottom: 8px"><strong style="color: #0061ff;">CSS Grid</strong></li>
+              <li style="margin-bottom: 8px">Struttura HTML semantica</li>
+              <li style="margin-bottom: 8px">Selettori e classi CSS</li>
+              <li style="margin-bottom: 8px">Box Model</li>
+              <li style="margin-bottom: 8px">Colori e tipografia</li>
+              <li style="margin-bottom: 8px">Layout multi-sezione</li>
+              <li>Immagini SVG e PNG</li>
+            </ul>
+          </div>
+          <a
+            href="../../../index.html#esercizi-html-css"
+            class="btn-card"
+            style="display: block; text-align: center; margin-top: 4px"
+          >
+            ← Esercizi HTML &amp; CSS
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="contatti">
+      <div class="container">
+        <p>
+          Hai domande? Scrivimi a
+          <a href="mailto:info@esempio.it">info@esempio.it</a>
+        </p>
+        <p class="footer-copy">
+          &copy; 2026 CorsoWeb — Tutti i diritti riservati
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

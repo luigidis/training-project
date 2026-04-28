@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Background Image su Colonne — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Background Image su Colonne
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Background #2</span>
+      </div>
+      <h1>Background Image su Colonne</h1>
+      <div class="ex-meta">
+        <span>⏱ 25 minuti</span>
+        <span>·</span>
+        <span>div · background-image · background-repeat · float · box-sizing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio creerai una sezione divisa in tre colonne affiancate usando tre
+          <code>div</code>. Ogni colonna avrà un'immagine di sfondo diversa, ripetuta
+          orizzontalmente con <code>background-repeat: repeat-x</code>. Utilizzerai anche
+          <code>float: left</code> per affiancare i div e <code>box-sizing: border-box</code>
+          per gestirne le dimensioni con precisione.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>index.html</strong>. Inserisci tre div,
+          ognuno con due classi: una comune e una specifica per la colonna.
+          Collega il file CSS esterno <strong>style.css</strong>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;title&gt;Esercizio Background Colonne&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;div class="colonna colonna-1"&gt;&lt;/div&gt;
+              &lt;div class="colonna colonna-2"&gt;&lt;/div&gt;
+              &lt;div class="colonna colonna-3"&gt;&lt;/div&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella.
+          Prima definisci gli stili condivisi da tutte le colonne con la classe
+          <code>.colonna</code>, poi aggiungi l'immagine specifica per ciascuna:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          .colonna {
+            height: 200px;
+            width: 30%;
+            float: left;
+            box-sizing: border-box;
+            background-repeat: repeat-x;
+          }
+
+          .colonna-1 {
+            background-image: url("colonna1.jpg");
+          }
+
+          .colonna-2 {
+            background-image: url("colonna2.jpg");
+          }
+
+          .colonna-3 {
+            background-image: url("colonna3.jpg");
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Capire ogni proprietà</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Proprietà</th>
+              <th>Valore usato</th>
+              <th>Effetto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>width: 30%</code></td>
+              <td>30%</td>
+              <td>Ogni colonna occupa il 30% della larghezza disponibile</td>
+            </tr>
+            <tr>
+              <td><code>height: 200px</code></td>
+              <td>200px</td>
+              <td>Altezza fissa: necessaria perché i div sono vuoti</td>
+            </tr>
+            <tr>
+              <td><code>float: left</code></td>
+              <td>left</td>
+              <td>Affianca i div orizzontalmente</td>
+            </tr>
+            <tr>
+              <td><code>box-sizing: border-box</code></td>
+              <td>border-box</td>
+              <td>Il 30% include eventuali padding e bordi</td>
+            </tr>
+            <tr>
+              <td><code>background-repeat: repeat-x</code></td>
+              <td>repeat-x</td>
+              <td>L'immagine si ripete solo orizzontalmente</td>
+            </tr>
+            <tr>
+              <td><code>background-image</code></td>
+              <td><code>url("...")</code></td>
+              <td>Immagine diversa per ciascuna colonna</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Perché l'altezza è necessaria</h2>
+        <p>
+          I tre <code>div</code> nell'HTML sono vuoti: non contengono testo né altri elementi.
+          Un elemento vuoto ha altezza zero di default, quindi non sarebbe visibile.
+          La regola <code>height: 200px</code> garantisce che le colonne abbiano
+          una dimensione verticale sufficiente a mostrare le immagini di sfondo.
+        </p>
+
+        <h2>Passo 5 — Aggiungere le immagini di test</h2>
+        <p>
+          Per testare l'esercizio avrai bisogno di tre file immagine nella stessa cartella
+          dell'HTML, chiamati <strong>colonna1.jpg</strong>, <strong>colonna2.jpg</strong>
+          e <strong>colonna3.jpg</strong>. Puoi usare qualsiasi immagine di larghezza
+          inferiore alla colonna per vedere l'effetto di ripetizione.
+        </p>
+        <p>
+          Per verificare la struttura senza immagini reali, puoi usare colori di sfondo:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — versione con colori di test</div>
+          <pre>
+          .colonna-1 { background-color: #fecaca; }
+          .colonna-2 { background-color: #bbf7d0; }
+          .colonna-3 { background-color: #bfdbfe; }
+          </pre>
+        </div>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Tre colonne affiancate, ciascuna larga il 30% della pagina e alta 200px.
+          Ognuna mostra un'immagine di sfondo diversa, ripetuta orizzontalmente.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p>
+          <strong>Nota su <code>float</code>:</strong> questo metodo di layout era molto
+          comune prima dell'introduzione di Flexbox e Grid. Quando si usa <code>float</code>,
+          il contenitore padre può "collassare" e non avvolgere i figli. Per evitarlo
+          si aggiunge spesso un elemento vuoto con <code>clear: both</code> dopo le colonne,
+          oppure si usa la tecnica del <em>clearfix</em>.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS</a></li>
+            <li><a href="#passo-3">Le proprietà</a></li>
+            <li><a href="#passo-4">Perché serve l'altezza</a></li>
+            <li><a href="#passo-5">Immagini di test</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>background-image</code></li>
+            <li style="margin-bottom:8px;"><code>background-repeat</code></li>
+            <li style="margin-bottom:8px;"><code>float: left</code></li>
+            <li style="margin-bottom:8px;"><code>box-sizing</code></li>
+            <li><code>height</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>
