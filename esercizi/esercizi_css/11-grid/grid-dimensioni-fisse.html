@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid: dimensioni fisse per righe e colonne — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Grid: dimensioni fisse per righe e colonne
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Grid #3</span>
+      </div>
+      <h1>Grid: dimensioni fisse per righe e colonne</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>grid-template-columns · grid-template-rows · px</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio creerai una griglia CSS di <strong>5 colonne e 2 righe</strong>
+          con dimensioni completamente fisse: ogni colonna sarà larga <strong>100 pixel</strong>
+          e ogni riga sarà alta <strong>50 pixel</strong>. Userai sia
+          <code>grid-template-columns</code> che <code>grid-template-rows</code> insieme.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>index.html</strong> con dieci elementi
+          <code>.grid-item</code> dentro un <code>.grid-container</code> (5 colonne × 2 righe
+          = 10 celle). Collega il file CSS esterno tramite il tag <code>&lt;link&gt;</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html lang="it"&gt;
+            &lt;head&gt;
+              &lt;title&gt;Grid Dimensioni Fisse&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;div class="grid-container"&gt;
+                &lt;div class="grid-item"&gt;1&lt;/div&gt;
+                &lt;div class="grid-item"&gt;2&lt;/div&gt;
+                &lt;div class="grid-item"&gt;3&lt;/div&gt;
+                &lt;div class="grid-item"&gt;4&lt;/div&gt;
+                &lt;div class="grid-item"&gt;5&lt;/div&gt;
+                &lt;div class="grid-item"&gt;6&lt;/div&gt;
+                &lt;div class="grid-item"&gt;7&lt;/div&gt;
+                &lt;div class="grid-item"&gt;8&lt;/div&gt;
+                &lt;div class="grid-item"&gt;9&lt;/div&gt;
+                &lt;div class="grid-item"&gt;10&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella di
+          <code>index.html</code>. Usa <code>repeat()</code> per definire sia le colonne
+          che le righe con dimensioni fisse:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: repeat(2, 50px);
+            gap: 10px;
+          }
+
+          .grid-item {
+            padding: 10px;
+            border: 1px solid black;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — <code>grid-template-rows</code></h2>
+        <p>
+          Così come <code>grid-template-columns</code> controlla la larghezza delle colonne,
+          <code>grid-template-rows</code> controlla l'<strong>altezza delle righe</strong>.
+          Il suo funzionamento è identico: si elencano i valori separati da uno spazio o si
+          usa <code>repeat()</code>:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Definizione</th>
+              <th>Risultato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>grid-template-rows: 50px 50px</code></td>
+              <td>Due righe alte 50px ciascuna</td>
+            </tr>
+            <tr>
+              <td><code>grid-template-rows: repeat(2, 50px)</code></td>
+              <td>Identico alla riga sopra, scritto in modo più compatto</td>
+            </tr>
+            <tr>
+              <td><code>grid-template-rows: 100px 1fr</code></td>
+              <td>Prima riga fissa a 100px, seconda che occupa lo spazio rimanente</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Osserva l'overflow (opzionale)</h2>
+        <p>
+          Il <code>padding: 10px</code> che hai messo sugli item potrebbe far traboccare
+          il contenuto dalle celle di 50px. Questo dipende dal <code>box-sizing</code>.
+          Prova ad aggiungere <code>box-sizing: border-box</code> al <code>.grid-item</code>
+          per includere il padding nelle dimensioni della cella:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Con box-sizing</div>
+          <pre>
+          .grid-item {
+            padding: 10px;
+            border: 1px solid black;
+            box-sizing: border-box;
+          }
+          </pre>
+        </div>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Una griglia di 5 colonne × 2 righe in cui ogni cella ha esattamente 100px di
+          larghezza e 50px di altezza, indipendentemente dal contenuto o dalla finestra
+          del browser.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Griglia rigida vs. griglia flessibile:</strong></p>
+        <p>
+          Una griglia con dimensioni fisse in pixel non si adatta alle diverse dimensioni
+          dello schermo. Nelle applicazioni reali si preferisce usare <code>fr</code>,
+          <code>minmax()</code> o <code>auto</code> per creare griglie responsive. Le
+          dimensioni fisse sono utili invece per componenti UI precisi come icone, celle
+          di tabella o pixel art.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS</a></li>
+            <li><a href="#passo-3">grid-template-rows</a></li>
+            <li><a href="#passo-4">Overflow e box-sizing</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>grid-template-columns</code></li>
+            <li style="margin-bottom:8px;"><code>grid-template-rows</code></li>
+            <li style="margin-bottom:8px;"><code>repeat()</code></li>
+            <li style="margin-bottom:8px;"><code>px</code> (pixel)</li>
+            <li><code>box-sizing: border-box</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid: spaziatura tra celle — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Grid: spaziatura tra celle
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Grid #2</span>
+      </div>
+      <h1>Grid: spaziatura tra celle</h1>
+      <div class="ex-meta">
+        <span>⏱ 15 minuti</span>
+        <span>·</span>
+        <span>display:grid · gap · column-gap · row-gap</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio creerai una griglia CSS di 4 colonne e imposterai una
+          <strong>spaziatura di 20 pixel</strong> tra tutte le celle usando la proprietà
+          <code>gap</code>. Imparerai la differenza tra <code>gap</code>, <code>column-gap</code>
+          e <code>row-gap</code>, e come la spaziatura si comporta con il layout a griglia.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>index.html</strong> con otto elementi
+          <code>.grid-item</code> dentro un <code>.grid-container</code> (due righe da quattro
+          colonne). Collega il file CSS esterno tramite il tag <code>&lt;link&gt;</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html lang="it"&gt;
+            &lt;head&gt;
+              &lt;title&gt;Grid Gap&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;div class="grid-container"&gt;
+                &lt;div class="grid-item"&gt;1&lt;/div&gt;
+                &lt;div class="grid-item"&gt;2&lt;/div&gt;
+                &lt;div class="grid-item"&gt;3&lt;/div&gt;
+                &lt;div class="grid-item"&gt;4&lt;/div&gt;
+                &lt;div class="grid-item"&gt;5&lt;/div&gt;
+                &lt;div class="grid-item"&gt;6&lt;/div&gt;
+                &lt;div class="grid-item"&gt;7&lt;/div&gt;
+                &lt;div class="grid-item"&gt;8&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con <code>gap</code></h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella di
+          <code>index.html</code>. Usa <code>gap: 20px</code> per impostare la stessa
+          spaziatura sia tra le colonne che tra le righe:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+          }
+
+          .grid-item {
+            padding: 10px;
+            border: 1px solid black;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — <code>gap</code>, <code>column-gap</code> e <code>row-gap</code></h2>
+        <p>
+          La proprietà <code>gap</code> è una scorciatoia che imposta sia lo spazio tra le
+          righe (<code>row-gap</code>) che tra le colonne (<code>column-gap</code>):
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Proprietà</th>
+              <th>Effetto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>gap: 20px</code></td>
+              <td>20px tra righe e 20px tra colonne</td>
+            </tr>
+            <tr>
+              <td><code>gap: 10px 20px</code></td>
+              <td>10px tra righe, 20px tra colonne</td>
+            </tr>
+            <tr>
+              <td><code>row-gap: 10px</code></td>
+              <td>Solo 10px tra le righe</td>
+            </tr>
+            <tr>
+              <td><code>column-gap: 20px</code></td>
+              <td>Solo 20px tra le colonne</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Prova spaziature diverse (opzionale)</h2>
+        <p>
+          Sostituisci <code>gap: 20px</code> con <code>gap: 10px 40px</code> per avere
+          una spaziatura verticale diversa da quella orizzontale, e osserva il risultato
+          nel browser:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Spaziatura asimmetrica</div>
+          <pre>
+          .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px 40px; /* riga colonna */
+          }
+          </pre>
+        </div>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Una griglia di 4 colonne × 2 righe in cui ogni cella è separata dalle
+          adiacenti da uno spazio uniforme di 20 pixel, sia orizzontalmente che
+          verticalmente.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p><strong><code>gap</code> non aggiunge spazio ai bordi esterni:</strong></p>
+        <p>
+          A differenza del <code>margin</code>, la proprietà <code>gap</code> inserisce
+          spazio <em>solo tra</em> gli elementi, mai tra un elemento e il bordo del
+          container. Per aggiungere spazio esterno usa <code>padding</code> sul container.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con gap</a></li>
+            <li><a href="#passo-3">gap, column-gap, row-gap</a></li>
+            <li><a href="#passo-4">Spaziature diverse</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>gap</code></li>
+            <li style="margin-bottom:8px;"><code>row-gap</code></li>
+            <li style="margin-bottom:8px;"><code>column-gap</code></li>
+            <li style="margin-bottom:8px;"><code>repeat(4, 1fr)</code></li>
+            <li><code>grid-template-columns</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

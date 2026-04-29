@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexbox: elementi in riga — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Flexbox: elementi in riga
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Flexbox #1</span>
+      </div>
+      <h1>Flexbox: elementi in riga</h1>
+      <div class="ex-meta">
+        <span>⏱ 15 minuti</span>
+        <span>·</span>
+        <span>display:flex · flex-container · flex-item</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio creerai il tuo primo layout con <strong>Flexbox</strong>. Flexbox è un
+          sistema di layout CSS che permette di distribuire e allineare elementi in modo semplice e
+          flessibile. L'obiettivo è disporre tre <code>&lt;div&gt;</code> in riga orizzontale usando
+          la proprietà <code>display: flex</code> sul loro contenitore.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>index.html</strong>. Aggiungi un
+          <code>&lt;div&gt;</code> contenitore con tre <code>&lt;div&gt;</code> figli all'interno.
+          Ricorda di collegare il file CSS esterno con il tag <code>&lt;link&gt;</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html lang="it"&gt;
+            &lt;head&gt;
+              &lt;title&gt;Flexbox Riga&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;div class="flex-container"&gt;
+                &lt;div class="flex-item"&gt;Elemento 1&lt;/div&gt;
+                &lt;div class="flex-item"&gt;Elemento 2&lt;/div&gt;
+                &lt;div class="flex-item"&gt;Elemento 3&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella di
+          <code>index.html</code>. Applica <code>display: flex</code> al contenitore e aggiungi
+          un bordo e un padding agli elementi figli:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          .flex-container {
+            display: flex;
+          }
+
+          .flex-item {
+            padding: 10px;
+            border: 1px solid black;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Come funziona <code>display: flex</code></h2>
+        <p>
+          Quando applichi <code>display: flex</code> a un elemento, quel <strong>elemento diventa
+          il flex container</strong> e i suoi figli diretti diventano i <strong>flex item</strong>.
+          Per impostazione predefinita, i flex item si dispongono in riga (<code>flex-direction: row</code>).
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Termine</th>
+              <th>Significato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Flex container</strong></td>
+              <td>L'elemento padre su cui si applica <code>display: flex</code></td>
+            </tr>
+            <tr>
+              <td><strong>Flex item</strong></td>
+              <td>Ogni figlio diretto del flex container</td>
+            </tr>
+            <tr>
+              <td><strong>Asse principale</strong></td>
+              <td>La direzione in cui si dispongono gli item (per default: orizzontale)</td>
+            </tr>
+            <tr>
+              <td><strong>Asse trasversale</strong></td>
+              <td>La direzione perpendicolare all'asse principale</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Risultato atteso</h2>
+        <p>I tre <code>div</code> si disporranno fianco a fianco in orizzontale, ciascuno con
+          un bordo visibile e un po' di padding interno.</p>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Perché i <code>div</code> normalmente si impilano in verticale?</strong></p>
+        <p>
+          Il <code>&lt;div&gt;</code> è un elemento <em>block-level</em>: per impostazione predefinita
+          occupa tutta la larghezza disponibile e si dispone sotto il precedente. Con
+          <code>display: flex</code>, il comportamento dei figli cambia: si dispongono lungo l'asse
+          principale del container, che di default è orizzontale.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS</a></li>
+            <li><a href="#passo-3">Come funziona flex</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>display: flex</code></li>
+            <li style="margin-bottom:8px;"><code>flex-container</code></li>
+            <li style="margin-bottom:8px;"><code>flex-item</code></li>
+            <li><code>flex-direction: row</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

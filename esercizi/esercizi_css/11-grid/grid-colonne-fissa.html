@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid: colonna a larghezza fissa — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Grid: colonna a larghezza fissa
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Grid #1</span>
+      </div>
+      <h1>Grid: colonna a larghezza fissa</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span>
+        <span>·</span>
+        <span>display:grid · grid-template-columns · fr · px</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio creerai una griglia CSS di 5 colonne in cui la quarta colonna ha
+          una larghezza fissa di <strong>150 pixel</strong>, mentre le altre quattro si adattano
+          proporzionalmente allo spazio rimanente. Imparerai a usare <code>display: grid</code>
+          e la funzione <code>repeat()</code> insieme all'unità frazionale <code>fr</code>.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>index.html</strong> con cinque elementi
+          <code>.grid-item</code> dentro un <code>.grid-container</code>. Collega il file CSS
+          esterno tramite il tag <code>&lt;link&gt;</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html lang="it"&gt;
+            &lt;head&gt;
+              &lt;title&gt;Grid Colonna Fissa&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;div class="grid-container"&gt;
+                &lt;div class="grid-item"&gt;Colonna 1&lt;/div&gt;
+                &lt;div class="grid-item"&gt;Colonna 2&lt;/div&gt;
+                &lt;div class="grid-item"&gt;Colonna 3&lt;/div&gt;
+                &lt;div class="grid-item"&gt;Colonna 4&lt;/div&gt;
+                &lt;div class="grid-item"&gt;Colonna 5&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella di
+          <code>index.html</code>. In <code>grid-template-columns</code> definisci ogni
+          colonna separata da uno spazio: le prime tre e l'ultima usano <code>1fr</code>,
+          la quarta usa <code>150px</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 150px 1fr;
+            gap: 10px;
+          }
+
+          .grid-item {
+            padding: 10px;
+            border: 1px solid black;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — Cos'è l'unità <code>fr</code>?</h2>
+        <p>
+          L'unità <code>fr</code> (fraction) rappresenta una <strong>frazione dello spazio
+          disponibile</strong> nel grid container. Dopo aver sottratto le colonne a dimensione
+          fissa (come <code>150px</code>), lo spazio rimanente viene diviso in frazioni uguali
+          tra le colonne che usano <code>fr</code>:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Definizione colonne</th>
+              <th>Risultato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>1fr 1fr 1fr</code></td>
+              <td>Tre colonne di uguale larghezza</td>
+            </tr>
+            <tr>
+              <td><code>2fr 1fr</code></td>
+              <td>Prima colonna larga il doppio della seconda</td>
+            </tr>
+            <tr>
+              <td><code>1fr 150px 1fr</code></td>
+              <td>Colonna centrale fissa, le altre si dividono lo spazio restante</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Usare <code>repeat()</code> (opzionale)</h2>
+        <p>
+          La funzione <code>repeat()</code> permette di abbreviare la definizione quando
+          più colonne hanno lo stesso valore. Puoi riscrivere l'esercizio usando
+          <code>repeat()</code> per le colonne <code>1fr</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Variante con repeat()</div>
+          <pre>
+          .grid-container {
+            display: grid;
+            /* Equivalente a: 1fr 1fr 1fr 150px 1fr */
+            grid-template-columns: repeat(3, 1fr) 150px 1fr;
+            gap: 10px;
+          }
+          </pre>
+        </div>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          Cinque celle in riga: le prime tre e l'ultima si dividono equamente lo spazio
+          disponibile, mentre la quarta rimane fissa a 150 pixel indipendentemente dalla
+          larghezza della finestra.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Differenza tra <code>fr</code> e <code>%</code>:</strong></p>
+        <p>
+          Con <code>%</code> la larghezza è calcolata rispetto al container totale, incluso
+          il <code>gap</code>. Con <code>fr</code> lo spazio viene distribuito
+          <em>dopo</em> aver tolto il gap e le colonne fisse, evitando il problema del
+          overflow quando si sommano percentuali e gap.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS</a></li>
+            <li><a href="#passo-3">L'unità fr</a></li>
+            <li><a href="#passo-4">Usare repeat()</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>display: grid</code></li>
+            <li style="margin-bottom:8px;"><code>grid-template-columns</code></li>
+            <li style="margin-bottom:8px;"><code>fr</code></li>
+            <li style="margin-bottom:8px;"><code>repeat()</code></li>
+            <li><code>gap</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

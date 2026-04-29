@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexbox: riga centrata — Corso Web</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../../css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">💻</span>
+        <span class="logo-text">CorsoWeb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="../../../index.html#esercizi-excel">Esercizi Excel</a>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <a href="../../../index.html#argomenti">Argomenti</a>
+        <a href="../../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../../index.html#esercizi-css">Esercizi CSS</a>
+        <span>›</span>
+        Flexbox: riga centrata
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO ESERCIZIO -->
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540; color:#93c5fd; border:1px solid #2a3a60;">Flexbox #2</span>
+      </div>
+      <h1>Flexbox: riga centrata</h1>
+      <div class="ex-meta">
+        <span>⏱ 15 minuti</span>
+        <span>·</span>
+        <span>display:flex · justify-content · center</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORPO ESERCIZIO -->
+  <section class="ex-body">
+    <div class="container">
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>
+          In questo esercizio userai la proprietà <code>justify-content</code> di Flexbox per
+          centrare orizzontalmente cinque elementi <code>&lt;div&gt;</code> all'interno del loro
+          contenitore. <code>justify-content</code> controlla la distribuzione degli item lungo
+          l'<strong>asse principale</strong> del flex container.
+        </p>
+
+        <h2>Passo 1 — Creare la struttura HTML</h2>
+        <p>
+          Crea un nuovo file chiamato <strong>index.html</strong> con cinque elementi
+          <code>.flex-item</code> dentro un <code>.flex-container</code>. Collega il file CSS
+          esterno tramite il tag <code>&lt;link&gt;</code>:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">index.html</div>
+          <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html lang="it"&gt;
+            &lt;head&gt;
+              &lt;title&gt;Flexbox Riga Centrata&lt;/title&gt;
+              &lt;link rel="stylesheet" href="style.css" /&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;div class="flex-container"&gt;
+                &lt;div class="flex-item"&gt;Elemento 1&lt;/div&gt;
+                &lt;div class="flex-item"&gt;Elemento 2&lt;/div&gt;
+                &lt;div class="flex-item"&gt;Elemento 3&lt;/div&gt;
+                &lt;div class="flex-item"&gt;Elemento 4&lt;/div&gt;
+                &lt;div class="flex-item"&gt;Elemento 5&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+          </pre>
+        </div>
+
+        <h2>Passo 2 — Creare il file CSS con <code>justify-content</code></h2>
+        <p>
+          Crea un nuovo file chiamato <strong>style.css</strong> nella stessa cartella di
+          <code>index.html</code>. Usa <code>justify-content: center</code> per centrare gli
+          elementi lungo l'asse orizzontale:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css</div>
+          <pre>
+          .flex-container {
+            display: flex;
+            justify-content: center;
+          }
+
+          .flex-item {
+            padding: 10px;
+            border: 1px solid black;
+          }
+          </pre>
+        </div>
+
+        <h2>Passo 3 — I valori di <code>justify-content</code></h2>
+        <p>
+          <code>justify-content</code> controlla come vengono distribuiti gli elementi lungo
+          l'asse principale. Ecco i valori più utilizzati:
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Valore</th>
+              <th>Effetto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>flex-start</code></td>
+              <td>Tutti gli item raggruppati all'inizio (sinistra per righe)</td>
+            </tr>
+            <tr>
+              <td><code>flex-end</code></td>
+              <td>Tutti gli item raggruppati alla fine (destra per righe)</td>
+            </tr>
+            <tr>
+              <td><code>center</code></td>
+              <td>Tutti gli item centrati</td>
+            </tr>
+            <tr>
+              <td><code>space-between</code></td>
+              <td>Spazio uguale tra gli item, niente spazio ai bordi</td>
+            </tr>
+            <tr>
+              <td><code>space-around</code></td>
+              <td>Spazio uguale intorno a ogni item</td>
+            </tr>
+            <tr>
+              <td><code>space-evenly</code></td>
+              <td>Spazio identico tra tutti gli item e i bordi</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Passo 4 — Prova gli altri valori (opzionale)</h2>
+        <p>
+          Sostituisci <code>center</code> con gli altri valori della tabella per osservare
+          la differenza nel browser. Prova anche ad aggiungere un colore di sfondo al
+          container per rendere visibile lo spazio disponibile:
+        </p>
+
+        <div class="formula-block">
+          <div class="formula-label">style.css — Variante con sfondo</div>
+          <pre>
+          .flex-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f0f0f0;
+            padding: 10px;
+          }
+
+          .flex-item {
+            padding: 10px;
+            border: 1px solid black;
+            background-color: white;
+          }
+          </pre>
+        </div>
+
+        <h2>Risultato atteso</h2>
+        <p>
+          I cinque elementi si disporranno in riga orizzontale e saranno raggruppati al
+          centro della pagina, con spazio libero ai lati.
+        </p>
+
+        <h2>Approfondimenti</h2>
+        <p><strong>Differenza tra <code>justify-content</code> e <code>align-items</code>:</strong></p>
+        <p>
+          <code>justify-content</code> agisce sull'<em>asse principale</em> (orizzontale di default),
+          mentre <code>align-items</code> agisce sull'<em>asse trasversale</em> (verticale di default).
+          Per centrare gli elementi sia in orizzontale che in verticale si usano entrambe le proprietà
+          insieme: <code>justify-content: center; align-items: center;</code>.
+        </p>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice dei passi</h3>
+          <ol>
+            <li><a href="#passo-1">Struttura HTML</a></li>
+            <li><a href="#passo-2">File CSS con justify-content</a></li>
+            <li><a href="#passo-3">Valori di justify-content</a></li>
+            <li><a href="#passo-4">Prova gli altri valori</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti chiave</h3>
+          <ul style="list-style:none; padding:0; font-size:0.88rem; color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>justify-content</code></li>
+            <li style="margin-bottom:8px;"><code>center</code></li>
+            <li style="margin-bottom:8px;"><code>space-between</code></li>
+            <li style="margin-bottom:8px;"><code>space-around</code></li>
+            <li><code>asse principale</code></li>
+          </ul>
+        </div>
+        <a href="../../../index.html#esercizi-css" class="btn-card" style="display:block; text-align:center; margin-top:4px;">
+          ← Esercizi CSS
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>Hai domande? Scrivimi a <a href="mailto:info@esempio.it">info@esempio.it</a></p>
+      <p class="footer-copy">&copy; 2026 CorsoWeb — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>
