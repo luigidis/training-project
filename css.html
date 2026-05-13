@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esercizi CSS — Piattaforma Esercizi</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="excel.html">Excel</a>
+        <a href="word.html">Word</a>
+        <a href="css.html">CSS</a>
+        <a href="html-css.html">HTML &amp; CSS</a>
+        <a href="index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Esercizi <span class="accent">CSS</span></h1>
+      <p class="hero-sub">Impara a stilizzare pagine web con CSS attraverso esercizi pratici organizzati per argomento.</p>
+    </div>
+  </section>
+
+  <!-- SEZIONE ESERCIZI CSS -->
+  <section class="section">
+    <div class="container">
+
+      <!-- BASE -->
+      <h3 style="margin-top: 2rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Base</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#1</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Collegare File CSS Esterno</h3>
+          <p class="card-desc">Impara a collegare un file CSS esterno al tuo documento HTML e applica il tuo primo stile con la proprietà color per i paragrafi.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/01-base/collegare-file-css.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SELETTORI DI ELEMENTI -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Selettori di Elementi</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#2</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Selettori per Intestazioni e Paragrafi</h3>
+          <p class="card-desc">Usa i selettori di tipo per applicare stili a tutti gli elementi h1, h2, h3 e p. Impara a raggruppare selettori per efficienza.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/02-selettori-elementi/selettori-intestazioni-paragrafi.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#3</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Selettore per Tabelle</h3>
+          <p class="card-desc">Applica stili alle celle di una tabella usando selettori discendenti. Impara la struttura base delle tabelle HTML.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/02-selettori-elementi/selettori-tabella.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SELETTORI DI CLASSE -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Selettori di Classe</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#4</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Classi per Titolo e Testo</h3>
+          <p class="card-desc">Impara a usare i selettori di classe per stilizzare elementi specifici. Assegna classi "titolo" e "testo" e applicagli stili diversi.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/03-selettori-classe/classe-titolo-testo.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#5</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Classi per Input e Titolo</h3>
+          <p class="card-desc">Applica classi a diversi tipi di elementi HTML (input e h2). Impara a stilizzare campi di input per migliorare l'esperienza utente.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/03-selettori-classe/classe-input-titolo.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#6</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Riutilizzo delle Classi</h3>
+          <p class="card-desc">Scopri il potere della riutilizzabilità: assegna la stessa classe a più paragrafi e stilizzali tutti con una singola regola CSS.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/03-selettori-classe/classe-paragrafi.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARGIN E PADDING -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Margin e Padding</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#7</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Margin e Padding su Link</h3>
+          <p class="card-desc">Impara la differenza tra margin (spazio esterno) e padding (spazio interno). Comprendi il Box Model CSS applicandolo a un link.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 25 min</span>
+            <a href="esercizi/esercizi_css/04-margin-padding/margin-padding-link.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#8</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Margin e Padding su Lista</h3>
+          <p class="card-desc">Applica margin e padding agli elementi di una lista. Controlla lo spazio interno ed esterno per creare liste ben strutturate.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/04-margin-padding/margin-padding-lista.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#9</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Lista con Marker Personalizzati</h3>
+          <p class="card-desc">Combina margin, padding e colore per personalizzare completamente una lista. Impara a colorare i marker (punti) della lista.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 25 min</span>
+            <a href="esercizi/esercizi_css/04-margin-padding/margin-padding-lista-rosso.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIMENSIONI E DISPLAY -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Dimensioni e Display</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#10</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Dimensioni di un Div</h3>
+          <p class="card-desc">Controlla le dimensioni di un elemento div con width, height, min-height e max-width per creare layout responsive e controllati.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/05-dimensioni-display/dimensioni-div.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#11</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Lista con Dimensioni</h3>
+          <p class="card-desc">Stilizza una lista non ordinata applicando dimensioni personalizzate agli elementi, rimuovi i marker e aggiungi spaziatura.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 25 min</span>
+            <a href="esercizi/esercizi_css/05-dimensioni-display/lista-dimensioni.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#12</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Stilizzare un Link</h3>
+          <p class="card-desc">Trasforma un link in un pulsante utilizzando display, dimensioni, text-decoration, text-align e line-height. Aggiungi effetti hover.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 25 min</span>
+            <a href="esercizi/esercizi_css/05-dimensioni-display/link-stile.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOX SIZING -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Box Sizing</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#13</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">border-box su Paragrafo</h3>
+          <p class="card-desc">Usa box-sizing: border-box su un paragrafo per garantire che padding e bordo siano inclusi nella larghezza totale di 200px.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/08-box-sizing/box-sizing-paragrafo.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#14</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">content-box su Link</h3>
+          <p class="card-desc">Applica box-sizing: content-box a un link e scopri perché la larghezza totale supera i 100px specificati: padding e bordo si aggiungono all'esterno.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/08-box-sizing/box-sizing-link-content.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#15</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">border-box su Div</h3>
+          <p class="card-desc">Usa box-sizing: border-box su un div per mantenere la larghezza totale esattamente a 300px. Impara la regola globale * { box-sizing: border-box }.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/08-box-sizing/box-sizing-div.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#16</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">content-box su Lista</h3>
+          <p class="card-desc">Applica box-sizing: content-box agli elementi li: l'altezza di 40px misura solo il contenuto, mentre padding e bordo aumentano l'altezza totale.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/08-box-sizing/box-sizing-lista.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#17</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">border-box su Titolo</h3>
+          <p class="card-desc">Usa box-sizing: border-box su un h1 per fissare l'altezza totale a 80px. Utile per header e barre di navigazione con altezza precisa.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/08-box-sizing/box-sizing-titolo.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#18</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">content-box con Bordo su Link</h3>
+          <p class="card-desc">Esercizio riepilogativo: con content-box, width 120px diventa 162px totali sommando padding e bordo. Metti a confronto i due modelli nella stessa pagina.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/08-box-sizing/box-sizing-link-border.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSEUDO-CLASSI -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Pseudo-classi</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#19</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">:hover su Lista</h3>
+          <p class="card-desc">Usa la pseudo-classe :hover per cambiare il colore degli elementi di una lista quando il cursore vi passa sopra.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/06-pseudo-classi/hover-lista.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#20</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">:hover e :active su Pulsante</h3>
+          <p class="card-desc">Applica :hover e :active a un pulsante per cambiarne il colore al passaggio del mouse e al momento del clic.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/06-pseudo-classi/hover-active-pulsante.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#21</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">:hover e :active su Link</h3>
+          <p class="card-desc">Stilizza un link con :hover e :active. Scopri le quattro pseudo-classi dei link e il metodo LoVe HAte per ordinarle correttamente.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/06-pseudo-classi/hover-active-link.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#22</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">:hover e :active su Lista</h3>
+          <p class="card-desc">Combina :hover e :active su una lista per ottenere due livelli di feedback visivo: blu al passaggio del cursore, arancione al clic.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/06-pseudo-classi/hover-active-lista.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#23</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">:nth-child su Tabella</h3>
+          <p class="card-desc">Usa :nth-child(odd) per colorare le righe dispari di una tabella e creare l'effetto zebra striping che migliora la leggibilità.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/06-pseudo-classi/nth-child-tabella.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSEUDO-ELEMENTI -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Pseudo-elementi</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#24</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">::before su Paragrafo</h3>
+          <p class="card-desc">Usa ::before per aggiungere uno sfondo colorato a un paragrafo. Impara a combinare position: absolute e z-index con i pseudo-elementi.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/07-pseudo-elementi/before-paragrafo.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#25</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">::after su Titolo</h3>
+          <p class="card-desc">Usa ::after per aggiungere automaticamente una linea decorativa sotto ogni titolo h1, senza modificare l'HTML.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/07-pseudo-elementi/after-titolo.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#26</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">::before su Link</h3>
+          <p class="card-desc">Usa ::before per aggiungere un'icona freccia prima di ogni link tramite caratteri Unicode nella proprietà content.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/07-pseudo-elementi/before-link.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#27</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">::before e ::after su Lista</h3>
+          <p class="card-desc">Combina ::before e ::after su una lista per aggiungere parentesi graffe attorno a ogni elemento, usando solo CSS.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/07-pseudo-elementi/before-after-lista.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BACKGROUND -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Background</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#28</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Background Image su Link</h3>
+          <p class="card-desc">Usa background-image per inserire un'icona decorativa in un link. Controlla ripetizione e dimensioni dell'immagine e usa il padding per fare spazio al testo.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/09-background/background-link.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#29</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Background Image su Colonne</h3>
+          <p class="card-desc">Crea tre colonne affiancate con float e assegna a ciascuna un'immagine di sfondo diversa, ripetuta orizzontalmente con background-repeat: repeat-x.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 25 min</span>
+            <a href="esercizi/esercizi_css/09-background/background-colonne.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#30</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Background Image su Titolo</h3>
+          <p class="card-desc">Imposta un'immagine di sfondo su un titolo h1 e ripetila solo orizzontalmente con repeat-x. Scopri come padding e color rendono il testo leggibile sullo sfondo.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/09-background/background-titolo.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FLEXBOX -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Flexbox</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#31</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Flexbox: elementi in riga</h3>
+          <p class="card-desc">Crea il tuo primo layout Flexbox disponendo tre div in riga orizzontale. Scopri la differenza tra flex container e flex item e come funziona l'asse principale.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/10-flexbox/flex-riga.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#32</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Flexbox: riga centrata</h3>
+          <p class="card-desc">Centra orizzontalmente cinque elementi con justify-content: center. Esplora tutti i valori disponibili: flex-start, flex-end, space-between, space-around e space-evenly.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/10-flexbox/flex-riga-centrata.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#33</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Flexbox: colonna allineata a destra</h3>
+          <p class="card-desc">Disponi quattro elementi in colonna verticale con flex-direction: column e allineali al lato destro con align-items: flex-end. Impara come cambiano gli assi al cambiare della direzione.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/10-flexbox/flex-colonna-destra.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRID -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--white); font-size: 1.5rem;">Grid</h3>
+      <div class="cards-grid">
+        <div class="card" data-level="base">
+                  <span class="card-number">#34</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Grid: colonna a larghezza fissa</h3>
+          <p class="card-desc">Crea una griglia di 5 colonne in cui la quarta colonna ha larghezza fissa di 150px e le altre si adattano proporzionalmente. Scopri l'unità fr e la funzione repeat().</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/11-grid/grid-colonne-fissa.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#35</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Grid: spaziatura tra celle</h3>
+          <p class="card-desc">Crea una griglia di 4 colonne con una spaziatura uniforme di 20px tra tutte le celle. Impara la differenza tra gap, row-gap e column-gap e come usarli insieme.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 15 min</span>
+            <a href="esercizi/esercizi_css/11-grid/grid-gap.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#36</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Grid: dimensioni fisse per righe e colonne</h3>
+          <p class="card-desc">Costruisci una griglia di 5 colonne × 2 righe con dimensioni completamente fisse: colonne da 100px e righe da 50px. Usa grid-template-rows insieme a grid-template-columns.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/11-grid/grid-dimensioni-fisse.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+
+        <div class="card" data-level="base">
+
+                  <span class="card-number">#37</span>
+          <div class="card-badge base">Base</div>
+          <h3 class="card-title">Grid: prima riga a altezza fissa</h3>
+          <p class="card-desc">Crea una griglia 3×3 in cui la prima riga è alta esattamente 100px e le altre due si dividono equamente lo spazio rimanente. Pattern tipico per layout con header fisso.</p>
+          <div class="card-footer">
+            <span class="card-meta">⏱ 20 min</span>
+            <a href="esercizi/esercizi_css/11-grid/grid-riga-fissa.html" class="btn-card">Inizia</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

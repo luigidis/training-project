@@ -197,6 +197,56 @@ a:hover {
   gap: 20px;
 }
 
+/* ===== CATEGORY CARDS (Home Page) ===== */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.category-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(91, 141, 238, 0.2);
+}
+
+.category-icon {
+  display: block;
+  margin: 0 auto 20px;
+  opacity: 0.85;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.category-card:hover .category-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.category-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -207,6 +257,7 @@ a:hover {
   flex-direction: column;
   gap: 12px;
   transition: transform 0.2s, border-color 0.2s;
+  position: relative;
 }
 
 .card:hover {
@@ -216,6 +267,19 @@ a:hover {
 
 .card.hidden {
   display: none;
+}
+
+.card-number {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  padding: 4px 10px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
 }
 
 .card-badge {
