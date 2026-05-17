@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rapporto di Metà Mese — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Rapporto di Metà Mese
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #1</span>
+      </div>
+      <h1>Rapporto di Metà Mese</h1>
+      <div class="ex-meta">
+        <span>⏱ 20 minuti</span><span>·</span>
+        <span>Operatori aritmetici · Somma manuale · Struttura foglio</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il responsabile vendite di una piccola azienda. Devi creare un rapporto di metà mese con tutte le vendite effettuate e i costi sostenuti, calcolare i profitti e totali — <strong>senza usare funzioni</strong>, solo operatori aritmetici di base.</p>
+
+        <h2>Struttura della tabella</h2>
+        <p>Crea una tabella con le seguenti colonne:</p>
+        <table class="data-table">
+          <thead><tr><th>Colonna</th><th>Contenuto</th></tr></thead>
+          <tbody>
+            <tr><td>A</td><td>Data</td></tr>
+            <tr><td>B</td><td>Descrizione vendita</td></tr>
+            <tr><td>C</td><td>Vendite (€)</td></tr>
+            <tr><td>D</td><td>Costi (€)</td></tr>
+            <tr><td>E</td><td>Profitti (€)</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Dati da inserire</h2>
+        <p>Inserisci almeno <strong>8 righe</strong> di dati relativi alla prima metà del mese (date dall'1 al 15). Inventa i valori di vendite e costi, assicurandoti che i profitti siano diversi riga per riga.</p>
+
+        <h2>Passaggi da completare</h2>
+        <ol>
+          <li>Nella colonna <strong>Profitti</strong> di ogni riga, scrivi una formula che sottrae i Costi dalle Vendite:<br>
+            <code>=C2-D2</code> (copia verso il basso su tutte le righe)
+          </li>
+          <li>Dopo l'ultima riga di dati, aggiungi una riga <strong>TOTALE</strong>.</li>
+          <li>Nella cella del totale Vendite, calcola la somma <strong>senza usare la funzione SOMMA</strong>: scrivi tutti gli addendi uno per uno separati da <code>+</code>:<br>
+          </li>
+        </ol>
+        <div class="formula-block">
+          <div class="formula-label">Esempio totale Vendite (senza SOMMA)</div>
+          =C2+C3+C4+C5+C6+C7+C8+C9
+        </div>
+        <ol start="4">
+          <li>Fai lo stesso per la colonna <strong>Costi</strong>.</li>
+          <li>Per il totale <strong>Profitti</strong> puoi sottrarre il totale costi dal totale vendite oppure sommare tutti i profitti riga per riga.</li>
+          <li>Verifica che: <strong>Totale Vendite − Totale Costi = Totale Profitti</strong>.</li>
+        </ol>
+
+        <h2>Verifica finale</h2>
+        <ul>
+          <li>Nessuna formula contiene le parole SOMMA, MEDIA o altre funzioni</li>
+          <li>La riga TOTALE riporta la somma corretta di tutte le righe</li>
+          <li>Totale Profitti = Totale Vendite − Totale Costi</li>
+        </ul>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Struttura tabella</li>
+            <li>Inserimento dati</li>
+            <li>Colonna Profitti</li>
+            <li>Riga TOTALE</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti usati</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Operatori + e −</li>
+            <li style="margin-bottom:8px;">Referenze relative</li>
+            <li>Struttura base foglio</li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

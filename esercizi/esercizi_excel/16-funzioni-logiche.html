@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funzioni Logiche — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Funzioni Logiche
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge intermedio">Intermedio</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #16</span>
+      </div>
+      <h1>Valutazione Agenti — Funzioni Logiche SE, E, O</h1>
+      <div class="ex-meta">
+        <span>⏱ 45 minuti</span><span>·</span>
+        <span>SE() · E() · O() · Nomi celle · Operatore &amp;</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il responsabile delle risorse umane di una media impresa e devi costruire un sistema di valutazione automatico per i tuoi agenti commerciali. Userai le funzioni logiche <strong>SE</strong>, <strong>E</strong> e <strong>O</strong> per automatizzare decisioni su bonus, promozioni e piani di supporto.</p>
+
+        <h2>Impostazione iniziale</h2>
+        <p>In una cella separata inserisci il valore <code>15000</code> con l'etichetta "Target Vendite" nella cella vicina. Assegna alla cella il nome <code>target_vendite</code> (clicca sulla Casella Nome, digita il nome e premi Invio).</p>
+
+        <h2>Struttura della tabella</h2>
+        <p>Crea la tabella con le colonne: <strong>Agente | Reparto | Vendite | Presenze | Anni Servizio | Esito Vendite | Fascia | Bonus | Promozione | Supporto</strong></p>
+        <p>Inserisci questi dati nelle prime cinque colonne:</p>
+        <table class="data-table">
+          <thead><tr><th>Agente</th><th>Reparto</th><th>Vendite</th><th>Presenze</th><th>Anni</th></tr></thead>
+          <tbody>
+            <tr><td>Rossi</td><td>Vendite</td><td>18500</td><td>92</td><td>7</td></tr>
+            <tr><td>Bianchi</td><td>Marketing</td><td>12300</td><td>88</td><td>3</td></tr>
+            <tr><td>Ferrari</td><td>Vendite</td><td>21000</td><td>95</td><td>10</td></tr>
+            <tr><td>Esposito</td><td>IT</td><td>9800</td><td>75</td><td>2</td></tr>
+            <tr><td>Romano</td><td>Vendite</td><td>14800</td><td>90</td><td>5</td></tr>
+            <tr><td>Ricci</td><td>Marketing</td><td>16200</td><td>85</td><td>8</td></tr>
+            <tr><td>Conti</td><td>IT</td><td>11500</td><td>70</td><td>1</td></tr>
+            <tr><td>Greco</td><td>Vendite</td><td>19700</td><td>93</td><td>6</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Parte A — SE() di base</h2>
+        <p>Sintassi: <code>=SE(condizione; valore_se_vero; valore_se_falso)</code></p>
+        <ol>
+          <li>Nella colonna <strong>Esito Vendite</strong> scrivi questa formula e copiala su tutti:</li>
+        </ol>
+        <div class="formula-block">=SE(C2&gt;target_vendite;"Sopra Target";"Sotto Target")</div>
+        <ol start="2">
+          <li>Modifica <code>target_vendite</code> da 15000 a 20000 e osserva quante celle cambiano. Poi rimetti 15000.</li>
+        </ol>
+
+        <h2>Parte B — SE() con E() — tutte le condizioni devono essere vere</h2>
+        <p>Sintassi: <code>=SE(E(cond1;cond2); vero; falso)</code><br>E() restituisce VERO solo se <strong>tutte</strong> le condizioni sono vere contemporaneamente.</p>
+        <ol start="4">
+          <li>Nella colonna <strong>Fascia</strong>: agente "Senior" se ha più di 5 anni di servizio E presenze &gt; 85:</li>
+        </ol>
+        <div class="formula-block">=SE(E(E2&gt;5;D2&gt;85);"Senior";"Junior")</div>
+        <ol start="5">
+          <li>Nella colonna <strong>Bonus</strong>: diritto al bonus se supera il target E presenze ≥ 80%:</li>
+        </ol>
+        <div class="formula-block">=SE(E(C2&gt;target_vendite;D2&gt;=80);"Sì";"No")</div>
+        <ol start="6">
+          <li>Modifica le presenze di Conti da 70 a 82 e osserva se la colonna Bonus cambia. Poi rimetti il valore originale.</li>
+        </ol>
+
+        <h2>Parte C — SE() con O() — almeno una condizione deve essere vera</h2>
+        <p>Sintassi: <code>=SE(O(cond1;cond2); vero; falso)</code><br>O() restituisce VERO se <strong>almeno una</strong> condizione è vera.</p>
+        <ol start="7">
+          <li>Nella colonna <strong>Promozione</strong>: candidato se vendite &gt; 18000 OPPURE anni di servizio &gt; 8:</li>
+        </ol>
+        <div class="formula-block">=SE(O(C2&gt;18000;E2&gt;8);"Candidato";"Non Candidato")</div>
+        <ol start="8">
+          <li>Nella colonna <strong>Supporto</strong>: supporto necessario se presenze &lt; 80 OPPURE vendite &lt; 10000:</li>
+        </ol>
+        <div class="formula-block">=SE(O(D2&lt;80;C2&lt;10000);"Supporto Necessario";"OK")</div>
+
+        <h2>Parte D — Combinare SE con altre funzioni</h2>
+        <ol start="10">
+          <li>Aggiungi la colonna <strong>Importo Bonus</strong>: converte Sì/No in valore numerico:</li>
+        </ol>
+        <div class="formula-block">=SE(H2="Sì";500;0)</div>
+        <ol start="11">
+          <li>In una zona di riepilogo completa:
+            <ul>
+              <li><code>SOMMA</code> sulla colonna Importo Bonus → totale bonus da erogare</li>
+              <li><code>MEDIA</code> sulla colonna Vendite → media delle vendite</li>
+              <li><code>MAX</code> sulla colonna Vendite → vendite più alte</li>
+              <li><code>=SE(MAX(C2:C9)&gt;target_vendite;"Almeno un agente ha superato il target";"Nessun agente ha superato il target")</code></li>
+            </ul>
+          </li>
+          <li>Aggiungi la colonna <strong>Scheda Agente</strong> che concatena informazioni con l'operatore &amp;:</li>
+        </ol>
+        <div class="formula-block">=MAIUSC.INIZ(A2)&amp;" - "&amp;F2&amp;" - Bonus: "&amp;H2</div>
+
+        <h2>Differenza tra E() e O()</h2>
+        <table class="data-table">
+          <thead><tr><th>Funzione</th><th>Restituisce VERO se…</th><th>Risultato</th></tr></thead>
+          <tbody>
+            <tr><td><code>E(cond1;cond2)</code></td><td>TUTTE le condizioni sono vere</td><td>Più selettivo</td></tr>
+            <tr><td><code>O(cond1;cond2)</code></td><td>ALMENO UNA condizione è vera</td><td>Più inclusivo</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Nome cella target_vendite</li>
+            <li>Parte A — SE base</li>
+            <li>Parte B — SE con E()</li>
+            <li>Parte C — SE con O()</li>
+            <li>Parte D — Importo Bonus + Riepilogo</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Funzioni usate</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>SE(cond;vero;falso)</code></li>
+            <li style="margin-bottom:8px;"><code>E(c1;c2;...)</code></li>
+            <li style="margin-bottom:8px;"><code>O(c1;c2;...)</code></li>
+            <li><code>MAIUSC.INIZ</code> + <code>&amp;</code></li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

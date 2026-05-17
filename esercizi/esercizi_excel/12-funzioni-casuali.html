@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funzioni Casuali — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Funzioni Casuali
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge intermedio">Intermedio</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #12</span>
+      </div>
+      <h1>Estrazione Candidati — Funzioni Casuali</h1>
+      <div class="ex-meta">
+        <span>⏱ 45 minuti</span><span>·</span>
+        <span>CASUALE · CASUALE.TRA · SCEGLI · MATR.CASUALE · Incolla Valori</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il responsabile di un'agenzia di selezione del personale e devi simulare l'estrazione casuale di candidati per colloqui, turni e assegnazioni di gruppo. Imparerai le funzioni casuali di Excel e il <strong>trick dell'Incolla Speciale → Valori</strong> per bloccare i risultati.</p>
+
+        <h2>Struttura della tabella</h2>
+        <p>Crea una tabella con le colonne: <strong>Candidato | Punteggio Test | Fascia | Gruppo Assegnato | Giorno Colloquio</strong></p>
+        <p>Inserisci questi nomi nella colonna Candidato: Marco, Anna, Giuseppe, Antonio, Luca, Francesca, Davide, Chiara, Roberto, Elena.</p>
+
+        <h2>Parte A — CASUALE e CASUALE.TRA</h2>
+        <ol>
+          <li>Nella colonna <strong>Punteggio Test</strong> scrivi questa formula e copiala su tutti i candidati:</li>
+        </ol>
+        <div class="formula-block">=CASUALE.TRA(60;100)</div>
+        <ol start="2">
+          <li>Premi <strong>F9</strong> e osserva che tutti i punteggi cambiano: <code>CASUALE.TRA</code> è una funzione <em>volatile</em> che si ricalcola ad ogni modifica del foglio.</li>
+          <li>In una cella vuota scrivi <code>=CASUALE()</code>: restituisce un decimale tra 0 e 1. Accanto scrivi <code>=CASUALE()*100</code> per un numero tra 0 e 100, e poi <code>=INT(CASUALE()*100)</code> per un intero.</li>
+        </ol>
+
+        <h2>Parte B — Trick Incolla Valori per bloccare i risultati</h2>
+        <ol start="4">
+          <li>Seleziona tutto l'intervallo del <strong>Punteggio Test</strong>. Copia con <code>Ctrl+C</code>.</li>
+          <li>Con lo stesso intervallo ancora selezionato: <em>Home → Incolla → Incolla Valori</em> (simbolo 123). In alternativa: tasto destro → icona Incolla Valori.</li>
+          <li>Premi <strong>F9</strong> più volte: i punteggi non cambiano più. Le celle contengono numeri fissi, non più formule.</li>
+        </ol>
+        <div class="formula-block">
+          <div class="formula-label">Scorciatoia alternativa</div>
+          Ctrl+C → tasto destro → icona 123 (Incolla Valori)
+        </div>
+
+        <h2>Parte C — SCEGLI combinata con CASUALE.TRA</h2>
+        <ol start="7">
+          <li>Nella colonna <strong>Fascia</strong> scrivi questa formula e copiala su tutti i candidati:</li>
+        </ol>
+        <div class="formula-block">=SCEGLI(CASUALE.TRA(1;3);"Bassa";"Media";"Alta")</div>
+        <ol start="8">
+          <li>Nella colonna <strong>Gruppo Assegnato</strong> scrivi:</li>
+        </ol>
+        <div class="formula-block">=SCEGLI(CASUALE.TRA(1;5);"Marco";"Anna";"Giuseppe";"Antonio";"Luca")</div>
+        <ol start="9">
+          <li>Nella colonna <strong>Giorno Colloquio</strong> scrivi:</li>
+        </ol>
+        <div class="formula-block">=SCEGLI(CASUALE.TRA(1;5);"Lunedì";"Martedì";"Mercoledì";"Giovedì";"Venerdì")</div>
+        <ol start="10">
+          <li>Seleziona le colonne Fascia, Gruppo Assegnato e Giorno Colloquio, poi <strong>congela i risultati</strong> con Incolla Valori. Verifica che F9 non cambi più nulla.</li>
+        </ol>
+
+        <h2>Parte D — MATR.CASUALE</h2>
+        <ol start="11">
+          <li>In una zona vuota del foglio scrivi questa formula e premi Invio:</li>
+        </ol>
+        <div class="formula-block">=MATR.CASUALE(5;3;1;100;VERO)</div>
+        <p>I cinque argomenti: 5 righe, 3 colonne, minimo 1, massimo 100, <code>VERO</code> = interi. Excel riempie automaticamente un blocco 5×3 (nota la cornice blu: è una formula dinamica).</p>
+        <ol start="12">
+          <li>Premi <strong>F9</strong>: tutti i valori si aggiornano insieme. Prova a cambiare <code>5</code> in <code>8</code> per più righe, o <code>VERO</code> in <code>FALSO</code> per decimali.</li>
+          <li>Congela la matrice con <strong>Incolla Valori</strong>. La formula dinamica scompare, rimangono solo i numeri fissi.</li>
+        </ol>
+
+        <h2>Parte E — Riepilogo</h2>
+        <ol start="14">
+          <li>In una zona di riepilogo inserisci:
+            <ul>
+              <li><code>=CASUALE.TRA(1;10)</code> — candidato estratto per il primo colloquio</li>
+              <li><code>=SCEGLI(CASUALE.TRA(1;3);"Sala A";"Sala B";"Sala C")</code> — sala assegnata</li>
+            </ul>
+            Poi congela entrambi con Incolla Valori.
+          </li>
+        </ol>
+
+        <h2>Riepilogo funzioni</h2>
+        <table class="data-table">
+          <thead><tr><th>Funzione</th><th>Cosa fa</th></tr></thead>
+          <tbody>
+            <tr><td><code>CASUALE()</code></td><td>Decimale tra 0 e 1 — si usa raramente da sola</td></tr>
+            <tr><td><code>CASUALE.TRA(min;max)</code></td><td>Intero in un intervallo definito — scelta più diretta</td></tr>
+            <tr><td><code>SCEGLI(n;v1;v2...)</code></td><td>Estrae casualmente elementi da una lista</td></tr>
+            <tr><td><code>MATR.CASUALE(r;c;min;max;int)</code></td><td>Genera un'intera matrice di valori in una sola formula</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Parte A — CASUALE e CASUALE.TRA</li>
+            <li>Parte B — Incolla Valori</li>
+            <li>Parte C — SCEGLI</li>
+            <li>Parte D — MATR.CASUALE</li>
+            <li>Parte E — Riepilogo</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Scorciatoie</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>F9</code> — Ricalcola il foglio</li>
+            <li><code>Ctrl+C → Incolla Valori</code> — Blocca i risultati</li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

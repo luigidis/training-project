@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riepilogativo Completo — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Riepilogativo Completo
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge avanzato">Avanzato</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #21</span>
+      </div>
+      <h1>Catena Negozi Sportivi — Riepilogativo Completo</h1>
+      <div class="ex-meta">
+        <span>⏱ 90 minuti</span><span>·</span>
+        <span>Tutti i concetti degli esercizi 1–20 in un unico progetto</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il responsabile amministrativo di una catena di negozi di abbigliamento sportivo con tre filiali: Nord, Sud e Centro. Hai ricevuto un export grezzo dal vecchio gestionale e devi costruire da zero tutto il sistema di analisi della catena. Il file ha <strong>quattro fogli rinominati</strong>: Nord, Sud, Centro, Riepilogo. Questo esercizio integra tutti i concetti degli esercizi 1–20.</p>
+
+        <h2>Sezione 1 — Importazione dei dati (Testo in colonne)</h2>
+        <p>Sul foglio <strong>Riepilogo</strong>, in una zona vuota (colonna A), inserisci questi dati esattamente come appaiono:</p>
+        <div class="formula-block">
+Cognome;Nome;Reparto;Livello;Vendite;Presenze
+rossi;marco;Nord;Senior;18500;92
+bianchi;giulia;Sud;Junior;11200;78
+ferrari;luca;Centro;Middle;15300;88
+esposito;sara;Nord;Junior;9800;65
+romano;andrea;Sud;Senior;21000;95
+ricci;chiara;Centro;Middle;14200;82
+conti;matteo;Nord;Senior;19700;90
+greco;valentina;Sud;Junior;8900;71
+        </div>
+        <ol>
+          <li>Seleziona tutto il blocco e usa <strong>Testo in colonne</strong> con il delimitatore <code>;</code> per separare i sei campi in colonne distinte. Verifica che le intestazioni siano sulla prima riga.</li>
+        </ol>
+
+        <h2>Sezione 2 — Pulizia dei testi (MAIUSC.INIZ, &amp;, CONCAT, Flash Fill)</h2>
+        <p>Aggiungi le colonne: <strong>Nome Pulito | Cognome Pulito | Nome Completo | Email Aziendale | Scheda</strong></p>
+        <ol start="2">
+          <li>Nella colonna <strong>Nome Pulito</strong> usa <code>=MAIUSC.INIZ(...)</code> sul nome originale. Copia verso il basso.</li>
+          <li>Fai la stessa cosa nella colonna <strong>Cognome Pulito</strong> partendo dal cognome originale.</li>
+          <li>Congela Nome Pulito e Cognome Pulito con <strong>Incolla Valori</strong>.</li>
+          <li>Nella colonna <strong>Nome Completo</strong> unisci nome pulito, spazio e cognome pulito con l'operatore <code>&amp;</code>.</li>
+          <li>Nella colonna <strong>Email Aziendale</strong>: <code>=MINUSC(nome_pulito)&amp;"."&amp;MINUSC(cognome_pulito)&amp;"@sportnord.it"</code></li>
+          <li>In una colonna adiacente costruisci la stessa email con <code>CONCAT</code> e verifica che il risultato sia identico.</li>
+          <li>Nella colonna <strong>Scheda</strong> concatena più informazioni:</li>
+        </ol>
+        <div class="formula-block">=nome_completo&amp;" - "&amp;reparto&amp;" - Livello: "&amp;livello</div>
+
+        <h2>Sezione 3 — Riempimento automatico (serie, date, giorni)</h2>
+        <p>In una zona separata del foglio Riepilogo crea un calendario delle riunioni mensili di zona:</p>
+        <ol start="9">
+          <li>Prima colonna: serie numerica da 1 a 8 (trascina da 1 e 2).</li>
+          <li>Seconda colonna: date mensili a partire da <code>05/01/2026</code> (trascina da due date distanziate di 1 mese).</li>
+          <li>Terza colonna: scrivi <code>Lunedi</code> e trascina verso il basso (Excel completa i giorni della settimana).</li>
+          <li>Quarta colonna: scrivi <code>Nord</code> e <code>Sud</code> alternati e trascina per osservare il comportamento ciclico.</li>
+          <li>Riga extra: scrivi <code>Gennaio</code> e trascina a destra per 6 celle (serie dei mesi).</li>
+        </ol>
+
+        <h2>Sezione 4 — Calcoli base: SOMMA, MEDIA, MAX, MIN, CONTA</h2>
+        <ol start="14">
+          <li>Calcola il totale delle Vendite con <strong>SOMMA con intervallo</strong>.</li>
+          <li>Calcola lo stesso totale con <strong>SOMMA con celle singole</strong> separate da <code>;</code>.</li>
+          <li>Calcola la <strong>MEDIA</strong> delle Vendite con intervallo.</li>
+          <li>Trova il valore di vendita più alto con <strong>MAX</strong> e quello più basso con <strong>MIN</strong>.</li>
+          <li>Usa <strong>CONTA.NUMERI</strong> sulla colonna Presenze per i valori numerici.</li>
+          <li>Aggiungi manualmente <code>Assente</code> in una cella, poi usa <strong>CONTA.VALORI</strong> e <strong>CONTA.VUOTE</strong> e confronta con CONTA.NUMERI. Ripristina il valore originale dopo.</li>
+          <li>Calcola la <strong>MEDIA</strong> della colonna Presenze.</li>
+          <li>Aggiungi una riga <strong>TOTALE FILIALE</strong> con la <strong>Somma Automatica</strong> sulla colonna Vendite.</li>
+        </ol>
+
+        <h2>Sezione 5 — Referenze assolute e miste</h2>
+        <p>In una cella separata inserisci <code>300</code> con l'etichetta "Rimborso Spese:" e assegna il nome <code>rimborso_spese</code>. Crea una tabella commissioni:</p>
+        <table class="data-table">
+          <thead><tr><th>Livello</th><th>Comm %</th></tr></thead>
+          <tbody>
+            <tr><td>Junior</td><td>5</td></tr>
+            <tr><td>Middle</td><td>8</td></tr>
+            <tr><td>Senior</td><td>12</td></tr>
+          </tbody>
+        </table>
+        <p>Rinomina le celle dei valori: <code>commissione_junior</code>, <code>commissione_middle</code>, <code>commissione_senior</code>.</p>
+        <ol start="22">
+          <li>Aggiungi la colonna <strong>Commissione</strong>: formula che moltiplica le Vendite per la percentuale del livello corrispondente (verifica che ogni livello abbia la commissione corretta).</li>
+          <li>Aggiungi la colonna <strong>Guadagno Finale</strong>: <code>Commissione + rimborso_spese</code>. Copia verso il basso.</li>
+          <li>Cambia il rimborso da <code>300</code> a <code>450</code> e verifica che tutti i Guadagni si aggiornino. Poi rimetti 300.</li>
+          <li>Crea una tabella tariffe trasferta a doppia entrata (livelli vs distanze 50/100/200/300 km) con referenze miste: <code>=$colonna riga * colonna $riga</code>. Copia su tutta la griglia.</li>
+        </ol>
+
+        <h2>Sezione 6 — Nomi delle celle</h2>
+        <ol start="26">
+          <li>Seleziona i valori della colonna Vendite e assegna il nome <code>vendite_venditori</code>.</li>
+          <li>Seleziona i valori della colonna Presenze e assegna il nome <code>presenze_venditori</code>.</li>
+          <li>Scrivi queste formule usando i nomi:<br><code>=SOMMA(vendite_venditori)</code>, <code>=MEDIA(presenze_venditori)</code>, <code>=MAX(vendite_venditori)</code>, <code>=MIN(presenze_venditori)</code></li>
+          <li>Seleziona tutta la tabella e usa <em>Formule → Crea da selezione → Riga superiore</em>. Verifica i nomi creati automaticamente con la Casella Nome.</li>
+          <li>Apri <em>Formule → Gestione Nomi</em>, elimina uno dei nomi creati automaticamente che non usi in formule, verifica che le formule con nomi validi non mostrino errori.</li>
+        </ol>
+
+        <h2>Sezione 7 — Formattazione condizionale</h2>
+        <ol start="31">
+          <li>Colonna Vendite → <em>Maggiore di 17000</em> con sfondo <strong>verde</strong>.</li>
+          <li>Colonna Vendite → <em>Minore di 10000</em> con sfondo <strong>rosso</strong>.</li>
+          <li>Colonna Livello → <em>Testo che contiene "Senior"</em> con sfondo <strong>giallo</strong>.</li>
+          <li>Colonna Presenze → <em>Regole primi/ultimi → Sopra la media</em>.</li>
+          <li>Colonna Vendite → <em>Barre di dati</em> con un colore a scelta.</li>
+          <li>Colonna Presenze → <em>Scale colori</em> verde-giallo-rosso.</li>
+          <li>Colonna Commissione → <em>Set di icone</em> con le tre frecce.</li>
+          <li>Tramite <em>Gestisci Regole</em> rimuovi la regola del testo "Senior". Verifica che le altre rimangano.</li>
+          <li>Seleziona la colonna Vendite e usa <em>Cancella Regole dalle celle selezionate</em>. Verifica che le regole sulle altre colonne restino attive.</li>
+        </ol>
+
+        <h2>Sezione 8 — Funzioni casuali e Incolla Valori</h2>
+        <p>Crea una tabella: <strong>Prodotto | Scorta Simulata | Categoria Rischio | Fornitore Assegnato</strong></p>
+        <p>Prodotti: Scarpe Running, Felpa Tecnica, Zaino Sport, Guanti Fitness, Pantaloni Tech, Borraccia Pro, Maglietta Sport.</p>
+        <ol start="40">
+          <li>Colonna <strong>Scorta Simulata</strong>: <code>=CASUALE.TRA(5;150)</code> per ogni prodotto. Poi congela con Incolla Valori.</li>
+          <li>Colonna <strong>Categoria Rischio</strong>: <code>=SCEGLI(CASUALE.TRA(1;3);"Basso";"Medio";"Alto")</code>. Congela.</li>
+          <li>Colonna <strong>Fornitore Assegnato</strong>: <code>=SCEGLI(CASUALE.TRA(1;4);"FornitoreA";"FornitoreB";"FornitoreC";"FornitoreD")</code>. Congela.</li>
+          <li>In una zona vuota scrivi <code>=MATR.CASUALE(4;3;100;500;VERO)</code>. Osserva la formula dinamica. Congela con Incolla Valori.</li>
+        </ol>
+
+        <h2>Sezione 9 — Funzioni logiche: SE, E, O</h2>
+        <p>In una cella separata inserisci <code>15000</code> e assegna il nome <code>target_vendite</code>. Aggiungi le colonne: <strong>Esito | Promozione | Supporto | Bonus Sì/No | Importo Bonus</strong></p>
+        <ol start="45">
+          <li><strong>Esito</strong>: <code>=SE(vendite&gt;target_vendite;"Idoneo";"Non Idoneo")</code></li>
+          <li><strong>Promozione</strong>: <code>=SE(O(vendite&gt;18000;presenze&gt;=90);"Candidato";"Non Candidato")</code></li>
+          <li><strong>Supporto</strong>: <code>=SE(O(presenze&lt;75;vendite&lt;10000);"Supporto Necessario";"OK")</code></li>
+          <li><strong>Bonus Sì/No</strong>: <code>=SE(E(esito="Idoneo";presenze&gt;=80);"Sì";"No")</code></li>
+          <li><strong>Importo Bonus</strong>: <code>=SE(bonus="Sì";600;0)</code></li>
+          <li>Riepilogo: <code>=SE(MAX(vendite_venditori)&gt;target_vendite;"Almeno un venditore è idoneo";"Nessuno è idoneo")</code></li>
+          <li>Modifica <code>target_vendite</code> a 22000 e osserva le variazioni. Poi rimetti 15000.</li>
+        </ol>
+
+        <h2>Sezione 10 — Funzioni condizionali: CONTA.SE, SOMMA.SE, MEDIA.SE</h2>
+        <ol start="52">
+          <li><code>=CONTA.SE(reparto;"Nord")</code> — quanti venditori nel reparto Nord</li>
+          <li><code>=CONTA.SE(livello;"Junior")</code> — quanti Junior</li>
+          <li><code>=CONTA.SE(vendite;"&gt;15000")</code> — quanti con vendite &gt; 15000</li>
+          <li><code>=CONTA.PIU.SE(reparto;"Nord";livello;"Senior")</code></li>
+          <li><code>=CONTA.PIU.SE(reparto;"Sud";presenze;"&gt;80")</code></li>
+          <li><code>=SOMMA.SE(reparto;"Nord";vendite)</code></li>
+          <li><code>=SOMMA.SE(livello;"Junior";vendite)</code></li>
+          <li><code>=SOMMA.PIU.SE(vendite;reparto;"Nord";livello;"Senior")</code></li>
+          <li><code>=MEDIA.SE(reparto;"Sud";vendite)</code></li>
+          <li>Tabella riepilogativa 3×3 (Nord/Sud/Centro × Junior/Middle/Senior) con <strong>SOMMA.PIU.SE</strong> per ogni combinazione (9 formule in totale).</li>
+        </ol>
+
+        <h2>Sezione 11 — Riferimenti tra fogli</h2>
+        <p>Inserisci questi dati nei fogli Nord, Sud e Centro (struttura: Mese | Vendite | Costi, righe: Gennaio/Febbraio/Marzo):</p>
+        <table class="data-table">
+          <thead><tr><th>Foglio</th><th>Gen Vendite</th><th>Feb Vendite</th><th>Mar Vendite</th></tr></thead>
+          <tbody>
+            <tr><td>Nord</td><td>48200</td><td>52100</td><td>46700</td></tr>
+            <tr><td>Sud</td><td>31400</td><td>35900</td><td>29800</td></tr>
+            <tr><td>Centro</td><td>38600</td><td>41200</td><td>36100</td></tr>
+          </tbody>
+        </table>
+        <ol start="62">
+          <li>Recupera le vendite di Gennaio della filiale Nord: <code>=Nord!B2</code></li>
+          <li>Totale vendite della filiale Sud: <code>=SOMMA(Sud!B2:B4)</code></li>
+          <li>Tabella riepilogativa Mese/Totale Vendite/Totale Costi/Profitto con la sintassi multi-foglio: <code>=SOMMA(Nord:Centro!B2)</code></li>
+          <li>MAX e MEDIA globali: <code>=MAX(Nord:Centro!B2:B4)</code>, <code>=MEDIA(Nord:Centro!B2:B4)</code></li>
+        </ol>
+
+        <h2>Sezione 12 — CONFRONTA e INDICE</h2>
+        <p>Crea una tabella catalogo prodotti (Prodotto | Categoria | Prezzo | Scorta) con: Scarpe Running (89/45), Felpa Tecnica (65/30), Zaino Sport (49/60), Guanti Fitness (25/80), Pantaloni Tech (79/35), Borraccia Pro (18/120), Maglietta Sport (35/55).</p>
+        <ol start="66">
+          <li><code>=CONFRONTA("Zaino Sport";colonna_prodotti;0)</code> → 3</li>
+          <li>Prova con "Borraccia Pro" e poi con un prodotto inesistente (osserva #N/D).</li>
+          <li><code>=INDICE(colonna_prezzo;3)</code> → 49</li>
+          <li><code>=INDICE(tabella;5;3)</code> → 79 (riga 5, colonna 3)</li>
+          <li>Area di ricerca con INDICE+CONFRONTA per recuperare prezzo e scorta dato il nome del prodotto. Prova con prodotti diversi e con uno inesistente.</li>
+        </ol>
+
+        <h2>Sezione 13 — CERCA.X</h2>
+        <p>Usa la stessa tabella catalogo della sezione 12.</p>
+        <ol start="72">
+          <li>Area di ricerca con CERCA.X per recuperare Categoria, Prezzo e Scorta dato il prodotto cercato.</li>
+          <li>Aggiungi il quarto argomento <code>"Prodotto non trovato"</code> e verifica con un prodotto inesistente.</li>
+          <li>Aggiungi una seconda tabella con dati storici (prodotti ripetuti per mese). Usa <code>CERCA.X</code> con sesto argomento <code>1</code> (prima occorrenza) e <code>-1</code> (ultima occorrenza).</li>
+          <li>Affianca le formule INDICE+CONFRONTA con le formule CERCA.X equivalenti e verifica che i risultati siano identici.</li>
+        </ol>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice sezioni</h3>
+          <ol>
+            <li>Testo in colonne</li>
+            <li>MAIUSC.INIZ · &amp; · CONCAT</li>
+            <li>Riempimento automatico</li>
+            <li>SOMMA · MEDIA · MAX · MIN · CONTA</li>
+            <li>Referenze assolute e miste</li>
+            <li>Nomi celle</li>
+            <li>Formattazione condizionale</li>
+            <li>Funzioni casuali</li>
+            <li>SE · E · O</li>
+            <li>CONTA.SE · SOMMA.SE · MEDIA.SE</li>
+            <li>Riferimenti tra fogli</li>
+            <li>CONFRONTA + INDICE</li>
+            <li>CERCA.X</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Fogli richiesti</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Nord</li>
+            <li style="margin-bottom:8px;">Sud</li>
+            <li style="margin-bottom:8px;">Centro</li>
+            <li>Riepilogo</li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

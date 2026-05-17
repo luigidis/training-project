@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riferimenti tra Fogli — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Riferimenti tra Fogli
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge intermedio">Intermedio</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #14</span>
+      </div>
+      <h1>Catena Filiali — Riferimenti tra Fogli</h1>
+      <div class="ex-meta">
+        <span>⏱ 50 minuti</span><span>·</span>
+        <span>Foglio!Cella · SOMMA(Foglio!Intervallo) · SOMMA(F1:F3!Cella) · Foglio Riepilogo</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il responsabile amministrativo di una catena con tre filiali (Nord, Centro, Sud). Ogni filiale tiene i propri dati su un foglio separato. Il tuo compito è costruire un <strong>foglio di riepilogo</strong> che consolida i dati dai tre fogli usando i riferimenti tra fogli.</p>
+
+        <h2>Impostazione dei fogli</h2>
+        <p>Rinomina i quattro fogli del file (doppio clic sulla linguetta):</p>
+        <ul>
+          <li>Foglio 1 → <strong>Nord</strong></li>
+          <li>Foglio 2 → <strong>Centro</strong></li>
+          <li>Foglio 3 → <strong>Sud</strong></li>
+          <li>Foglio 4 → <strong>Riepilogo</strong></li>
+        </ul>
+
+        <h2>Parte A — Dati nelle tre filiali</h2>
+        <p>Inserisci le seguenti tabelle nei rispettivi fogli (a partire dalla cella A1):</p>
+        <table class="data-table">
+          <thead><tr><th>Foglio Nord</th><th>Vendite</th><th>Costi</th></tr></thead>
+          <tbody>
+            <tr><td>Gennaio</td><td>18500</td><td>11200</td></tr>
+            <tr><td>Febbraio</td><td>21300</td><td>12800</td></tr>
+            <tr><td>Marzo</td><td>19700</td><td>11900</td></tr>
+          </tbody>
+        </table>
+        <table class="data-table">
+          <thead><tr><th>Foglio Centro</th><th>Vendite</th><th>Costi</th></tr></thead>
+          <tbody>
+            <tr><td>Gennaio</td><td>12400</td><td>8100</td></tr>
+            <tr><td>Febbraio</td><td>14200</td><td>9300</td></tr>
+            <tr><td>Marzo</td><td>13800</td><td>8700</td></tr>
+          </tbody>
+        </table>
+        <table class="data-table">
+          <thead><tr><th>Foglio Sud</th><th>Vendite</th><th>Costi</th></tr></thead>
+          <tbody>
+            <tr><td>Gennaio</td><td>9800</td><td>6400</td></tr>
+            <tr><td>Febbraio</td><td>11200</td><td>7100</td></tr>
+            <tr><td>Marzo</td><td>10500</td><td>6800</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Parte B — Riferimento a una singola cella di un altro foglio</h2>
+        <p>Vai sul foglio <strong>Riepilogo</strong>:</p>
+        <ol>
+          <li>Scrivi la formula <code>=Nord!B2</code> e premi Invio. Compare 18500 (vendite di Gennaio del foglio Nord). La sintassi è <strong>NomeFoglio!Cella</strong>.</li>
+          <li>Scrivi <code>=Centro!B2</code> e <code>=Sud!B2</code> per lo stesso campo su fogli diversi.</li>
+          <li>Modifica le vendite di Gennaio nel foglio Nord (18500 → 19000) e torna al Riepilogo: la formula si è aggiornata automaticamente.</li>
+          <li>Crea una tabella con le colonne <strong>Filiale | Vendite Gennaio | Costi Gennaio</strong>. Compila le tre righe (Nord, Centro, Sud) con i riferimenti ai rispettivi fogli.</li>
+        </ol>
+
+        <h2>Parte C — Funzioni con riferimenti a celle di altri fogli</h2>
+        <ol start="5">
+          <li>Scrivi queste formule per i totali delle vendite di ogni filiale:</li>
+        </ol>
+        <div class="formula-block">
+=SOMMA(Nord!B2:B4)
+=SOMMA(Centro!B2:B4)
+=SOMMA(Sud!B2:B4)
+        </div>
+        <ol start="6">
+          <li>Aggiungi le stesse formule per i costi (colonna C di ogni foglio).</li>
+          <li>Usa MAX e MIN su dati di un singolo foglio:</li>
+        </ol>
+        <div class="formula-block">
+=MAX(Nord!B2:B4)
+=MIN(Sud!C2:C4)
+=MEDIA(Nord!B2:B4)
+        </div>
+
+        <h2>Parte D — Range di fogli contemporaneamente</h2>
+        <ol start="10">
+          <li>Scrivi questa formula che somma la stessa cella su tutti e tre i fogli in una volta:</li>
+        </ol>
+        <div class="formula-block">
+          <div class="formula-label">Sintassi: NomeFoglio1:NomeFoglio3!Cella</div>
+          =SOMMA(Nord:Sud!B2)
+        </div>
+        <ol start="11">
+          <li>Scrivi la stessa formula per Febbraio e Marzo cambiando solo il numero di riga:</li>
+        </ol>
+        <div class="formula-block">
+=SOMMA(Nord:Sud!B3)
+=SOMMA(Nord:Sud!B4)
+        </div>
+        <ol start="12">
+          <li>Usa la stessa sintassi con altre funzioni:</li>
+        </ol>
+        <div class="formula-block">
+=MEDIA(Nord:Sud!B2)
+=MAX(Nord:Sud!B2:B4)
+=MIN(Nord:Sud!C2:C4)
+        </div>
+
+        <h2>Parte E — Riepilogo finale</h2>
+        <p>Costruisci nel foglio Riepilogo una tabella finale: <strong>Mese | Totale Vendite Catena | Totale Costi Catena | Profitto</strong></p>
+        <div class="formula-block">
+Totale Vendite Gennaio: =SOMMA(Nord:Sud!B2)
+Totale Costi Gennaio:   =SOMMA(Nord:Sud!C2)
+Profitto Gennaio:       =cella_vendite - cella_costi
+        </div>
+        <p>Ripeti per Febbraio (B3/C3) e Marzo (B4/C4). Aggiungi una riga <strong>Totale Trimestre</strong> con SOMMA normale (referenze relative), poi aggiungi le statistiche globali:</p>
+        <div class="formula-block">
+=MAX(Nord:Sud!B2:B4)
+=MIN(Nord:Sud!C2:C4)
+=MEDIA(Nord:Sud!B2:B4)
+        </div>
+
+        <h2>Le tre sintassi a confronto</h2>
+        <table class="data-table">
+          <thead><tr><th>Sintassi</th><th>Quando usarla</th></tr></thead>
+          <tbody>
+            <tr><td><code>=Foglio1!B3</code></td><td>Singola cella da un foglio specifico</td></tr>
+            <tr><td><code>=SOMMA(Foglio1!B2:B4)</code></td><td>Intervallo di celle da un foglio specifico</td></tr>
+            <tr><td><code>=SOMMA(F1:F3!B2)</code></td><td>Stessa cella/intervallo su più fogli con struttura identica</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Rinominare i fogli</li>
+            <li>Parte A — Dati filiali</li>
+            <li>Parte B — Foglio!Cella</li>
+            <li>Parte C — SOMMA multi-foglio</li>
+            <li>Parte D — Nord:Sud!B2</li>
+            <li>Parte E — Riepilogo finale</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Sintassi chiave</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>Foglio!B2</code></li>
+            <li style="margin-bottom:8px;"><code>SOMMA(Foglio!B2:B4)</code></li>
+            <li><code>SOMMA(F1:F3!B2)</code></li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

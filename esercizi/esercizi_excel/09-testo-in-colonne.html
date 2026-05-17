@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testo in Colonne — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Testo in Colonne
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #9</span>
+      </div>
+      <h1>Dati Anagrafici — Testo in Colonne</h1>
+      <div class="ex-meta">
+        <span>⏱ 30 minuti</span><span>·</span>
+        <span>Testo in colonne · Delimitato · Punto e virgola · Barra verticale</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei un impiegato dell'ufficio anagrafico e hai ricevuto un file esportato da un vecchio sistema che ha messo tutti i dati dei cittadini in una sola colonna separati da punto e virgola. Devi dividere ogni informazione nella propria colonna usando lo strumento <strong>Testo in colonne</strong>.</p>
+
+        <h2>Dataset 1 — Delimitatore punto e virgola</h2>
+        <p>In una nuova colonna del foglio (colonna A) inserisci questi dati esattamente come appaiono (una riga per cella):</p>
+        <div class="formula-block">
+Cognome;Nome;Città;CAP
+Rossi;Marco;Roma;00100
+Bianchi;Giulia;Milano;20100
+Ferrari;Luca;Napoli;80100
+Esposito;Sara;Torino;10100
+Romano;Andrea;Palermo;90100
+Ricci;Chiara;Bologna;40100
+Conti;Matteo;Firenze;50100
+Greco;Valentina;Venezia;30100
+        </div>
+
+        <h2>Passaggi per il Dataset 1</h2>
+        <ol>
+          <li>Seleziona tutta la colonna A dall'intestazione fino all'ultimo dato.</li>
+          <li>Vai alla scheda <strong>Dati</strong> nella barra multifunzione e clicca su <strong>Testo in colonne</strong>.</li>
+          <li>Nella prima schermata della procedura guidata seleziona <strong>Delimitato</strong> (i dati sono separati da un carattere specifico, non da una larghezza fissa) e clicca Avanti.</li>
+          <li>Nella seconda schermata deseleziona <em>Tabulazione</em> se è spuntata, poi spunta <strong>Punto e virgola</strong> come delimitatore. Osserva nella finestra di anteprima come i dati si dividono automaticamente in colonne separate e clicca Avanti.</li>
+          <li>Nella terza schermata lascia il formato <strong>Generale</strong> per tutte le colonne e clicca Fine.</li>
+          <li>Aggiungi le intestazioni appropriate sopra i dati se non ci sono già (Cognome, Nome, Città, CAP).</li>
+        </ol>
+
+        <h2>Dataset 2 — Delimitatore barra verticale</h2>
+        <p>In una zona vuota del foglio inserisci questi dati in una colonna (i campi sono separati da una barra verticale <code>|</code>):</p>
+        <div class="formula-block">
+Prodotto|Categoria|Prezzo|Quantità
+Penna|Cancelleria|1.50|100
+Quaderno|Cancelleria|3.20|50
+Mouse|Informatica|25.00|30
+Tastiera|Informatica|45.00|20
+        </div>
+
+        <h2>Passaggi per il Dataset 2</h2>
+        <ol start="7">
+          <li>Seleziona questo secondo blocco di dati e avvia di nuovo <strong>Testo in colonne</strong>.</li>
+          <li>Nella seconda schermata scegli come delimitatore <strong>Altro</strong> e digita il carattere <code>|</code> nel campo apposito, poi osserva l'anteprima e clicca Fine.</li>
+        </ol>
+
+        <h2>Verifica finale</h2>
+        <ul>
+          <li>Il Dataset 1 è diviso in 4 colonne: Cognome, Nome, Città, CAP</li>
+          <li>Il Dataset 2 è diviso in 4 colonne: Prodotto, Categoria, Prezzo, Quantità</li>
+          <li>Nessun separatore rimasto nelle celle</li>
+        </ul>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Dataset 1 (punto e virgola)</li>
+            <li>Procedura guidata</li>
+            <li>Dataset 2 (barra verticale)</li>
+            <li>Verifica risultati</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Percorso strumento</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Scheda <strong>Dati</strong></li>
+            <li style="margin-bottom:8px;">→ Testo in colonne</li>
+            <li style="margin-bottom:8px;">→ Delimitato</li>
+            <li>→ Scegli delimitatore</li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

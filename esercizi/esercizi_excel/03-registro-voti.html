@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro Voti di Classe — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Registro Voti di Classe
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #3</span>
+      </div>
+      <h1>Registro Voti di Classe</h1>
+      <div class="ex-meta">
+        <span>⏱ 35 minuti</span><span>·</span>
+        <span>MAX · MIN · CONTA.NUMERI · CONTA.VUOTE · CONTA.VALORI</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei un insegnante e devi analizzare i voti del registro di classe al termine del quadrimestre. Imparerai le funzioni MAX, MIN e le varianti di CONTA.</p>
+
+        <h2>Struttura della tabella</h2>
+        <p>Crea una tabella con le colonne: <strong>Studente | Matematica | Italiano | Scienze | Inglese</strong></p>
+        <p>Inserisci almeno <strong>8 studenti</strong> con voti da 1 a 10. Attenzione:</p>
+        <ul>
+          <li>Lascia <strong>almeno 3 celle vuote</strong> (simulano assenze al compito)</li>
+          <li>In <strong>altre celle</strong> scrivi la parola <code>Assente</code> al posto del voto</li>
+        </ul>
+
+        <h2>Sezione di riepilogo</h2>
+        <p>Aggiungi una sezione sotto la tabella e completa nell'ordine:</p>
+
+        <h3>MAX e MIN</h3>
+        <ol>
+          <li>Usa MAX con un <em>intervallo</em> per il voto più alto di Matematica:</li>
+        </ol>
+        <div class="formula-block">=MAX(B2:B9)</div>
+        <ol start="2">
+          <li>Usa MIN con un <em>intervallo</em> per il voto più basso di Matematica.</li>
+          <li>Usa MAX selezionando le <em>celle singole</em> (separate da <code>;</code>) per il voto più alto di Italiano.</li>
+          <li>Usa MIN con celle singole per il voto più basso di Italiano.</li>
+          <li>Usa la <strong>Finestra delle Funzioni</strong> (<em>Formule → Inserisci funzione</em>) per inserire MAX su Scienze, leggendo la descrizione prima di confermare.</li>
+        </ol>
+
+        <h3>CONTA — le tre varianti</h3>
+        <ol start="6">
+          <li><strong>CONTA.NUMERI</strong> — conta quanti studenti hanno ricevuto un voto <em>numerico</em> (celle vuote e "Assente" non vengono conteggiate):</li>
+        </ol>
+        <div class="formula-block">=CONTA.NUMERI(B2:B9)</div>
+        <ol start="7">
+          <li><strong>CONTA.VUOTE</strong> — conta quante celle sono rimaste vuote:</li>
+        </ol>
+        <div class="formula-block">=CONTA.VUOTE(B2:B9)</div>
+        <ol start="8">
+          <li><strong>CONTA.VALORI</strong> — conta tutte le celle non vuote, incluse quelle con "Assente":</li>
+        </ol>
+        <div class="formula-block">=CONTA.VALORI(B2:B9)</div>
+        <ol start="9">
+          <li>Verifica che: <code>CONTA.NUMERI + CONTA.VUOTE = CONTA.VALORI + CONTA.VUOTE</code><br>
+          Rifletti sul perché: CONTA.VALORI conta "Assente" come valore, CONTA.NUMERI no.</li>
+        </ol>
+
+        <h3>Trascinamento formule</h3>
+        <ol start="10">
+          <li>Copia le formule MIN e MAX anche sulla colonna <strong>Inglese</strong> usando il trascinamento. Osserva come Excel aggiorna automaticamente i riferimenti alle celle.</li>
+        </ol>
+
+        <h2>Verifica finale</h2>
+        <ul>
+          <li>MAX e MIN calcolati con metodi diversi (intervallo, celle singole, Finestra Funzioni)</li>
+          <li>Le tre CONTA restituiscono valori coerenti tra loro</li>
+          <li>Le formule copiate su Inglese mostrano i valori corretti</li>
+        </ul>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Struttura tabella</li>
+            <li>MAX e MIN</li>
+            <li>CONTA.NUMERI</li>
+            <li>CONTA.VUOTE</li>
+            <li>CONTA.VALORI</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Funzioni usate</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>MAX</code></li>
+            <li style="margin-bottom:8px;"><code>MIN</code></li>
+            <li style="margin-bottom:8px;"><code>CONTA.NUMERI</code></li>
+            <li style="margin-bottom:8px;"><code>CONTA.VUOTE</code></li>
+            <li><code>CONTA.VALORI</code></li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

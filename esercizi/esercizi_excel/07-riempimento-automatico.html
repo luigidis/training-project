@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riempimento Automatico — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Riempimento Automatico
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge base">Base</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #7</span>
+      </div>
+      <h1>Calendario Torneo — Riempimento Automatico</h1>
+      <div class="ex-meta">
+        <span>⏱ 25 minuti</span><span>·</span>
+        <span>Serie numerica · Serie date · Riempimento ciclico · Riempimento identico</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei l'organizzatore di un torneo sportivo e devi preparare il calendario delle partite per le prossime settimane. Scoprirai come Excel riconosce pattern diversi durante il trascinamento, con risultati a volte sorprendenti.</p>
+
+        <h2>Struttura della tabella</h2>
+        <p>Crea una tabella con le colonne: <strong>Giornata | Data | Squadra Casa | Squadra Ospite</strong></p>
+
+        <h2>Passaggi da completare</h2>
+        <ol>
+          <li>
+            <strong>Colonna Giornata — serie numerica</strong><br>
+            Scrivi <code>1</code> nella prima cella e <code>2</code> nella seconda. Seleziona entrambe le celle e trascina il quadratino di riempimento verso il basso fino alla riga 11, ottenendo le giornate da 1 a 10. Osserva come Excel riconosce automaticamente il pattern +1.
+          </li>
+          <li>
+            <strong>Colonna Data — serie di date</strong><br>
+            Scrivi <code>01/04/2025</code> nella prima cella e <code>08/04/2025</code> nella seconda (le partite si giocano ogni 7 giorni). Seleziona entrambe e trascina verso il basso per completare tutte e 10 le date. Osserva come Excel riconosce il pattern di 7 giorni.
+          </li>
+          <li>
+            <strong>Colonna Squadra Casa — riempimento ciclico</strong><br>
+            Scrivi <code>Roma</code> nella prima cella e <code>Lazio</code> nella seconda. Trascina verso il basso e osserva cosa succede: Excel non riconosce un pattern nei nomi delle squadre e li ripete in modo ciclico (Roma, Lazio, Roma, Lazio…). Questo comportamento è diverso dal riempimento numerico o delle date.
+          </li>
+          <li>
+            <strong>Colonna Squadra Ospite — riempimento identico</strong><br>
+            Scrivi <code>Inter</code> nella prima cella e <code>Inter</code> nella seconda. Seleziona entrambe le celle e trascina verso il basso. Poiché hai selezionato due celle con lo stesso contenuto, Excel riempie tutto con lo stesso valore.
+          </li>
+        </ol>
+
+        <h2>Osservazioni sul comportamento di Excel</h2>
+        <table class="data-table">
+          <thead><tr><th>Tipo di dato</th><th>Comportamento nel trascinamento</th></tr></thead>
+          <tbody>
+            <tr><td>Numeri con step (1, 2)</td><td>Excel continua la serie: 3, 4, 5…</td></tr>
+            <tr><td>Date con step (ogni 7 giorni)</td><td>Excel continua aggiungendo 7 giorni a ogni cella</td></tr>
+            <tr><td>Testo non riconosciuto (Roma, Lazio)</td><td>Excel ripete ciclicamente le celle selezionate</td></tr>
+            <tr><td>Stesso valore (Inter, Inter)</td><td>Excel copia lo stesso valore in tutte le celle</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Verifica finale</h2>
+        <ul>
+          <li>Le giornate vanno da 1 a 10 con incremento di 1</li>
+          <li>Le date si distanziano esattamente di 7 giorni l'una dall'altra</li>
+          <li>Le squadre casa si alternano in modo ciclico</li>
+          <li>La colonna Squadra Ospite contiene sempre "Inter"</li>
+        </ul>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Serie giornate (1–10)</li>
+            <li>Serie date (+7 giorni)</li>
+            <li>Riempimento ciclico</li>
+            <li>Riempimento identico</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti usati</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Quadratino di riempimento</li>
+            <li style="margin-bottom:8px;">Serie numerica automatica</li>
+            <li style="margin-bottom:8px;">Serie date automatica</li>
+            <li>Riempimento ciclico testo</li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

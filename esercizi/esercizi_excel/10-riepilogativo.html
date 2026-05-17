@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esercizio Riepilogativo (Es. 1–9) — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Riepilogativo Es. 1–9
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge intermedio">Intermedio</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #10</span>
+      </div>
+      <h1>Report Scuola di Formazione — Riepilogativo Es. 1–9</h1>
+      <div class="ex-meta">
+        <span>⏱ 70 minuti</span><span>·</span>
+        <span>Testo in colonne · Flash Fill · Riempimento · MAX/MIN/CONTA · Referenze · SOMMA/MEDIA</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il responsabile amministrativo di una scuola di formazione professionale. Devi costruire un report trimestrale completo sui corsi, i partecipanti e i ricavi. Lavora su un <strong>unico file Excel</strong> con più sezioni nello stesso foglio. Questo esercizio copre tutti i concetti degli esercizi 1–9.</p>
+
+        <h2>Parte A — Importazione e pulizia dei dati</h2>
+        <p><em>Testo in colonne + Flash Fill</em></p>
+        <p>Hai ricevuto dal sistema gestionale un export grezzo. In una zona vuota del foglio (colonna A) incolla questi dati esattamente come appaiono:</p>
+        <div class="formula-block">
+Cognome;Nome;Corso;Voto
+Marini;Elena;Fotografia;8
+Conti;Paolo;Fotografia;7
+Greco;Sara;Web Design;9
+Bruno;Luca;Web Design;
+Fontana;Anna;Marketing;6
+Riva;Marco;Marketing;Assente
+Moretti;Chiara;Fotografia;10
+Galli;Davide;Web Design;8
+        </div>
+        <ol>
+          <li>Seleziona tutto il blocco e usa <strong>Testo in colonne</strong> con il delimitatore <code>;</code> per separare i quattro campi in colonne distinte. Aggiungi le intestazioni se non ci sono già.</li>
+          <li>In una nuova colonna <strong>Nome Completo</strong> scrivi manualmente nella prima cella: <code>Elena Marini</code>. Poi usa <code>Ctrl+E</code> per completare automaticamente tutti gli altri nel formato Nome Cognome.</li>
+          <li>In un'altra colonna <strong>Tessera</strong> scrivi manualmente la prima tessera nel formato <code>FOTO-EMarini</code> (sigla corso + iniziale nome + cognome). Poi usa <code>Ctrl+E</code> per completare le tessere di tutti. Verifica la coerenza con il modello.</li>
+        </ol>
+
+        <h2>Parte B — Calendario del corso</h2>
+        <p><em>Riempimento automatico</em></p>
+        <p>In una zona separata crea il calendario delle lezioni del corso di Fotografia con le colonne: <strong>Lezione | Data | Giorno | Argomento</strong></p>
+        <ol>
+          <li>Nella colonna <strong>Lezione</strong> scrivi 1 e 2, poi trascina verso il basso fino alla lezione 8.</li>
+          <li>Nella colonna <strong>Data</strong> scrivi <code>03/03/2025</code> e <code>10/03/2025</code> (lezioni ogni 7 giorni), poi trascina per completare tutte e 8 le date.</li>
+          <li>Nella colonna <strong>Giorno</strong> scrivi <code>Lunedi</code> nella prima cella e trascina: Excel riconosce automaticamente la serie dei giorni della settimana.</li>
+          <li>Nella colonna <strong>Argomento</strong> scrivi <code>Introduzione</code> e <code>Tecnica</code>. Trascina e osserva come Excel ripete ciclicamente il testo generico.</li>
+          <li>Aggiungi una riga extra: scrivi <code>Marzo</code> in una cella e trascina verso destra per 5 celle. Osserva come Excel completa la serie dei mesi.</li>
+        </ol>
+
+        <h2>Parte C — Registro voti e statistiche</h2>
+        <p><em>MAX, MIN, CONTA</em></p>
+        <p>Torna alla tabella dei partecipanti creata nella Parte A (alcune celle Voto sono vuote, altre contengono "Assente"). In una zona di riepilogo sotto la tabella:</p>
+        <ol>
+          <li>Usa <strong>MAX</strong> con un intervallo sulla colonna Voto per trovare il voto più alto.</li>
+          <li>Usa <strong>MIN</strong> con un intervallo per trovare il voto più basso.</li>
+          <li>Usa la <strong>Finestra delle Funzioni</strong> per inserire MAX sui soli voti del corso Web Design, leggendo la descrizione prima di confermare.</li>
+          <li>Usa <strong>CONTA.NUMERI</strong> sull'intervallo della colonna Voto per contare quanti partecipanti hanno ricevuto un voto numerico.</li>
+          <li>Usa <strong>CONTA.VUOTE</strong> sullo stesso intervallo per contare le celle vuote.</li>
+          <li>Usa <strong>CONTA.VALORI</strong> per contare tutte le celle non vuote, incluse quelle con "Assente".</li>
+          <li>Verifica che <code>CONTA.NUMERI + CONTA.VUOTE</code> dia lo stesso risultato di <code>CONTA.VALORI + CONTA.VUOTE</code>.</li>
+        </ol>
+
+        <h2>Parte D — Calcolo ricavi con referenza assoluta</h2>
+        <p>In una cella separata (es. <strong>F1</strong>) inserisci <code>120</code> con l'etichetta "Quota iscrizione:". Aggiungi la colonna <strong>Ricavo</strong> alla tabella dei partecipanti:</p>
+        <div class="formula-block">
+          <div class="formula-label">Ricavo — ogni partecipante</div>
+          =$F$1
+        </div>
+        <ol>
+          <li>Copia la formula verso il basso su tutti i partecipanti.</li>
+          <li>Cambia il valore in F1 da <code>120</code> a <code>150</code> e verifica che tutti i ricavi si aggiornino automaticamente.</li>
+        </ol>
+
+        <h2>Parte E — Tariffe materiali per livello e durata</h2>
+        <p><em>Referenza mista</em></p>
+        <p>In una zona separata del foglio:</p>
+        <ul>
+          <li>Nella <strong>riga 1</strong> (da B1 in poi) scrivi le durate in ore: <code>20 | 40 | 60 | 80</code></li>
+          <li>Nella <strong>colonna A</strong> (da A2 in poi) scrivi i livelli: <code>Base | Intermedio | Avanzato</code></li>
+          <li>In una colonna separata (es. colonna G) inserisci i costi unitari per ora: <code>2 | 3 | 4</code></li>
+        </ul>
+        <div class="formula-block">
+          <div class="formula-label">B2 — costo totale materiali</div>
+          =$G2*B$1
+        </div>
+        <p>Copia su tutta la griglia (righe 2-4, colonne B-E). Modifica il costo del livello Avanzato e verifica che si aggiorni tutta la riga corrispondente.</p>
+
+        <h2>Parte F — Commissioni formatori</h2>
+        <p><em>Mix di referenze</em></p>
+        <p>In una cella separata (es. <strong>C1</strong>) inserisci <code>50</code> con l'etichetta "Rimborso spese:". Crea una tabella Livelli compenso (colonne G–H):</p>
+        <table class="data-table">
+          <thead><tr><th>Livello</th><th>Compenso %</th></tr></thead>
+          <tbody>
+            <tr><td>Junior</td><td>0,08</td></tr>
+            <tr><td>Senior</td><td>0,12</td></tr>
+            <tr><td>Expert</td><td>0,18</td></tr>
+          </tbody>
+        </table>
+        <p>Crea la tabella principale: <strong>Formatore | Livello | Ore Marzo | Ore Aprile | Ore Maggio | Totale Ore | Compenso | Totale Finale</strong>. Inserisci 3 formatori con livelli diversi.</p>
+        <ol>
+          <li>Calcola <strong>Totale Ore</strong> con SOMMA (referenze relative), copia su tutti i formatori.</li>
+          <li>Calcola <strong>Compenso</strong> con referenza mista <code>$H2</code> (colonna fissa, riga relativa). Copia verso il basso.</li>
+          <li>Calcola <strong>Totale Finale</strong> con referenza assoluta <code>$C$1</code>. Copia verso il basso.</li>
+          <li>Modifica il rimborso in C1 da <code>50</code> a <code>80</code> e verifica che tutti i Totali Finali si aggiornino.</li>
+        </ol>
+
+        <h2>Parte G — Riepilogo totale</h2>
+        <p><em>SOMMA e MEDIA in tre modi</em></p>
+        <p>In una zona finale del foglio crea una riga di riepilogo generale:</p>
+        <ol>
+          <li><strong>SOMMA</strong> con intervallo su tutte le ore totali dei formatori.</li>
+          <li><strong>SOMMA</strong> con celle singole separate da <code>;</code> sui ricavi dei primi tre partecipanti.</li>
+          <li><strong>SOMMA</strong> con intervallo più il numero fisso <code>100</code> come spesa straordinaria non registrata.</li>
+          <li><strong>MEDIA</strong> con intervallo sui voti numerici dei partecipanti.</li>
+          <li><strong>MEDIA</strong> con celle singole più il numero fisso <code>5</code> come voto di un partecipante aggiunto manualmente.</li>
+          <li>Usa la <strong>Finestra delle Funzioni</strong> per inserire MEDIA sul totale ore dei formatori, leggendo la descrizione prima di confermare.</li>
+        </ol>
+        <p>Se appare un errore su qualche cella, usa <em>Formule → Controllo Errori</em> per identificare e correggere il problema.</p>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Parte A — Dati (Testo+Flash Fill)</li>
+            <li>Parte B — Calendario (Riempimento)</li>
+            <li>Parte C — Voti (MAX/MIN/CONTA)</li>
+            <li>Parte D — Ricavi ($F$1)</li>
+            <li>Parte E — Tariffe ($G2/B$1)</li>
+            <li>Parte F — Commissioni (mix)</li>
+            <li>Parte G — Riepilogo (SOMMA/MEDIA)</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Concetti usati</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Testo in colonne</li>
+            <li style="margin-bottom:8px;">Flash Fill <code>Ctrl+E</code></li>
+            <li style="margin-bottom:8px;">Riempimento automatico</li>
+            <li style="margin-bottom:8px;">MAX · MIN · CONTA</li>
+            <li style="margin-bottom:8px;">Referenza assoluta</li>
+            <li style="margin-bottom:8px;">Referenza mista</li>
+            <li>SOMMA · MEDIA</li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

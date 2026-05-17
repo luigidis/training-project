@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CERCA.X — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        CERCA.X
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge avanzato">Avanzato</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #20</span>
+      </div>
+      <h1>Scheda Dipendenti — CERCA.X</h1>
+      <div class="ex-meta">
+        <span>⏱ 40 minuti</span><span>·</span>
+        <span>CERCA.X · 4° argomento (se non trovato) · 6° argomento (direzione) · vs INDICE+CONFRONTA</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il responsabile delle risorse umane e devi costruire una scheda di ricerca dipendenti. Dato un nome, vuoi recuperare automaticamente reparto, stipendio e livello. <strong>CERCA.X</strong> è la funzione moderna che sostituisce e semplifica la combinazione INDICE+CONFRONTA: una sola funzione invece di due annidate.</p>
+
+        <h2>Struttura della tabella</h2>
+        <p>Crea una tabella con le colonne: <strong>Dipendente | Reparto | Stipendio | Livello</strong></p>
+        <p>Inserisci questi dati esattamente come appaiono:</p>
+        <table class="data-table">
+          <thead><tr><th>Dipendente</th><th>Reparto</th><th>Stipendio</th><th>Livello</th></tr></thead>
+          <tbody>
+            <tr><td>Rossi</td><td>Vendite</td><td>2800</td><td>Junior</td></tr>
+            <tr><td>Bianchi</td><td>IT</td><td>3500</td><td>Senior</td></tr>
+            <tr><td>Ferrari</td><td>Marketing</td><td>3100</td><td>Middle</td></tr>
+            <tr><td>Esposito</td><td>Vendite</td><td>2600</td><td>Junior</td></tr>
+            <tr><td>Romano</td><td>IT</td><td>4200</td><td>Senior</td></tr>
+            <tr><td>Ricci</td><td>HR</td><td>2900</td><td>Middle</td></tr>
+            <tr><td>Conti</td><td>Marketing</td><td>3800</td><td>Senior</td></tr>
+            <tr><td>Greco</td><td>HR</td><td>2500</td><td>Junior</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Parte A — CERCA.X sintassi base</h2>
+        <p>Sintassi: <code>=CERCA.X(valore_cercato; interv_ricerca; interv_risultati; [se_non_trovato])</code></p>
+        <p>Crea una <strong>scheda di ricerca</strong>: etichetta "Dipendente cercato:" con la cella a fianco contenente <code>Romano</code>. Sotto scrivi le etichette Reparto:, Stipendio:, Livello:.</p>
+        <ol>
+          <li>Accanto a <strong>Reparto:</strong> (sostituisci <code>cella_ricerca</code> con il riferimento alla cella con Romano):</li>
+        </ol>
+        <div class="formula-block">=CERCA.X(cella_ricerca;A2:A9;B2:B9)</div>
+        <ol start="2">
+          <li>Accanto a <strong>Stipendio:</strong> — cambia solo l'intervallo risultati:</li>
+        </ol>
+        <div class="formula-block">=CERCA.X(cella_ricerca;A2:A9;C2:C9)</div>
+        <ol start="3">
+          <li>Accanto a <strong>Livello:</strong></li>
+        </ol>
+        <div class="formula-block">=CERCA.X(cella_ricerca;A2:A9;D2:D9)</div>
+        <ol start="4">
+          <li>Cambia il nome nella cella di ricerca con <code>Ricci</code> e osserva come tutte e tre le celle si aggiornano (HR, 2900, Middle). Prova con altri nomi.</li>
+        </ol>
+
+        <h2>Parte B — Quarto argomento: messaggio personalizzato</h2>
+        <ol start="5">
+          <li>Digita <code>Marini</code> (non esiste): tutte e tre le formule mostrano <code>#N/D</code>.</li>
+          <li>Modifica le formule aggiungendo il quarto argomento:</li>
+        </ol>
+        <div class="formula-block">=CERCA.X(cella_ricerca;A2:A9;C2:C9;"Dipendente non trovato")</div>
+        <ol start="7">
+          <li>Rimetti <code>Conti</code> nella cella di ricerca e verifica che le formule tornino ai valori normali (Marketing, 3800, Senior).</li>
+        </ol>
+
+        <h2>Parte C — Sesto argomento: direzione di ricerca</h2>
+        <p>Il sesto argomento controlla la direzione: <code>1</code> = dall'alto (default), <code>-1</code> = dal basso (trova l'ultima occorrenza).</p>
+        <p>Aggiungi questa seconda tabella con dati ripetuti:</p>
+        <table class="data-table">
+          <thead><tr><th>Mese</th><th>Agente</th><th>Vendite</th></tr></thead>
+          <tbody>
+            <tr><td>Gennaio</td><td>Rossi</td><td>4500</td></tr>
+            <tr><td>Febbraio</td><td>Rossi</td><td>3200</td></tr>
+            <tr><td>Marzo</td><td>Rossi</td><td>5800</td></tr>
+            <tr><td>Gennaio</td><td>Bianchi</td><td>2900</td></tr>
+            <tr><td>Febbraio</td><td>Bianchi</td><td>4100</td></tr>
+            <tr><td>Marzo</td><td>Bianchi</td><td>3700</td></tr>
+          </tbody>
+        </table>
+        <ol start="9">
+          <li>Cerca le vendite di Rossi a partire dall'inizio:</li>
+        </ol>
+        <div class="formula-block">=CERCA.X("Rossi";G2:G7;I2:I7;"Non trovato";0;1)</div>
+        <p>Risultato: 4500 (Gennaio — prima riga con Rossi).</p>
+        <ol start="10">
+          <li>Cerca le vendite di Rossi a partire dalla fine:</li>
+        </ol>
+        <div class="formula-block">=CERCA.X("Rossi";G2:G7;I2:I7;"Non trovato";0;-1)</div>
+        <p>Risultato: 5800 (Marzo — ultima riga con Rossi). Utile con dati in ordine cronologico per trovare il record più recente.</p>
+
+        <h2>Parte D — Confronto CERCA.X vs INDICE+CONFRONTA</h2>
+        <ol start="11">
+          <li>Scrivi la formula INDICE+CONFRONTA per lo stipendio di Bianchi:</li>
+        </ol>
+        <div class="formula-block">=INDICE(C2:C9;CONFRONTA("Bianchi";A2:A9;0))</div>
+        <ol start="12">
+          <li>Scrivi la formula CERCA.X equivalente nella cella accanto:</li>
+        </ol>
+        <div class="formula-block">=CERCA.X("Bianchi";A2:A9;C2:C9)</div>
+        <p>Il risultato è identico (3500). CERCA.X è più corta e diretta.</p>
+
+        <h2>CERCA.X vs INDICE+CONFRONTA</h2>
+        <table class="data-table">
+          <thead><tr><th></th><th>INDICE+CONFRONTA</th><th>CERCA.X</th></tr></thead>
+          <tbody>
+            <tr><td>Complessità</td><td>Due funzioni annidate</td><td>Una sola funzione</td></tr>
+            <tr><td>Valore non trovato</td><td>Errore #N/D</td><td>4° argomento personalizzabile</td></tr>
+            <tr><td>Ricerca inversa</td><td>Non supportata nativamente</td><td>6° argomento = -1</td></tr>
+            <tr><td>Compatibilità</td><td>Tutte le versioni Excel</td><td>Solo Excel 2021+ e Microsoft 365</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Parte A — CERCA.X base</li>
+            <li>Parte B — 4° argomento</li>
+            <li>Parte C — 6° argomento (dir.)</li>
+            <li>Parte D — vs INDICE+CONFRONTA</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Sintassi completa</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>=CERCA.X(</code></li>
+            <li style="margin-bottom:8px;">valore_cercato,</li>
+            <li style="margin-bottom:8px;">interv_ricerca,</li>
+            <li style="margin-bottom:8px;">interv_risultati,</li>
+            <li style="margin-bottom:8px;">[se_non_trovato],</li>
+            <li style="margin-bottom:8px;">[modalità],</li>
+            <li><code>[direzione])</code></li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

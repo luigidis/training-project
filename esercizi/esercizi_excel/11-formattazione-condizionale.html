@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formattazione Condizionale — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Formattazione Condizionale
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge intermedio">Intermedio</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #11</span>
+      </div>
+      <h1>Report Venditori — Formattazione Condizionale</h1>
+      <div class="ex-meta">
+        <span>⏱ 40 minuti</span><span>·</span>
+        <span>Regole · Barre di dati · Scale colori · Set icone · Gestisci regole</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il responsabile delle vendite e devi preparare un report mensile che evidenzi visivamente le performance dei venditori. Imparerai a usare la <strong>Formattazione Condizionale</strong> per rendere i dati immediatamente leggibili con colori, barre e icone.</p>
+
+        <h2>Struttura della tabella</h2>
+        <p>Crea una tabella con le colonne: <strong>Venditore | Regione | Vendite Gennaio | Vendite Febbraio | Vendite Marzo | Totale Trimestre</strong></p>
+        <p>Inserisci questi dati esattamente come appaiono:</p>
+        <table class="data-table">
+          <thead><tr><th>Venditore</th><th>Regione</th><th>Gen</th><th>Feb</th><th>Mar</th></tr></thead>
+          <tbody>
+            <tr><td>Rossi</td><td>Nord</td><td>8200</td><td>7400</td><td>9100</td></tr>
+            <tr><td>Bianchi</td><td>Sud</td><td>5300</td><td>6100</td><td>4800</td></tr>
+            <tr><td>Ferrari</td><td>Nord</td><td>11200</td><td>10800</td><td>12400</td></tr>
+            <tr><td>Esposito</td><td>Sud</td><td>3100</td><td>2900</td><td>4200</td></tr>
+            <tr><td>Romano</td><td>Centro</td><td>7600</td><td>8300</td><td>7900</td></tr>
+            <tr><td>Ricci</td><td>Centro</td><td>9400</td><td>9800</td><td>8700</td></tr>
+            <tr><td>Conti</td><td>Nord</td><td>6800</td><td>5900</td><td>7300</td></tr>
+            <tr><td>Greco</td><td>Sud</td><td>4500</td><td>5100</td><td>3800</td></tr>
+          </tbody>
+        </table>
+        <p>Calcola il <strong>Totale Trimestre</strong> per ogni venditore con SOMMA prima di procedere.</p>
+
+        <h2>Regole base</h2>
+        <ol>
+          <li>Seleziona l'intervallo dei valori di <strong>Gennaio</strong>. Vai su <em>Formattazione Condizionale → Regole evidenziazione celle → Maggiore di</em> e imposta il valore <code>9000</code> con sfondo <strong>verde</strong>.</li>
+          <li>Con lo stesso intervallo ancora selezionato, aggiungi una seconda regola: <em>Minore di</em> <code>5000</code> con sfondo <strong>rosso</strong>. Le due regole coesistono: non si sostituiscono.</li>
+          <li>Seleziona la colonna <strong>Regione</strong>. Vai su <em>Regole evidenziazione celle → Testo che contiene</em> e scrivi <code>Nord</code> con sfondo <strong>giallo</strong>.</li>
+          <li>Seleziona il <strong>Totale Trimestre</strong>. Applica la regola <em>Tra</em> con valori <code>20000</code> e <code>25000</code> con sfondo <strong>arancione</strong> (se non trovi "Tra", crea un formato personalizzato).</li>
+        </ol>
+
+        <h2>Sopra la media</h2>
+        <ol start="5">
+          <li>Seleziona il <strong>Totale Trimestre</strong>. Vai su <em>Formattazione Condizionale → Regole primi/ultimi valori → Sopra la media</em>. Excel calcola automaticamente la media e applica il formato solo alle celle che la superano.</li>
+        </ol>
+
+        <h2>Barre di dati</h2>
+        <ol start="6">
+          <li>Seleziona l'intervallo di <strong>Febbraio</strong>. Vai su <em>Formattazione Condizionale → Barre di dati</em> e scegli un colore. Il valore più alto riceve la barra più lunga, tutti gli altri sono proporzionati di conseguenza.</li>
+        </ol>
+
+        <h2>Scale colori</h2>
+        <ol start="7">
+          <li>Seleziona l'intervallo di <strong>Marzo</strong>. Vai su <em>Formattazione Condizionale → Scale colori</em> e scegli la scala verde-giallo-rosso. Excel assegna automaticamente il verde al valore più alto e il rosso al più basso.</li>
+        </ol>
+
+        <h2>Set di icone</h2>
+        <ol start="8">
+          <li>Seleziona il <strong>Totale Trimestre</strong>. Vai su <em>Formattazione Condizionale → Set di icone</em> e scegli il set con le tre frecce (su, laterale, giù). Excel divide automaticamente i valori in tre fasce.</li>
+        </ol>
+
+        <h2>Gestire e cancellare le regole</h2>
+        <ol start="9">
+          <li>Vai su <em>Formattazione Condizionale → Gestisci regole</em>. Seleziona la regola "Tra 20000 e 25000" sul Totale Trimestre e <strong>eliminala</strong>. Le altre regole rimangono intatte.</li>
+          <li>Seleziona l'intervallo di <strong>Gennaio</strong>. Vai su <em>Formattazione Condizionale → Cancella regole → Cancella regole dalle celle selezionate</em>. Tutte le regole di Gennaio vengono rimosse; le altre colonne restano invariate.</li>
+          <li>Vai su <em>Cancella regole → Cancella regole dall'intero foglio</em>. Tutte le formattazioni condizionali vengono rimosse contemporaneamente.</li>
+        </ol>
+
+        <h2>Note importanti</h2>
+        <p>Le regole si sommano: una stessa cella può soddisfare più condizioni e ricevere più formattazioni. Barre di dati, scale colori e set di icone <strong>non richiedono soglie manuali</strong>: Excel usa il massimo e il minimo della selezione come riferimento.</p>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Struttura tabella</li>
+            <li>Regole base (>9000, &lt;5000)</li>
+            <li>Regola testo (Nord)</li>
+            <li>Sopra la media</li>
+            <li>Barre di dati</li>
+            <li>Scale colori</li>
+            <li>Set di icone</li>
+            <li>Gestisci / Cancella regole</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Percorso</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Home → Formattazione Condizionale</li>
+            <li style="margin-bottom:8px;">→ Regole evidenziazione celle</li>
+            <li style="margin-bottom:8px;">→ Barre di dati</li>
+            <li style="margin-bottom:8px;">→ Scale colori</li>
+            <li style="margin-bottom:8px;">→ Set di icone</li>
+            <li>→ Gestisci / Cancella regole</li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CONFRONTA e INDICE — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        CONFRONTA e INDICE
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge avanzato">Avanzato</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #19</span>
+      </div>
+      <h1>Catalogo Prodotti — CONFRONTA e INDICE</h1>
+      <div class="ex-meta">
+        <span>⏱ 45 minuti</span><span>·</span>
+        <span>CONFRONTA(valore;interv;0) · INDICE(interv;pos) · INDICE+CONFRONTA combinati</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il magazziniere di un negozio di elettronica e vuoi costruire un sistema di ricerca rapida. Invece di scorrere la tabella ogni volta, vuoi digitare il nome di un prodotto e ottenere automaticamente prezzo e disponibilità. Userai <strong>CONFRONTA</strong> per trovare la posizione e <strong>INDICE</strong> per recuperare il valore corrispondente.</p>
+
+        <h2>Struttura della tabella</h2>
+        <p>Crea una tabella con le colonne: <strong>Prodotto | Categoria | Prezzo | Giacenza</strong></p>
+        <p>Inserisci questi dati esattamente come appaiono:</p>
+        <table class="data-table">
+          <thead><tr><th>Prodotto</th><th>Categoria</th><th>Prezzo</th><th>Giacenza</th></tr></thead>
+          <tbody>
+            <tr><td>Smartphone X1</td><td>Telefonia</td><td>499</td><td>12</td></tr>
+            <tr><td>Laptop Pro 15</td><td>Informatica</td><td>1199</td><td>5</td></tr>
+            <tr><td>Cuffie Wireless</td><td>Accessori</td><td>89</td><td>30</td></tr>
+            <tr><td>Tablet Mini</td><td>Informatica</td><td>349</td><td>8</td></tr>
+            <tr><td>Smartwatch S2</td><td>Accessori</td><td>199</td><td>15</td></tr>
+            <tr><td>Monitor 27"</td><td>Informatica</td><td>279</td><td>7</td></tr>
+            <tr><td>Webcam HD</td><td>Accessori</td><td>69</td><td>22</td></tr>
+            <tr><td>Smartphone X2</td><td>Telefonia</td><td>699</td><td>9</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Parte A — CONFRONTA() — trovare la posizione</h2>
+        <p>Sintassi: <code>=CONFRONTA(valore_cercato; matrice; tipo)</code><br>Il terzo argomento <code>0</code> = corrispondenza esatta. Restituisce la posizione relativa all'interno dell'intervallo (non il numero di riga del foglio).</p>
+        <div class="formula-block">
+=CONFRONTA("Tablet Mini";A2:A9;0)    → risultato: 4
+=CONFRONTA("Webcam HD";A2:A9;0)      → risultato: 7
+=CONFRONTA("Stampante";A2:A9;0)      → risultato: #N/D (non trovato)
+=CONFRONTA("Informatica";B2:B9;0)    → risultato: 2 (prima occorrenza)
+        </div>
+
+        <h2>Parte B — INDICE() — recuperare un valore per posizione</h2>
+        <p>Sintassi: <code>=INDICE(matrice; num_riga; [num_colonna])</code><br>Per una singola colonna puoi omettere <code>num_colonna</code>.</p>
+        <div class="formula-block">
+=INDICE(C2:C9;3)      → 89 (terzo valore della colonna Prezzo = Cuffie Wireless)
+=INDICE(D2:D9;5)      → 15 (quinta giacenza = Smartwatch S2)
+=INDICE(A2:D9;2;3)    → 1199 (riga 2, colonna 3 = prezzo di Laptop Pro 15)
+=INDICE(A2:D9;2;4)    → 5 (riga 2, colonna 4 = giacenza di Laptop Pro 15)
+        </div>
+
+        <h2>Parte C — INDICE + CONFRONTA combinati</h2>
+        <p>CONFRONTA calcola la posizione → INDICE usa quella posizione per recuperare il valore dall'altra colonna.</p>
+        <div class="formula-block">
+          <div class="formula-label">Schema della combinazione</div>
+          =INDICE(colonna_risultati; CONFRONTA(valore_cercato; colonna_chiavi; 0))
+        </div>
+        <ol>
+          <li>Crea una piccola <strong>area di ricerca</strong>:
+            <ul>
+              <li>Una cella con l'etichetta "Prodotto cercato:"</li>
+              <li>Nella cella a fianco scrivi <code>Smartwatch S2</code></li>
+              <li>Sotto scrivi le etichette "Prezzo:" e "Giacenza:"</li>
+            </ul>
+          </li>
+          <li>Accanto all'etichetta <strong>Prezzo:</strong> scrivi (sostituisci <code>cella_ricerca</code> con il riferimento alla cella dove hai scritto il nome del prodotto):</li>
+        </ol>
+        <div class="formula-block">=INDICE(C2:C9;CONFRONTA(cella_ricerca;A2:A9;0))</div>
+        <ol start="3">
+          <li>Accanto all'etichetta <strong>Giacenza:</strong> scrivi la stessa formula cambiando la colonna di INDICE da C2:C9 a D2:D9.</li>
+          <li>Modifica il prodotto cercato: sostituisci <code>Smartwatch S2</code> con <code>Monitor 27"</code>. Entrambe le celle si aggiornano automaticamente (279 e 7).</li>
+          <li>Prova con tutti gli altri prodotti del catalogo.</li>
+          <li>Digita <code>Stampante</code> (non esiste): entrambe le celle mostrano <code>#N/D</code>. Questo segnala che il prodotto non è in catalogo.</li>
+        </ol>
+
+        <h2>Riepilogo funzioni</h2>
+        <table class="data-table">
+          <thead><tr><th>Funzione</th><th>Cosa fa</th><th>Quando usarla da sola</th></tr></thead>
+          <tbody>
+            <tr><td><code>CONFRONTA(v;interv;0)</code></td><td>Trova la posizione di un valore</td><td>Vuoi sapere "a che posto" si trova un elemento</td></tr>
+            <tr><td><code>INDICE(interv;pos)</code></td><td>Recupera il valore a una posizione</td><td>Conosci già la posizione e vuoi estrarre il valore</td></tr>
+            <tr><td><code>INDICE+CONFRONTA</code></td><td>Cerca per nome, restituisce dati correlati</td><td>Vuoi un sistema di ricerca flessibile</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Parte A — CONFRONTA</li>
+            <li>Parte B — INDICE</li>
+            <li>Parte C — INDICE+CONFRONTA</li>
+            <li>Area di ricerca dinamica</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Funzioni usate</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>CONFRONTA(v;interv;0)</code></li>
+            <li style="margin-bottom:8px;"><code>INDICE(interv;pos)</code></li>
+            <li><code>INDICE(interv;r;c)</code></li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

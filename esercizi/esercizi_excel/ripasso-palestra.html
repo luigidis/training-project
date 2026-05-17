@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esercizio di Ripasso — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Esercizio di Ripasso
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge intermedio">Intermedio</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Ripasso Es. 5–6–7</span>
+      </div>
+      <h1>Presenze Palestra — Esercizio di Ripasso</h1>
+      <div class="ex-meta">
+        <span>⏱ 50 minuti</span><span>·</span>
+        <span>SOMMA · MEDIA · MAX · MIN · CONTA · Controllo Errori</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il responsabile di una palestra e devi analizzare le presenze mensili dei tuoi soci per capire chi si allena di più, chi meno, e quanti hanno saltato delle settimane. Questo esercizio riepiloga i concetti degli esercizi 5, 6 e 7 (SOMMA/MEDIA in modi diversi, MAX/MIN, CONTA).</p>
+
+        <h2>Struttura della tabella</h2>
+        <p>Crea una tabella con le colonne: <strong>Socio | Settimana 1 | Settimana 2 | Settimana 3 | Settimana 4 | Totale Presenze | Media Settimanale</strong></p>
+        <p>Inserisci almeno <strong>8 soci</strong> con valori da 0 a 7 (giorni di presenza). Attenzione:</p>
+        <ul>
+          <li>Lascia <strong>almeno 3 celle vuote</strong> (simulano settimane senza registrazione)</li>
+          <li>In <strong>altre celle</strong> scrivi la parola <code>Sospeso</code> per indicare soci con abbonamento sospeso</li>
+        </ul>
+
+        <h2>Totali e medie</h2>
+        <ol>
+          <li>Calcola il <strong>Totale Presenze</strong> del primo socio usando SOMMA con un <em>intervallo</em>:</li>
+        </ol>
+        <div class="formula-block">=SOMMA(B2:E2)</div>
+        <ol start="2">
+          <li>Calcola il Totale del secondo socio usando SOMMA con le <em>quattro celle singole</em> separate da <code>;</code>:</li>
+        </ol>
+        <div class="formula-block">=SOMMA(B3;C3;D3;E3)</div>
+        <ol start="3">
+          <li>Calcola il Totale del terzo socio usando SOMMA con un <em>intervallo più il numero fisso 3</em> (presenze registrate su carta ma non a sistema):</li>
+        </ol>
+        <div class="formula-block">=SOMMA(B4:E4;3)</div>
+        <ol start="4">
+          <li>Per i soci rimanenti usa il pulsante <strong>Somma Automatica</strong> (scheda Home).</li>
+          <li>Calcola la <strong>Media Settimanale</strong> del primo socio usando MEDIA con un <em>intervallo</em>:</li>
+        </ol>
+        <div class="formula-block">=MEDIA(B2:E2)</div>
+        <ol start="6">
+          <li>Calcola la Media del secondo socio usando MEDIA selezionando le <em>celle singole</em>:</li>
+        </ol>
+        <div class="formula-block">=MEDIA(B3;C3;D3;E3)</div>
+        <ol start="7">
+          <li>Calcola la Media del terzo socio usando MEDIA con <em>celle singole più il numero fisso 3</em>:</li>
+        </ol>
+        <div class="formula-block">=MEDIA(B4;C4;D4;E4;3)</div>
+        <ol start="8">
+          <li>Usa la <strong>Finestra delle Funzioni</strong> (<em>Formule → Inserisci funzione</em>) per inserire MEDIA per il quarto socio, leggendo la descrizione prima di confermare.</li>
+          <li>Copia le formule Media sugli ultimi soci.</li>
+        </ol>
+
+        <h2>Riepilogo presenze</h2>
+        <p>Aggiungi una sezione di riepilogo sotto la tabella:</p>
+        <ol start="10">
+          <li>Usa <strong>MAX</strong> con un <em>intervallo</em> per trovare il numero di presenze più alto nella colonna Settimana 1.</li>
+          <li>Usa <strong>MIN</strong> con un <em>intervallo</em> per trovare il valore più basso nella colonna Settimana 1.</li>
+          <li>Usa <strong>MAX</strong> selezionando le <em>celle singole</em> separate da <code>;</code> per il valore più alto nella colonna Settimana 2.</li>
+          <li>Usa <strong>MIN</strong> con <em>celle singole</em> per il valore più basso nella colonna Settimana 2.</li>
+          <li>Usa la <strong>Finestra delle Funzioni</strong> per inserire MAX sulla colonna Settimana 3, leggendo la descrizione prima di confermare.</li>
+        </ol>
+
+        <h2>Conteggio soci</h2>
+        <ol start="15">
+          <li>Usa <strong>CONTA.NUMERI</strong> sull'intervallo della colonna Settimana 1 per contare quanti soci hanno una presenza numerica (vuote e "Sospeso" non vengono conteggiate):</li>
+        </ol>
+        <div class="formula-block">=CONTA.NUMERI(B2:B9)</div>
+        <ol start="16">
+          <li>Usa <strong>CONTA.VUOTE</strong> sullo stesso intervallo per contare le celle vuote:</li>
+        </ol>
+        <div class="formula-block">=CONTA.VUOTE(B2:B9)</div>
+        <ol start="17">
+          <li>Usa <strong>CONTA.VALORI</strong> per contare tutte le celle non vuote, incluse quelle con "Sospeso":</li>
+        </ol>
+        <div class="formula-block">=CONTA.VALORI(B2:B9)</div>
+        <ol start="18">
+          <li>Verifica che <code>CONTA.NUMERI + CONTA.VUOTE</code> dia lo stesso totale di <code>CONTA.VALORI + CONTA.VUOTE</code> e rifletti sul perché.</li>
+        </ol>
+
+        <h2>Riga totale palestra</h2>
+        <p>Aggiungi una riga <strong>TOTALE PALESTRA</strong> in fondo e usa SOMMA con intervallo per sommare tutti i Totali Presenze. Se appare un errore, usa <em>Formule → Controllo Errori</em> per identificare, correggere o ignorare il problema.</p>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Struttura tabella</li>
+            <li>Totali — SOMMA (3 modi)</li>
+            <li>Medie — MEDIA (3 modi)</li>
+            <li>MAX e MIN (3 modi)</li>
+            <li>CONTA.NUMERI/VUOTE/VALORI</li>
+            <li>Riga TOTALE PALESTRA</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Funzioni usate</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>SOMMA</code></li>
+            <li style="margin-bottom:8px;"><code>MEDIA</code></li>
+            <li style="margin-bottom:8px;"><code>MAX</code> · <code>MIN</code></li>
+            <li style="margin-bottom:8px;"><code>CONTA.NUMERI</code></li>
+            <li style="margin-bottom:8px;"><code>CONTA.VUOTE</code></li>
+            <li><code>CONTA.VALORI</code></li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

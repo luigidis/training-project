@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nomi delle Celle — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Nomi delle Celle
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge intermedio">Intermedio</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #13</span>
+      </div>
+      <h1>Catalogo Elettronica — Nomi delle Celle</h1>
+      <div class="ex-meta">
+        <span>⏱ 45 minuti</span><span>·</span>
+        <span>Casella Nome · Nomi celle · Nomi intervalli · Crea da selezione · Gestione Nomi</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il responsabile di un negozio di elettronica e vuoi rendere le formule più leggibili. Invece di scrivere <code>$F$1</code> potrai scrivere <code>IVA</code>, e invece di <code>SOMMA(B2:B9)</code> potrai scrivere <code>SOMMA(vendite_q1)</code>. I nomi si comportano come referenze assolute: puntano sempre alla stessa cella.</p>
+
+        <h2>Struttura della tabella</h2>
+        <p>Crea una tabella con le colonne: <strong>Prodotto | Categoria | Vendite Q1 | Vendite Q2 | Vendite Q3 | Totale Trimestrale</strong></p>
+        <p>Inserisci questi dati esattamente come appaiono:</p>
+        <table class="data-table">
+          <thead><tr><th>Prodotto</th><th>Categoria</th><th>Q1</th><th>Q2</th><th>Q3</th></tr></thead>
+          <tbody>
+            <tr><td>Smartphone</td><td>Telefonia</td><td>45</td><td>52</td><td>38</td></tr>
+            <tr><td>Tablet</td><td>Telefonia</td><td>23</td><td>18</td><td>31</td></tr>
+            <tr><td>Laptop</td><td>Informatica</td><td>12</td><td>15</td><td>9</td></tr>
+            <tr><td>Monitor</td><td>Informatica</td><td>8</td><td>11</td><td>14</td></tr>
+            <tr><td>Cuffie</td><td>Accessori</td><td>67</td><td>71</td><td>58</td></tr>
+            <tr><td>Tastiera</td><td>Accessori</td><td>34</td><td>29</td><td>41</td></tr>
+            <tr><td>Mouse</td><td>Accessori</td><td>89</td><td>94</td><td>76</td></tr>
+            <tr><td>Webcam</td><td>Informatica</td><td>19</td><td>25</td><td>17</td></tr>
+          </tbody>
+        </table>
+        <p>Calcola il Totale Trimestrale per ogni prodotto con SOMMA prima di procedere. In una cella separata (es. H1) inserisci <code>0,22</code> con l'etichetta "IVA"; in H2 inserisci <code>10</code> con l'etichetta "Scorta Minima".</p>
+
+        <h2>Parte A — Assegnare un nome a una cella singola</h2>
+        <ol>
+          <li>Clicca sulla cella H1 (valore 0,22). In alto a sinistra trovi la <strong>Casella Nome</strong> (mostra di solito il riferimento cella, es. H1). Clicca su di essa, digita <code>IVA</code> e premi Invio.</li>
+          <li>Clicca su H2 (valore 10). Clicca sulla Casella Nome, digita <code>scorta_minima</code> e premi Invio.</li>
+          <li>In una cella vuota scrivi <code>=H1</code> e in un'altra <code>=IVA</code>. Entrambe restituiscono 0,22: il nome è un alias più leggibile per la stessa cella.</li>
+          <li>Aggiungi la colonna <strong>Prezzo IVA inclusa</strong>. Nella prima riga scrivi <code>=299*(1+IVA)</code>. La formula è immediatamente comprensibile senza sapere cosa c'è in H1.</li>
+          <li>Modifica H1 da <code>0,22</code> a <code>0,10</code> e osserva che la formula si aggiorna. I nomi si comportano come referenze assolute. Poi rimetti 0,22.</li>
+        </ol>
+
+        <h2>Parte B — Assegnare un nome a un intervallo</h2>
+        <ol start="6">
+          <li>Seleziona i valori della colonna <strong>Vendite Q1</strong> (senza intestazione). Clicca sulla Casella Nome, digita <code>vendite_q1</code> e premi Invio.</li>
+          <li>Ripeti per <strong>Vendite Q2</strong> → <code>vendite_q2</code>, <strong>Vendite Q3</strong> → <code>vendite_q3</code>, <strong>Totale Trimestrale</strong> → <code>totale_vendite</code>.</li>
+          <li>In una zona di riepilogo sotto la tabella scrivi queste formule usando i nomi:</li>
+        </ol>
+        <div class="formula-block">
+=SOMMA(vendite_q1)
+=MEDIA(vendite_q2)
+=MAX(vendite_q3)
+=MIN(totale_vendite)
+=CONTA.NUMERI(vendite_q1)
+        </div>
+
+        <h2>Parte C — Crea da selezione</h2>
+        <ol start="10">
+          <li>Seleziona tutta la tabella incluse le intestazioni (dalla cella Prodotto fino all'ultimo Totale).</li>
+          <li>Vai su <em>Formule → Crea da selezione</em>. Lascia spuntata solo <strong>Riga superiore</strong> e conferma. Excel crea automaticamente un nome per ogni colonna usando l'intestazione come nome.</li>
+          <li>Clicca sulla freccia accanto alla Casella Nome: vedi tutti i nomi disponibili. Clicca su uno per saltare immediatamente all'intervallo corrispondente.</li>
+          <li>Usa uno dei nomi creati automaticamente in una formula per verificare che la selezione sia corretta.</li>
+        </ol>
+
+        <h2>Parte D — Gestione Nomi</h2>
+        <ol start="14">
+          <li>Vai su <em>Formule → Gestione Nomi</em>. Vedi nome, valore attuale, riferimento e ambito per ogni nome definito.</li>
+          <li>Crea un nuovo nome dalla Gestione Nomi cliccando <strong>Nuovo</strong>. Assegna il nome <code>Trimestri</code> all'intervallo che comprende tutte e tre le colonne Q1, Q2 e Q3 insieme.</li>
+          <li>Usa il nuovo nome: scrivi <code>=SOMMA(Trimestri)</code> e verifica che restituisca la somma complessiva dei tre trimestri.</li>
+          <li>Torna nella Gestione Nomi, seleziona uno dei nomi creati automaticamente ed <strong>eliminalo</strong>. Le formule che lo usavano mostrano ora <code>#NOME?</code>: Excel non riconosce più il nome cancellato.</li>
+        </ol>
+
+        <h2>Parte E — Nomi vs referenza assoluta</h2>
+        <ol start="19">
+          <li>Aggiungi una colonna <strong>Prezzo IVA esclusa</strong>. Usa <code>=CASUALE.TRA(20;150)</code> per i prezzi, poi congela i valori con Incolla Valori.</li>
+          <li>Nella colonna <strong>Prezzo IVA inclusa</strong> scrivi una formula che usa il prezzo della cella e il nome <code>IVA</code>. Copia verso il basso: il nome rimane fisso (come <code>$H$1</code>), il prezzo scorre riga per riga.</li>
+        </ol>
+
+        <h2>Confronto approcci per valori fissi</h2>
+        <table class="data-table">
+          <thead><tr><th>Approccio</th><th>Pro</th><th>Contro</th></tr></thead>
+          <tbody>
+            <tr><td>Referenza assoluta <code>$H$1</code></td><td>Funziona sempre</td><td>Devi ricordare cosa c'è in H1</td></tr>
+            <tr><td>Referenza mista <code>$H2</code></td><td>La riga scorre, la colonna è fissa</td><td>Limitata a scorrimento verticale</td></tr>
+            <tr><td>Nome (es. <code>IVA</code>)</td><td>Formula leggibile, funziona anche se sposti la cella</td><td>Richiede di assegnare i nomi</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Parte A — Nomi cella singola</li>
+            <li>Parte B — Nomi intervalli</li>
+            <li>Parte C — Crea da selezione</li>
+            <li>Parte D — Gestione Nomi</li>
+            <li>Parte E — Nomi vs $$$</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Percorso</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;">Casella Nome (in alto a sinistra)</li>
+            <li style="margin-bottom:8px;">Formule → Crea da selezione</li>
+            <li>Formule → Gestione Nomi</li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>

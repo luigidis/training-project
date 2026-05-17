@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funzioni Condizionali — Corso Excel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../excel.html">Excel</a>
+        <a href="../../word.html">Word</a>
+        <a href="../../css.html">CSS</a>
+        <a href="../../html-css.html">HTML &amp; CSS</a>
+        <a href="../../index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ex-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a><span>›</span>
+        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        Funzioni Condizionali
+      </div>
+    </div>
+  </div>
+
+  <section class="ex-hero">
+    <div class="container">
+      <div class="badge-row">
+        <span class="card-badge avanzato">Avanzato</span>
+        <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #17</span>
+      </div>
+      <h1>Registro Vendite — Funzioni Condizionali</h1>
+      <div class="ex-meta">
+        <span>⏱ 55 minuti</span><span>·</span>
+        <span>CONTA.SE · CONTA.PIU.SE · SOMMA.SE · SOMMA.PIU.SE · MEDIA.SE</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-body">
+    <div class="container">
+      <div class="ex-content">
+
+        <h2>Descrizione</h2>
+        <p>Sei il direttore commerciale di una catena di negozi di elettronica e hai ricevuto il registro delle vendite del trimestre. Devi analizzare i dati per estrarre statistiche precise su sottoinsiemi specifici (es. solo le vendite del Nord, solo la categoria Telefonia, solo Rossi a Marzo) senza ricopiare i dati a mano.</p>
+
+        <h2>Struttura della tabella principale</h2>
+        <p>Crea una tabella con le colonne: <strong>Mese | Agente | Regione | Categoria | Vendite</strong></p>
+        <p>Inserisci questi 20 record esattamente come appaiono:</p>
+        <table class="data-table">
+          <thead><tr><th>Mese</th><th>Agente</th><th>Regione</th><th>Categoria</th><th>Vendite</th></tr></thead>
+          <tbody>
+            <tr><td>Gennaio</td><td>Rossi</td><td>Nord</td><td>Telefonia</td><td>4500</td></tr>
+            <tr><td>Gennaio</td><td>Bianchi</td><td>Sud</td><td>Informatica</td><td>3200</td></tr>
+            <tr><td>Gennaio</td><td>Ferrari</td><td>Centro</td><td>Accessori</td><td>1800</td></tr>
+            <tr><td>Gennaio</td><td>Esposito</td><td>Nord</td><td>Informatica</td><td>5100</td></tr>
+            <tr><td>Gennaio</td><td>Romano</td><td>Sud</td><td>Telefonia</td><td>2900</td></tr>
+            <tr><td>Febbraio</td><td>Rossi</td><td>Nord</td><td>Accessori</td><td>2200</td></tr>
+            <tr><td>Febbraio</td><td>Bianchi</td><td>Sud</td><td>Telefonia</td><td>4800</td></tr>
+            <tr><td>Febbraio</td><td>Ferrari</td><td>Centro</td><td>Informatica</td><td>3700</td></tr>
+            <tr><td>Febbraio</td><td>Esposito</td><td>Nord</td><td>Telefonia</td><td>6200</td></tr>
+            <tr><td>Febbraio</td><td>Romano</td><td>Sud</td><td>Accessori</td><td>1500</td></tr>
+            <tr><td>Marzo</td><td>Rossi</td><td>Nord</td><td>Informatica</td><td>5800</td></tr>
+            <tr><td>Marzo</td><td>Bianchi</td><td>Sud</td><td>Accessori</td><td>2100</td></tr>
+            <tr><td>Marzo</td><td>Ferrari</td><td>Centro</td><td>Telefonia</td><td>4100</td></tr>
+            <tr><td>Marzo</td><td>Esposito</td><td>Nord</td><td>Accessori</td><td>3300</td></tr>
+            <tr><td>Marzo</td><td>Romano</td><td>Sud</td><td>Informatica</td><td>2700</td></tr>
+            <tr><td>Marzo</td><td>Ricci</td><td>Centro</td><td>Telefonia</td><td>5500</td></tr>
+            <tr><td>Marzo</td><td>Conti</td><td>Nord</td><td>Informatica</td><td>3900</td></tr>
+            <tr><td>Marzo</td><td>Greco</td><td>Sud</td><td>Accessori</td><td>1600</td></tr>
+            <tr><td>Marzo</td><td>Marini</td><td>Centro</td><td>Telefonia</td><td>4700</td></tr>
+            <tr><td>Marzo</td><td>Galli</td><td>Nord</td><td>Informatica</td><td>2800</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Parte A — CONTA.SE — un solo criterio</h2>
+        <p>Sintassi: <code>=CONTA.SE(intervallo; criterio)</code></p>
+        <div class="formula-block">
+=CONTA.SE(C2:C21;"Nord")         → quante vendite nella regione Nord (risultato: 7)
+=CONTA.SE(D2:D21;"Telefonia")    → quante righe categoria Telefonia
+=CONTA.SE(E2:E21;"&gt;4000")    → quante vendite superiori a 4000
+=CONTA.SE(B2:B21;"Rossi")        → quante righe per l'agente Rossi
+        </div>
+        <p>Per il range 2000–4000 senza CONTA.PIU.SE: <code>=CONTA.SE(E2:E21;"&lt;=4000")-CONTA.SE(E2:E21;"&lt;2000")</code></p>
+
+        <h2>Parte B — CONTA.PIU.SE — più criteri</h2>
+        <p>Sintassi: <code>=CONTA.PIU.SE(interv1;crit1;interv2;crit2;...)</code><br>Conta le righe dove <strong>tutti</strong> i criteri sono soddisfatti contemporaneamente.</p>
+        <div class="formula-block">
+=CONTA.PIU.SE(C2:C21;"Nord";D2:D21;"Informatica")
+=CONTA.PIU.SE(B2:B21;"Rossi";A2:A21;"Marzo")
+=CONTA.PIU.SE(E2:E21;"&gt;="&amp;2000;E2:E21;"&lt;="&amp;4000)
+=CONTA.PIU.SE(C2:C21;"Sud";A2:A21;"Gennaio";E2:E21;"&gt;2000")
+        </div>
+
+        <h2>Parte C — SOMMA.SE — sommare con un criterio</h2>
+        <p>Sintassi: <code>=SOMMA.SE(interv_criterio; criterio; interv_somma)</code><br>Nota: l'intervallo da sommare è il <strong>terzo</strong> argomento.</p>
+        <div class="formula-block">
+=SOMMA.SE(C2:C21;"Nord";E2:E21)      → totale vendite regione Nord
+=SOMMA.SE(D2:D21;"Accessori";E2:E21) → totale vendite Accessori
+=SOMMA.SE(B2:B21;"Ferrari";E2:E21)   → totale vendite di Ferrari
+=SOMMA.SE(E2:E21;"&gt;4000";E2:E21)  → somma vendite superiori a 4000
+        </div>
+
+        <h2>Parte D — SOMMA.PIU.SE — sommare con più criteri</h2>
+        <p>Sintassi: <code>=SOMMA.PIU.SE(interv_somma; interv1;crit1; interv2;crit2;...)</code><br>Attenzione: l'intervallo da sommare è il <strong>primo</strong> argomento (diverso da SOMMA.SE).</p>
+        <div class="formula-block">
+=SOMMA.PIU.SE(E2:E21;C2:C21;"Nord";D2:D21;"Telefonia")
+=SOMMA.PIU.SE(E2:E21;B2:B21;"Rossi";A2:A21;"Marzo")
+=SOMMA.PIU.SE(E2:E21;C2:C21;"Sud";A2:A21;"Gennaio")
+=SOMMA.PIU.SE(E2:E21;C2:C21;"Nord";D2:D21;"Informatica";E2:E21;"&gt;3000")
+        </div>
+        <p>Costruisci poi una <strong>tabella riepilogativa 3×3</strong> con righe Nord/Centro/Sud e colonne Telefonia/Informatica/Accessori. Riempi ogni cella con una SOMMA.PIU.SE (9 formule in totale).</p>
+
+        <h2>Parte E — MEDIA.SE — media con un criterio</h2>
+        <p>Sintassi: <code>=MEDIA.SE(interv_criterio; criterio; interv_media)</code><br>Struttura identica a SOMMA.SE.</p>
+        <div class="formula-block">
+=MEDIA.SE(C2:C21;"Centro";E2:E21)    → media vendite regione Centro
+=MEDIA.SE(D2:D21;"Telefonia";E2:E21) → media vendite Telefonia
+=MEDIA.SE(E2:E21;"&gt;3000";E2:E21)  → media vendite superiori a 3000
+        </div>
+        <p>Confronta: <code>=MEDIA(E2:E21)</code> vs <code>MEDIA.SE</code> per Nord e Sud. Rifletti su quale regione performa meglio e se il dato globale nasconde differenze importanti.</p>
+
+      </div>
+      <aside class="ex-sidebar">
+        <div class="sidebar-box">
+          <h3>Indice</h3>
+          <ol>
+            <li>Parte A — CONTA.SE</li>
+            <li>Parte B — CONTA.PIU.SE</li>
+            <li>Parte C — SOMMA.SE</li>
+            <li>Parte D — SOMMA.PIU.SE + tabella 3×3</li>
+            <li>Parte E — MEDIA.SE</li>
+          </ol>
+        </div>
+        <div class="sidebar-box">
+          <h3>Funzioni usate</h3>
+          <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
+            <li style="margin-bottom:8px;"><code>CONTA.SE</code></li>
+            <li style="margin-bottom:8px;"><code>CONTA.PIU.SE</code></li>
+            <li style="margin-bottom:8px;"><code>SOMMA.SE</code></li>
+            <li style="margin-bottom:8px;"><code>SOMMA.PIU.SE</code></li>
+            <li><code>MEDIA.SE</code></li>
+          </ul>
+        </div>
+        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+</body>
+</html>
