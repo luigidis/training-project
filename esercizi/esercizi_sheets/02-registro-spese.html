@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registro Mensile Spese — Corso Excel</title>
+  <title>Registro Mensile Spese — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,7 +31,7 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
         Registro Mensile Spese
       </div>
     </div>
@@ -46,7 +46,7 @@
       <h1>Registro Mensile Spese per Reparto</h1>
       <div class="ex-meta">
         <span>⏱ 35 minuti</span><span>·</span>
-        <span>SOMMA · MEDIA · Somma Automatica · Finestra Funzioni · Controllo Errori</span>
+        <span>SUM · AVERAGE · Pulsante Σ · Inserisci → Funzione · Controllo Errori</span>
       </div>
     </div>
   </section>
@@ -56,7 +56,7 @@
       <div class="ex-content">
 
         <h2>Descrizione</h2>
-        <p>Sei il responsabile amministrativo di una piccola azienda. Devi creare un registro mensile delle spese suddivise per reparto, imparando i <strong>diversi modi di usare SOMMA e MEDIA</strong>.</p>
+        <p>Sei il responsabile amministrativo di una piccola azienda. Devi creare un registro mensile delle spese suddivise per reparto, imparando i <strong>diversi modi di usare SUM e AVERAGE</strong>.</p>
 
         <h2>Struttura della tabella</h2>
         <p>Crea una tabella con queste colonne: <strong>Reparto | Settimana 1 | Settimana 2 | Settimana 3 | Settimana 4 | Totale | Media</strong></p>
@@ -64,50 +64,50 @@
 
         <h2>Passaggi da completare nell'ordine</h2>
 
-        <h3>Colonna Totale — modi diversi di usare SOMMA</h3>
+        <h3>Colonna Totale — modi diversi di usare SUM</h3>
         <ol>
-          <li><strong>Reparto 1</strong> — usa SOMMA con un <em>intervallo</em>:</li>
+          <li><strong>Reparto 1</strong> — usa SUM con un <em>intervallo</em>:</li>
         </ol>
         <div class="formula-block">
           <div class="formula-label">Totale Reparto 1 — intervallo</div>
-          =SOMMA(B2:E2)
+          =SUM(B2:E2)
         </div>
         <ol start="2">
-          <li><strong>Reparto 2</strong> — usa SOMMA selezionando le <em>quattro celle singole</em> separate da <code>;</code>:</li>
+          <li><strong>Reparto 2</strong> — usa SUM selezionando le <em>quattro celle singole</em> separate da <code>;</code>:</li>
         </ol>
         <div class="formula-block">
           <div class="formula-label">Totale Reparto 2 — celle singole</div>
-          =SOMMA(B3;C3;D3;E3)
+          =SUM(B3;C3;D3;E3)
         </div>
         <ol start="3">
-          <li><strong>Reparto 3</strong> — usa SOMMA con intervallo <em>più un numero fisso</em> di 200 (spesa extra non registrata):</li>
+          <li><strong>Reparto 3</strong> — usa SUM con intervallo <em>più un numero fisso</em> di 200 (spesa extra non registrata):</li>
         </ol>
         <div class="formula-block">
           <div class="formula-label">Totale Reparto 3 — intervallo + numero fisso</div>
-          =SOMMA(B4:E4;200)
+          =SUM(B4:E4;200)
         </div>
         <ol start="4">
-          <li><strong>Reparti rimanenti</strong> — usa il pulsante <strong>Somma Automatica</strong> (scheda Home) per calcolare il totale automaticamente.</li>
+          <li><strong>Reparti rimanenti</strong> — usa il pulsante <strong>Σ</strong> nella barra degli strumenti (oppure <em>Inserisci → Funzioni → SUM</em>) per calcolare il totale automaticamente.</li>
         </ol>
 
-        <h3>Colonna Media — modi diversi di usare MEDIA</h3>
+        <h3>Colonna Media — modi diversi di usare AVERAGE</h3>
         <ol start="5">
-          <li><strong>Reparto 1</strong> — usa MEDIA con un <em>intervallo</em>:</li>
+          <li><strong>Reparto 1</strong> — usa AVERAGE con un <em>intervallo</em>:</li>
         </ol>
-        <div class="formula-block">=MEDIA(B2:E2)</div>
+        <div class="formula-block">=AVERAGE(B2:E2)</div>
         <ol start="6">
-          <li><strong>Reparto 2</strong> — usa MEDIA con <em>celle singole più il numero fisso 200</em> (per includere la spesa extra nella media):</li>
+          <li><strong>Reparto 2</strong> — usa AVERAGE con <em>celle singole più il numero fisso 200</em> (per includere la spesa extra nella media):</li>
         </ol>
-        <div class="formula-block">=MEDIA(B3;C3;D3;E3;200)</div>
+        <div class="formula-block">=AVERAGE(B3;C3;D3;E3;200)</div>
         <ol start="7">
-          <li><strong>Reparto 3</strong> — usa la <strong>Finestra delle Funzioni</strong> (<em>Formule → Inserisci funzione</em>) per trovare e inserire MEDIA, leggendo la descrizione prima di confermare.</li>
+          <li><strong>Reparto 3</strong> — usa <em>Inserisci → Funzione</em> per trovare e inserire AVERAGE, leggendo la descrizione prima di confermare.</li>
           <li><strong>Ultimi reparti</strong> — copia le formule Media verso il basso.</li>
         </ol>
 
         <h3>Riga TOTALE AZIENDA</h3>
         <ol start="9">
-          <li>Aggiungi una riga <strong>TOTALE AZIENDA</strong> in fondo e usa SOMMA con intervallo per sommare i totali di tutti i reparti.</li>
-          <li>Se appare un errore su qualche cella, vai su <em>Formule → Controllo Errori</em> per identificarlo e correggerlo.</li>
+          <li>Aggiungi una riga <strong>TOTALE AZIENDA</strong> in fondo e usa SUM con intervallo per sommare i totali di tutti i reparti.</li>
+          <li>Se appare un errore su qualche cella, gli errori sono indicati con un triangolino nelle celle; seleziona la cella per visualizzare i dettagli.</li>
         </ol>
 
         <h2>Verifica finale</h2>
@@ -123,21 +123,21 @@
           <h3>Indice</h3>
           <ol>
             <li>Struttura tabella</li>
-            <li>Totali — SOMMA</li>
-            <li>Medie — MEDIA</li>
+            <li>Totali — SUM</li>
+            <li>Medie — AVERAGE</li>
             <li>Riga TOTALE AZIENDA</li>
           </ol>
         </div>
         <div class="sidebar-box">
           <h3>Funzioni usate</h3>
           <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
-            <li style="margin-bottom:8px;"><code>SOMMA</code></li>
-            <li style="margin-bottom:8px;"><code>MEDIA</code></li>
-            <li style="margin-bottom:8px;">Somma Automatica</li>
-            <li>Finestra Funzioni</li>
+            <li style="margin-bottom:8px;"><code>SUM</code></li>
+            <li style="margin-bottom:8px;"><code>AVERAGE</code></li>
+            <li style="margin-bottom:8px;">Pulsante Σ</li>
+            <li>Inserisci → Funzione</li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

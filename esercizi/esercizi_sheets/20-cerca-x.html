@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CERCA.X — Corso Excel</title>
+  <title>XLOOKUP — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,8 +31,8 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
-        CERCA.X
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
+        XLOOKUP
       </div>
     </div>
   </div>
@@ -43,10 +43,10 @@
         <span class="card-badge avanzato">Avanzato</span>
         <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #20</span>
       </div>
-      <h1>Scheda Dipendenti — CERCA.X</h1>
+      <h1>Scheda Dipendenti — XLOOKUP</h1>
       <div class="ex-meta">
         <span>⏱ 40 minuti</span><span>·</span>
-        <span>CERCA.X · 4° argomento (se non trovato) · 6° argomento (direzione) · vs INDICE+CONFRONTA</span>
+        <span>XLOOKUP · 4° argomento (se non trovato) · 6° argomento (direzione) · vs INDEX+MATCH</span>
       </div>
     </div>
   </section>
@@ -56,7 +56,7 @@
       <div class="ex-content">
 
         <h2>Descrizione</h2>
-        <p>Sei il responsabile delle risorse umane e devi costruire una scheda di ricerca dipendenti. Dato un nome, vuoi recuperare automaticamente reparto, stipendio e livello. <strong>CERCA.X</strong> è la funzione moderna che sostituisce e semplifica la combinazione INDICE+CONFRONTA: una sola funzione invece di due annidate.</p>
+        <p>Sei il responsabile delle risorse umane e devi costruire una scheda di ricerca dipendenti. Dato un nome, vuoi recuperare automaticamente reparto, stipendio e livello. <strong>XLOOKUP</strong> è la funzione moderna che sostituisce e semplifica la combinazione INDEX+MATCH: una sola funzione invece di due annidate.</p>
 
         <h2>Struttura della tabella</h2>
         <p>Crea una tabella con le colonne: <strong>Dipendente | Reparto | Stipendio | Livello</strong></p>
@@ -75,21 +75,21 @@
           </tbody>
         </table>
 
-        <h2>Parte A — CERCA.X sintassi base</h2>
-        <p>Sintassi: <code>=CERCA.X(valore_cercato; interv_ricerca; interv_risultati; [se_non_trovato])</code></p>
+        <h2>Parte A — XLOOKUP sintassi base</h2>
+        <p>Sintassi: <code>=XLOOKUP(valore_cercato; interv_ricerca; interv_risultati; [se_non_trovato])</code></p>
         <p>Crea una <strong>scheda di ricerca</strong>: etichetta "Dipendente cercato:" con la cella a fianco contenente <code>Romano</code>. Sotto scrivi le etichette Reparto:, Stipendio:, Livello:.</p>
         <ol>
           <li>Accanto a <strong>Reparto:</strong> (sostituisci <code>cella_ricerca</code> con il riferimento alla cella con Romano):</li>
         </ol>
-        <div class="formula-block">=CERCA.X(cella_ricerca;A2:A9;B2:B9)</div>
+        <div class="formula-block">=XLOOKUP(cella_ricerca;A2:A9;B2:B9)</div>
         <ol start="2">
           <li>Accanto a <strong>Stipendio:</strong> — cambia solo l'intervallo risultati:</li>
         </ol>
-        <div class="formula-block">=CERCA.X(cella_ricerca;A2:A9;C2:C9)</div>
+        <div class="formula-block">=XLOOKUP(cella_ricerca;A2:A9;C2:C9)</div>
         <ol start="3">
           <li>Accanto a <strong>Livello:</strong></li>
         </ol>
-        <div class="formula-block">=CERCA.X(cella_ricerca;A2:A9;D2:D9)</div>
+        <div class="formula-block">=XLOOKUP(cella_ricerca;A2:A9;D2:D9)</div>
         <ol start="4">
           <li>Cambia il nome nella cella di ricerca con <code>Ricci</code> e osserva come tutte e tre le celle si aggiornano (HR, 2900, Middle). Prova con altri nomi.</li>
         </ol>
@@ -99,7 +99,7 @@
           <li>Digita <code>Marini</code> (non esiste): tutte e tre le formule mostrano <code>#N/D</code>.</li>
           <li>Modifica le formule aggiungendo il quarto argomento:</li>
         </ol>
-        <div class="formula-block">=CERCA.X(cella_ricerca;A2:A9;C2:C9;"Dipendente non trovato")</div>
+        <div class="formula-block">=XLOOKUP(cella_ricerca;A2:A9;C2:C9;"Dipendente non trovato")</div>
         <ol start="7">
           <li>Rimetti <code>Conti</code> nella cella di ricerca e verifica che le formule tornino ai valori normali (Marketing, 3800, Senior).</li>
         </ol>
@@ -121,33 +121,33 @@
         <ol start="9">
           <li>Cerca le vendite di Rossi a partire dall'inizio:</li>
         </ol>
-        <div class="formula-block">=CERCA.X("Rossi";G2:G7;I2:I7;"Non trovato";0;1)</div>
+        <div class="formula-block">=XLOOKUP("Rossi";G2:G7;I2:I7;"Non trovato";0;1)</div>
         <p>Risultato: 4500 (Gennaio — prima riga con Rossi).</p>
         <ol start="10">
           <li>Cerca le vendite di Rossi a partire dalla fine:</li>
         </ol>
-        <div class="formula-block">=CERCA.X("Rossi";G2:G7;I2:I7;"Non trovato";0;-1)</div>
+        <div class="formula-block">=XLOOKUP("Rossi";G2:G7;I2:I7;"Non trovato";0;-1)</div>
         <p>Risultato: 5800 (Marzo — ultima riga con Rossi). Utile con dati in ordine cronologico per trovare il record più recente.</p>
 
-        <h2>Parte D — Confronto CERCA.X vs INDICE+CONFRONTA</h2>
+        <h2>Parte D — Confronto XLOOKUP vs INDEX+MATCH</h2>
         <ol start="11">
-          <li>Scrivi la formula INDICE+CONFRONTA per lo stipendio di Bianchi:</li>
+          <li>Scrivi la formula INDEX+MATCH per lo stipendio di Bianchi:</li>
         </ol>
-        <div class="formula-block">=INDICE(C2:C9;CONFRONTA("Bianchi";A2:A9;0))</div>
+        <div class="formula-block">=INDEX(C2:C9;MATCH("Bianchi";A2:A9;0))</div>
         <ol start="12">
-          <li>Scrivi la formula CERCA.X equivalente nella cella accanto:</li>
+          <li>Scrivi la formula XLOOKUP equivalente nella cella accanto:</li>
         </ol>
-        <div class="formula-block">=CERCA.X("Bianchi";A2:A9;C2:C9)</div>
-        <p>Il risultato è identico (3500). CERCA.X è più corta e diretta.</p>
+        <div class="formula-block">=XLOOKUP("Bianchi";A2:A9;C2:C9)</div>
+        <p>Il risultato è identico (3500). XLOOKUP è più corta e diretta.</p>
 
-        <h2>CERCA.X vs INDICE+CONFRONTA</h2>
+        <h2>XLOOKUP vs INDEX+MATCH</h2>
         <table class="data-table">
-          <thead><tr><th></th><th>INDICE+CONFRONTA</th><th>CERCA.X</th></tr></thead>
+          <thead><tr><th></th><th>INDEX+MATCH</th><th>XLOOKUP</th></tr></thead>
           <tbody>
             <tr><td>Complessità</td><td>Due funzioni annidate</td><td>Una sola funzione</td></tr>
             <tr><td>Valore non trovato</td><td>Errore #N/D</td><td>4° argomento personalizzabile</td></tr>
             <tr><td>Ricerca inversa</td><td>Non supportata nativamente</td><td>6° argomento = -1</td></tr>
-            <tr><td>Compatibilità</td><td>Tutte le versioni Excel</td><td>Solo Excel 2021+ e Microsoft 365</td></tr>
+            <tr><td>Compatibilità</td><td>Tutte le versioni</td><td>Disponibile in Google Sheets</td></tr>
           </tbody>
         </table>
 
@@ -156,16 +156,16 @@
         <div class="sidebar-box">
           <h3>Indice</h3>
           <ol>
-            <li>Parte A — CERCA.X base</li>
+            <li>Parte A — XLOOKUP base</li>
             <li>Parte B — 4° argomento</li>
             <li>Parte C — 6° argomento (dir.)</li>
-            <li>Parte D — vs INDICE+CONFRONTA</li>
+            <li>Parte D — vs INDEX+MATCH</li>
           </ol>
         </div>
         <div class="sidebar-box">
           <h3>Sintassi completa</h3>
           <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
-            <li style="margin-bottom:8px;"><code>=CERCA.X(</code></li>
+            <li style="margin-bottom:8px;"><code>=XLOOKUP(</code></li>
             <li style="margin-bottom:8px;">valore_cercato,</li>
             <li style="margin-bottom:8px;">interv_ricerca,</li>
             <li style="margin-bottom:8px;">interv_risultati,</li>
@@ -174,7 +174,7 @@
             <li><code>[direzione])</code></li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

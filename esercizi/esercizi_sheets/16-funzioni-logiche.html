@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Funzioni Logiche — Corso Excel</title>
+  <title>Funzioni Logiche — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,7 +31,7 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
         Funzioni Logiche
       </div>
     </div>
@@ -43,10 +43,10 @@
         <span class="card-badge intermedio">Intermedio</span>
         <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #16</span>
       </div>
-      <h1>Valutazione Agenti — Funzioni Logiche SE, E, O</h1>
+      <h1>Valutazione Agenti — Funzioni Logiche IF, AND, OR</h1>
       <div class="ex-meta">
         <span>⏱ 45 minuti</span><span>·</span>
-        <span>SE() · E() · O() · Nomi celle · Operatore &amp;</span>
+        <span>IF() · AND() · OR() · Nomi celle · Operatore &amp;</span>
       </div>
     </div>
   </section>
@@ -56,10 +56,10 @@
       <div class="ex-content">
 
         <h2>Descrizione</h2>
-        <p>Sei il responsabile delle risorse umane di una media impresa e devi costruire un sistema di valutazione automatico per i tuoi agenti commerciali. Userai le funzioni logiche <strong>SE</strong>, <strong>E</strong> e <strong>O</strong> per automatizzare decisioni su bonus, promozioni e piani di supporto.</p>
+        <p>Sei il responsabile delle risorse umane di una media impresa e devi costruire un sistema di valutazione automatico per i tuoi agenti commerciali. Userai le funzioni logiche <strong>IF</strong>, <strong>AND</strong> e <strong>OR</strong> per automatizzare decisioni su bonus, promozioni e piani di supporto.</p>
 
         <h2>Impostazione iniziale</h2>
-        <p>In una cella separata inserisci il valore <code>15000</code> con l'etichetta "Target Vendite" nella cella vicina. Assegna alla cella il nome <code>target_vendite</code> (clicca sulla Casella Nome, digita il nome e premi Invio).</p>
+        <p>In una cella separata inserisci il valore <code>15000</code> con l'etichetta "Target Vendite" nella cella vicina. Assegna alla cella il nome <code>target_vendite</code> (clicca sulla Casella Nome, digita il nome e premi Invio). In alternativa puoi usare <strong>Dati → Intervalli con nome</strong> per assegnare il nome tramite il pannello laterale.</p>
 
         <h2>Struttura della tabella</h2>
         <p>Crea la tabella con le colonne: <strong>Agente | Reparto | Vendite | Presenze | Anni Servizio | Esito Vendite | Fascia | Bonus | Promozione | Supporto</strong></p>
@@ -78,65 +78,65 @@
           </tbody>
         </table>
 
-        <h2>Parte A — SE() di base</h2>
-        <p>Sintassi: <code>=SE(condizione; valore_se_vero; valore_se_falso)</code></p>
+        <h2>Parte A — IF() di base</h2>
+        <p>Sintassi: <code>=IF(condizione; valore_se_vero; valore_se_falso)</code></p>
         <ol>
           <li>Nella colonna <strong>Esito Vendite</strong> scrivi questa formula e copiala su tutti:</li>
         </ol>
-        <div class="formula-block">=SE(C2&gt;target_vendite;"Sopra Target";"Sotto Target")</div>
+        <div class="formula-block">=IF(C2&gt;target_vendite;"Sopra Target";"Sotto Target")</div>
         <ol start="2">
           <li>Modifica <code>target_vendite</code> da 15000 a 20000 e osserva quante celle cambiano. Poi rimetti 15000.</li>
         </ol>
 
-        <h2>Parte B — SE() con E() — tutte le condizioni devono essere vere</h2>
-        <p>Sintassi: <code>=SE(E(cond1;cond2); vero; falso)</code><br>E() restituisce VERO solo se <strong>tutte</strong> le condizioni sono vere contemporaneamente.</p>
+        <h2>Parte B — IF() con AND() — tutte le condizioni devono essere vere</h2>
+        <p>Sintassi: <code>=IF(AND(cond1;cond2); vero; falso)</code><br>AND() restituisce VERO solo se <strong>tutte</strong> le condizioni sono vere contemporaneamente.</p>
         <ol start="4">
-          <li>Nella colonna <strong>Fascia</strong>: agente "Senior" se ha più di 5 anni di servizio E presenze &gt; 85:</li>
+          <li>Nella colonna <strong>Fascia</strong>: agente "Senior" se ha più di 5 anni di servizio e presenze &gt; 85:</li>
         </ol>
-        <div class="formula-block">=SE(E(E2&gt;5;D2&gt;85);"Senior";"Junior")</div>
+        <div class="formula-block">=IF(AND(E2&gt;5;D2&gt;85);"Senior";"Junior")</div>
         <ol start="5">
-          <li>Nella colonna <strong>Bonus</strong>: diritto al bonus se supera il target E presenze ≥ 80%:</li>
+          <li>Nella colonna <strong>Bonus</strong>: diritto al bonus se supera il target e presenze ≥ 80%:</li>
         </ol>
-        <div class="formula-block">=SE(E(C2&gt;target_vendite;D2&gt;=80);"Sì";"No")</div>
+        <div class="formula-block">=IF(AND(C2&gt;target_vendite;D2&gt;=80);"Sì";"No")</div>
         <ol start="6">
           <li>Modifica le presenze di Conti da 70 a 82 e osserva se la colonna Bonus cambia. Poi rimetti il valore originale.</li>
         </ol>
 
-        <h2>Parte C — SE() con O() — almeno una condizione deve essere vera</h2>
-        <p>Sintassi: <code>=SE(O(cond1;cond2); vero; falso)</code><br>O() restituisce VERO se <strong>almeno una</strong> condizione è vera.</p>
+        <h2>Parte C — IF() con OR() — almeno una condizione deve essere vera</h2>
+        <p>Sintassi: <code>=IF(OR(cond1;cond2); vero; falso)</code><br>OR() restituisce VERO se <strong>almeno una</strong> condizione è vera.</p>
         <ol start="7">
           <li>Nella colonna <strong>Promozione</strong>: candidato se vendite &gt; 18000 OPPURE anni di servizio &gt; 8:</li>
         </ol>
-        <div class="formula-block">=SE(O(C2&gt;18000;E2&gt;8);"Candidato";"Non Candidato")</div>
+        <div class="formula-block">=IF(OR(C2&gt;18000;E2&gt;8);"Candidato";"Non Candidato")</div>
         <ol start="8">
           <li>Nella colonna <strong>Supporto</strong>: supporto necessario se presenze &lt; 80 OPPURE vendite &lt; 10000:</li>
         </ol>
-        <div class="formula-block">=SE(O(D2&lt;80;C2&lt;10000);"Supporto Necessario";"OK")</div>
+        <div class="formula-block">=IF(OR(D2&lt;80;C2&lt;10000);"Supporto Necessario";"OK")</div>
 
-        <h2>Parte D — Combinare SE con altre funzioni</h2>
+        <h2>Parte D — Combinare IF con altre funzioni</h2>
         <ol start="10">
           <li>Aggiungi la colonna <strong>Importo Bonus</strong>: converte Sì/No in valore numerico:</li>
         </ol>
-        <div class="formula-block">=SE(H2="Sì";500;0)</div>
+        <div class="formula-block">=IF(H2="Sì";500;0)</div>
         <ol start="11">
           <li>In una zona di riepilogo completa:
             <ul>
-              <li><code>SOMMA</code> sulla colonna Importo Bonus → totale bonus da erogare</li>
-              <li><code>MEDIA</code> sulla colonna Vendite → media delle vendite</li>
+              <li><code>SUM</code> sulla colonna Importo Bonus → totale bonus da erogare</li>
+              <li><code>AVERAGE</code> sulla colonna Vendite → media delle vendite</li>
               <li><code>MAX</code> sulla colonna Vendite → vendite più alte</li>
-              <li><code>=SE(MAX(C2:C9)&gt;target_vendite;"Almeno un agente ha superato il target";"Nessun agente ha superato il target")</code></li>
+              <li><code>=IF(MAX(C2:C9)&gt;target_vendite;"Almeno un agente ha superato il target";"Nessun agente ha superato il target")</code></li>
             </ul>
           </li>
           <li>Aggiungi la colonna <strong>Scheda Agente</strong> che concatena informazioni con l'operatore &amp;:</li>
         </ol>
-        <div class="formula-block">=MAIUSC.INIZ(A2)&amp;" - "&amp;F2&amp;" - Bonus: "&amp;H2</div>
+        <div class="formula-block">=PROPER(A2)&amp;" - "&amp;F2&amp;" - Bonus: "&amp;H2</div>
 
-        <h2>Differenza tra E() e O()</h2>
+        <h2>Differenza tra AND() e OR()</h2>
         <table class="data-table">
           <thead><tr><th>Funzione</th><th>Restituisce VERO se…</th><th>Risultato</th></tr></thead>
           <tbody>
-            <tr><td><code>E(cond1;cond2)</code></td><td>TUTTE le condizioni sono vere</td><td>Più selettivo</td></tr>
-            <tr><td><code>O(cond1;cond2)</code></td><td>ALMENO UNA condizione è vera</td><td>Più inclusivo</td></tr>
+            <tr><td><code>AND(cond1;cond2)</code></td><td>TUTTE le condizioni sono vere</td><td>Più selettivo</td></tr>
+            <tr><td><code>OR(cond1;cond2)</code></td><td>ALMENO UNA condizione è vera</td><td>Più inclusivo</td></tr>
           </tbody>
         </table>
 
@@ -146,22 +146,22 @@
           <h3>Indice</h3>
           <ol>
             <li>Nome cella target_vendite</li>
-            <li>Parte A — SE base</li>
-            <li>Parte B — SE con E()</li>
-            <li>Parte C — SE con O()</li>
+            <li>Parte A — IF base</li>
+            <li>Parte B — IF con AND()</li>
+            <li>Parte C — IF con OR()</li>
             <li>Parte D — Importo Bonus + Riepilogo</li>
           </ol>
         </div>
         <div class="sidebar-box">
           <h3>Funzioni usate</h3>
           <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
-            <li style="margin-bottom:8px;"><code>SE(cond;vero;falso)</code></li>
-            <li style="margin-bottom:8px;"><code>E(c1;c2;...)</code></li>
-            <li style="margin-bottom:8px;"><code>O(c1;c2;...)</code></li>
-            <li><code>MAIUSC.INIZ</code> + <code>&amp;</code></li>
+            <li style="margin-bottom:8px;"><code>IF(cond;vero;falso)</code></li>
+            <li style="margin-bottom:8px;"><code>AND(c1;c2;...)</code></li>
+            <li style="margin-bottom:8px;"><code>OR(c1;c2;...)</code></li>
+            <li><code>PROPER</code> + <code>&amp;</code></li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

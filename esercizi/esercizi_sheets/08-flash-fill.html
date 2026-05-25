@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flash Fill — Corso Excel</title>
+  <title>Compilazione automatica — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,8 +31,8 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
-        Flash Fill
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
+        Compilazione automatica
       </div>
     </div>
   </div>
@@ -43,10 +43,10 @@
         <span class="card-badge base">Base</span>
         <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #8</span>
       </div>
-      <h1>Dati Dipendenti — Flash Fill (Riempimento Rapido)</h1>
+      <h1>Dati Dipendenti — Compilazione automatica (Smart Fill)</h1>
       <div class="ex-meta">
         <span>⏱ 25 minuti</span><span>·</span>
-        <span>Flash Fill · Ctrl+E · Pattern testo · Email aziendale</span>
+        <span>Compilazione automatica · Ctrl+Shift+Y · Pattern testo · Email aziendale</span>
       </div>
     </div>
   </section>
@@ -56,7 +56,7 @@
       <div class="ex-content">
 
         <h2>Descrizione</h2>
-        <p>Sei il responsabile delle risorse umane di un'azienda e hai ricevuto un foglio con i dati dei nuovi dipendenti. Devi unificare nome e cognome in un'unica colonna e generare automaticamente le email aziendali. Imparerai il <strong>Flash Fill</strong> (Riempimento Rapido): Excel riconosce il pattern dal primo esempio e completa tutto automaticamente.</p>
+        <p>Sei il responsabile delle risorse umane di un'azienda e hai ricevuto un foglio con i dati dei nuovi dipendenti. Devi unificare nome e cognome in un'unica colonna e generare automaticamente le email aziendali. Imparerai la <strong>Compilazione automatica (Smart Fill)</strong>: Google Sheets riconosce il pattern dal primo esempio e completa tutto automaticamente.</p>
 
         <h2>Struttura della tabella</h2>
         <p>Crea una tabella con le colonne: <strong>Nome | Cognome | Nome Completo | Email Aziendale</strong></p>
@@ -78,21 +78,22 @@
         <h2>Passaggi da completare</h2>
         <ol>
           <li>Nella colonna <strong>Nome Completo</strong> della prima riga scrivi manualmente: <code>Marco Rossi</code> (nome, spazio, cognome).</li>
-          <li>Vai alla seconda riga della stessa colonna e inizia a scrivere: <code>Giulia</code>. Prima ancora di finire, Excel mostrerà in grigio il suggerimento <em>Giulia Bianchi</em>. Premi <strong>Invio</strong> per accettarlo.</li>
+          <li>Vai alla seconda riga della stessa colonna e inizia a scrivere: <code>Giulia</code>. Prima ancora di finire, Google Sheets mostrerà un suggerimento in grigio <em>Giulia Bianchi</em>. Premi <strong>Invio</strong> per accettarlo.</li>
         </ol>
         <div class="formula-block">
           <div class="formula-label">In alternativa — usa la scorciatoia da tastiera</div>
-          Ctrl + E
+          Ctrl + Shift + Y
         </div>
+        <p style="margin-top:0.5rem; font-size:0.9rem; color:var(--text-muted);">Nota: Google Sheets spesso suggerisce automaticamente la compilazione dopo il primo esempio; premi Tab per accettare il suggerimento.</p>
         <ol start="3">
           <li>Nella colonna <strong>Email Aziendale</strong> scrivi manualmente la prima email seguendo il formato <code>nome.cognome@azienda.it</code> (tutto minuscolo):<br>
           es. <code>marco.rossi@azienda.it</code></li>
-          <li>Vai alla riga successiva, inizia a scrivere <code>giulia.bianchi@azienda.it</code> e osserva come Excel completa tutte le email rimanenti rispettando il pattern.</li>
-          <li>Controlla che tutte le email siano in <strong>minuscolo</strong>. Se alcune non lo sono, elimina le email generate, inserisci correttamente la prima e la seconda cella e ripeti il Flash Fill.</li>
+          <li>Vai alla riga successiva, inizia a scrivere <code>giulia.bianchi@azienda.it</code> e osserva come Google Sheets completa tutte le email rimanenti rispettando il pattern.</li>
+          <li>Controlla che tutte le email siano in <strong>minuscolo</strong>. Se alcune non lo sono, elimina le email generate, inserisci correttamente la prima e la seconda cella e ripeti la Compilazione automatica.</li>
         </ol>
 
         <h2>Nota importante</h2>
-        <p>Il Flash Fill si basa sul pattern che mostri manualmente nella prima (o nelle prime due) celle. Più il modello è chiaro e coerente, più Excel riesce a completare correttamente le righe successive. Se il risultato non è quello atteso, prova a fornire un secondo esempio prima di usare Ctrl+E.</p>
+        <p>La Compilazione automatica si basa sul pattern che mostri manualmente nella prima (o nelle prime due) celle. Più il modello è chiaro e coerente, più Google Sheets riesce a completare correttamente le righe successive. Se il risultato non è quello atteso, prova a fornire un secondo esempio prima di usare Ctrl+Shift+Y.</p>
 
         <h2>Verifica finale</h2>
         <ul>
@@ -107,19 +108,19 @@
           <h3>Indice</h3>
           <ol>
             <li>Inserimento dati</li>
-            <li>Nome Completo (Flash Fill)</li>
-            <li>Email Aziendale (Flash Fill)</li>
+            <li>Nome Completo (Compilazione automatica)</li>
+            <li>Email Aziendale (Compilazione automatica)</li>
             <li>Verifica minuscolo</li>
           </ol>
         </div>
         <div class="sidebar-box">
           <h3>Scorciatoia</h3>
           <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
-            <li style="margin-bottom:8px;"><code>Ctrl+E</code> — Flash Fill</li>
-            <li>Oppure: Dati → Riempimento Rapido</li>
+            <li style="margin-bottom:8px;"><code>Ctrl+Shift+Y</code> — Compilazione automatica</li>
+            <li>Oppure: Modifica → Compilazione automatica</li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

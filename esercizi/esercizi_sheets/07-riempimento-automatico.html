@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Riempimento Automatico — Corso Excel</title>
+  <title>Riempimento Automatico — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,7 +31,7 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
         Riempimento Automatico
       </div>
     </div>
@@ -56,7 +56,7 @@
       <div class="ex-content">
 
         <h2>Descrizione</h2>
-        <p>Sei l'organizzatore di un torneo sportivo e devi preparare il calendario delle partite per le prossime settimane. Scoprirai come Excel riconosce pattern diversi durante il trascinamento, con risultati a volte sorprendenti.</p>
+        <p>Sei l'organizzatore di un torneo sportivo e devi preparare il calendario delle partite per le prossime settimane. Scoprirai come Google Sheets riconosce pattern diversi durante il trascinamento, con risultati a volte sorprendenti.</p>
 
         <h2>Struttura della tabella</h2>
         <p>Crea una tabella con le colonne: <strong>Giornata | Data | Squadra Casa | Squadra Ospite</strong></p>
@@ -65,30 +65,30 @@
         <ol>
           <li>
             <strong>Colonna Giornata — serie numerica</strong><br>
-            Scrivi <code>1</code> nella prima cella e <code>2</code> nella seconda. Seleziona entrambe le celle e trascina il quadratino di riempimento verso il basso fino alla riga 11, ottenendo le giornate da 1 a 10. Osserva come Excel riconosce automaticamente il pattern +1.
+            Scrivi <code>1</code> nella prima cella e <code>2</code> nella seconda. Seleziona entrambe le celle e trascina il quadratino di riempimento verso il basso fino alla riga 11, ottenendo le giornate da 1 a 10. Osserva come Google Sheets riconosce automaticamente il pattern +1.
           </li>
           <li>
             <strong>Colonna Data — serie di date</strong><br>
-            Scrivi <code>01/04/2025</code> nella prima cella e <code>08/04/2025</code> nella seconda (le partite si giocano ogni 7 giorni). Seleziona entrambe e trascina verso il basso per completare tutte e 10 le date. Osserva come Excel riconosce il pattern di 7 giorni.
+            Scrivi <code>01/04/2025</code> nella prima cella e <code>08/04/2025</code> nella seconda (le partite si giocano ogni 7 giorni). Seleziona entrambe e trascina verso il basso per completare tutte e 10 le date. Osserva come Google Sheets riconosce il pattern di 7 giorni.
           </li>
           <li>
             <strong>Colonna Squadra Casa — riempimento ciclico</strong><br>
-            Scrivi <code>Roma</code> nella prima cella e <code>Lazio</code> nella seconda. Trascina verso il basso e osserva cosa succede: Excel non riconosce un pattern nei nomi delle squadre e li ripete in modo ciclico (Roma, Lazio, Roma, Lazio…). Questo comportamento è diverso dal riempimento numerico o delle date.
+            Scrivi <code>Roma</code> nella prima cella e <code>Lazio</code> nella seconda. Trascina verso il basso e osserva cosa succede: Google Sheets non riconosce un pattern nei nomi delle squadre e li ripete in modo ciclico (Roma, Lazio, Roma, Lazio…). Questo comportamento è diverso dal riempimento numerico o delle date.
           </li>
           <li>
             <strong>Colonna Squadra Ospite — riempimento identico</strong><br>
-            Scrivi <code>Inter</code> nella prima cella e <code>Inter</code> nella seconda. Seleziona entrambe le celle e trascina verso il basso. Poiché hai selezionato due celle con lo stesso contenuto, Excel riempie tutto con lo stesso valore.
+            Scrivi <code>Inter</code> nella prima cella e <code>Inter</code> nella seconda. Seleziona entrambe le celle e trascina verso il basso. Poiché hai selezionato due celle con lo stesso contenuto, Google Sheets riempie tutto con lo stesso valore.
           </li>
         </ol>
 
-        <h2>Osservazioni sul comportamento di Excel</h2>
+        <h2>Osservazioni sul comportamento di Google Sheets</h2>
         <table class="data-table">
           <thead><tr><th>Tipo di dato</th><th>Comportamento nel trascinamento</th></tr></thead>
           <tbody>
-            <tr><td>Numeri con step (1, 2)</td><td>Excel continua la serie: 3, 4, 5…</td></tr>
-            <tr><td>Date con step (ogni 7 giorni)</td><td>Excel continua aggiungendo 7 giorni a ogni cella</td></tr>
-            <tr><td>Testo non riconosciuto (Roma, Lazio)</td><td>Excel ripete ciclicamente le celle selezionate</td></tr>
-            <tr><td>Stesso valore (Inter, Inter)</td><td>Excel copia lo stesso valore in tutte le celle</td></tr>
+            <tr><td>Numeri con step (1, 2)</td><td>Google Sheets continua la serie: 3, 4, 5…</td></tr>
+            <tr><td>Date con step (ogni 7 giorni)</td><td>Google Sheets continua aggiungendo 7 giorni a ogni cella</td></tr>
+            <tr><td>Testo non riconosciuto (Roma, Lazio)</td><td>Google Sheets ripete ciclicamente le celle selezionate</td></tr>
+            <tr><td>Stesso valore (Inter, Inter)</td><td>Google Sheets copia lo stesso valore in tutte le celle</td></tr>
           </tbody>
         </table>
 
@@ -120,7 +120,7 @@
             <li>Riempimento ciclico testo</li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

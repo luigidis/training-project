@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestione Inventario — Corso Excel</title>
+    <title>Gestione Inventario — Corso Google Sheets</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>"
@@ -15,13 +15,14 @@
     <header class="site-header">
       <div class="container">
         <div class="logo">
-          <span class="logo-icon">💻</span>
-          <span class="logo-text">CorsoWeb</span>
+          <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;"><span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span></a>
         </div>
         <nav class="main-nav">
-          <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
-          <a href="../../index.html#esercizi-css">Esercizi CSS</a>
-          <a href="../../index.html#argomenti">Argomenti</a>
+          <a href="../../excel.html">Excel</a>
+          <a href="../../google-sheets.html">Google Sheets</a>
+          <a href="../../word.html">Word</a>
+          <a href="../../css.html">CSS</a>
+          <a href="../../html-css.html">HTML &amp; CSS</a>
           <a href="../../index.html#contatti">Contatti</a>
         </nav>
       </div>
@@ -33,7 +34,7 @@
         <div class="breadcrumb">
           <a href="../../index.html">Home</a>
           <span>›</span>
-          <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
+          <a href="../../google-sheets.html">Esercizi Google Sheets</a>
           <span>›</span>
           Gestione Inventario
         </div>
@@ -55,11 +56,11 @@
             >Esercizio #3</span
           >
         </div>
-        <h1>Creare un Sistema di Gestione dell'Inventario in Excel</h1>
+        <h1>Creare un Sistema di Gestione dell'Inventario in Google Sheets</h1>
         <div class="ex-meta">
           <span>⏱ 40 minuti</span>
           <span>·</span>
-          <span>SOMMA.SE · Formattazione Condizionale · Grafici a barre</span>
+          <span>SUMIF · Formattazione Condizionale · Grafici a barre</span>
         </div>
       </div>
     </section>
@@ -72,7 +73,7 @@
           <h2>Descrizione</h2>
           <p>
             In questo esercizio imparerai a creare un sistema di gestione
-            dell'inventario in Excel. Lo strumento ti permetterà di monitorare
+            dell'inventario in Google Sheets. Lo strumento ti permetterà di monitorare
             le scorte di prodotti, gestire acquisti e vendite, calcolare il
             valore dell'inventario e segnalare visivamente le scorte in
             esaurimento.
@@ -272,17 +273,17 @@
             <tbody>
               <tr>
                 <td>Elettronica</td>
-                <td><code>=SOMMA.SE(C2:C6;K2;G2:G6)</code></td>
+                <td><code>=SUMIF(C2:C6;K2;G2:G6)</code></td>
                 <td>240</td>
               </tr>
               <tr>
                 <td>Abbigliamento</td>
-                <td><code>=SOMMA.SE(C2:C6;K3;G2:G6)</code></td>
+                <td><code>=SUMIF(C2:C6;K3;G2:G6)</code></td>
                 <td>180</td>
               </tr>
               <tr>
                 <td>Cancelleria</td>
-                <td><code>=SOMMA.SE(C2:C6;K4;G2:G6)</code></td>
+                <td><code>=SUMIF(C2:C6;K4;G2:G6)</code></td>
                 <td>250</td>
               </tr>
             </tbody>
@@ -293,7 +294,7 @@
           <p><strong>Grafico a barre — Valore totale per categoria:</strong></p>
           <ol>
             <li>Seleziona <code>K2:L4</code> (categorie e totali quantità).</li>
-            <li>Inserisci un <em>grafico a barre orizzontali</em>.</li>
+            <li>Vai su <em>Inserisci → Grafico → Grafico a barre</em>.</li>
             <li>
               Il grafico mostra a colpo d'occhio quale categoria ha più stock.
             </li>
@@ -307,7 +308,7 @@
               Seleziona <code>B2:B6</code> (nomi prodotti) e
               <code>G2:G6</code> (quantità) con <code>Ctrl</code>.
             </li>
-            <li>Inserisci un <em>grafico a colonne verticali</em>.</li>
+            <li>Vai su <em>Inserisci → Grafico → Grafico a colonne</em>.</li>
             <li>Visualizza il confronto delle scorte tra prodotti.</li>
           </ol>
 
@@ -321,13 +322,11 @@
               Seleziona l'intervallo <code>G2:G6</code> (Quantità Attuale).
             </li>
             <li>
-              Vai su <em>Home → Formattazione condizionale → Nuova regola</em>.
+              Vai su <em>Formato → Formattazione condizionale → Aggiungi regola</em>.
             </li>
             <li>
               Scegli
-              <em
-                >Utilizza una formula per determinare le celle da formattare</em
-              >.
+              <em>Formula personalizzata è</em>.
             </li>
           </ol>
           <div class="formula-block">
@@ -364,7 +363,7 @@
               </tr>
               <tr>
                 <td><code>L2:L4</code></td>
-                <td><code>=SOMMA.SE(C2:C6;K2;G2:G6)</code></td>
+                <td><code>=SUMIF(C2:C6;K2;G2:G6)</code></td>
                 <td>Quantità totale per categoria</td>
               </tr>
               <tr>
@@ -398,18 +397,18 @@
                 color: var(--text-muted);
               "
             >
-              <li style="margin-bottom: 8px"><code>SOMMA.SE</code></li>
+              <li style="margin-bottom: 8px"><code>SUMIF</code></li>
               <li style="margin-bottom: 8px">Operazioni aritmetiche</li>
               <li style="margin-bottom: 8px">Grafici a barre/colonne</li>
               <li>Formattazione condizionale</li>
             </ul>
           </div>
           <a
-            href="../../index.html#esercizi-excel"
+            href="../../google-sheets.html"
             class="btn-card"
             style="display: block; text-align: center; margin-top: 4px"
           >
-            ← Esercizi Excel
+            ← Esercizi Google Sheets
           </a>
         </aside>
       </div>
@@ -418,13 +417,9 @@
     <!-- FOOTER -->
     <footer class="site-footer" id="contatti">
       <div class="container">
-        <p>
-          Hai domande? Scrivimi a
-          <a href="mailto:info@esempio.it">info@esempio.it</a>
-        </p>
-        <p class="footer-copy">
-          &copy; 2026 CorsoWeb — Tutti i diritti riservati
-        </p>
+        <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+        <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+        <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
       </div>
     </footer>
   </body>

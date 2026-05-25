@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formattazione Condizionale — Corso Excel</title>
+  <title>Formattazione Condizionale — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,7 +31,7 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
         Formattazione Condizionale
       </div>
     </div>
@@ -46,7 +46,7 @@
       <h1>Report Venditori — Formattazione Condizionale</h1>
       <div class="ex-meta">
         <span>⏱ 40 minuti</span><span>·</span>
-        <span>Regole · Barre di dati · Scale colori · Set icone · Gestisci regole</span>
+        <span>Regole · Scale colori · Gestisci regole</span>
       </div>
     </div>
   </section>
@@ -56,7 +56,7 @@
       <div class="ex-content">
 
         <h2>Descrizione</h2>
-        <p>Sei il responsabile delle vendite e devi preparare un report mensile che evidenzi visivamente le performance dei venditori. Imparerai a usare la <strong>Formattazione Condizionale</strong> per rendere i dati immediatamente leggibili con colori, barre e icone.</p>
+        <p>Sei il responsabile delle vendite e devi preparare un report mensile che evidenzi visivamente le performance dei venditori. Imparerai a usare la <strong>Formattazione Condizionale</strong> per rendere i dati immediatamente leggibili con colori e scale.</p>
 
         <h2>Struttura della tabella</h2>
         <p>Crea una tabella con le colonne: <strong>Venditore | Regione | Vendite Gennaio | Vendite Febbraio | Vendite Marzo | Totale Trimestre</strong></p>
@@ -74,45 +74,47 @@
             <tr><td>Greco</td><td>Sud</td><td>4500</td><td>5100</td><td>3800</td></tr>
           </tbody>
         </table>
-        <p>Calcola il <strong>Totale Trimestre</strong> per ogni venditore con SOMMA prima di procedere.</p>
+        <p>Calcola il <strong>Totale Trimestre</strong> per ogni venditore con SUM prima di procedere.</p>
 
         <h2>Regole base</h2>
         <ol>
-          <li>Seleziona l'intervallo dei valori di <strong>Gennaio</strong>. Vai su <em>Formattazione Condizionale → Regole evidenziazione celle → Maggiore di</em> e imposta il valore <code>9000</code> con sfondo <strong>verde</strong>.</li>
+          <li>Seleziona l'intervallo dei valori di <strong>Gennaio</strong>. Vai su <em>Formato → Formattazione condizionale → (pannello laterale) → Aggiungi regola</em>. Nella sezione "Formatta le celle se..." scegli <em>Maggiore di</em> e imposta il valore <code>9000</code> con sfondo <strong>verde</strong>.</li>
           <li>Con lo stesso intervallo ancora selezionato, aggiungi una seconda regola: <em>Minore di</em> <code>5000</code> con sfondo <strong>rosso</strong>. Le due regole coesistono: non si sostituiscono.</li>
-          <li>Seleziona la colonna <strong>Regione</strong>. Vai su <em>Regole evidenziazione celle → Testo che contiene</em> e scrivi <code>Nord</code> con sfondo <strong>giallo</strong>.</li>
-          <li>Seleziona il <strong>Totale Trimestre</strong>. Applica la regola <em>Tra</em> con valori <code>20000</code> e <code>25000</code> con sfondo <strong>arancione</strong> (se non trovi "Tra", crea un formato personalizzato).</li>
+          <li>Seleziona la colonna <strong>Regione</strong>. Vai su <em>Formato → Formattazione condizionale</em> e nella sezione "Formatta le celle se..." scegli <em>Il testo contiene</em> e scrivi <code>Nord</code> con sfondo <strong>giallo</strong>.</li>
+          <li>Seleziona il <strong>Totale Trimestre</strong>. Applica la regola <em>È compreso tra</em> con valori <code>20000</code> e <code>25000</code> con sfondo <strong>arancione</strong>.</li>
         </ol>
 
         <h2>Sopra la media</h2>
         <ol start="5">
-          <li>Seleziona il <strong>Totale Trimestre</strong>. Vai su <em>Formattazione Condizionale → Regole primi/ultimi valori → Sopra la media</em>. Excel calcola automaticamente la media e applica il formato solo alle celle che la superano.</li>
+          <li>Seleziona il <strong>Totale Trimestre</strong>. Vai su <em>Formato → Formattazione condizionale</em> e nella sezione "Formatta le celle se..." scegli <em>Maggiore della media</em>. Google Sheets calcola automaticamente la media e applica il formato solo alle celle che la superano.</li>
         </ol>
 
         <h2>Barre di dati</h2>
-        <ol start="6">
-          <li>Seleziona l'intervallo di <strong>Febbraio</strong>. Vai su <em>Formattazione Condizionale → Barre di dati</em> e scegli un colore. Il valore più alto riceve la barra più lunga, tutti gli altri sono proporzionati di conseguenza.</li>
-        </ol>
+        <div class="sidebar-box" style="background:#1a2a1a; border-left:4px solid #4ade80; margin-bottom:1rem;">
+          <strong style="color:#4ade80;">Nota — Non disponibile in Google Sheets</strong>
+          <p style="margin:0.5rem 0 0; font-size:0.9rem; color:var(--text-muted);">Le barre di dati non sono disponibili in Google Sheets. Come alternativa, puoi usare la <strong>Scala di colori</strong> (vedi sezione successiva) per visualizzare visivamente i valori relativi.</p>
+        </div>
 
         <h2>Scale colori</h2>
         <ol start="7">
-          <li>Seleziona l'intervallo di <strong>Marzo</strong>. Vai su <em>Formattazione Condizionale → Scale colori</em> e scegli la scala verde-giallo-rosso. Excel assegna automaticamente il verde al valore più alto e il rosso al più basso.</li>
+          <li>Seleziona l'intervallo di <strong>Marzo</strong>. Vai su <em>Formato → Formattazione condizionale</em> e nel pannello laterale scegli la scheda <strong>Scala di colori</strong> invece di "Colore cella". Puoi impostare i colori per minimo, punto medio e massimo: scegli verde-giallo-rosso. Google Sheets assegna automaticamente il verde al valore più alto e il rosso al più basso.</li>
         </ol>
 
         <h2>Set di icone</h2>
-        <ol start="8">
-          <li>Seleziona il <strong>Totale Trimestre</strong>. Vai su <em>Formattazione Condizionale → Set di icone</em> e scegli il set con le tre frecce (su, laterale, giù). Excel divide automaticamente i valori in tre fasce.</li>
-        </ol>
+        <div class="sidebar-box" style="background:#1a2a1a; border-left:4px solid #4ade80; margin-bottom:1rem;">
+          <strong style="color:#4ade80;">Nota — Non disponibile in Google Sheets</strong>
+          <p style="margin:0.5rem 0 0; font-size:0.9rem; color:var(--text-muted);">I set di icone non sono disponibili in Google Sheets. Per ottenere un effetto simile, crea più regole con colori di sfondo diversi (es. verde &gt;25000, arancione tra 20000 e 25000, rosso &lt;20000).</p>
+        </div>
 
         <h2>Gestire e cancellare le regole</h2>
         <ol start="9">
-          <li>Vai su <em>Formattazione Condizionale → Gestisci regole</em>. Seleziona la regola "Tra 20000 e 25000" sul Totale Trimestre e <strong>eliminala</strong>. Le altre regole rimangono intatte.</li>
-          <li>Seleziona l'intervallo di <strong>Gennaio</strong>. Vai su <em>Formattazione Condizionale → Cancella regole → Cancella regole dalle celle selezionate</em>. Tutte le regole di Gennaio vengono rimosse; le altre colonne restano invariate.</li>
-          <li>Vai su <em>Cancella regole → Cancella regole dall'intero foglio</em>. Tutte le formattazioni condizionali vengono rimosse contemporaneamente.</li>
+          <li>Vai su <em>Formato → Formattazione condizionale</em>: il pannello laterale mostra tutte le regole. Clicca sul <strong>cestino</strong> accanto alla regola "Tra 20000 e 25000" sul Totale Trimestre per eliminarla. Le altre regole rimangono intatte.</li>
+          <li>Seleziona l'intervallo di <strong>Gennaio</strong>. Vai su <em>Formato → Formattazione condizionale</em> e nel pannello elimina tutte le regole di Gennaio tramite il cestino accanto a ciascuna. Le altre colonne restano invariate.</li>
+          <li>Per cancellare tutte le regole da un intervallo: seleziona le celle → <em>Formato → Cancella formattazione</em>. Tutte le formattazioni condizionali vengono rimosse contemporaneamente.</li>
         </ol>
 
         <h2>Note importanti</h2>
-        <p>Le regole si sommano: una stessa cella può soddisfare più condizioni e ricevere più formattazioni. Barre di dati, scale colori e set di icone <strong>non richiedono soglie manuali</strong>: Excel usa il massimo e il minimo della selezione come riferimento.</p>
+        <p>Le regole si sommano: una stessa cella può soddisfare più condizioni e ricevere più formattazioni. Le scale colori <strong>non richiedono soglie manuali</strong>: Google Sheets usa il massimo e il minimo della selezione come riferimento.</p>
 
       </div>
       <aside class="ex-sidebar">
@@ -120,27 +122,24 @@
           <h3>Indice</h3>
           <ol>
             <li>Struttura tabella</li>
-            <li>Regole base (>9000, &lt;5000)</li>
+            <li>Regole base (&gt;9000, &lt;5000)</li>
             <li>Regola testo (Nord)</li>
             <li>Sopra la media</li>
-            <li>Barre di dati</li>
             <li>Scale colori</li>
-            <li>Set di icone</li>
             <li>Gestisci / Cancella regole</li>
           </ol>
         </div>
         <div class="sidebar-box">
           <h3>Percorso</h3>
           <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
-            <li style="margin-bottom:8px;">Home → Formattazione Condizionale</li>
-            <li style="margin-bottom:8px;">→ Regole evidenziazione celle</li>
-            <li style="margin-bottom:8px;">→ Barre di dati</li>
+            <li style="margin-bottom:8px;">Formato → Formattazione condizionale</li>
+            <li style="margin-bottom:8px;">→ Pannello laterale</li>
+            <li style="margin-bottom:8px;">→ Aggiungi regola</li>
             <li style="margin-bottom:8px;">→ Scale colori</li>
-            <li style="margin-bottom:8px;">→ Set di icone</li>
-            <li>→ Gestisci / Cancella regole</li>
+            <li>→ Cancella formattazione</li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

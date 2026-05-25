@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registro Voti di Classe — Corso Excel</title>
+  <title>Registro Voti di Classe — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,7 +31,7 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
         Registro Voti di Classe
       </div>
     </div>
@@ -46,7 +46,7 @@
       <h1>Registro Voti di Classe</h1>
       <div class="ex-meta">
         <span>⏱ 35 minuti</span><span>·</span>
-        <span>MAX · MIN · CONTA.NUMERI · CONTA.VUOTE · CONTA.VALORI</span>
+        <span>MAX · MIN · COUNT · COUNTBLANK · COUNTA</span>
       </div>
     </div>
   </section>
@@ -56,7 +56,7 @@
       <div class="ex-content">
 
         <h2>Descrizione</h2>
-        <p>Sei un insegnante e devi analizzare i voti del registro di classe al termine del quadrimestre. Imparerai le funzioni MAX, MIN e le varianti di CONTA.</p>
+        <p>Sei un insegnante e devi analizzare i voti del registro di classe al termine del quadrimestre. Imparerai le funzioni MAX, MIN e le varianti di COUNT.</p>
 
         <h2>Struttura della tabella</h2>
         <p>Crea una tabella con le colonne: <strong>Studente | Matematica | Italiano | Scienze | Inglese</strong></p>
@@ -78,36 +78,36 @@
           <li>Usa MIN con un <em>intervallo</em> per il voto più basso di Matematica.</li>
           <li>Usa MAX selezionando le <em>celle singole</em> (separate da <code>;</code>) per il voto più alto di Italiano.</li>
           <li>Usa MIN con celle singole per il voto più basso di Italiano.</li>
-          <li>Usa la <strong>Finestra delle Funzioni</strong> (<em>Formule → Inserisci funzione</em>) per inserire MAX su Scienze, leggendo la descrizione prima di confermare.</li>
+          <li>Usa <em>Inserisci → Funzione</em> per inserire MAX su Scienze, leggendo la descrizione prima di confermare.</li>
         </ol>
 
-        <h3>CONTA — le tre varianti</h3>
+        <h3>COUNT — le tre varianti</h3>
         <ol start="6">
-          <li><strong>CONTA.NUMERI</strong> — conta quanti studenti hanno ricevuto un voto <em>numerico</em> (celle vuote e "Assente" non vengono conteggiate):</li>
+          <li><strong>COUNT</strong> — conta quanti studenti hanno ricevuto un voto <em>numerico</em> (celle vuote e "Assente" non vengono conteggiate):</li>
         </ol>
-        <div class="formula-block">=CONTA.NUMERI(B2:B9)</div>
+        <div class="formula-block">=COUNT(B2:B9)</div>
         <ol start="7">
-          <li><strong>CONTA.VUOTE</strong> — conta quante celle sono rimaste vuote:</li>
+          <li><strong>COUNTBLANK</strong> — conta quante celle sono rimaste vuote:</li>
         </ol>
-        <div class="formula-block">=CONTA.VUOTE(B2:B9)</div>
+        <div class="formula-block">=COUNTBLANK(B2:B9)</div>
         <ol start="8">
-          <li><strong>CONTA.VALORI</strong> — conta tutte le celle non vuote, incluse quelle con "Assente":</li>
+          <li><strong>COUNTA</strong> — conta tutte le celle non vuote, incluse quelle con "Assente":</li>
         </ol>
-        <div class="formula-block">=CONTA.VALORI(B2:B9)</div>
+        <div class="formula-block">=COUNTA(B2:B9)</div>
         <ol start="9">
-          <li>Verifica che: <code>CONTA.NUMERI + CONTA.VUOTE = CONTA.VALORI + CONTA.VUOTE</code><br>
-          Rifletti sul perché: CONTA.VALORI conta "Assente" come valore, CONTA.NUMERI no.</li>
+          <li>Verifica che: <code>COUNT + COUNTBLANK = COUNTA + COUNTBLANK</code><br>
+          Rifletti sul perché: COUNTA conta "Assente" come valore, COUNT no.</li>
         </ol>
 
         <h3>Trascinamento formule</h3>
         <ol start="10">
-          <li>Copia le formule MIN e MAX anche sulla colonna <strong>Inglese</strong> usando il trascinamento. Osserva come Excel aggiorna automaticamente i riferimenti alle celle.</li>
+          <li>Copia le formule MIN e MAX anche sulla colonna <strong>Inglese</strong> usando il trascinamento. Osserva come Google Sheets aggiorna automaticamente i riferimenti alle celle.</li>
         </ol>
 
         <h2>Verifica finale</h2>
         <ul>
-          <li>MAX e MIN calcolati con metodi diversi (intervallo, celle singole, Finestra Funzioni)</li>
-          <li>Le tre CONTA restituiscono valori coerenti tra loro</li>
+          <li>MAX e MIN calcolati con metodi diversi (intervallo, celle singole, Inserisci → Funzione)</li>
+          <li>Le tre COUNT restituiscono valori coerenti tra loro</li>
           <li>Le formule copiate su Inglese mostrano i valori corretti</li>
         </ul>
 
@@ -118,9 +118,9 @@
           <ol>
             <li>Struttura tabella</li>
             <li>MAX e MIN</li>
-            <li>CONTA.NUMERI</li>
-            <li>CONTA.VUOTE</li>
-            <li>CONTA.VALORI</li>
+            <li>COUNT</li>
+            <li>COUNTBLANK</li>
+            <li>COUNTA</li>
           </ol>
         </div>
         <div class="sidebar-box">
@@ -128,12 +128,12 @@
           <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
             <li style="margin-bottom:8px;"><code>MAX</code></li>
             <li style="margin-bottom:8px;"><code>MIN</code></li>
-            <li style="margin-bottom:8px;"><code>CONTA.NUMERI</code></li>
-            <li style="margin-bottom:8px;"><code>CONTA.VUOTE</code></li>
-            <li><code>CONTA.VALORI</code></li>
+            <li style="margin-bottom:8px;"><code>COUNT</code></li>
+            <li style="margin-bottom:8px;"><code>COUNTBLANK</code></li>
+            <li><code>COUNTA</code></li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

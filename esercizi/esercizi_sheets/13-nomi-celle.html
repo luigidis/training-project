@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nomi delle Celle — Corso Excel</title>
+  <title>Nomi delle Celle — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,8 +31,8 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
-        Nomi delle Celle
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
+        Intervalli con nome
       </div>
     </div>
   </div>
@@ -43,10 +43,10 @@
         <span class="card-badge intermedio">Intermedio</span>
         <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #13</span>
       </div>
-      <h1>Catalogo Elettronica — Nomi delle Celle</h1>
+      <h1>Catalogo Elettronica — Intervalli con nome</h1>
       <div class="ex-meta">
         <span>⏱ 45 minuti</span><span>·</span>
-        <span>Casella Nome · Nomi celle · Nomi intervalli · Crea da selezione · Gestione Nomi</span>
+        <span>Casella Nome · Intervalli con nome · Dati → Intervalli con nome</span>
       </div>
     </div>
   </section>
@@ -56,7 +56,7 @@
       <div class="ex-content">
 
         <h2>Descrizione</h2>
-        <p>Sei il responsabile di un negozio di elettronica e vuoi rendere le formule più leggibili. Invece di scrivere <code>$F$1</code> potrai scrivere <code>IVA</code>, e invece di <code>SOMMA(B2:B9)</code> potrai scrivere <code>SOMMA(vendite_q1)</code>. I nomi si comportano come referenze assolute: puntano sempre alla stessa cella.</p>
+        <p>Sei il responsabile di un negozio di elettronica e vuoi rendere le formule più leggibili. Invece di scrivere <code>$F$1</code> potrai scrivere <code>IVA</code>, e invece di <code>SUM(B2:B9)</code> potrai scrivere <code>SUM(vendite_q1)</code>. I nomi si comportano come referenze assolute: puntano sempre alla stessa cella.</p>
 
         <h2>Struttura della tabella</h2>
         <p>Crea una tabella con le colonne: <strong>Prodotto | Categoria | Vendite Q1 | Vendite Q2 | Vendite Q3 | Totale Trimestrale</strong></p>
@@ -74,7 +74,7 @@
             <tr><td>Webcam</td><td>Informatica</td><td>19</td><td>25</td><td>17</td></tr>
           </tbody>
         </table>
-        <p>Calcola il Totale Trimestrale per ogni prodotto con SOMMA prima di procedere. In una cella separata (es. H1) inserisci <code>0,22</code> con l'etichetta "IVA"; in H2 inserisci <code>10</code> con l'etichetta "Scorta Minima".</p>
+        <p>Calcola il Totale Trimestrale per ogni prodotto con SUM prima di procedere. In una cella separata (es. H1) inserisci <code>0,22</code> con l'etichetta "IVA"; in H2 inserisci <code>10</code> con l'etichetta "Scorta Minima".</p>
 
         <h2>Parte A — Assegnare un nome a una cella singola</h2>
         <ol>
@@ -92,32 +92,34 @@
           <li>In una zona di riepilogo sotto la tabella scrivi queste formule usando i nomi:</li>
         </ol>
         <div class="formula-block">
-=SOMMA(vendite_q1)
-=MEDIA(vendite_q2)
+=SUM(vendite_q1)
+=AVERAGE(vendite_q2)
 =MAX(vendite_q3)
 =MIN(totale_vendite)
-=CONTA.NUMERI(vendite_q1)
+=COUNT(vendite_q1)
         </div>
 
-        <h2>Parte C — Crea da selezione</h2>
+        <h2>Parte C — Nomi multipli in Google Sheets</h2>
+        <p>In Google Sheets non è disponibile la funzione <em>Crea da selezione</em> di Excel. Puoi assegnare nomi a più intervalli usando il pannello <strong>Dati → Intervalli con nome</strong>:</p>
         <ol start="10">
-          <li>Seleziona tutta la tabella incluse le intestazioni (dalla cella Prodotto fino all'ultimo Totale).</li>
-          <li>Vai su <em>Formule → Crea da selezione</em>. Lascia spuntata solo <strong>Riga superiore</strong> e conferma. Excel crea automaticamente un nome per ogni colonna usando l'intestazione come nome.</li>
-          <li>Clicca sulla freccia accanto alla Casella Nome: vedi tutti i nomi disponibili. Clicca su uno per saltare immediatamente all'intervallo corrispondente.</li>
-          <li>Usa uno dei nomi creati automaticamente in una formula per verificare che la selezione sia corretta.</li>
+          <li>Vai su <strong>Dati → Intervalli con nome</strong>. Si apre un pannello laterale con tutti i nomi definiti.</li>
+          <li>Clicca su <strong>Aggiungi intervallo</strong>. Assegna un nome (es. <code>Prodotto</code>) e specifica l'intervallo (es. <code>A2:A9</code>). Salva.</li>
+          <li>Ripeti per le altre colonne: <code>Categoria</code>, <code>Q1</code>, <code>Q2</code>, <code>Q3</code>, <code>totale_vendite</code>.</li>
+          <li>Nel pannello <em>Intervalli con nome</em> clicca su un nome: Google Sheets seleziona l'intervallo corrispondente.</li>
+          <li>Usa uno dei nomi in una formula: <code>=SUM(vendite_q1)</code> per verificare che sia corretto.</li>
         </ol>
 
         <h2>Parte D — Gestione Nomi</h2>
         <ol start="14">
-          <li>Vai su <em>Formule → Gestione Nomi</em>. Vedi nome, valore attuale, riferimento e ambito per ogni nome definito.</li>
-          <li>Crea un nuovo nome dalla Gestione Nomi cliccando <strong>Nuovo</strong>. Assegna il nome <code>Trimestri</code> all'intervallo che comprende tutte e tre le colonne Q1, Q2 e Q3 insieme.</li>
-          <li>Usa il nuovo nome: scrivi <code>=SOMMA(Trimestri)</code> e verifica che restituisca la somma complessiva dei tre trimestri.</li>
-          <li>Torna nella Gestione Nomi, seleziona uno dei nomi creati automaticamente ed <strong>eliminalo</strong>. Le formule che lo usavano mostrano ora <code>#NOME?</code>: Excel non riconosce più il nome cancellato.</li>
+          <li>Vai su <em>Dati → Intervalli con nome</em>. Vedi nome, valore attuale, riferimento e ambito per ogni nome definito.</li>
+          <li>Crea un nuovo nome dal pannello cliccando <strong>Aggiungi intervallo</strong>. Assegna il nome <code>Trimestri</code> all'intervallo che comprende tutte e tre le colonne Q1, Q2 e Q3 insieme.</li>
+          <li>Usa il nuovo nome: scrivi <code>=SUM(Trimestri)</code> e verifica che restituisca la somma complessiva dei tre trimestri.</li>
+          <li>Torna in <em>Dati → Intervalli con nome</em>, seleziona uno dei nomi ed eliminalo cliccando sull'icona cestino nel pannello. Le formule che lo usavano mostrano ora <code>#NOME?</code>: Google Sheets non riconosce più il nome cancellato.</li>
         </ol>
 
         <h2>Parte E — Nomi vs referenza assoluta</h2>
         <ol start="19">
-          <li>Aggiungi una colonna <strong>Prezzo IVA esclusa</strong>. Usa <code>=CASUALE.TRA(20;150)</code> per i prezzi, poi congela i valori con Incolla Valori.</li>
+          <li>Aggiungi una colonna <strong>Prezzo IVA esclusa</strong>. Usa <code>=RANDBETWEEN(20;150)</code> per i prezzi, poi congela i valori con Modifica → Incolla speciale → Solo valori (Ctrl+Shift+V).</li>
           <li>Nella colonna <strong>Prezzo IVA inclusa</strong> scrivi una formula che usa il prezzo della cella e il nome <code>IVA</code>. Copia verso il basso: il nome rimane fisso (come <code>$H$1</code>), il prezzo scorre riga per riga.</li>
         </ol>
 
@@ -138,7 +140,7 @@
           <ol>
             <li>Parte A — Nomi cella singola</li>
             <li>Parte B — Nomi intervalli</li>
-            <li>Parte C — Crea da selezione</li>
+            <li>Parte C — Nomi multipli in Google Sheets</li>
             <li>Parte D — Gestione Nomi</li>
             <li>Parte E — Nomi vs $$$</li>
           </ol>
@@ -147,11 +149,11 @@
           <h3>Percorso</h3>
           <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
             <li style="margin-bottom:8px;">Casella Nome (in alto a sinistra)</li>
-            <li style="margin-bottom:8px;">Formule → Crea da selezione</li>
-            <li>Formule → Gestione Nomi</li>
+            <li style="margin-bottom:8px;">Dati → Intervalli con nome</li>
+            <li>Dati → Intervalli con nome</li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

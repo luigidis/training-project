@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Esercizio Riepilogativo (Es. 1–9) — Corso Excel</title>
+  <title>Esercizio Riepilogativo (Es. 1–9) — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,7 +31,7 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
         Riepilogativo Es. 1–9
       </div>
     </div>
@@ -46,7 +46,7 @@
       <h1>Report Scuola di Formazione — Riepilogativo Es. 1–9</h1>
       <div class="ex-meta">
         <span>⏱ 70 minuti</span><span>·</span>
-        <span>Testo in colonne · Flash Fill · Riempimento · MAX/MIN/CONTA · Referenze · SOMMA/MEDIA</span>
+        <span>Dividi testo in colonne · Compilazione automatica · Riempimento · MAX/MIN/CONTA · Referenze · SUM/AVERAGE</span>
       </div>
     </div>
   </section>
@@ -56,18 +56,10 @@
       <div class="ex-content">
 
         <h2>Descrizione</h2>
-        <p>Sei il responsabile amministrativo di una scuola di formazione professionale. Devi costruire un report trimestrale completo sui corsi, i partecipanti e i ricavi. Lavora su un <strong>unico file Excel</strong> con più sezioni nello stesso foglio. Questo esercizio copre tutti i concetti degli esercizi 1–9.</p>
-
-        <div class="sidebar-box" style="background:#2a1a1a; border-left:4px solid #f87171; margin-bottom:2rem;">
-          <strong style="color:#f87171;">Nota — Solo Excel Desktop (Parte A)</strong>
-          <p style="margin:0.5rem 0 0; font-size:0.9rem; color:var(--text-muted);">
-            Lo strumento <strong>Testo in Colonne</strong> <strong>non è disponibile su Excel Online</strong>.
-            Il passaggio 1 della Parte A richiede Excel installato sul PC. Le Parti B–G sono eseguibili anche online.
-          </p>
-        </div>
+        <p>Sei il responsabile amministrativo di una scuola di formazione professionale. Devi costruire un report trimestrale completo sui corsi, i partecipanti e i ricavi. Lavora su un <strong>unico foglio Google Sheets</strong> con più sezioni nello stesso foglio. Questo esercizio copre tutti i concetti degli esercizi 1–9.</p>
 
         <h2>Parte A — Importazione e pulizia dei dati</h2>
-        <p><em>Testo in colonne + Flash Fill</em></p>
+        <p><em>Dividi testo in colonne + Compilazione automatica (Smart Fill)</em></p>
         <p>Hai ricevuto dal sistema gestionale un export grezzo. In una zona vuota del foglio (colonna A) incolla questi dati esattamente come appaiono:</p>
         <div class="formula-block">
 Cognome;Nome;Corso;Voto
@@ -81,9 +73,9 @@ Moretti;Chiara;Fotografia;10
 Galli;Davide;Web Design;8
         </div>
         <ol>
-          <li>Seleziona tutto il blocco e usa <strong>Testo in colonne</strong> con il delimitatore <code>;</code> per separare i quattro campi in colonne distinte. Aggiungi le intestazioni se non ci sono già.</li>
-          <li>In una nuova colonna <strong>Nome Completo</strong> scrivi manualmente nella prima cella: <code>Elena Marini</code>. Poi usa <code>Ctrl+E</code> per completare automaticamente tutti gli altri nel formato Nome Cognome.</li>
-          <li>In un'altra colonna <strong>Tessera</strong> scrivi manualmente la prima tessera nel formato <code>FOTO-EMarini</code> (sigla corso + iniziale nome + cognome). Poi usa <code>Ctrl+E</code> per completare le tessere di tutti. Verifica la coerenza con il modello.</li>
+          <li>Seleziona tutto il blocco e usa <strong>Dividi testo in colonne</strong> (menu Dati) con il separatore <code>;</code> per separare i quattro campi. In basso apparirà il menu Separatore: scegli Punto e virgola. Aggiungi le intestazioni se non ci sono già.</li>
+          <li>In una nuova colonna <strong>Nome Completo</strong> scrivi manualmente nella prima cella: <code>Elena Marini</code>. Poi usa <code>Ctrl+Shift+Y</code> per completare automaticamente tutti gli altri nel formato Nome Cognome.</li>
+          <li>In un'altra colonna <strong>Tessera</strong> scrivi manualmente la prima tessera nel formato <code>FOTO-EMarini</code> (sigla corso + iniziale nome + cognome). Poi usa <code>Ctrl+Shift+Y</code> per completare con la <strong>Compilazione automatica (Smart Fill)</strong> le tessere di tutti. Verifica la coerenza con il modello.</li>
         </ol>
 
         <h2>Parte B — Calendario del corso</h2>
@@ -92,9 +84,9 @@ Galli;Davide;Web Design;8
         <ol>
           <li>Nella colonna <strong>Lezione</strong> scrivi 1 e 2, poi trascina verso il basso fino alla lezione 8.</li>
           <li>Nella colonna <strong>Data</strong> scrivi <code>03/03/2025</code> e <code>10/03/2025</code> (lezioni ogni 7 giorni), poi trascina per completare tutte e 8 le date.</li>
-          <li>Nella colonna <strong>Giorno</strong> scrivi <code>Lunedi</code> nella prima cella e trascina: Excel riconosce automaticamente la serie dei giorni della settimana.</li>
-          <li>Nella colonna <strong>Argomento</strong> scrivi <code>Introduzione</code> e <code>Tecnica</code>. Trascina e osserva come Excel ripete ciclicamente il testo generico.</li>
-          <li>Aggiungi una riga extra: scrivi <code>Marzo</code> in una cella e trascina verso destra per 5 celle. Osserva come Excel completa la serie dei mesi.</li>
+          <li>Nella colonna <strong>Giorno</strong> scrivi <code>Lunedi</code> nella prima cella e trascina: Google Sheets riconosce automaticamente la serie dei giorni della settimana.</li>
+          <li>Nella colonna <strong>Argomento</strong> scrivi <code>Introduzione</code> e <code>Tecnica</code>. Trascina e osserva come Google Sheets ripete ciclicamente il testo generico.</li>
+          <li>Aggiungi una riga extra: scrivi <code>Marzo</code> in una cella e trascina verso destra per 5 celle. Osserva come Google Sheets completa la serie dei mesi.</li>
         </ol>
 
         <h2>Parte C — Registro voti e statistiche</h2>
@@ -103,11 +95,11 @@ Galli;Davide;Web Design;8
         <ol>
           <li>Usa <strong>MAX</strong> con un intervallo sulla colonna Voto per trovare il voto più alto.</li>
           <li>Usa <strong>MIN</strong> con un intervallo per trovare il voto più basso.</li>
-          <li>Usa la <strong>Finestra delle Funzioni</strong> per inserire MAX sui soli voti del corso Web Design, leggendo la descrizione prima di confermare.</li>
-          <li>Usa <strong>CONTA.NUMERI</strong> sull'intervallo della colonna Voto per contare quanti partecipanti hanno ricevuto un voto numerico.</li>
-          <li>Usa <strong>CONTA.VUOTE</strong> sullo stesso intervallo per contare le celle vuote.</li>
-          <li>Usa <strong>CONTA.VALORI</strong> per contare tutte le celle non vuote, incluse quelle con "Assente".</li>
-          <li>Verifica che <code>CONTA.NUMERI + CONTA.VUOTE</code> dia lo stesso risultato di <code>CONTA.VALORI + CONTA.VUOTE</code>.</li>
+          <li>Usa <em>Inserisci → Funzione</em> per inserire MAX sui soli voti del corso Web Design, leggendo la descrizione prima di confermare.</li>
+          <li>Usa <strong>COUNT</strong> sull'intervallo della colonna Voto per contare quanti partecipanti hanno ricevuto un voto numerico.</li>
+          <li>Usa <strong>COUNTBLANK</strong> sullo stesso intervallo per contare le celle vuote.</li>
+          <li>Usa <strong>COUNTA</strong> per contare tutte le celle non vuote, incluse quelle con "Assente".</li>
+          <li>Verifica che <code>COUNT + COUNTBLANK</code> dia lo stesso risultato di <code>COUNTA + COUNTBLANK</code>.</li>
         </ol>
 
         <h2>Parte D — Calcolo ricavi con referenza assoluta</h2>
@@ -148,52 +140,52 @@ Galli;Davide;Web Design;8
         </table>
         <p>Crea la tabella principale: <strong>Formatore | Livello | Ore Marzo | Ore Aprile | Ore Maggio | Totale Ore | Compenso | Totale Finale</strong>. Inserisci 3 formatori con livelli diversi.</p>
         <ol>
-          <li>Calcola <strong>Totale Ore</strong> con SOMMA (referenze relative), copia su tutti i formatori.</li>
+          <li>Calcola <strong>Totale Ore</strong> con SUM (referenze relative), copia su tutti i formatori.</li>
           <li>Calcola <strong>Compenso</strong> con referenza mista <code>$H2</code> (colonna fissa, riga relativa). Copia verso il basso.</li>
           <li>Calcola <strong>Totale Finale</strong> con referenza assoluta <code>$C$1</code>. Copia verso il basso.</li>
           <li>Modifica il rimborso in C1 da <code>50</code> a <code>80</code> e verifica che tutti i Totali Finali si aggiornino.</li>
         </ol>
 
         <h2>Parte G — Riepilogo totale</h2>
-        <p><em>SOMMA e MEDIA in tre modi</em></p>
+        <p><em>SUM e AVERAGE in tre modi</em></p>
         <p>In una zona finale del foglio crea una riga di riepilogo generale:</p>
         <ol>
-          <li><strong>SOMMA</strong> con intervallo su tutte le ore totali dei formatori.</li>
-          <li><strong>SOMMA</strong> con celle singole separate da <code>;</code> sui ricavi dei primi tre partecipanti.</li>
-          <li><strong>SOMMA</strong> con intervallo più il numero fisso <code>100</code> come spesa straordinaria non registrata.</li>
-          <li><strong>MEDIA</strong> con intervallo sui voti numerici dei partecipanti.</li>
-          <li><strong>MEDIA</strong> con celle singole più il numero fisso <code>5</code> come voto di un partecipante aggiunto manualmente.</li>
-          <li>Usa la <strong>Finestra delle Funzioni</strong> per inserire MEDIA sul totale ore dei formatori, leggendo la descrizione prima di confermare.</li>
+          <li><strong>SUM</strong> con intervallo su tutte le ore totali dei formatori.</li>
+          <li><strong>SUM</strong> con celle singole separate da <code>;</code> sui ricavi dei primi tre partecipanti.</li>
+          <li><strong>SUM</strong> con intervallo più il numero fisso <code>100</code> come spesa straordinaria non registrata.</li>
+          <li><strong>AVERAGE</strong> con intervallo sui voti numerici dei partecipanti.</li>
+          <li><strong>AVERAGE</strong> con celle singole più il numero fisso <code>5</code> come voto di un partecipante aggiunto manualmente.</li>
+          <li>Usa <em>Inserisci → Funzione</em> per inserire AVERAGE sul totale ore dei formatori, leggendo la descrizione prima di confermare.</li>
         </ol>
-        <p>Se appare un errore su qualche cella, usa <em>Formule → Controllo Errori</em> per identificare e correggere il problema.</p>
+        <p>Se appare un errore su qualche cella, gli errori sono indicati con un triangolino nelle celle; seleziona la cella per i dettagli.</p>
 
       </div>
       <aside class="ex-sidebar">
         <div class="sidebar-box">
           <h3>Indice</h3>
           <ol>
-            <li>Parte A — Dati (Testo+Flash Fill)</li>
+            <li>Parte A — Dati (Dividi+Smart Fill)</li>
             <li>Parte B — Calendario (Riempimento)</li>
             <li>Parte C — Voti (MAX/MIN/CONTA)</li>
             <li>Parte D — Ricavi ($F$1)</li>
             <li>Parte E — Tariffe ($G2/B$1)</li>
             <li>Parte F — Commissioni (mix)</li>
-            <li>Parte G — Riepilogo (SOMMA/MEDIA)</li>
+            <li>Parte G — Riepilogo (SUM/AVERAGE)</li>
           </ol>
         </div>
         <div class="sidebar-box">
           <h3>Concetti usati</h3>
           <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
-            <li style="margin-bottom:8px;">Testo in colonne</li>
-            <li style="margin-bottom:8px;">Flash Fill <code>Ctrl+E</code></li>
+            <li style="margin-bottom:8px;">Dividi testo in colonne</li>
+            <li style="margin-bottom:8px;">Compilazione automatica <code>Ctrl+Shift+Y</code></li>
             <li style="margin-bottom:8px;">Riempimento automatico</li>
             <li style="margin-bottom:8px;">MAX · MIN · CONTA</li>
             <li style="margin-bottom:8px;">Referenza assoluta</li>
             <li style="margin-bottom:8px;">Referenza mista</li>
-            <li>SOMMA · MEDIA</li>
+            <li>SUM · AVERAGE</li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

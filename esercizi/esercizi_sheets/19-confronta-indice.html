@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CONFRONTA e INDICE — Corso Excel</title>
+  <title>MATCH e INDEX — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,8 +31,8 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
-        CONFRONTA e INDICE
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
+        MATCH e INDEX
       </div>
     </div>
   </div>
@@ -43,10 +43,10 @@
         <span class="card-badge avanzato">Avanzato</span>
         <span class="card-badge" style="background:#1a2540;color:#93c5fd;border:1px solid #2a3a60;">Esercizio #19</span>
       </div>
-      <h1>Catalogo Prodotti — CONFRONTA e INDICE</h1>
+      <h1>Catalogo Prodotti — MATCH e INDEX</h1>
       <div class="ex-meta">
         <span>⏱ 45 minuti</span><span>·</span>
-        <span>CONFRONTA(valore;interv;0) · INDICE(interv;pos) · INDICE+CONFRONTA combinati</span>
+        <span>MATCH(valore;interv;0) · INDEX(interv;pos) · INDEX+MATCH combinati</span>
       </div>
     </div>
   </section>
@@ -56,7 +56,7 @@
       <div class="ex-content">
 
         <h2>Descrizione</h2>
-        <p>Sei il magazziniere di un negozio di elettronica e vuoi costruire un sistema di ricerca rapida. Invece di scorrere la tabella ogni volta, vuoi digitare il nome di un prodotto e ottenere automaticamente prezzo e disponibilità. Userai <strong>CONFRONTA</strong> per trovare la posizione e <strong>INDICE</strong> per recuperare il valore corrispondente.</p>
+        <p>Sei il magazziniere di un negozio di elettronica e vuoi costruire un sistema di ricerca rapida. Invece di scorrere la tabella ogni volta, vuoi digitare il nome di un prodotto e ottenere automaticamente prezzo e disponibilità. Userai <strong>MATCH</strong> per trovare la posizione e <strong>INDEX</strong> per recuperare il valore corrispondente.</p>
 
         <h2>Struttura della tabella</h2>
         <p>Crea una tabella con le colonne: <strong>Prodotto | Categoria | Prezzo | Giacenza</strong></p>
@@ -75,29 +75,29 @@
           </tbody>
         </table>
 
-        <h2>Parte A — CONFRONTA() — trovare la posizione</h2>
-        <p>Sintassi: <code>=CONFRONTA(valore_cercato; matrice; tipo)</code><br>Il terzo argomento <code>0</code> = corrispondenza esatta. Restituisce la posizione relativa all'interno dell'intervallo (non il numero di riga del foglio).</p>
+        <h2>Parte A — MATCH() — trovare la posizione</h2>
+        <p>Sintassi: <code>=MATCH(valore_cercato; matrice; tipo)</code><br>Il terzo argomento <code>0</code> = corrispondenza esatta. Restituisce la posizione relativa all'interno dell'intervallo (non il numero di riga del foglio).</p>
         <div class="formula-block">
-=CONFRONTA("Tablet Mini";A2:A9;0)    → risultato: 4
-=CONFRONTA("Webcam HD";A2:A9;0)      → risultato: 7
-=CONFRONTA("Stampante";A2:A9;0)      → risultato: #N/D (non trovato)
-=CONFRONTA("Informatica";B2:B9;0)    → risultato: 2 (prima occorrenza)
+=MATCH("Tablet Mini";A2:A9;0)    → risultato: 4
+=MATCH("Webcam HD";A2:A9;0)      → risultato: 7
+=MATCH("Stampante";A2:A9;0)      → risultato: #N/D (non trovato)
+=MATCH("Informatica";B2:B9;0)    → risultato: 2 (prima occorrenza)
         </div>
 
-        <h2>Parte B — INDICE() — recuperare un valore per posizione</h2>
-        <p>Sintassi: <code>=INDICE(matrice; num_riga; [num_colonna])</code><br>Per una singola colonna puoi omettere <code>num_colonna</code>.</p>
+        <h2>Parte B — INDEX() — recuperare un valore per posizione</h2>
+        <p>Sintassi: <code>=INDEX(matrice; num_riga; [num_colonna])</code><br>Per una singola colonna puoi omettere <code>num_colonna</code>.</p>
         <div class="formula-block">
-=INDICE(C2:C9;3)      → 89 (terzo valore della colonna Prezzo = Cuffie Wireless)
-=INDICE(D2:D9;5)      → 15 (quinta giacenza = Smartwatch S2)
-=INDICE(A2:D9;2;3)    → 1199 (riga 2, colonna 3 = prezzo di Laptop Pro 15)
-=INDICE(A2:D9;2;4)    → 5 (riga 2, colonna 4 = giacenza di Laptop Pro 15)
+=INDEX(C2:C9;3)      → 89 (terzo valore della colonna Prezzo = Cuffie Wireless)
+=INDEX(D2:D9;5)      → 15 (quinta giacenza = Smartwatch S2)
+=INDEX(A2:D9;2;3)    → 1199 (riga 2, colonna 3 = prezzo di Laptop Pro 15)
+=INDEX(A2:D9;2;4)    → 5 (riga 2, colonna 4 = giacenza di Laptop Pro 15)
         </div>
 
-        <h2>Parte C — INDICE + CONFRONTA combinati</h2>
-        <p>CONFRONTA calcola la posizione → INDICE usa quella posizione per recuperare il valore dall'altra colonna.</p>
+        <h2>Parte C — INDEX + MATCH combinati</h2>
+        <p>MATCH calcola la posizione → INDEX usa quella posizione per recuperare il valore dall'altra colonna.</p>
         <div class="formula-block">
           <div class="formula-label">Schema della combinazione</div>
-          =INDICE(colonna_risultati; CONFRONTA(valore_cercato; colonna_chiavi; 0))
+          =INDEX(colonna_risultati; MATCH(valore_cercato; colonna_chiavi; 0))
         </div>
         <ol>
           <li>Crea una piccola <strong>area di ricerca</strong>:
@@ -109,9 +109,9 @@
           </li>
           <li>Accanto all'etichetta <strong>Prezzo:</strong> scrivi (sostituisci <code>cella_ricerca</code> con il riferimento alla cella dove hai scritto il nome del prodotto):</li>
         </ol>
-        <div class="formula-block">=INDICE(C2:C9;CONFRONTA(cella_ricerca;A2:A9;0))</div>
+        <div class="formula-block">=INDEX(C2:C9;MATCH(cella_ricerca;A2:A9;0))</div>
         <ol start="3">
-          <li>Accanto all'etichetta <strong>Giacenza:</strong> scrivi la stessa formula cambiando la colonna di INDICE da C2:C9 a D2:D9.</li>
+          <li>Accanto all'etichetta <strong>Giacenza:</strong> scrivi la stessa formula cambiando la colonna di INDEX da C2:C9 a D2:D9.</li>
           <li>Modifica il prodotto cercato: sostituisci <code>Smartwatch S2</code> con <code>Monitor 27"</code>. Entrambe le celle si aggiornano automaticamente (279 e 7).</li>
           <li>Prova con tutti gli altri prodotti del catalogo.</li>
           <li>Digita <code>Stampante</code> (non esiste): entrambe le celle mostrano <code>#N/D</code>. Questo segnala che il prodotto non è in catalogo.</li>
@@ -121,9 +121,9 @@
         <table class="data-table">
           <thead><tr><th>Funzione</th><th>Cosa fa</th><th>Quando usarla da sola</th></tr></thead>
           <tbody>
-            <tr><td><code>CONFRONTA(v;interv;0)</code></td><td>Trova la posizione di un valore</td><td>Vuoi sapere "a che posto" si trova un elemento</td></tr>
-            <tr><td><code>INDICE(interv;pos)</code></td><td>Recupera il valore a una posizione</td><td>Conosci già la posizione e vuoi estrarre il valore</td></tr>
-            <tr><td><code>INDICE+CONFRONTA</code></td><td>Cerca per nome, restituisce dati correlati</td><td>Vuoi un sistema di ricerca flessibile</td></tr>
+            <tr><td><code>MATCH(v;interv;0)</code></td><td>Trova la posizione di un valore</td><td>Vuoi sapere "a che posto" si trova un elemento</td></tr>
+            <tr><td><code>INDEX(interv;pos)</code></td><td>Recupera il valore a una posizione</td><td>Conosci già la posizione e vuoi estrarre il valore</td></tr>
+            <tr><td><code>INDEX+MATCH</code></td><td>Cerca per nome, restituisce dati correlati</td><td>Vuoi un sistema di ricerca flessibile</td></tr>
           </tbody>
         </table>
 
@@ -132,21 +132,21 @@
         <div class="sidebar-box">
           <h3>Indice</h3>
           <ol>
-            <li>Parte A — CONFRONTA</li>
-            <li>Parte B — INDICE</li>
-            <li>Parte C — INDICE+CONFRONTA</li>
+            <li>Parte A — MATCH</li>
+            <li>Parte B — INDEX</li>
+            <li>Parte C — INDEX+MATCH</li>
             <li>Area di ricerca dinamica</li>
           </ol>
         </div>
         <div class="sidebar-box">
           <h3>Funzioni usate</h3>
           <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
-            <li style="margin-bottom:8px;"><code>CONFRONTA(v;interv;0)</code></li>
-            <li style="margin-bottom:8px;"><code>INDICE(interv;pos)</code></li>
-            <li><code>INDICE(interv;r;c)</code></li>
+            <li style="margin-bottom:8px;"><code>MATCH(v;interv;0)</code></li>
+            <li style="margin-bottom:8px;"><code>INDEX(interv;pos)</code></li>
+            <li><code>INDEX(interv;r;c)</code></li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

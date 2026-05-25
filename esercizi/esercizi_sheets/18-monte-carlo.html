@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simulazione Monte Carlo — Corso Excel</title>
+  <title>Simulazione Monte Carlo — Corso Google Sheets</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -31,7 +31,7 @@
     <div class="container">
       <div class="breadcrumb">
         <a href="../../index.html">Home</a><span>›</span>
-        <a href="../../excel.html">Esercizi Excel</a><span>›</span>
+        <a href="../../google-sheets.html">Esercizi Google Sheets</a><span>›</span>
         Simulazione Monte Carlo
       </div>
     </div>
@@ -46,7 +46,7 @@
       <h1>Simulazione Economica — Monte Carlo</h1>
       <div class="ex-meta">
         <span>⏱ 50 minuti</span><span>·</span>
-        <span>CASUALE.TRA · Nomi celle · Scenari multipli · Stress test · Incolla Valori</span>
+        <span>RANDBETWEEN · Nomi celle · Scenari multipli · Stress test · Incolla Valori</span>
       </div>
     </div>
   </section>
@@ -59,7 +59,7 @@
         <p>Sei un analista finanziario di una piccola catena di negozi. Non sai esattamente quanto ricaverai il prossimo anno, ma sai che il ricavo mensile si aggira intorno a 10.000 euro con oscillazioni legate al mercato. Invece di fare una sola previsione fissa, generi <strong>decine di scenari casuali</strong> e osservi la distribuzione dei risultati — questo è il principio del <strong>metodo Monte Carlo</strong>.</p>
 
         <h2>Impostazione iniziale</h2>
-        <p>In una cella separata inserisci il valore <code>10000</code> con l'etichetta "Ricavo Base Mensile:" e assegna alla cella il nome <code>ricavo_base</code>.</p>
+        <p>In una cella separata inserisci il valore <code>10000</code> con l'etichetta "Ricavo Base Mensile:" e assegna alla cella il nome <code>ricavo_base</code> tramite la Casella Nome oppure <em>Dati → Intervalli con nome</em>.</p>
 
         <h2>Parte A — Simulare un anno di ricavi</h2>
         <p>Crea una tabella con le colonne: <strong>Mese | Oscillazione % | Ricavo Simulato</strong></p>
@@ -67,22 +67,22 @@
           <li>Nella colonna <strong>Mese</strong> scrivi Gennaio e usa il riempimento automatico per completare tutti e 12 i mesi.</li>
           <li>Nella colonna <strong>Oscillazione %</strong> scrivi questa formula e copiala su tutti i 12 mesi:</li>
         </ol>
-        <div class="formula-block">=CASUALE.TRA(-20;30)</div>
+        <div class="formula-block">=RANDBETWEEN(-20;30)</div>
         <p>Simula un tasso di variazione casuale tra -20% (crisi) e +30% (boom).</p>
         <ol start="3">
           <li>Nella colonna <strong>Ricavo Simulato</strong> scrivi questa formula e copiala:</li>
         </ol>
         <div class="formula-block">=ricavo_base*(1+B2/100)</div>
         <ol start="4">
-          <li>Premi <strong>F9</strong> più volte e osserva come cambiano oscillazioni e ricavi. Ogni pressione di F9 è come "vivere" un anno alternativo.</li>
+          <li>Apporta una modifica qualsiasi al foglio (o Ctrl+Shift+F9) e osserva come cambiano oscillazioni e ricavi. Ogni ricalcolo simula un anno alternativo.</li>
           <li>Sotto la tabella aggiungi:</li>
         </ol>
         <div class="formula-block">
-=SOMMA(C2:C13)                               → ricavo totale annuo
-=MEDIA(C2:C13)                               → ricavo medio mensile
-=MAX(C2:C13)                                 → mese migliore
-=MIN(C2:C13)                                 → mese peggiore
-=SE(SOMMA(C2:C13)&gt;120000;"Anno positivo";"Anno in perdita")
+=SUM(C2:C13)                               → ricavo totale annuo
+=AVERAGE(C2:C13)                           → ricavo medio mensile
+=MAX(C2:C13)                               → mese migliore
+=MIN(C2:C13)                               → mese peggiore
+=IF(SUM(C2:C13)&gt;120000;"Anno positivo";"Anno in perdita")
         </div>
 
         <h2>Parte B — Monte Carlo: 5 scenari in parallelo</h2>
@@ -90,46 +90,46 @@
         <ol start="6">
           <li>Per ogni cella delle 5 colonne scenario scrivi questa formula compatta e copiala su tutte le 12 righe × 5 colonne (60 valori indipendenti):</li>
         </ol>
-        <div class="formula-block">=ricavo_base*(1+CASUALE.TRA(-20;30)/100)</div>
+        <div class="formula-block">=ricavo_base*(1+RANDBETWEEN(-20;30)/100)</div>
         <ol start="7">
-          <li>Sotto ogni colonna scenario calcola il totale annuo con SOMMA sui 12 mesi.</li>
+          <li>Sotto ogni colonna scenario calcola il totale annuo con SUM sui 12 mesi.</li>
           <li>Aggiungi una riga <strong>Esito</strong> sotto i totali:</li>
         </ol>
-        <div class="formula-block">=SE(cella_totale&gt;120000;"Positivo";"Negativo")</div>
+        <div class="formula-block">=IF(cella_totale&gt;120000;"Positivo";"Negativo")</div>
         <ol start="9">
           <li>In una zona di riepilogo finale calcola:
             <ul>
-              <li>MEDIA dei 5 totali → stima Monte Carlo del ricavo annuo atteso</li>
+              <li>AVERAGE dei 5 totali → stima Monte Carlo del ricavo annuo atteso</li>
               <li>MAX dei 5 totali → scenario più ottimistico</li>
               <li>MIN dei 5 totali → scenario peggiore</li>
               <li>Differenza MAX-MIN → ampiezza del rischio</li>
             </ul>
           </li>
-          <li>Congela i 5 scenari con <strong>Incolla Valori</strong> sull'intero blocco dati.</li>
+          <li>Congela i 5 scenari con <strong>Modifica → Incolla speciale → Solo valori</strong> sull'intero blocco dati.</li>
         </ol>
 
         <h2>Parte C — Stress test: condizioni estreme</h2>
-        <p>In due celle separate inserisci <code>-35</code> (etichetta "Shock minimo crisi:") e <code>5</code> (etichetta "Shock massimo crisi:"). Assegna i nomi <code>crisi_min</code> e <code>crisi_max</code>.</p>
+        <p>In due celle separate inserisci <code>-35</code> (etichetta "Shock minimo crisi:") e <code>5</code> (etichetta "Shock massimo crisi:"). Assegna i nomi <code>crisi_min</code> e <code>crisi_max</code> tramite la Casella Nome oppure <em>Dati → Intervalli con nome</em>.</p>
         <ol start="11">
           <li>Crea una terza piccola tabella con la colonna <strong>Ricavo in Crisi</strong> (12 righe):</li>
         </ol>
-        <div class="formula-block">=ricavo_base*(1+CASUALE.TRA(crisi_min;crisi_max)/100)</div>
+        <div class="formula-block">=ricavo_base*(1+RANDBETWEEN(crisi_min;crisi_max)/100)</div>
         <ol start="12">
           <li>Calcola il totale annuo in crisi e confrontalo con il totale della Parte A. Aggiungi un alert:</li>
         </ol>
-        <div class="formula-block">=SE(totale_crisi&lt;ricavo_base*12*0.7;"Crisi grave: ricavi sotto il 70% del previsto";"Crisi gestibile")</div>
+        <div class="formula-block">=IF(totale_crisi&lt;ricavo_base*12*0.7;"Crisi grave: ricavi sotto il 70% del previsto";"Crisi gestibile")</div>
         <ol start="13">
-          <li>Congela anche questi valori con Incolla Valori.</li>
+          <li>Congela anche questi valori con Modifica → Incolla speciale → Solo valori (Ctrl+Shift+V).</li>
         </ol>
 
         <h2>Concetti chiave</h2>
         <table class="data-table">
           <thead><tr><th>Tecnica</th><th>Scopo</th></tr></thead>
           <tbody>
-            <tr><td>CASUALE.TRA con nomi celle</td><td>Scenari economici realistici</td></tr>
-            <tr><td>5 scenari in parallelo</td><td>Confronto senza dover premere F9 ogni volta</td></tr>
+            <tr><td>RANDBETWEEN con nomi celle</td><td>Scenari economici realistici</td></tr>
+            <tr><td>5 scenari in parallelo</td><td>Confronto senza dover ricalcolare ogni volta</td></tr>
             <tr><td>Stress test (crisi_min/crisi_max)</td><td>Misura la resistenza ai worst case</td></tr>
-            <tr><td>Incolla Valori</td><td>Congela la simulazione per conservarla</td></tr>
+            <tr><td>Incolla speciale → Solo valori</td><td>Congela la simulazione per conservarla</td></tr>
           </tbody>
         </table>
 
@@ -147,11 +147,11 @@
         <div class="sidebar-box">
           <h3>Scorciatoie</h3>
           <ul style="list-style:none;padding:0;font-size:.88rem;color:var(--text-muted);">
-            <li style="margin-bottom:8px;"><code>F9</code> — Ricalcola scenari</li>
-            <li><code>Ctrl+C → Incolla Valori</code> — Blocca simulazione</li>
+            <li style="margin-bottom:8px;"><code>Ctrl+Shift+F9</code> — Ricalcola scenari</li>
+            <li><code>Ctrl+Shift+V</code> — Incolla solo valori</li>
           </ul>
         </div>
-        <a href="../../excel.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Excel</a>
+        <a href="../../google-sheets.html" class="btn-card" style="display:block;text-align:center;margin-top:4px;">← Esercizi Google Sheets</a>
       </aside>
     </div>
   </section>

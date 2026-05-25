@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calcolatore Mutuo — Corso Excel</title>
+    <title>Calcolatore Mutuo — Corso Google Sheets</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>"
@@ -15,13 +15,14 @@
     <header class="site-header">
       <div class="container">
         <div class="logo">
-          <span class="logo-icon">💻</span>
-          <span class="logo-text">CorsoWeb</span>
+          <a href="../../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;"><span class="logo-icon">💻</span><span class="logo-text">Piattaforma Esercizi</span></a>
         </div>
         <nav class="main-nav">
-          <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
-          <a href="../../index.html#esercizi-css">Esercizi CSS</a>
-          <a href="../../index.html#argomenti">Argomenti</a>
+          <a href="../../excel.html">Excel</a>
+          <a href="../../google-sheets.html">Google Sheets</a>
+          <a href="../../word.html">Word</a>
+          <a href="../../css.html">CSS</a>
+          <a href="../../html-css.html">HTML &amp; CSS</a>
           <a href="../../index.html#contatti">Contatti</a>
         </nav>
       </div>
@@ -33,7 +34,7 @@
         <div class="breadcrumb">
           <a href="../../index.html">Home</a>
           <span>›</span>
-          <a href="../../index.html#esercizi-excel">Esercizi Excel</a>
+          <a href="../../google-sheets.html">Esercizi Google Sheets</a>
           <span>›</span>
           Calcolatore Mutuo
         </div>
@@ -55,11 +56,11 @@
             >Esercizio #2</span
           >
         </div>
-        <h1>Creare un Calcolatore di Mutuo in Excel</h1>
+        <h1>Creare un Calcolatore di Mutuo in Google Sheets</h1>
         <div class="ex-meta">
           <span>⏱ 50 minuti</span>
           <span>·</span>
-          <span>RATA · Piano di ammortamento · Grafici a linee</span>
+          <span>PMT · Piano di ammortamento · Grafici a linee</span>
         </div>
       </div>
     </section>
@@ -72,7 +73,7 @@
           <h2>Descrizione</h2>
           <p>
             In questo esercizio imparerai a creare un calcolatore di mutuo in
-            Excel. Lo strumento calcolerà la rata mensile, il totale degli
+            Google Sheets. Lo strumento calcolerà la rata mensile, il totale degli
             interessi pagati e il costo complessivo del mutuo. Costruirai
             inoltre un piano di ammortamento completo per visualizzare come ogni
             pagamento riduce il capitale residuo.
@@ -118,14 +119,14 @@
           <h2>Passo 2 — Calcolo della rata mensile</h2>
           <p>
             In <code>A6</code> scrivi l'etichetta <strong>Rata Mensile</strong>,
-            poi in <code>B6</code> inserisci la funzione <code>RATA</code>:
+            poi in <code>B6</code> inserisci la funzione <code>PMT</code>:
           </p>
           <div class="formula-block">
             <div class="formula-label">B6 — Rata Mensile</div>
-            =RATA(B2/B4; B3*B4; -B1)
+            =PMT(B2/B4; B3*B4; -B1)
           </div>
           <p>
-            La funzione <code>RATA</code> accetta: tasso per periodo, numero
+            La funzione <code>PMT</code> accetta: tasso per periodo, numero
             totale di rate e valore attuale (importo negativo). Risultato
             atteso: <strong>1.073,64 €</strong> al mese.
           </p>
@@ -226,7 +227,7 @@
               Seleziona <code>A11:A370</code> (Numero Rata) e
               <code>E11:E370</code> (Capitale Residuo) con <code>Ctrl</code>.
             </li>
-            <li>Inserisci un <em>grafico a linee</em>.</li>
+            <li>Vai su <em>Inserisci → Grafico → Grafico a linee</em>.</li>
             <li>Vedrai la curva decrescente del debito residuo nel tempo.</li>
           </ol>
 
@@ -236,7 +237,7 @@
               Seleziona <code>A11:A370</code>, <code>C11:C370</code> (Interessi)
               e <code>D11:D370</code> (Capitale) con <code>Ctrl</code>.
             </li>
-            <li>Inserisci un <em>grafico a linee</em> con due serie.</li>
+            <li>Vai su <em>Inserisci → Grafico → Grafico a linee</em> con due serie.</li>
             <li>
               Osserva come la quota interessi scende e la quota capitale sale
               nel tempo.
@@ -255,7 +256,7 @@
             <tbody>
               <tr>
                 <td><code>B6</code></td>
-                <td><code>=RATA(B2/B4;B3*B4;-B1)</code></td>
+                <td><code>=PMT(B2/B4;B3*B4;-B1)</code></td>
                 <td>Rata mensile</td>
               </tr>
               <tr>
@@ -293,7 +294,7 @@
             <h3>Indice dei passi</h3>
             <ol>
               <li><a href="#">Dati iniziali</a></li>
-              <li><a href="#">Rata mensile (RATA)</a></li>
+              <li><a href="#">Rata mensile (PMT)</a></li>
               <li><a href="#">Interessi e costo totale</a></li>
               <li><a href="#">Piano di ammortamento</a></li>
               <li><a href="#">Grafici</a></li>
@@ -309,7 +310,7 @@
                 color: var(--text-muted);
               "
             >
-              <li style="margin-bottom: 8px"><code>RATA</code></li>
+              <li style="margin-bottom: 8px"><code>PMT</code></li>
               <li style="margin-bottom: 8px">
                 Riferimenti assoluti <code>$</code>
               </li>
@@ -318,11 +319,11 @@
             </ul>
           </div>
           <a
-            href="../../index.html#esercizi-excel"
+            href="../../google-sheets.html"
             class="btn-card"
             style="display: block; text-align: center; margin-top: 4px"
           >
-            ← Esercizi Excel
+            ← Esercizi Google Sheets
           </a>
         </aside>
       </div>
@@ -331,13 +332,9 @@
     <!-- FOOTER -->
     <footer class="site-footer" id="contatti">
       <div class="container">
-        <p>
-          Hai domande? Scrivimi a
-          <a href="mailto:info@esempio.it">info@esempio.it</a>
-        </p>
-        <p class="footer-copy">
-          &copy; 2026 CorsoWeb — Tutti i diritti riservati
-        </p>
+        <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+        <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+        <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
       </div>
     </footer>
   </body>
