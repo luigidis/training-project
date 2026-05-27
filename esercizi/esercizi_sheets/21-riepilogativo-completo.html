@@ -206,7 +206,19 @@ greco;valentina;Sud;Junior;8900;71
         <p>Nota: la sintassi per i riferimenti tra fogli in Google Sheets è identica a quella usata qui sopra.</p>
 
         <h2>Sezione 12 — MATCH e INDEX</h2>
-        <p>Crea una tabella catalogo prodotti (Prodotto | Categoria | Prezzo | Scorta) con: Scarpe Running (89/45), Felpa Tecnica (65/30), Zaino Sport (49/60), Guanti Fitness (25/80), Pantaloni Tech (79/35), Borraccia Pro (18/120), Maglietta Sport (35/55).</p>
+        <p>Crea una tabella catalogo prodotti con le colonne: <strong>Prodotto | Categoria | Prezzo | Scorta</strong>. Inserisci questi dati esattamente come appaiono:</p>
+        <table class="data-table">
+          <thead><tr><th>Prodotto</th><th>Categoria</th><th>Prezzo (€)</th><th>Scorta</th></tr></thead>
+          <tbody>
+            <tr><td>Scarpe Running</td><td>Calzature</td><td>89</td><td>45</td></tr>
+            <tr><td>Felpa Tecnica</td><td>Abbigliamento</td><td>65</td><td>30</td></tr>
+            <tr><td>Zaino Sport</td><td>Accessori</td><td>49</td><td>60</td></tr>
+            <tr><td>Guanti Fitness</td><td>Accessori</td><td>25</td><td>80</td></tr>
+            <tr><td>Pantaloni Tech</td><td>Abbigliamento</td><td>79</td><td>35</td></tr>
+            <tr><td>Borraccia Pro</td><td>Accessori</td><td>18</td><td>120</td></tr>
+            <tr><td>Maglietta Sport</td><td>Abbigliamento</td><td>35</td><td>55</td></tr>
+          </tbody>
+        </table>
         <ol start="66">
           <li><code>=MATCH("Zaino Sport";colonna_prodotti;0)</code> → 3</li>
           <li>Prova con "Borraccia Pro" e poi con un prodotto inesistente (osserva #N/D).</li>

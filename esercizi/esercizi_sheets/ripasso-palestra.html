@@ -60,11 +60,20 @@
 
         <h2>Struttura della tabella</h2>
         <p>Crea una tabella con le colonne: <strong>Socio | Settimana 1 | Settimana 2 | Settimana 3 | Settimana 4 | Totale Presenze | Media Settimanale</strong></p>
-        <p>Inserisci almeno <strong>8 soci</strong> con valori da 0 a 7 (giorni di presenza). Attenzione:</p>
-        <ul>
-          <li>Lascia <strong>almeno 3 celle vuote</strong> (simulano settimane senza registrazione)</li>
-          <li>In <strong>altre celle</strong> scrivi la parola <code>Sospeso</code> per indicare soci con abbonamento sospeso</li>
-        </ul>
+        <p>Inserisci questi dati nella tabella. Le celle indicate con <em style="color:var(--text-muted)">vuota</em> devono essere <strong>lasciate vuote</strong>; le celle con <code>Sospeso</code> devono contenere proprio quella parola:</p>
+        <table class="data-table">
+          <thead><tr><th>Socio</th><th>Settimana 1</th><th>Settimana 2</th><th>Settimana 3</th><th>Settimana 4</th></tr></thead>
+          <tbody>
+            <tr><td>Rossi</td><td>5</td><td>4</td><td>6</td><td>5</td></tr>
+            <tr><td>Bianchi</td><td>3</td><td><em style="color:var(--text-muted)">vuota</em></td><td>2</td><td>4</td></tr>
+            <tr><td>Ferrari</td><td>7</td><td>6</td><td>7</td><td><em style="color:var(--text-muted)">vuota</em></td></tr>
+            <tr><td>Esposito</td><td>Sospeso</td><td>Sospeso</td><td>Sospeso</td><td>Sospeso</td></tr>
+            <tr><td>Romano</td><td>2</td><td>3</td><td><em style="color:var(--text-muted)">vuota</em></td><td>2</td></tr>
+            <tr><td>Ricci</td><td>6</td><td>5</td><td>4</td><td>6</td></tr>
+            <tr><td>Conti</td><td>4</td><td>4</td><td>3</td><td>5</td></tr>
+            <tr><td>Greco</td><td>1</td><td>2</td><td>1</td><td>3</td></tr>
+          </tbody>
+        </table>
 
         <h2>Totali e medie</h2>
         <ol>
