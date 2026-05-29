@@ -63,9 +63,29 @@
 
         <h2>Parte A — Simulare un anno di ricavi</h2>
         <p>Crea una tabella con le colonne: <strong>Mese | Oscillazione % | Ricavo Simulato</strong></p>
+        <p>Ecco come deve apparire la struttura iniziale prima di inserire le formule:</p>
+        <table class="data-table">
+          <thead><tr><th>A — Mese</th><th>B — Oscillazione %</th><th>C — Ricavo Simulato</th></tr></thead>
+          <tbody>
+            <tr><td>Gennaio</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Febbraio</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Marzo</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Aprile</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Maggio</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Giugno</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Luglio</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Agosto</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Settembre</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Ottobre</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Novembre</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Dicembre</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+          </tbody>
+        </table>
+        <p>Segui questi passaggi per costruire la struttura:</p>
         <ol>
-          <li>Nella colonna <strong>Mese</strong> scrivi Gennaio e usa il riempimento automatico per completare tutti e 12 i mesi.</li>
-          <li>Nella colonna <strong>Oscillazione %</strong> scrivi questa formula e copiala su tutti i 12 mesi:</li>
+          <li>Scrivi in <strong>A1</strong> l'intestazione <code>Mese</code>, in <strong>B1</strong> scrivi <code>Oscillazione %</code>, in <strong>C1</strong> scrivi <code>Ricavo Simulato</code>.</li>
+          <li>Clicca su <strong>A2</strong> e scrivi <code>Gennaio</code>. Poi trascina il quadratino di riempimento verso il basso fino alla riga 13: Google Sheets riconosce la serie dei mesi e completa automaticamente fino a Dicembre.</li>
+          <li>Nella colonna <strong>Oscillazione %</strong> (B2) scrivi questa formula e copiala su tutti i 12 mesi:</li>
         </ol>
         <div class="formula-block">=RANDBETWEEN(-20;30)</div>
         <p>Simula un tasso di variazione casuale tra -20% (crisi) e +30% (boom).</p>

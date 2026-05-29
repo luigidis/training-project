@@ -126,7 +126,40 @@ greco;valentina;Sud;Junior;8900;71
           <li>Aggiungi la colonna <strong>Commissione</strong>: formula che moltiplica le Vendite per la percentuale del livello corrispondente (verifica che ogni livello abbia la commissione corretta).</li>
           <li>Aggiungi la colonna <strong>Guadagno Finale</strong>: <code>Commissione + rimborso_spese</code>. Copia verso il basso.</li>
           <li>Cambia il rimborso da <code>300</code> a <code>450</code> e verifica che tutti i Guadagni si aggiornino. Poi rimetti 300.</li>
-          <li>Crea una tabella tariffe trasferta a doppia entrata (livelli vs distanze 50/100/200/300 km) con referenze miste: <code>=$colonna riga * colonna $riga</code>. Copia su tutta la griglia.</li>
+          <li>Crea la tabella tariffe trasferta in una zona separata del foglio. Ecco la struttura iniziale da costruire prima di inserire le formule:
+            <table class="data-table" style="margin-top:0.75rem;">
+              <thead>
+                <tr><th style="background:#0f1a2e;color:#64748b;">Cella</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th style="background:#0f1a2e;color:#64748b;"> </th><th>G</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="background:#0f1a2e;color:#64748b;font-weight:600;">1</td>
+                  <td>Livello / km</td><td>50</td><td>100</td><td>200</td><td>300</td>
+                  <td style="background:#0f1a2e;"></td>
+                  <td>€/km</td>
+                </tr>
+                <tr>
+                  <td style="background:#0f1a2e;color:#64748b;font-weight:600;">2</td>
+                  <td>Junior</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+                  <td style="background:#0f1a2e;"></td>
+                  <td>0,20</td>
+                </tr>
+                <tr>
+                  <td style="background:#0f1a2e;color:#64748b;font-weight:600;">3</td>
+                  <td>Middle</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+                  <td style="background:#0f1a2e;"></td>
+                  <td>0,25</td>
+                </tr>
+                <tr>
+                  <td style="background:#0f1a2e;color:#64748b;font-weight:600;">4</td>
+                  <td>Senior</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+                  <td style="background:#0f1a2e;"></td>
+                  <td>0,30</td>
+                </tr>
+              </tbody>
+            </table>
+            Passaggi: (a) In A1 scrivi <code>Livello / km</code>; in B1–E1 scrivi <code>50</code>, <code>100</code>, <code>200</code>, <code>300</code>. (b) In A2–A4 scrivi <code>Junior</code>, <code>Middle</code>, <code>Senior</code>. (c) In G1 scrivi <code>€/km</code>; in G2–G4 scrivi <code>0,20</code>, <code>0,25</code>, <code>0,30</code>. (d) In B2 scrivi la formula con referenze miste <code>=$G2*B$1</code> e copiala su tutta la griglia B2:E4.
+          </li>
         </ol>
 
         <h2>Sezione 6 — Nomi delle celle</h2>

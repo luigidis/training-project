@@ -59,8 +59,39 @@
         <p>Sei il responsabile di un'agenzia di selezione del personale e devi simulare l'estrazione casuale di candidati per colloqui, turni e assegnazioni di gruppo. Imparerai le funzioni casuali di Google Sheets e il <strong>trick di Modifica → Incolla speciale → Solo valori</strong> per bloccare i risultati.</p>
 
         <h2>Struttura della tabella</h2>
-        <p>Crea una tabella con le colonne: <strong>Candidato | Punteggio Test | Fascia | Gruppo Assegnato | Giorno Colloquio</strong></p>
-        <p>Inserisci questi nomi nella colonna Candidato: Marco, Anna, Giuseppe, Antonio, Luca, Francesca, Davide, Chiara, Roberto, Elena.</p>
+        <p>La tabella ha cinque colonne. Le prime tre (Punteggio Test, Fascia, Gruppo Assegnato, Giorno Colloquio) vengono generate dalle formule casuali. Comincia inserendo solo le intestazioni e i nomi:</p>
+        <table class="data-table">
+          <thead><tr><th style="background:#0f1a2e;color:#64748b;">Cella</th><th>Contenuto</th></tr></thead>
+          <tbody>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">A1</td><td><code>Candidato</code> (intestazione)</td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">B1</td><td><code>Punteggio Test</code> (intestazione)</td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">C1</td><td><code>Fascia</code> (intestazione)</td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">D1</td><td><code>Gruppo Assegnato</code> (intestazione)</td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">E1</td><td><code>Giorno Colloquio</code> (intestazione)</td></tr>
+          </tbody>
+        </table>
+        <p>Poi inserisci i 10 candidati nella colonna A (righe 2–11):</p>
+        <table class="data-table">
+          <thead><tr><th>A — Candidato</th><th>B — Punteggio Test</th><th>C — Fascia</th><th>D — Gruppo Assegnato</th><th>E — Giorno Colloquio</th></tr></thead>
+          <tbody>
+            <tr><td>Marco</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Anna</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Giuseppe</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Antonio</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Luca</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Francesca</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Davide</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Chiara</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Roberto</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+            <tr><td>Elena</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64740b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td></tr>
+          </tbody>
+        </table>
+        <p>Passi per costruire la struttura:</p>
+        <ol>
+          <li>Clicca su <strong>A1</strong> e scrivi <code>Candidato</code>. Poi scrivi le altre intestazioni in B1, C1, D1, E1.</li>
+          <li>Clicca su <strong>A2</strong> e scrivi <code>Marco</code>. Poi in A3 scrivi <code>Anna</code>, A4 <code>Giuseppe</code>, A5 <code>Antonio</code>, A6 <code>Luca</code>, A7 <code>Francesca</code>, A8 <code>Davide</code>, A9 <code>Chiara</code>, A10 <code>Roberto</code>, A11 <code>Elena</code>.</li>
+          <li>Le colonne B–E restano vuote per ora: le riempirai con le formule casuali nei passaggi successivi.</li>
+        </ol>
 
         <h2>Parte A — RAND e RANDBETWEEN</h2>
         <ol>

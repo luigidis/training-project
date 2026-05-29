@@ -58,29 +58,63 @@
         <h2>Descrizione</h2>
         <p>Sei il direttore commerciale di un'azienda e devi costruire un report che calcoli le commissioni guadagnate da ogni venditore in base al proprio livello e alle proprie vendite. Userai tutti e tre i tipi di referenza insieme nella stessa formula.</p>
 
-        <h2>Impostazione iniziale</h2>
-        <p>In una cella separata (es. <strong>C1</strong>) inserisci il valore <code>200</code> con l'etichetta "Bonus Aziendale:" nella cella vicina. Questo bonus fisso viene aggiunto al guadagno di tutti i venditori.</p>
+        <h2>Struttura iniziale del foglio</h2>
+        <p>Prima di inserire qualsiasi formula, devi costruire tre elementi separati nel foglio. Ecco come deve apparire la struttura quando hai finito:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th style="background:#0f1a2e;color:#64748b;">Cella</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th style="background:#0f1a2e;color:#64748b;">F</th><th>G</th><th>H</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">1</td>
+              <td>Bonus Aziendale:</td><td></td><td>200</td><td></td><td></td><td></td>
+              <td style="background:#0f1a2e;"></td>
+              <td>Livello</td><td>Comm. %</td>
+            </tr>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">2</td>
+              <td>Venditore</td><td>Livello</td><td>Vend. Gen.</td><td>Vend. Feb.</td><td>Vend. Mar.</td><td>Tot. Vendite</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>Junior</td><td>0,05</td>
+            </tr>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">3</td>
+              <td>Rossi</td><td>Junior</td><td>8500</td><td>7200</td><td>9100</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>Senior</td><td>0,08</td>
+            </tr>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">4</td>
+              <td>Ferrari</td><td>Senior</td><td>14200</td><td>15800</td><td>13600</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>Expert</td><td>0,12</td>
+            </tr>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">5</td>
+              <td>Conti</td><td>Expert</td><td>22000</td><td>19500</td><td>24300</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+              <td style="background:#0f1a2e;"></td>
+              <td></td><td></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Segui questi passaggi per costruire la struttura:</p>
+        <ol>
+          <li>Clicca su <strong>A1</strong> e scrivi l'etichetta <code>Bonus Aziendale:</code>. Poi clicca su <strong>C1</strong> e scrivi <code>200</code>. Questo valore fisso viene sommato al guadagno di tutti i venditori.</li>
+          <li>Clicca su <strong>G1</strong> e scrivi <code>Livello</code>, poi su <strong>H1</strong> scrivi <code>Comm. %</code>. Questi sono i titoli della tabella livelli.</li>
+          <li>Nella cella <strong>G2</strong> scrivi <code>Junior</code> e in <strong>H2</strong> scrivi <code>0,05</code>. Poi in <strong>G3</strong> scrivi <code>Senior</code> e in <strong>H3</strong> scrivi <code>0,08</code>. Infine in <strong>G4</strong> scrivi <code>Expert</code> e in <strong>H4</strong> scrivi <code>0,12</code>.</li>
+          <li>Costruisci le intestazioni della tabella principale: in <strong>A2</strong> scrivi <code>Venditore</code>, in <strong>B2</strong> scrivi <code>Livello</code>, in <strong>C2</strong> scrivi <code>Vend. Gen.</code>, in <strong>D2</strong> scrivi <code>Vend. Feb.</code>, in <strong>E2</strong> scrivi <code>Vend. Mar.</code>, in <strong>F2</strong> scrivi <code>Tot. Vendite</code>, in <strong>G2</strong> (salta — è occupato) — la colonna Commissione va in <strong>G2 no, usa la colonna vicina:</strong> inserisci <code>Commissione</code> in una colonna libera e <code>Guadagno Finale</code> nella colonna dopo.</li>
+          <li>Inserisci i dati del primo venditore: in <strong>A3</strong> scrivi <code>Rossi</code>, in <strong>B3</strong> scrivi <code>Junior</code>, in <strong>C3</strong> scrivi <code>8500</code>, in <strong>D3</strong> scrivi <code>7200</code>, in <strong>E3</strong> scrivi <code>9100</code>.</li>
+          <li>Inserisci i dati del secondo venditore (riga 4): <code>Ferrari | Senior | 14200 | 15800 | 13600</code>.</li>
+          <li>Inserisci i dati del terzo venditore (riga 5): <code>Conti | Expert | 22000 | 19500 | 24300</code>.</li>
+        </ol>
 
         <h2>Tabella livelli di commissione</h2>
-        <p>Crea una tabella Livelli in una zona separata del foglio Google Sheets (es. <strong>colonne G–H</strong>):</p>
         <table class="data-table">
           <thead><tr><th>Livello</th><th>Commissione %</th></tr></thead>
           <tbody>
             <tr><td>Junior</td><td>0,05</td></tr>
             <tr><td>Senior</td><td>0,08</td></tr>
             <tr><td>Expert</td><td>0,12</td></tr>
-          </tbody>
-        </table>
-
-        <h2>Tabella principale</h2>
-        <p>Crea la tabella principale con le colonne: <strong>Venditore | Livello | Vendite Gennaio | Vendite Febbraio | Vendite Marzo | Totale Vendite | Commissione | Guadagno Finale</strong></p>
-        <p>Inserisci questi 3 venditori con le rispettive vendite mensili (le colonne <em>Totale Vendite</em>, <em>Commissione</em> e <em>Guadagno Finale</em> le calcolerai tu):</p>
-        <table class="data-table">
-          <thead><tr><th>Venditore</th><th>Livello</th><th>Vendite Gen.</th><th>Vendite Feb.</th><th>Vendite Mar.</th></tr></thead>
-          <tbody>
-            <tr><td>Rossi</td><td>Junior</td><td>8500</td><td>7200</td><td>9100</td></tr>
-            <tr><td>Ferrari</td><td>Senior</td><td>14200</td><td>15800</td><td>13600</td></tr>
-            <tr><td>Conti</td><td>Expert</td><td>22000</td><td>19500</td><td>24300</td></tr>
           </tbody>
         </table>
 

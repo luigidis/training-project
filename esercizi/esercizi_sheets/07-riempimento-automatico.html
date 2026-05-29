@@ -58,28 +58,64 @@
         <h2>Descrizione</h2>
         <p>Sei l'organizzatore di un torneo sportivo e devi preparare il calendario delle partite per le prossime settimane. Scoprirai come Google Sheets riconosce pattern diversi durante il trascinamento, con risultati a volte sorprendenti.</p>
 
-        <h2>Struttura della tabella</h2>
-        <p>Crea una tabella con le colonne: <strong>Giornata | Data | Squadra Casa | Squadra Ospite</strong></p>
+        <h2>Struttura iniziale della tabella</h2>
+        <p>La tabella ha quattro colonne. Non devi inserire tutti i dati a mano: ne inserisci solo i primi due valori per colonna, poi Google Sheets completa il resto automaticamente. Ecco come deve apparire la tabella PRIMA di usare il riempimento automatico:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th></th><th>A — Giornata</th><th>B — Data</th><th>C — Squadra Casa</th><th>D — Squadra Ospite</th></tr>
+          </thead>
+          <tbody>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">1</td><td><strong>Giornata</strong></td><td><strong>Data</strong></td><td><strong>Squadra Casa</strong></td><td><strong>Squadra Ospite</strong></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">2</td><td>1</td><td>01/04/2025</td><td>Roma</td><td>Inter</td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">3</td><td>2</td><td>08/04/2025</td><td>Lazio</td><td>Inter</td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">4–11</td><td style="color:#64748b;font-style:italic;">(riempimento automatico)</td><td style="color:#64748b;font-style:italic;">(riempimento automatico)</td><td style="color:#64748b;font-style:italic;">(riempimento automatico)</td><td style="color:#64748b;font-style:italic;">(riempimento automatico)</td></tr>
+          </tbody>
+        </table>
+        <p>Segui questi passaggi per costruire la struttura iniziale:</p>
+        <ol>
+          <li>Clicca su <strong>A1</strong> e scrivi <code>Giornata</code>, poi in <strong>B1</strong> scrivi <code>Data</code>, in <strong>C1</strong> scrivi <code>Squadra Casa</code>, in <strong>D1</strong> scrivi <code>Squadra Ospite</code>. Questi sono i titoli delle colonne.</li>
+          <li>In <strong>A2</strong> scrivi <code>1</code> e in <strong>A3</strong> scrivi <code>2</code>.</li>
+          <li>In <strong>B2</strong> scrivi <code>01/04/2025</code> e in <strong>B3</strong> scrivi <code>08/04/2025</code>.</li>
+          <li>In <strong>C2</strong> scrivi <code>Roma</code> e in <strong>C3</strong> scrivi <code>Lazio</code>.</li>
+          <li>In <strong>D2</strong> scrivi <code>Inter</code> e in <strong>D3</strong> scrivi <code>Inter</code>.</li>
+        </ol>
 
-        <h2>Passaggi da completare</h2>
+        <h2>Passaggi — riempimento automatico</h2>
         <ol>
           <li>
             <strong>Colonna Giornata — serie numerica</strong><br>
-            Scrivi <code>1</code> nella prima cella e <code>2</code> nella seconda. Seleziona entrambe le celle e trascina il quadratino di riempimento verso il basso fino alla riga 11, ottenendo le giornate da 1 a 10. Osserva come Google Sheets riconosce automaticamente il pattern +1.
+            Seleziona entrambe le celle <strong>A2:A3</strong> (i valori 1 e 2 che hai appena inserito). Trascina il quadratino di riempimento (piccolo quadrato blu in basso a destra della selezione) verso il basso fino alla riga 11. Google Sheets riconosce il pattern +1 e completa automaticamente le giornate da 3 a 10.
           </li>
           <li>
             <strong>Colonna Data — serie di date</strong><br>
-            Scrivi <code>01/04/2025</code> nella prima cella e <code>08/04/2025</code> nella seconda (le partite si giocano ogni 7 giorni). Seleziona entrambe e trascina verso il basso per completare tutte e 10 le date. Osserva come Google Sheets riconosce il pattern di 7 giorni.
+            Seleziona entrambe le celle <strong>B2:B3</strong> (le due date che hai inserito, distanziate di 7 giorni). Trascina verso il basso fino alla riga 11. Google Sheets riconosce il pattern di 7 giorni e completa le date fino al 23/06/2025.
           </li>
           <li>
             <strong>Colonna Squadra Casa — riempimento ciclico</strong><br>
-            Scrivi <code>Roma</code> nella prima cella e <code>Lazio</code> nella seconda. Trascina verso il basso e osserva cosa succede: Google Sheets non riconosce un pattern nei nomi delle squadre e li ripete in modo ciclico (Roma, Lazio, Roma, Lazio…). Questo comportamento è diverso dal riempimento numerico o delle date.
+            Seleziona entrambe le celle <strong>C2:C3</strong> (Roma e Lazio). Trascina verso il basso fino alla riga 11. Osserva cosa succede: Google Sheets non riconosce un pattern nei nomi propri e li ripete ciclicamente (Roma, Lazio, Roma, Lazio…). Questo comportamento è diverso dal riempimento numerico o delle date.
           </li>
           <li>
             <strong>Colonna Squadra Ospite — riempimento identico</strong><br>
-            Scrivi <code>Inter</code> nella prima cella e <code>Inter</code> nella seconda. Seleziona entrambe le celle e trascina verso il basso. Poiché hai selezionato due celle con lo stesso contenuto, Google Sheets riempie tutto con lo stesso valore.
+            Seleziona entrambe le celle <strong>D2:D3</strong> (Inter e Inter). Trascina verso il basso fino alla riga 11. Poiché hai selezionato due celle con lo stesso contenuto, Google Sheets copia lo stesso valore in tutte le celle.
           </li>
         </ol>
+
+        <h2>Risultato atteso dopo il riempimento</h2>
+        <table class="data-table">
+          <thead><tr><th>Giornata</th><th>Data</th><th>Squadra Casa</th><th>Squadra Ospite</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>01/04/2025</td><td>Roma</td><td>Inter</td></tr>
+            <tr><td>2</td><td>08/04/2025</td><td>Lazio</td><td>Inter</td></tr>
+            <tr><td>3</td><td>15/04/2025</td><td>Roma</td><td>Inter</td></tr>
+            <tr><td>4</td><td>22/04/2025</td><td>Lazio</td><td>Inter</td></tr>
+            <tr><td>5</td><td>29/04/2025</td><td>Roma</td><td>Inter</td></tr>
+            <tr><td>6</td><td>06/05/2025</td><td>Lazio</td><td>Inter</td></tr>
+            <tr><td>7</td><td>13/05/2025</td><td>Roma</td><td>Inter</td></tr>
+            <tr><td>8</td><td>20/05/2025</td><td>Lazio</td><td>Inter</td></tr>
+            <tr><td>9</td><td>27/05/2025</td><td>Roma</td><td>Inter</td></tr>
+            <tr><td>10</td><td>03/06/2025</td><td>Lazio</td><td>Inter</td></tr>
+          </tbody>
+        </table>
 
         <h2>Osservazioni sul comportamento di Google Sheets</h2>
         <table class="data-table">
@@ -91,14 +127,6 @@
             <tr><td>Stesso valore (Inter, Inter)</td><td>Google Sheets copia lo stesso valore in tutte le celle</td></tr>
           </tbody>
         </table>
-
-        <h2>Verifica finale</h2>
-        <ul>
-          <li>Le giornate vanno da 1 a 10 con incremento di 1</li>
-          <li>Le date si distanziano esattamente di 7 giorni l'una dall'altra</li>
-          <li>Le squadre casa si alternano in modo ciclico</li>
-          <li>La colonna Squadra Ospite contiene sempre "Inter"</li>
-        </ul>
 
       </div>
       <aside class="ex-sidebar">

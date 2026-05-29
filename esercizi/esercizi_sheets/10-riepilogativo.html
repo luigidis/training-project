@@ -115,17 +115,64 @@ Galli;Davide;Web Design;8
 
         <h2>Parte E — Tariffe materiali per livello e durata</h2>
         <p><em>Referenza mista</em></p>
-        <p>In una zona separata del foglio:</p>
-        <ul>
-          <li>Nella <strong>riga 1</strong> (da B1 in poi) scrivi le durate in ore: <code>20 | 40 | 60 | 80</code></li>
-          <li>Nella <strong>colonna A</strong> (da A2 in poi) scrivi i livelli: <code>Base | Intermedio | Avanzato</code></li>
-          <li>In una colonna separata (es. colonna G) inserisci i costi unitari per ora: <code>2 | 3 | 4</code></li>
-        </ul>
+        <p>In una zona separata del foglio costruisci una griglia a doppia entrata. Ecco come deve apparire prima di inserire le formule:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th style="background:#0f1a2e;color:#64748b;">Cella</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th style="background:#0f1a2e;color:#64748b;">F</th><th>G</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">1</td>
+              <td>Livello / Ore</td><td>20</td><td>40</td><td>60</td><td>80</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>Costo/Ora</td>
+            </tr>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">2</td>
+              <td>Base</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">3</td>
+              <td>Intermedio</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">4</td>
+              <td>Avanzato</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>4</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Segui questi passaggi per costruirla:</p>
+        <ol>
+          <li>Scrivi in <strong>A1</strong> l'etichetta <code>Livello / Ore</code>. Poi in <strong>B1</strong> scrivi <code>20</code>, in <strong>C1</strong> scrivi <code>40</code>, in <strong>D1</strong> scrivi <code>60</code>, in <strong>E1</strong> scrivi <code>80</code>.</li>
+          <li>Scrivi in <strong>A2</strong> il valore <code>Base</code>, in <strong>A3</strong> scrivi <code>Intermedio</code>, in <strong>A4</strong> scrivi <code>Avanzato</code>.</li>
+          <li>In <strong>G1</strong> scrivi l'etichetta <code>Costo/Ora</code>. In <strong>G2</strong> scrivi <code>2</code>, in <strong>G3</strong> scrivi <code>3</code>, in <strong>G4</strong> scrivi <code>4</code>.</li>
+          <li>Clicca su <strong>B2</strong> e scrivi la formula:</li>
+        </ol>
         <div class="formula-block">
           <div class="formula-label">B2 — costo totale materiali</div>
           =$G2*B$1
         </div>
-        <p>Copia su tutta la griglia (righe 2-4, colonne B-E). Modifica il costo del livello Avanzato e verifica che si aggiorni tutta la riga corrispondente.</p>
+        <ol start="5">
+          <li>Trascina la formula a destra fino a <strong>E2</strong> per coprire tutte le durate della riga Base.</li>
+          <li>Seleziona <strong>B2:E2</strong> e trascina verso il basso fino alla riga 4 per coprire anche Intermedio e Avanzato.</li>
+          <li>Modifica il valore in <strong>G4</strong> da <code>4</code> a <code>5</code> e verifica che si aggiorni tutta la riga Avanzato. Poi rimetti <code>4</code>.</li>
+        </ol>
+
+        <h2>Risultato atteso — Parte E</h2>
+        <table class="data-table">
+          <thead><tr><th></th><th>20 ore</th><th>40 ore</th><th>60 ore</th><th>80 ore</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Base (2€/ora)</strong></td><td>40</td><td>80</td><td>120</td><td>160</td></tr>
+            <tr><td><strong>Intermedio (3€/ora)</strong></td><td>60</td><td>120</td><td>180</td><td>240</td></tr>
+            <tr><td><strong>Avanzato (4€/ora)</strong></td><td>80</td><td>160</td><td>240</td><td>320</td></tr>
+          </tbody>
+        </table>
 
         <h2>Parte F — Commissioni formatori</h2>
         <p><em>Mix di referenze</em></p>

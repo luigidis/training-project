@@ -59,49 +59,75 @@
         <p>Sei un impiegato dell'ufficio anagrafico e hai ricevuto un file esportato da un vecchio sistema che ha messo tutti i dati dei cittadini in una sola colonna separati da punto e virgola. Devi dividere ogni informazione nella propria colonna usando lo strumento <strong>Dividi testo in colonne</strong>.</p>
 
         <h2>Dataset 1 — Delimitatore punto e virgola</h2>
-        <p>In una nuova colonna del foglio (colonna A) inserisci questi dati esattamente come appaiono (una riga per cella):</p>
-        <div class="formula-block">
-Cognome;Nome;Città;CAP
-Rossi;Marco;Roma;00100
-Bianchi;Giulia;Milano;20100
-Ferrari;Luca;Napoli;80100
-Esposito;Sara;Torino;10100
-Romano;Andrea;Palermo;90100
-Ricci;Chiara;Bologna;40100
-Conti;Matteo;Firenze;50100
-Greco;Valentina;Venezia;30100
-        </div>
+        <p>Inserisci questi dati nella colonna A del foglio, <strong>una riga per cella</strong> (ogni riga è una singola stringa di testo con i campi separati da <code>;</code>):</p>
+        <table class="data-table">
+          <thead><tr><th style="background:#0f1a2e;color:#64748b;">Cella</th><th>Contenuto da digitare in quella cella</th></tr></thead>
+          <tbody>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">A1</td><td><code>Cognome;Nome;Città;CAP</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">A2</td><td><code>Rossi;Marco;Roma;00100</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">A3</td><td><code>Bianchi;Giulia;Milano;20100</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">A4</td><td><code>Ferrari;Luca;Napoli;80100</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">A5</td><td><code>Esposito;Sara;Torino;10100</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">A6</td><td><code>Romano;Andrea;Palermo;90100</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">A7</td><td><code>Ricci;Chiara;Bologna;40100</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">A8</td><td><code>Conti;Matteo;Firenze;50100</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">A9</td><td><code>Greco;Valentina;Venezia;30100</code></td></tr>
+          </tbody>
+        </table>
+        <p>Ogni cella contiene una sola stringa: non premere Invio tra i campi della stessa riga. Premi Invio solo per passare alla cella successiva.</p>
 
         <h2>Passaggi per il Dataset 1</h2>
         <ol>
-          <li>Seleziona tutta la colonna A dall'intestazione fino all'ultimo dato.</li>
-          <li>Vai al menu <strong>Dati</strong> e clicca su <strong>Dividi testo in colonne</strong>. Google Sheets divide immediatamente il contenuto e mostra in basso il menu <em>Separatore</em>.</li>
-          <li>Nel menu <strong>Separatore</strong> che appare in basso, seleziona <strong>Punto e virgola</strong>. I dati vengono separati automaticamente in colonne.</li>
-          <li>Aggiungi le intestazioni appropriate sopra i dati (Cognome, Nome, Città, CAP) se non ci sono già.</li>
+          <li>Clicca su <strong>A1</strong> e seleziona dall'intestazione fino ad <strong>A9</strong> (tutte e 9 le righe che hai appena inserito).</li>
+          <li>Vai al menu <strong>Dati</strong> e clicca su <strong>Dividi testo in colonne</strong>. Google Sheets tenta di dividere il contenuto e mostra in basso il menu <em>Separatore</em>.</li>
+          <li>Nel menu <strong>Separatore</strong> che appare in basso a sinistra, clicca e seleziona <strong>Punto e virgola</strong>. I dati vengono separati automaticamente in quattro colonne: A, B, C, D.</li>
+          <li>Verifica che la prima riga (A1:D1) contenga le intestazioni <strong>Cognome | Nome | Città | CAP</strong>.</li>
         </ol>
 
+        <h2>Risultato atteso dopo la divisione — Dataset 1</h2>
+        <table class="data-table">
+          <thead><tr><th>Cognome</th><th>Nome</th><th>Città</th><th>CAP</th></tr></thead>
+          <tbody>
+            <tr><td>Rossi</td><td>Marco</td><td>Roma</td><td>00100</td></tr>
+            <tr><td>Bianchi</td><td>Giulia</td><td>Milano</td><td>20100</td></tr>
+            <tr><td>Ferrari</td><td>Luca</td><td>Napoli</td><td>80100</td></tr>
+            <tr><td>Esposito</td><td>Sara</td><td>Torino</td><td>10100</td></tr>
+            <tr><td>Romano</td><td>Andrea</td><td>Palermo</td><td>90100</td></tr>
+            <tr><td>Ricci</td><td>Chiara</td><td>Bologna</td><td>40100</td></tr>
+            <tr><td>Conti</td><td>Matteo</td><td>Firenze</td><td>50100</td></tr>
+            <tr><td>Greco</td><td>Valentina</td><td>Venezia</td><td>30100</td></tr>
+          </tbody>
+        </table>
+
         <h2>Dataset 2 — Delimitatore barra verticale</h2>
-        <p>In una zona vuota del foglio inserisci questi dati in una colonna (i campi sono separati da una barra verticale <code>|</code>):</p>
-        <div class="formula-block">
-Prodotto|Categoria|Prezzo|Quantità
-Penna|Cancelleria|1.50|100
-Quaderno|Cancelleria|3.20|50
-Mouse|Informatica|25.00|30
-Tastiera|Informatica|45.00|20
-        </div>
+        <p>In una zona vuota del foglio (es. a partire dalla cella <strong>F1</strong>) inserisci questi dati, una stringa per cella:</p>
+        <table class="data-table">
+          <thead><tr><th style="background:#0f1a2e;color:#64748b;">Cella</th><th>Contenuto da digitare in quella cella</th></tr></thead>
+          <tbody>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">F1</td><td><code>Prodotto|Categoria|Prezzo|Quantità</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">F2</td><td><code>Penna|Cancelleria|1.50|100</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">F3</td><td><code>Quaderno|Cancelleria|3.20|50</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">F4</td><td><code>Mouse|Informatica|25.00|30</code></td></tr>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">F5</td><td><code>Tastiera|Informatica|45.00|20</code></td></tr>
+          </tbody>
+        </table>
 
         <h2>Passaggi per il Dataset 2</h2>
         <ol start="5">
-          <li>Seleziona il secondo blocco di dati e vai su <strong>Dati → Dividi testo in colonne</strong>.</li>
-          <li>Nel menu <strong>Separatore</strong>, scegli <strong>Personalizzato</strong> e digita il carattere <code>|</code> nel campo. I dati vengono separati automaticamente.</li>
+          <li>Seleziona le celle <strong>F1:F5</strong> e vai su <strong>Dati → Dividi testo in colonne</strong>.</li>
+          <li>Nel menu <strong>Separatore</strong> che appare, scegli <strong>Personalizzato</strong> e digita il carattere <code>|</code> nel campo. I dati vengono separati automaticamente in quattro colonne.</li>
         </ol>
 
-        <h2>Verifica finale</h2>
-        <ul>
-          <li>Il Dataset 1 è diviso in 4 colonne: Cognome, Nome, Città, CAP</li>
-          <li>Il Dataset 2 è diviso in 4 colonne: Prodotto, Categoria, Prezzo, Quantità</li>
-          <li>Nessun separatore rimasto nelle celle</li>
-        </ul>
+        <h2>Risultato atteso dopo la divisione — Dataset 2</h2>
+        <table class="data-table">
+          <thead><tr><th>Prodotto</th><th>Categoria</th><th>Prezzo</th><th>Quantità</th></tr></thead>
+          <tbody>
+            <tr><td>Penna</td><td>Cancelleria</td><td>1.50</td><td>100</td></tr>
+            <tr><td>Quaderno</td><td>Cancelleria</td><td>3.20</td><td>50</td></tr>
+            <tr><td>Mouse</td><td>Informatica</td><td>25.00</td><td>30</td></tr>
+            <tr><td>Tastiera</td><td>Informatica</td><td>45.00</td><td>20</td></tr>
+          </tbody>
+        </table>
 
       </div>
       <aside class="ex-sidebar">

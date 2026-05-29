@@ -59,7 +59,7 @@
         <p>Sei un negoziante e vuoi calcolare il prezzo finale dei tuoi prodotti applicando uno sconto fisso uguale per tutti. Imparerai la differenza tra referenza relativa e referenza assoluta.</p>
 
         <h2>Impostazione iniziale</h2>
-        <p>In una cella separata (es. <code>F1</code>) inserisci il valore <code>0,15</code> (15% di sconto) e nell'etichetta vicina scrivi <em>"Sconto:"</em>.</p>
+        <p>In una cella separata (es. <code>F1</code>) inserisci il valore <code>0,15</code> (15% di sconto) e nella cella adiacente (E1) scrivi <em>"Sconto:"</em>. Per avere un etichetta e capire cosa indica quel numero.</p>
 
         <h2>Struttura della tabella</h2>
         <p>Crea una tabella con: <strong>Prodotto | Prezzo Originale | Sconto Applicato | Prezzo Finale</strong></p>
@@ -85,7 +85,7 @@
           =B2*$F$1
         </div>
         <ol start="2">
-          <li>Copia la formula verso il basso su tutti gli altri prodotti. Osserva come:
+          <li>Selezionando la cella dove adesso abbiamo il calcolo eseguito con la formula, trascina il pallino blu verso il basso e copia la formula su tutti gli altri prodotti. Osserva come:
             <ul>
               <li>La referenza <code>B2</code> si aggiorna riga per riga (B3, B4...)</li>
               <li>La referenza <code>$F$1</code> rimane fissa su F1 per tutti</li>
@@ -110,12 +110,6 @@
             <tr><td>Assoluta</td><td><code>$F$1</code></td><td>Rimane sempre fissa su F1</td></tr>
           </tbody>
         </table>
-
-        <h2>Verifica finale</h2>
-        <ul>
-          <li>Cambiando il valore in F1 tutti gli sconti e prezzi finali si aggiornano</li>
-          <li>La formula di Sconto Applicato ha <code>$F$1</code> (non solo <code>F1</code>)</li>
-        </ul>
 
       </div>
       <aside class="ex-sidebar">

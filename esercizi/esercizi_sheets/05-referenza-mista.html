@@ -58,37 +58,103 @@
         <h2>Descrizione</h2>
         <p>Sei il responsabile di una palestra e vuoi creare una tabella che mostri il costo mensile per ogni combinazione di tipo di abbonamento e durata. Imparerai la <strong>referenza mista</strong>: bloccare solo la colonna o solo la riga.</p>
 
-        <h2>Struttura iniziale</h2>
+        <h2>Struttura della tabella iniziale</h2>
+        <p>Prima di scrivere qualsiasi formula devi costruire la griglia di dati. Ecco l'aspetto che deve avere il tuo foglio al termine di questa fase (le celle B2:E4 restano vuote — le riempirai con le formule dopo):</p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th style="background:#0f1a2e;color:#64748b;">Cella</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th style="background:#0f1a2e;color:#64748b;">F</th><th>G</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">1</td>
+              <td>Tipo / Mesi</td><td>1</td><td>3</td><td>6</td><td>12</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>Prezzo Base</td>
+            </tr>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">2</td>
+              <td>Base</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">3</td>
+              <td>Standard</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>80</td>
+            </tr>
+            <tr>
+              <td style="background:#0f1a2e;color:#64748b;font-weight:600;">4</td>
+              <td>Premium</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td><td style="color:#64748b;font-style:italic;">(formula)</td>
+              <td style="background:#0f1a2e;"></td>
+              <td>120</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Segui questi passaggi per costruire la struttura:</p>
         <ol>
-          <li>Nella <strong>riga 1</strong> (a partire da B1) scrivi le durate in mesi: <code>1 | 3 | 6 | 12</code></li>
-          <li>Nella <strong>colonna A</strong> (a partire da A2) scrivi i tipi di abbonamento: <code>Base | Standard | Premium</code></li>
-          <li>In una <strong>zona separata</strong> (es. colonna G) inserisci i prezzi base: <code>50 | 80 | 120</code> (allineati con i tipi di abbonamento)</li>
+          <li>Clicca sulla cella <strong>A1</strong> e scrivi l'etichetta <code>Tipo / Mesi</code> — serve per identificare la griglia.</li>
+          <li>Clicca su <strong>B1</strong> e scrivi <code>1</code>. Poi in <strong>C1</strong> scrivi <code>3</code>, in <strong>D1</strong> scrivi <code>6</code>, in <strong>E1</strong> scrivi <code>12</code>. Questi sono i mesi di durata dell'abbonamento.</li>
+          <li>Clicca su <strong>A2</strong> e scrivi <code>Base</code>. Poi in <strong>A3</strong> scrivi <code>Standard</code>, in <strong>A4</strong> scrivi <code>Premium</code>. Questi sono i tipi di abbonamento.</li>
+          <li>Clicca su <strong>G1</strong> e scrivi l'etichetta <code>Prezzo Base</code> per ricordarti cosa contiene la colonna.</li>
+          <li>Clicca su <strong>G2</strong> e scrivi <code>50</code> (prezzo mensile Base). Poi in <strong>G3</strong> scrivi <code>80</code> (Standard), in <strong>G4</strong> scrivi <code>120</code> (Premium).</li>
         </ol>
 
         <h2>La formula con referenza mista</h2>
-        <p>Nella cella <strong>B2</strong> scrivi questa formula:</p>
+        <p>Ora è il momento di inserire la formula. Clicca sulla cella <strong>B2</strong> e scrivi:</p>
         <div class="formula-block">
           <div class="formula-label">B2 — formula con referenza mista</div>
           =$G2*B$1
         </div>
-        <p>Copia la formula su <strong>tutta la griglia</strong> (righe 2-4, colonne B-E) trascinando prima a destra poi verso il basso.</p>
+        <p>Questa formula moltiplica il prezzo base (colonna G, riga 2) per la durata in mesi (riga 1, colonna B). Premi Invio per confermare.</p>
+
+        <p>Ora copia la formula su tutta la griglia:</p>
+        <ol>
+          <li>Clicca di nuovo su <strong>B2</strong> per selezionarla.</li>
+          <li>Trascina il pallino blu in basso a destra della cella verso destra fino a <strong>E2</strong> per coprire tutte e 4 le durate della riga Base.</li>
+          <li>Ora seleziona l'intervallo <strong>B2:E2</strong> e trascina il pallino blu verso il basso fino alla riga 4 per coprire anche Standard e Premium.</li>
+        </ol>
 
         <h2>Come funzionano le referenze miste</h2>
         <table class="data-table">
           <thead><tr><th>Referenza</th><th>Significato</th><th>Effetto nel copia</th></tr></thead>
           <tbody>
-            <tr><td><code>$G2</code></td><td>Colonna G fissa, riga relativa</td><td>Ogni tipo di abbonamento prende il proprio prezzo base da colonna G</td></tr>
-            <tr><td><code>B$1</code></td><td>Riga 1 fissa, colonna relativa</td><td>Ogni colonna prende la propria durata in mesi dalla riga 1</td></tr>
+            <tr><td><code>$G2</code></td><td>Colonna G fissa, riga relativa</td><td>La colonna G non cambia mai; la riga scende (2→3→4) seguendo il tipo di abbonamento</td></tr>
+            <tr><td><code>B$1</code></td><td>Riga 1 fissa, colonna relativa</td><td>La riga 1 non cambia mai; la colonna avanza (B→C→D→E) seguendo la durata in mesi</td></tr>
           </tbody>
         </table>
 
+        <h2>La griglia con le formule propagate</h2>
+        <p>Dopo aver copiato la formula su tutte le celle, ogni cella conterrà una versione "adattata" della formula originale. Ecco come appaiono le formule nelle 12 celle della griglia:</p>
+        <table class="data-table">
+          <thead><tr><th></th><th>B (1 mese)</th><th>C (3 mesi)</th><th>D (6 mesi)</th><th>E (12 mesi)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>2 — Base</strong></td>
+              <td><code>=$G2*B$1</code></td><td><code>=$G2*C$1</code></td><td><code>=$G2*D$1</code></td><td><code>=$G2*E$1</code></td>
+            </tr>
+            <tr>
+              <td><strong>3 — Standard</strong></td>
+              <td><code>=$G3*B$1</code></td><td><code>=$G3*C$1</code></td><td><code>=$G3*D$1</code></td><td><code>=$G3*E$1</code></td>
+            </tr>
+            <tr>
+              <td><strong>4 — Premium</strong></td>
+              <td><code>=$G4*B$1</code></td><td><code>=$G4*C$1</code></td><td><code>=$G4*D$1</code></td><td><code>=$G4*E$1</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Nota come la colonna G avanza verticalmente (G2, G3, G4) mentre la riga 1 avanza orizzontalmente (B, C, D, E). Hai usato una sola formula per calcolare 12 valori diversi.</p>
+
         <h2>Test finale</h2>
         <ol>
-          <li>Modifica uno dei prezzi base nella colonna G e verifica che si aggiorni <strong>tutta la riga</strong> corrispondente.</li>
-          <li>Modifica una durata nella riga 1 e verifica che si aggiorni <strong>tutta la colonna</strong> corrispondente.</li>
+          <li>Modifica il valore in <strong>G3</strong> da <code>80</code> a <code>100</code> e osserva come si aggiornano automaticamente <strong>tutte le celle della riga Standard</strong> (B3:E3). Poi rimetti <code>80</code>.</li>
+          <li>Modifica il valore in <strong>D1</strong> da <code>6</code> a <code>9</code> e osserva come si aggiornano automaticamente <strong>tutte le celle della colonna D</strong> (D2:D4). Poi rimetti <code>6</code>.</li>
         </ol>
 
         <h2>Risultato atteso</h2>
+        <p>Se tutto è corretto, le celle B2:E4 mostreranno questi valori:</p>
         <table class="data-table">
           <thead><tr><th></th><th>1 mese</th><th>3 mesi</th><th>6 mesi</th><th>12 mesi</th></tr></thead>
           <tbody>

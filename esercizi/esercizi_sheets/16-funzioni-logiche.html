@@ -59,7 +59,19 @@
         <p>Sei il responsabile delle risorse umane di una media impresa e devi costruire un sistema di valutazione automatico per i tuoi agenti commerciali. Userai le funzioni logiche <strong>IF</strong>, <strong>AND</strong> e <strong>OR</strong> per automatizzare decisioni su bonus, promozioni e piani di supporto.</p>
 
         <h2>Impostazione iniziale</h2>
-        <p>In una cella separata inserisci il valore <code>15000</code> con l'etichetta "Target Vendite" nella cella vicina. Assegna alla cella il nome <code>target_vendite</code> (clicca sulla Casella Nome, digita il nome e premi Invio). In alternativa puoi usare <strong>Dati → Intervalli con nome</strong> per assegnare il nome tramite il pannello laterale.</p>
+        <p>Prima di creare la tabella, imposta la cella di riferimento con il target vendite:</p>
+        <ol>
+          <li>Clicca su <strong>J1</strong> e scrivi l'etichetta <code>Target Vendite:</code>.</li>
+          <li>Clicca su <strong>K1</strong> e scrivi <code>15000</code>.</li>
+          <li>Con <strong>K1</strong> ancora selezionata, clicca sulla <strong>Casella Nome</strong> (il riquadro in alto a sinistra che mostra "K1"), digita <code>target_vendite</code> e premi <strong>Invio</strong>. Ora potrai usare il nome <code>target_vendite</code> direttamente nelle formule invece di <code>$K$1</code>.</li>
+          <li>In alternativa: vai su <strong>Dati → Intervalli con nome → Aggiungi intervallo</strong>, scrivi il nome e specifica la cella K1.</li>
+        </ol>
+        <table class="data-table">
+          <thead><tr><th style="background:#0f1a2e;color:#64748b;">Cella</th><th>J</th><th>K</th></tr></thead>
+          <tbody>
+            <tr><td style="background:#0f1a2e;color:#64748b;font-weight:600;">1</td><td>Target Vendite:</td><td>15000 <em style="color:#64748b;">(nome: target_vendite)</em></td></tr>
+          </tbody>
+        </table>
 
         <h2>Struttura della tabella</h2>
         <p>Crea la tabella con le colonne: <strong>Agente | Reparto | Vendite | Presenze | Anni Servizio | Esito Vendite | Fascia | Bonus | Promozione | Supporto</strong></p>
