@@ -113,40 +113,6 @@
 =COUNT(vendite_q1)
         </div>
 
-        <h2>Parte C — Nomi multipli in Google Sheets</h2>
-        <p>In Google Sheets non è disponibile la funzione <em>Crea da selezione</em> di Excel. Puoi assegnare nomi a più intervalli usando il pannello <strong>Dati → Intervalli con nome</strong>:</p>
-        <ol start="10">
-          <li>Vai su <strong>Dati → Intervalli con nome</strong>. Si apre un pannello laterale con tutti i nomi definiti.</li>
-          <li>Clicca su <strong>Aggiungi intervallo</strong>. Assegna un nome (es. <code>Prodotto</code>) e specifica l'intervallo (es. <code>A2:A9</code>). Salva.</li>
-          <li>Ripeti per le altre colonne: <code>Categoria</code>, <code>Q1</code>, <code>Q2</code>, <code>Q3</code>, <code>totale_vendite</code>.</li>
-          <li>Nel pannello <em>Intervalli con nome</em> clicca su un nome: Google Sheets seleziona l'intervallo corrispondente.</li>
-          <li>Usa uno dei nomi in una formula: <code>=SUM(vendite_q1)</code> per verificare che sia corretto.</li>
-        </ol>
-
-        <h2>Parte D — Gestione Nomi</h2>
-        <ol start="14">
-          <li>Vai su <em>Dati → Intervalli con nome</em>. Vedi nome, valore attuale, riferimento e ambito per ogni nome definito.</li>
-          <li>Crea un nuovo nome dal pannello cliccando <strong>Aggiungi intervallo</strong>. Assegna il nome <code>Trimestri</code> all'intervallo che comprende tutte e tre le colonne Q1, Q2 e Q3 insieme.</li>
-          <li>Usa il nuovo nome: scrivi <code>=SUM(Trimestri)</code> e verifica che restituisca la somma complessiva dei tre trimestri.</li>
-          <li>Torna in <em>Dati → Intervalli con nome</em>, seleziona uno dei nomi ed eliminalo cliccando sull'icona cestino nel pannello. Le formule che lo usavano mostrano ora <code>#NOME?</code>: Google Sheets non riconosce più il nome cancellato.</li>
-        </ol>
-
-        <h2>Parte E — Nomi vs referenza assoluta</h2>
-        <ol start="19">
-          <li>Aggiungi una colonna <strong>Prezzo IVA esclusa</strong>. Usa <code>=RANDBETWEEN(20;150)</code> per i prezzi, poi congela i valori con Modifica → Incolla speciale → Solo valori (Ctrl+Shift+V).</li>
-          <li>Nella colonna <strong>Prezzo IVA inclusa</strong> scrivi una formula che usa il prezzo della cella e il nome <code>IVA</code>. Copia verso il basso: il nome rimane fisso (come <code>$H$1</code>), il prezzo scorre riga per riga.</li>
-        </ol>
-
-        <h2>Confronto approcci per valori fissi</h2>
-        <table class="data-table">
-          <thead><tr><th>Approccio</th><th>Pro</th><th>Contro</th></tr></thead>
-          <tbody>
-            <tr><td>Referenza assoluta <code>$H$1</code></td><td>Funziona sempre</td><td>Devi ricordare cosa c'è in H1</td></tr>
-            <tr><td>Referenza mista <code>$H2</code></td><td>La riga scorre, la colonna è fissa</td><td>Limitata a scorrimento verticale</td></tr>
-            <tr><td>Nome (es. <code>IVA</code>)</td><td>Formula leggibile, funziona anche se sposti la cella</td><td>Richiede di assegnare i nomi</td></tr>
-          </tbody>
-        </table>
-
       </div>
       <aside class="ex-sidebar">
         <div class="sidebar-box">
