@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guida Completa Google Sheets — Piattaforma Esercizi</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ════════════════════════════════════════
+       Guide-specific variables (light theme)
+    ════════════════════════════════════════ */
+    :root {
+      --gs-blue: #1a73e8;
+      --gs-green: #34a853;
+      --gs-yellow: #fbbc04;
+      --gs-red: #ea4335;
+      --gs-dark: #202124;
+      --gs-mid: #5f6368;
+      --gs-light: #f8f9fa;
+      --gs-border: #dadce0;
+      --gs-dark-blue: #0d47a1;
+      --gs-blue-bg: #e8f0fe;
+      --gs-green-bg: #e6f4ea;
+      --gs-yellow-bg: #fef9e7;
+      --gs-yellow-bd: #f9ab00;
+    }
+
+    /* ── Hero actions ── */
+    .hero-actions {
+      display: flex;
+      gap: .85rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      padding: .65rem 1.4rem;
+      font-size: .95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      text-decoration: none;
+    }
+    .btn-print:hover { background: var(--accent-dark); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: .65rem 1.4rem;
+      font-size: .95rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color .2s, border-color .2s;
+    }
+    .btn-outline:hover { color: var(--text); border-color: var(--text-muted); }
+
+    /* ── Guide wrapper ── */
+    .guide-bg {
+      background: #e8eaed;
+      padding: 1.5rem 0 3rem;
+    }
+    .guide-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 1.5rem;
+      max-width: 1340px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      align-items: start;
+    }
+
+    /* ── Sidebar TOC ── */
+    .guide-toc {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+      padding: 1.3rem;
+      position: sticky;
+      top: 80px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+    }
+    .guide-toc h3 {
+      color: var(--gs-blue);
+      font-size: .95rem;
+      font-weight: 700;
+      margin-bottom: .85rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--gs-border);
+    }
+    .guide-toc ol {
+      list-style: none;
+      padding: 0; margin: 0;
+      counter-reset: toc-counter;
+    }
+    .guide-toc li { counter-increment: toc-counter; }
+    .guide-toc a {
+      display: flex;
+      align-items: baseline;
+      gap: .45rem;
+      color: var(--gs-dark);
+      text-decoration: none;
+      font-size: .8rem;
+      line-height: 1.4;
+      padding: .28rem .4rem;
+      border-radius: 5px;
+      transition: background .15s;
+    }
+    .guide-toc a::before {
+      content: counter(toc-counter);
+      color: var(--gs-blue);
+      font-size: .7rem;
+      font-weight: 700;
+      min-width: 1.15rem;
+      flex-shrink: 0;
+    }
+    .guide-toc a:hover { background: var(--gs-blue-bg); }
+    .guide-toc a.active {
+      background: var(--gs-blue-bg);
+      color: var(--gs-dark-blue);
+      font-weight: 600;
+    }
+
+    /* ── Slides container ── */
+    .slides-container { min-width: 0; color: var(--gs-dark); }
+
+    /* ════════════════════════════════════════
+       Slide styles (scoped to .slides-container)
+    ════════════════════════════════════════ */
+    .slides-container * { box-sizing: border-box; margin: 0; padding: 0; }
+    .slides-container p { margin: 0; padding: 0; }
+
+    .slide {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      scroll-margin-top: 80px;
+    }
+
+    .slide-header { background: var(--gs-blue); padding: 1rem 1.4rem .85rem; }
+    .slide-header h2 { color: #fff; font-size: 1.3rem; font-weight: 700; line-height: 1.3; }
+    .slide-header p { color: #bbdefb; font-size: .88rem; margin-top: .3rem; }
+
+    .slide-title {
+      background: var(--gs-dark-blue);
+      text-align: center;
+      padding: 3.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 6px;
+      background: linear-gradient(90deg, var(--gs-green) 25%, var(--gs-yellow) 25% 50%, var(--gs-red) 50% 75%, var(--gs-blue) 75%);
+    }
+    .slide-title h1 { color: #fff; font-size: 2.2rem; font-weight: 700; margin-bottom: .8rem; }
+    .slide-title .sub { color: #bbdefb; font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .slide-title .note { color: #90caf9; font-size: .9rem; font-style: italic; }
+
+    .slide-body { padding: 1.4rem; }
+
+    .slides-container .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .slides-container .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .slides-container .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .slides-container .card {
+      background: var(--gs-light);
+      border: 1px solid var(--gs-border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .slides-container .card h3 { color: var(--gs-blue); font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+    .slides-container .card p,
+    .slides-container .card li { font-size: .88rem; color: var(--gs-dark); line-height: 1.55; }
+    .slides-container .card ul { padding-left: 1.1rem; margin-top: .3rem; }
+    .slides-container .card li { margin-bottom: .2rem; }
+
+    .slides-container .card-num { display: flex; gap: .8rem; }
+    .slides-container .card-num .num {
+      background: var(--gs-blue); color: #fff;
+      font-size: 1.2rem; font-weight: 700;
+      min-width: 2rem; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .slides-container .card-num .content h3 { margin-bottom: .3rem; }
+
+    .slides-container .diff {
+      background: var(--gs-yellow-bg);
+      border: 1px solid var(--gs-yellow-bd);
+      border-radius: 8px;
+      padding: .75rem 1rem;
+      margin-top: 1rem;
+    }
+    .slides-container .diff strong { color: #7a5100; font-size: .88rem; }
+    .slides-container .diff p,
+    .slides-container .diff li { color: #5d3b00; font-size: .85rem; line-height: 1.5; }
+    .slides-container .diff ul { padding-left: 1.1rem; margin-top: .3rem; }
+
+    .slides-container .new {
+      background: var(--gs-green-bg);
+      border: 1px solid var(--gs-green);
+      border-radius: 8px;
+      padding: .75rem 1rem;
+      margin-top: 1rem;
+    }
+    .slides-container .new strong { color: #1a5c30; font-size: .88rem; }
+    .slides-container .new p,
+    .slides-container .new li { color: #154725; font-size: .85rem; line-height: 1.5; }
+    .slides-container .new ul { padding-left: 1.1rem; margin-top: .3rem; }
+
+    .slides-container code {
+      background: #f1f3f4;
+      border-radius: 4px;
+      padding: .15rem .45rem;
+      font-family: 'Consolas','Courier New',monospace;
+      font-size: .88rem;
+      color: var(--gs-dark-blue);
+    }
+    .slides-container .code-block {
+      background: #f1f3f4;
+      border-radius: 6px;
+      padding: .6rem 1rem;
+      margin: .5rem 0;
+      font-family: 'Consolas','Courier New',monospace;
+      font-size: .88rem;
+      color: var(--gs-dark-blue);
+      font-weight: 600;
+    }
+
+    .slides-container .steps { list-style: none; padding: 0; margin-top: .5rem; }
+    .slides-container .steps li { display: flex; gap: .8rem; align-items: flex-start; margin-bottom: .55rem; }
+    .slides-container .steps li .step-num {
+      background: var(--gs-blue); color: #fff;
+      font-size: .78rem; font-weight: 700;
+      min-width: 1.6rem; height: 1.6rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: .05rem;
+    }
+    .slides-container .steps li .step-text { font-size: .88rem; line-height: 1.5; }
+
+    .slides-container .pillar { border-radius: 8px; overflow: hidden; }
+    .slides-container .pillar-bar { height: 5px; }
+    .slides-container .pillar-body {
+      background: var(--gs-light);
+      border: 1px solid var(--gs-border);
+      border-top: none;
+      padding: .9rem;
+      border-radius: 0 0 8px 8px;
+    }
+    .slides-container .pillar-body h3 { font-size: .95rem; font-weight: 700; margin-bottom: .4rem; }
+    .slides-container .pillar-body p { font-size: .84rem; line-height: 1.5; color: var(--gs-mid); }
+
+    .slides-container table { width: 100%; border-collapse: collapse; font-size: .86rem; margin-top: .6rem; }
+    .slides-container table th { background: var(--gs-blue); color: #fff; padding: .5rem .7rem; text-align: left; }
+    .slides-container table td { padding: .45rem .7rem; border-bottom: 1px solid var(--gs-border); vertical-align: top; }
+    .slides-container table tr:nth-child(even) td { background: var(--gs-light); }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .guide-layout { grid-template-columns: 1fr; }
+      .guide-toc { position: static; max-height: 300px; }
+    }
+    @media (max-width: 640px) {
+      .slides-container .grid-2,
+      .slides-container .grid-3,
+      .slides-container .grid-4 { grid-template-columns: 1fr; }
+    }
+
+    /* ════════════════════════════════════════
+       PRINT — ogni slide su pagina separata
+    ════════════════════════════════════════ */
+    @media print {
+      .site-header,
+      .site-footer,
+      .hero,
+      .guide-toc,
+      .btn-print,
+      .btn-outline { display: none !important; }
+
+      body { background: #fff !important; }
+      .guide-bg { background: #fff !important; padding: 0 !important; }
+      .guide-layout { display: block !important; max-width: 100% !important; padding: 0 !important; }
+      .slides-container { display: block !important; }
+
+      .slide {
+        box-shadow: none !important;
+        margin: 0 !important;
+        page-break-after: always;
+        break-after: page;
+        border-radius: 0 !important;
+        border: none !important;
+      }
+      .slide:last-child {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+
+      .slides-container .grid-2 { grid-template-columns: 1fr 1fr !important; }
+      .slides-container .grid-3 { grid-template-columns: 1fr 1fr 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+          <span class="logo-icon">💻</span>
+          <span class="logo-text">Piattaforma Esercizi</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="excel.html">Excel</a>
+        <a href="google-sheets.html">Google Sheets</a>
+        <a href="word.html">Word</a>
+        <a href="css.html">CSS</a>
+        <a href="html-css.html">HTML &amp; CSS</a>
+        <a href="index.html#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Guida <span class="accent">Google Sheets</span></h1>
+      <p class="hero-sub">29 slide illustrate — dall'introduzione alle formule avanzate. Studia online oppure stampa le slide per i tuoi discenti.</p>
+      <div class="hero-actions">
+        <button class="btn-print" onclick="window.print()">🖨 Stampa / Salva PDF</button>
+        <a href="google-sheets.html" class="btn-outline">← Torna agli esercizi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <div class="guide-bg">
+    <div class="guide-layout">
+
+      <!-- SIDEBAR TOC -->
+      <aside class="guide-toc">
+        <h3>📊 Indice — 24 sezioni</h3>
+        <ol>
+          <li><a href="#s1">Titolo</a></li>
+          <li><a href="#s2">Navigazione Essenziale</a></li>
+          <li><a href="#s3">Introduzione alle Formule</a></li>
+          <li><a href="#s4">Struttura delle Funzioni</a></li>
+          <li><a href="#s5">MIN e MAX</a></li>
+          <li><a href="#s6">Funzioni di Conteggio</a></li>
+          <li><a href="#s7">Referenze Relative e Assolute</a></li>
+          <li><a href="#s8">Referenze Miste</a></li>
+          <li><a href="#s9">Riempimento Automatico</a></li>
+          <li><a href="#s10">Smart Fill</a></li>
+          <li><a href="#s11">Manipolazione Testo Avanzata</a></li>
+          <li><a href="#s12">Formattazione Celle</a></li>
+          <li><a href="#s13">Formattazione Condizionale</a></li>
+          <li><a href="#s14">Generazione Dati Casuali</a></li>
+          <li><a href="#s15">Intervalli Denominati</a></li>
+          <li><a href="#s16">Referenze ad Altri Fogli</a></li>
+          <li><a href="#s17">Logica Booleana</a></li>
+          <li><a href="#s18">SE(), E(), O()</a></li>
+          <li><a href="#s19">CONTA.SE, SOMMA.SE, MEDIA.SE</a></li>
+          <li><a href="#s20">Funzioni Testo e Concatenazione</a></li>
+          <li><a href="#s21">CONFRONTA e INDICE</a></li>
+          <li><a href="#s22">CERCA.X / XLOOKUP</a></li>
+          <li><a href="#s23">Tabelle in Google Sheets</a></li>
+          <li><a href="#s24">Menu e Opzioni della Tabella</a></li>
+        </ol>
+      </aside>
+
+      <!-- SLIDES -->
+      <main class="slides-container">
+
+        <!-- S1 -->
+        <section class="slide" id="s1">
+          <div class="slide-title">
+            <h1>Guida Completa Google Sheets</h1>
+            <p class="sub">Dall'inizio alla Padronanza</p>
+            <p class="note">Versione Google Workspace</p>
+          </div>
+        </section>
+
+        <!-- S2 -->
+        <section class="slide" id="s2">
+          <div class="slide-header">
+            <h2>Navigazione Essenziale nel Foglio di Calcolo</h2>
+            <p>Le stesse scorciatoie di Excel — con qualche piccola differenza su Mac</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card"><h3>TAB / SHIFT+TAB</h3><p>Avanza o torna indietro tra le celle nella riga corrente.</p></div>
+              <div class="card"><h3>CTRL + Frecce</h3><p>Salta al bordo del blocco di dati corrente (ultima cella non vuota).</p></div>
+              <div class="card"><h3>CTRL + PGSU / PGGIÙ</h3><p>Passa al foglio precedente o successivo all'interno dello stesso file.</p></div>
+              <div class="card"><h3>CTRL + CLICK</h3><p>Seleziona celle non contigue (sparse) tenendo premuto CTRL.</p></div>
+              <div class="card"><h3>CTRL + SHIFT + Frecce</h3><p>Estende la selezione corrente fino al bordo del blocco di dati.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S3 -->
+        <section class="slide" id="s3">
+          <div class="slide-header">
+            <h2>Introduzione alle Formule in Google Sheets</h2>
+            <p>Le formule sono il motore di Sheets: ogni formula inizia con il segno <code>=</code></p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>Calcoli con Valori Fissi</h3>
+                <div class="code-block">=5*10  →  50</div>
+                <p>Inserisci numeri direttamente per risultati immediati.</p>
+              </div>
+              <div class="card">
+                <h3>Calcoli con Riferimenti di Cella</h3>
+                <div class="code-block">=A1+B1</div>
+                <p>Si aggiorna automaticamente al variare dei valori nelle celle.</p>
+              </div>
+              <div class="card">
+                <h3>Priorità con le Parentesi</h3>
+                <div class="code-block">=(A1+B1)*C1</div>
+                <p>Le parentesi <code>()</code> definiscono l'ordine delle operazioni.</p>
+              </div>
+              <div class="card">
+                <h3>Mostra Formule</h3>
+                <div class="code-block">CTRL + ` (accento grave)</div>
+                <p>Alterna la vista tra risultati e testo delle formule — identico a Excel.</p>
+              </div>
+            </div>
+            <div class="new">
+              <strong>✚ Funzione esclusiva Google Sheets</strong>
+              <p>Sheets mostra i suggerimenti formula in tempo reale con documentazione inline mentre digiti — più immediato rispetto alla finestra separata di Excel.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- S4 -->
+        <section class="slide" id="s4">
+          <div class="slide-header">
+            <h2>Funzioni in Google Sheets: Struttura e Strumenti Essenziali</h2>
+            <p>Ogni funzione ha argomenti obbligatori e argomenti facoltativi [tra parentesi quadre]</p>
+          </div>
+          <div class="slide-body">
+            <div class="code-block">=SOMMA(num1; [num2]; ...)</div>
+            <div class="grid-2" style="margin-top:1rem">
+              <div class="card">
+                <h3>Argomenti Obbligatori e Facoltativi</h3>
+                <ul>
+                  <li>Gli argomenti obbligatori sono sempre richiesti.</li>
+                  <li>Quelli facoltativi sono tra parentesi quadre <code>[...]</code>.</li>
+                  <li>Separatore argomenti: <code>;</code>.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>Come Inserire una Funzione</h3>
+                <ul>
+                  <li>Clicca su una cella e digita <code>=</code> per iniziare.</li>
+                  <li>Sheets suggerisce le funzioni in tempo reale mentre scrivi.</li>
+                  <li>Usa <strong>Tab</strong> per accettare il suggerimento evidenziato.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>Sintassi degli Argomenti</h3>
+                <ul>
+                  <li><code>A1; B2</code> → celle singole</li>
+                  <li><code>A1:C5</code> → intervallo di celle</li>
+                  <li><code>A1:A10; 50</code> → intervallo + valore fisso</li>
+                </ul>
+              </div>
+            </div>
+            <div class="diff">
+              <strong>⚠ Differenza da Excel</strong>
+              <p>In Excel si apre una finestra "Argomenti Funzione" separata. In Sheets la documentazione compare direttamente sotto la cella mentre digiti.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- S5 -->
+        <section class="slide" id="s5">
+          <div class="slide-header">
+            <h2>Funzioni MIN e MAX</h2>
+            <p>Identificano il valore più piccolo e più grande in un intervallo — sintassi identica a Excel</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>MIN — Trova il Valore Minimo</h3>
+                <p>Restituisce il valore numerico più piccolo in un set di dati o in un intervallo di celle. Ignora celle vuote e testo.</p>
+                <div class="code-block" style="margin-top:.7rem">=MIN(A1:A10)</div>
+                <p style="margin-top:.5rem;color:var(--gs-mid);font-style:italic">Trova il valore minimo tra le celle da A1 a A10.</p>
+              </div>
+              <div class="card">
+                <h3>MAX — Trova il Valore Massimo</h3>
+                <p>Restituisce il valore numerico più grande. Perfetta per identificare picchi, record o valori di soglia.</p>
+                <div class="code-block" style="margin-top:.7rem">=MAX(B1:B10)</div>
+                <p style="margin-top:.5rem;color:var(--gs-mid);font-style:italic">Trova il valore massimo tra le celle da B1 a B10.</p>
+              </div>
+            </div>
+            <div class="new" style="margin-top:1rem">
+              <strong>✚ Varianti in Google Sheets</strong>
+              <p>Sheets include anche <code>MINA()</code> e <code>MAXA()</code> che considerano i valori logici (VERO=1, FALSO=0) e il testo. Sintassi e comportamento base identici a Excel — nessuna differenza rilevante.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- S6 -->
+        <section class="slide" id="s6">
+          <div class="slide-header">
+            <h2>Funzioni di Conteggio: CONTA.VUOTE, CONTA.VALORI, CONTA.NUMERI</h2>
+            <p>Analizza l'occupazione e il tipo di contenuto nelle celle</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-3">
+              <div class="card">
+                <h3>CONTA.VUOTE <small style="color:var(--gs-mid)">(COUNTBLANK)</small></h3>
+                <p>Conta le celle <strong>vuote</strong> in un intervallo. Ignora celle con spazi o formule che restituiscono <code>""</code>.</p>
+                <div class="code-block" style="margin-top:.6rem">=CONTA.VUOTE(A1:A10)</div>
+              </div>
+              <div class="card">
+                <h3>CONTA.VALORI <small style="color:var(--gs-mid)">(COUNTA)</small></h3>
+                <p>Conta le celle <strong>non vuote</strong>: testo, numeri, date, valori logici, errori e stringhe vuote da formule.</p>
+                <div class="code-block" style="margin-top:.6rem">=CONTA.VALORI(B1:B10)</div>
+              </div>
+              <div class="card">
+                <h3>CONTA.NUMERI <small style="color:var(--gs-mid)">(COUNT)</small></h3>
+                <p>Conta solo le celle con <strong>valori numerici</strong>: numeri, percentuali, valute, date, ore. Ignora testo e vuoti.</p>
+                <div class="code-block" style="margin-top:.6rem">=CONTA.NUMERI(C1:C10)</div>
+              </div>
+            </div>
+            <p style="margin-top:1rem;font-size:.85rem;color:var(--gs-mid);font-style:italic">
+              ✓ In Google Sheets con locale italiana le funzioni accettano sia i nomi italiani che quelli inglesi (COUNTBLANK, COUNTA, COUNT). Sintassi identica a Excel.
+            </p>
+          </div>
+        </section>
+
+        <!-- S7 -->
+        <section class="slide" id="s7">
+          <div class="slide-header">
+            <h2>Referenze Relative e Assolute</h2>
+            <p>Determinano il comportamento delle formule quando vengono copiate — identico a Excel</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>Referenze Relative</h3>
+                <p>Si <strong>adattano automaticamente</strong> quando la formula viene copiata o trascinata. È il comportamento predefinito.</p>
+                <div class="code-block" style="margin:.6rem 0">=A1+B1</div>
+                <p style="color:var(--gs-mid);font-style:italic">Copiando da C1 a C2 → la formula diventa <code>=A2+B2</code>.</p>
+              </div>
+              <div class="card">
+                <h3>Referenze Assolute</h3>
+                <p>Rimangono <strong>fisse e invariate</strong> quando copi la formula. Il simbolo <code>$</code> blocca colonna e/o riga.</p>
+                <div class="code-block" style="margin:.6rem 0">=$A$1+$B$1</div>
+                <p style="color:var(--gs-mid);font-style:italic">Copiando ovunque → rimane sempre <code>=$A$1+$B$1</code>.</p>
+              </div>
+            </div>
+            <div class="card" style="margin-top:1rem;background:#e8f0fe;border-color:var(--gs-blue)">
+              <h3 style="color:var(--gs-dark-blue)">💡 Tasto F4 — Cicla tra i tipi di referenza</h3>
+              <p>Durante la digitazione di una formula, posiziona il cursore su un riferimento di cella e premi <strong>F4</strong> per ciclare:<br>
+              <code>=A1</code> → <code>=$A$1</code> → <code>=A$1</code> → <code>=$A1</code> → di nuovo <code>=A1</code></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- S8 -->
+        <section class="slide" id="s8">
+          <div class="slide-header">
+            <h2>Referenze Miste: Controllo Preciso</h2>
+            <p>Blocca selettivamente solo la riga o solo la colonna — identico a Excel</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>Fissare la Riga: <code>A$1</code></h3>
+                <p><code>$</code> prima del <strong>numero</strong> blocca la riga. Copiando la formula in altre righe, la riga rimane fissa mentre la colonna si adatta.</p>
+                <div class="code-block" style="margin:.6rem 0">=A$1*B2</div>
+                <p style="color:var(--gs-mid)">Ideale per applicare un valore di intestazione di riga (es. un tasso fisso) a calcoli in diverse colonne.</p>
+              </div>
+              <div class="card">
+                <h3>Fissare la Colonna: <code>$A1</code></h3>
+                <p><code>$</code> prima della <strong>lettera</strong> blocca la colonna. Copiando in altre colonne, la colonna rimane fissa mentre la riga si adatta.</p>
+                <div class="code-block" style="margin:.6rem 0">=$A1*B2</div>
+                <p style="color:var(--gs-mid)">Perfetto per un moltiplicatore di colonna da applicare su più righe.</p>
+              </div>
+            </div>
+            <p style="margin-top:1rem;font-size:.9rem;font-weight:600;color:var(--gs-dark-blue)">
+              Ricorda: premi F4 più volte per ciclare rapidamente tra i quattro tipi di referenza.
+            </p>
+          </div>
+        </section>
+
+        <!-- S9 -->
+        <section class="slide" id="s9">
+          <div class="slide-header">
+            <h2>Riempimento Automatico: Pattern Intelligenti</h2>
+            <p>Trascina il quadratino blu in basso a destra per estendere serie numeriche, date o testo</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>Riconoscimento di Serie Numeriche</h3>
+                <ul>
+                  <li>Seleziona le prime due celle con i valori iniziali.</li>
+                  <li>Trascina il quadratino in basso a destra.</li>
+                  <li>Sheets riconosce la progressione: <code>1, 2, 3...</code> oppure <code>5, 10, 15...</code></li>
+                  <li>Funziona anche con date: <code>01/01/2024, 01/02/2024...</code></li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>Riconoscimento di Pattern di Testo</h3>
+                <ul>
+                  <li>Sheets riconosce serie predefinite: <em>Lunedì, Martedì...</em></li>
+                  <li>Riconosce i mesi: <em>Gennaio, Febbraio...</em></li>
+                  <li>Funziona con locale italiana impostata nel file.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="diff">
+              <strong>⚠ Differenze da Excel</strong>
+              <ul>
+                <li><strong>Doppio-click</strong> sul quadratino riempie automaticamente fino all'ultima riga con dati adiacenti.</li>
+                <li>Non esiste "Riempi senza formattazione". Alternativa: <strong>Modifica > Incolla speciale > Solo valori</strong> (<code>CTRL+SHIFT+V</code>).</li>
+                <li>Non esiste "Modifica Elenchi Personalizzati". Per elenchi custom usa <strong>Dati > Convalida dati</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- S10 -->
+        <section class="slide" id="s10">
+          <div class="slide-header">
+            <h2>Smart Fill: Riconoscimento Intelligente dei Pattern</h2>
+            <p>L'equivalente Google Sheets del Flash Fill di Excel — ma funziona in modo diverso</p>
+          </div>
+          <div class="slide-body">
+            <div class="diff" style="margin-top:0;margin-bottom:1rem">
+              <strong>⚠ Differenza da Excel</strong>
+              <ul>
+                <li>Excel: <strong>Flash Fill</strong> (Riempimento Veloce) con <code>Ctrl+E</code> o Dati > Riempimento Veloce.</li>
+                <li>Google Sheets: <strong>Smart Fill</strong> basato su AI — si attiva automaticamente, non ha una scorciatoia <code>Ctrl+E</code>.</li>
+              </ul>
+            </div>
+            <div class="grid-2">
+              <div class="card">
+                <h3>Come Funziona lo Smart Fill</h3>
+                <ul>
+                  <li>Inizia a digitare nella colonna affiancata ai dati.</li>
+                  <li>Sheets rileva il pattern e mostra un suggerimento in grigio chiaro.</li>
+                  <li>Premi <strong>Tab</strong> per accettare il completamento.</li>
+                  <li>Attivabile anche da: <strong>Dati > Smart Fill</strong>.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>Esempio — Estrarre il Nome</h3>
+                <table>
+                  <tr><th>Dati (col. A)</th><th>Input (col. B)</th></tr>
+                  <tr><td>Mario Rossi</td><td>Mario</td></tr>
+                  <tr><td>Laura Bianchi</td><td>Laura</td></tr>
+                  <tr><td>Giovanni Verdi</td><td><em style="color:var(--gs-mid)">← suggerisce "Giovanni"</em></td></tr>
+                </table>
+                <p style="margin-top:.5rem;font-size:.83rem">Premi <strong>Tab</strong> per confermare il suggerimento.</p>
+              </div>
+            </div>
+            <div class="card" style="margin-top:1rem">
+              <h3>Esempio — Combinare Colonne</h3>
+              <table>
+                <tr><th>Nome (A)</th><th>Cognome (B)</th><th>Input (C)</th></tr>
+                <tr><td>Mario</td><td>Rossi</td><td>Mario Rossi</td></tr>
+                <tr><td>Laura</td><td>Bianchi</td><td>Laura Bianchi</td></tr>
+                <tr><td>Giovanni</td><td>Verdi</td><td><em style="color:var(--gs-mid)">← suggerisce "Giovanni Verdi"</em></td></tr>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- S11 -->
+        <section class="slide" id="s11">
+          <div class="slide-header">
+            <h2>Oltre lo Smart Fill: Strumenti per la Manipolazione del Testo</h2>
+            <p>Google Sheets offre funzioni native potenti come SPLIT(), JOIN() e REGEXEXTRACT()</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>SPLIT() — Dividere il testo in colonne</h3>
+                <p>Divide una stringa in più celle usando un separatore. È una <strong>formula dinamica</strong>.</p>
+                <div class="code-block">=SPLIT("Mario Rossi"; " ")  →  Mario | Rossi</div>
+                <div class="code-block">=SPLIT(A1; "-")</div>
+                <p style="font-size:.83rem;color:var(--gs-mid);margin-top:.4rem">A differenza di Excel (Dati > Testo in colonne), SPLIT è dinamica e si aggiorna automaticamente.</p>
+              </div>
+              <div class="card">
+                <h3>JOIN() — Unire celle con separatore</h3>
+                <p>Unisce un intervallo di celle con un separatore scelto. Più flessibile di CONCAT().</p>
+                <div class="code-block">=JOIN(", "; A1:A5)</div>
+                <div class="code-block">=JOIN(" "; "Mario"; "Rossi")  →  Mario Rossi</div>
+              </div>
+              <div class="card">
+                <h3>REGEXEXTRACT() — Estrazione con Regex</h3>
+                <p>Estrae una parte di testo usando un pattern di espressione regolare.</p>
+                <div class="code-block">=REGEXEXTRACT("Codice-ABC-123"; "[A-Z]+")</div>
+                <p style="font-size:.83rem;color:var(--gs-mid);margin-top:.4rem">Risultato: <strong>ABC</strong>. Ideale per estrarre codici, email o numeri da stringhe miste.</p>
+              </div>
+              <div class="card">
+                <h3>Confronto con Excel</h3>
+                <ul>
+                  <li>Excel usa <strong>Flash Fill</strong> (Ctrl+E) che impara il pattern dagli esempi.</li>
+                  <li>Per SPLIT: Excel ha "Dati > Testo in colonne" (non dinamico).</li>
+                  <li>REGEXEXTRACT è <strong>esclusiva di Google Sheets</strong> — in Excel servono formule più complesse o VBA.</li>
+                  <li>JOIN in Excel si chiama TEXTJOIN() con sintassi diversa.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S12 -->
+        <section class="slide" id="s12">
+          <div class="slide-header">
+            <h2>Formattazione Celle: Chiarezza e Controllo dei Dati</h2>
+            <p>Percorso: Formato > Numero — oppure usa la toolbar per i formati più comuni</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card card-num">
+                <div class="num">1</div>
+                <div class="content">
+                  <h3>Numerico e Valuta</h3>
+                  <p>Formato > Numero per decimali, separatori e simbolo valuta. La toolbar ha i pulsanti rapidi <code>€</code> <code>%</code> <code>.0</code> per i formati più usati.</p>
+                </div>
+              </div>
+              <div class="card card-num">
+                <div class="num">2</div>
+                <div class="content">
+                  <h3>Testo</h3>
+                  <p>Formato > Numero > Testo normale. Tratta il contenuto come testo puro: utile per codici, numeri di telefono o codici fiscali che non devono essere calcolati.</p>
+                </div>
+              </div>
+              <div class="card card-num">
+                <div class="num">3</div>
+                <div class="content">
+                  <h3>Data e Ora</h3>
+                  <p>Formato > Numero > Data, Ora o Data e ora. Scegli dalla lista predefinita o crea un formato personalizzato.</p>
+                </div>
+              </div>
+              <div class="card card-num">
+                <div class="num">4</div>
+                <div class="content">
+                  <h3>Formato Personalizzato</h3>
+                  <p>Formato > Numero > Formato numero personalizzato. Inserisci pattern come <code>00000</code> (5 cifre con zeri iniziali) o <code>€#.##0,00</code>.</p>
+                </div>
+              </div>
+            </div>
+            <div class="diff">
+              <strong>⚠ Differenza da Excel</strong>
+              <ul>
+                <li>In Excel: clic destro > Formato celle (<code>CTRL+1</code>). In Sheets non esiste <code>CTRL+1</code> — usa il menu <strong>Formato > Numero</strong>.</li>
+                <li>Sheets ha meno opzioni di formato personalizzato rispetto a Excel, ma copre la quasi totalità dei casi d'uso.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- S13 -->
+        <section class="slide" id="s13">
+          <div class="slide-header">
+            <h2>Formattazione Condizionale: Analisi Visiva Dinamica</h2>
+            <p>Percorso: Formato > Formattazione condizionale — Il pannello si apre sulla destra</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>Regole di Base</h3>
+                <ul>
+                  <li>Seleziona le celle > Formato > Formattazione condizionale.</li>
+                  <li>Scegli una condizione (es. "È maggiore di", "Testo contiene").</li>
+                  <li>Definisci lo stile: colore di sfondo, testo, grassetto.</li>
+                  <li>Le regole si aggiornano in tempo reale al variare dei dati.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>Scala Colori (Color Scale)</h3>
+                <ul>
+                  <li>Disponibile in Sheets: Formattazione condizionale > Scala colori.</li>
+                  <li>Applica una sfumatura di colore proporzionale ai valori.</li>
+                  <li>Personalizza i punti Min, Medio e Max con colori diversi.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="diff" style="margin-top:1rem">
+              <strong>⚠ Funzionalità non disponibili in Google Sheets (presenti in Excel)</strong>
+              <ul>
+                <li><strong>Set di Icone</strong>: frecce, semafori, stelle, bandierine — non esistono in Sheets.</li>
+                <li><strong>Barre di Dati</strong> (Data Bars) native — non disponibili, vanno simulate.</li>
+                <li><strong>Regole predefinite</strong> "Sopra la media" o "Primi 10 elementi" — in Sheets si usano formule personalizzate.</li>
+              </ul>
+            </div>
+            <div class="card" style="margin-top:1rem">
+              <h3>Formule Personalizzate — La soluzione per le funzionalità mancanti</h3>
+              <p>Sheets supporta formule personalizzate nella formattazione condizionale. Seleziona <em>"Formula personalizzata è"</em> e inserisci la condizione.</p>
+              <div class="code-block" style="margin-top:.5rem">=A1>MEDIA($A$1:$A$20)   → evidenzia valori sopra la media</div>
+              <div class="code-block">=RANGO(A1;$A$1:$A$20)&lt;=10   → evidenzia i primi 10</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S14 -->
+        <section class="slide" id="s14">
+          <div class="slide-header">
+            <h2>Generazione Dati Casuali in Google Sheets</h2>
+            <p>Le stesse funzioni di Excel per creare dati fittizi e simulazioni</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>CASUALE() <small style="color:var(--gs-mid)">(RAND)</small></h3>
+                <p>Genera un numero decimale tra 0 e 1 (es. 0,7342...).</p>
+                <div class="code-block">=CASUALE()</div>
+              </div>
+              <div class="card">
+                <h3>CASUALE.TRA(min; max) <small style="color:var(--gs-mid)">(RANDBETWEEN)</small></h3>
+                <p>Genera un numero intero casuale nell'intervallo specificato.</p>
+                <div class="code-block">=CASUALE.TRA(1; 100)</div>
+              </div>
+              <div class="card">
+                <h3>MATR.CASUALE() <small style="color:var(--gs-mid)">(RANDARRAY)</small></h3>
+                <p>Crea una matrice dinamica di numeri casuali. Disponibile anche in Google Sheets.</p>
+                <div class="code-block">=MATR.CASUALE(5; 3; 1; 100; VERO)</div>
+              </div>
+              <div class="card">
+                <h3>SCEGLI + CASUALE.TRA()</h3>
+                <p>Seleziona un elemento casuale da una lista predefinita.</p>
+                <div class="code-block">=SCEGLI(CASUALE.TRA(1;3);"Nord";"Centro";"Sud")</div>
+              </div>
+            </div>
+            <div class="diff">
+              <strong>⚠ Differenza da Excel</strong>
+              <ul>
+                <li>Per <strong>fissare i valori casuali</strong>: in Excel si usa <code>Alt+I, S, V</code>. In Google Sheets: <code>CTRL+SHIFT+V</code> per "Incolla Solo Valori".</li>
+                <li>MATR.CASUALE() è disponibile anche in Sheets ma alcune opzioni avanzate potrebbero differire dalla versione Excel 365.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- S20 -->
+        <section class="slide" id="s15">
+          <div class="slide-header">
+            <h2>Nominare Celle e Intervalli Denominati</h2>
+            <p>Percorso: Dati > Intervalli denominati — Il pannello si apre sulla destra</p>
+          </div>
+          <div class="slide-body">
+            <div class="diff" style="margin-bottom:1rem;margin-top:0">
+              <strong>⚠ Differenza da Excel</strong>
+              <p>In Excel: Casella Nome (in alto a sinistra) + Formule > Gestione Nomi. In Sheets: <strong>Dati > Intervalli denominati</strong> (pannello laterale sulla destra).</p>
+            </div>
+            <div class="grid-2">
+              <div class="card">
+                <h3>Come Creare un Intervallo Denominato</h3>
+                <ol class="steps">
+                  <li><span class="step-num">1</span><span class="step-text">Seleziona le celle da nominare.</span></li>
+                  <li><span class="step-num">2</span><span class="step-text">Vai su <strong>Dati > Intervalli denominati</strong>.</span></li>
+                  <li><span class="step-num">3</span><span class="step-text">Nel pannello inserisci il nome (es. <code>citta_gennaio</code>).</span></li>
+                  <li><span class="step-num">4</span><span class="step-text">Verifica o modifica l'intervallo di celle.</span></li>
+                  <li><span class="step-num">5</span><span class="step-text">Clicca <strong>Fine</strong> per confermare.</span></li>
+                </ol>
+              </div>
+              <div class="card">
+                <h3>Uso nelle Formule</h3>
+                <p>Inserisci il nome direttamente nella formula:</p>
+                <div class="code-block" style="margin:.5rem 0">=SOMMA(citta_gennaio)</div>
+                <div class="code-block">=MEDIA(budget_annuale)</div>
+                <p style="font-size:.84rem;color:var(--gs-mid);margin-top:.5rem">I nomi appaiono nei suggerimenti automatici mentre digiti. Aggiornare l'intervallo nel pannello aggiorna tutte le formule che lo usano.</p>
+              </div>
+            </div>
+            <div class="card" style="margin-top:1rem">
+              <h3>Regole di Nomenclatura (uguali a Excel)</h3>
+              <ul>
+                <li>Non possono contenere spazi — usa <code>_</code> o <code>-</code> per separare le parole.</li>
+                <li>Non possono iniziare con un numero.</li>
+                <li>Non possono coincidere con un riferimento di cella (es. <code>A1</code> non è valido).</li>
+                <li>Gestione centralizzata dal pannello <strong>Dati > Intervalli denominati</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- S21 -->
+        <section class="slide" id="s16">
+          <div class="slide-header">
+            <h2>Referenze a Celle in Altri Fogli</h2>
+            <p>Stessa sintassi di Excel — più IMPORTRANGE() per riferirsi ad altri file Google Sheets</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>Riferimento Base a un Altro Foglio (= Excel)</h3>
+                <div class="code-block">=Foglio1!B3</div>
+                <div class="code-block">='Nome Foglio'!B3  ← con spazi nel nome</div>
+                <div class="code-block">=SOMMA(Foglio1!B3:B5)</div>
+                <p style="font-size:.84rem;color:var(--gs-mid);margin-top:.4rem">Se il nome del foglio contiene spazi, usa gli apici singoli — identico a Excel.</p>
+              </div>
+              <div class="card">
+                <h3>Referenze 3D — Più Fogli (= Excel)</h3>
+                <div class="code-block">=SOMMA(Gen!B4;Feb!B4;Mar!B4)</div>
+                <p style="font-size:.84rem;margin-top:.4rem">Fa riferimento alla cella B4 in tutti i fogli Gen Feb e Mar. I valori si aggiornano automaticamente se cambiano nei fogli sorgente.</p>
+              </div>
+            </div>
+            <div class="new" style="margin-top:1rem">
+              <strong>✚ Funzione esclusiva Google Sheets: IMPORTRANGE()</strong>
+              <ul>
+                <li>Permette di importare dati da un <strong>altro file Google Sheets</strong> (impossibile in Excel senza connessioni esterne).</li>
+                <li><div class="code-block" style="margin:.4rem 0">=IMPORTRANGE("URL_del_file"; "NomeFoglio!A1:B10")</div></li>
+                <li>Alla prima esecuzione richiede di <strong>autorizzare l'accesso</strong> al file sorgente — clicca "Consenti accesso".</li>
+                <li>I dati si aggiornano automaticamente: ideale per fogli riepilogativi che aggregano dati da più file condivisi.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- S22 -->
+        <section class="slide" id="s17">
+          <div class="slide-header">
+            <h2>Logica Booleana: Il Motore delle Decisioni in Google Sheets</h2>
+            <p>VERO e FALSO sono la base di ogni formula condizionale — identico a Excel</p>
+          </div>
+          <div class="slide-body">
+            <p style="color:var(--gs-mid);margin-bottom:1rem">La logica booleana permette di creare formule che valutano condizioni e restituiscono VERO o FALSO. È la spina dorsale di SE(), formattazione condizionale, filtri e calcoli condizionali.</p>
+            <div class="grid-2">
+              <div class="card" style="border-color:var(--gs-blue)">
+                <h3 style="color:var(--gs-blue)">VERO / FALSO <small>(TRUE / FALSE)</small></h3>
+                <p>I valori fondamentali. Ogni condizione si risolve in uno di questi due stati.</p>
+                <div class="code-block" style="margin-top:.5rem">=5>3  →  VERO</div>
+              </div>
+              <div class="card" style="border-color:var(--gs-green)">
+                <h3 style="color:var(--gs-green)">Operatore E() <small>(AND)</small></h3>
+                <p>Restituisce VERO solo se <strong>tutte</strong> le condizioni sono vere.</p>
+                <div class="code-block" style="margin-top:.5rem">=E(A1>10; B1="Sì")</div>
+              </div>
+              <div class="card" style="border-color:#9c27b0">
+                <h3 style="color:#9c27b0">Operatore O() <small>(OR)</small></h3>
+                <p>Restituisce VERO se <strong>almeno una</strong> condizione è vera.</p>
+                <div class="code-block" style="margin-top:.5rem">=O(A1="Urgente"; B1="Prioritario")</div>
+              </div>
+              <div class="card" style="border-color:var(--gs-red)">
+                <h3 style="color:var(--gs-red)">Operatore NON() <small>(NOT)</small></h3>
+                <p>Inverte il valore logico: VERO diventa FALSO e viceversa.</p>
+                <div class="code-block" style="margin-top:.5rem">=NON(A1="Chiuso")</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S23 -->
+        <section class="slide" id="s18">
+          <div class="slide-header">
+            <h2>Funzioni Logiche Condizionali: SE(), E(), O()</h2>
+            <p>Costruisci modelli decisionali complessi — sintassi identica a Excel</p>
+          </div>
+          <div class="slide-body">
+            <div class="card" style="margin-bottom:1rem">
+              <h3>Funzione SE()</h3>
+              <p>Valuta una condizione e restituisce due possibili valori. Sintassi:</p>
+              <div class="code-block" style="margin:.5rem 0">SE(condizione; valore_se_vero; valore_se_falso)</div>
+              <div class="code-block">=SE(5&lt;3; "VERO"; "FALSO")  →  "FALSO"</div>
+              <div class="code-block" style="margin-top:.3rem">=SE(A1>100; "Alto"; SE(A1>50; "Medio"; "Basso"))  ← SE annidato</div>
+            </div>
+            <div class="grid-2">
+              <div class="card">
+                <h3>Funzione E()</h3>
+                <p>VERO solo se <strong>tutte</strong> le condizioni sono vere.</p>
+                <div class="code-block" style="margin-top:.5rem">=E(A1>10; B1="Completo")</div>
+              </div>
+              <div class="card">
+                <h3>Funzione O()</h3>
+                <p>VERO se <strong>almeno una</strong> condizione è vera.</p>
+                <div class="code-block" style="margin-top:.5rem">=O(C1="Urgente"; D1="Prioritario")</div>
+              </div>
+            </div>
+            <div class="card" style="margin-top:1rem">
+              <h3>Combinazione Potente: SE() + E() / O()</h3>
+              <div class="code-block">=SE(E(Vendite>1000; Margine>0,2); "Ottimo"; "Da rivedere")</div>
+              <div class="code-block" style="margin-top:.3rem">=SE(O(A1="Rosso"; A1="Giallo"); "Attenzione"; "OK")</div>
+              <p style="font-size:.84rem;color:var(--gs-mid);margin-top:.4rem">E() e O() si annidano dentro SE() per decisioni basate su più criteri.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- S24 -->
+        <section class="slide" id="s19">
+          <div class="slide-header">
+            <h2>Funzioni Condizionali: CONTA.SE(), SOMMA.SE(), MEDIA.SE()</h2>
+            <p>Aggrega dati in base a condizioni — sintassi identica a Excel</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>CONTA.SE()</h3>
+                <p>Conta celle che soddisfano <strong>UNA</strong> condizione.</p>
+                <div class="code-block" style="margin-top:.5rem">=CONTA.SE(B2:B10; ">100")</div>
+              </div>
+              <div class="card">
+                <h3>CONTA.PIÙ.SE()</h3>
+                <p>Conta celle con <strong>più criteri</strong> su diversi intervalli.</p>
+                <div class="code-block" style="margin-top:.5rem">=CONTA.PIÙ.SE(C2:C10; "Est"; B2:B10; ">100")</div>
+              </div>
+              <div class="card">
+                <h3>SOMMA.SE()</h3>
+                <p>Somma valori che soddisfano <strong>UNA</strong> condizione.</p>
+                <div class="code-block" style="margin-top:.5rem">=SOMMA.SE(A2:A10; "Prodotto A"; B2:B10)</div>
+              </div>
+              <div class="card">
+                <h3>SOMMA.PIÙ.SE()</h3>
+                <p>Somma con <strong>più condizioni</strong> su diversi intervalli.</p>
+                <div class="code-block" style="margin-top:.5rem">=SOMMA.PIÙ.SE(B2:B10; A2:A10; "Prod.B"; C2:C10; "Sud")</div>
+              </div>
+            </div>
+            <div class="card" style="margin-top:1rem">
+              <h3>MEDIA.SE()</h3>
+              <p>Calcola la media dei valori che soddisfano una singola condizione.</p>
+              <div class="code-block" style="margin-top:.5rem">=MEDIA.SE(D2:D10; "Completo"; E2:E10)</div>
+            </div>
+            <p style="margin-top:.8rem;font-size:.85rem;color:var(--gs-mid);font-style:italic">✓ Tutte queste funzioni hanno la stessa sintassi in Google Sheets e in Excel — nessuna differenza rilevante.</p>
+          </div>
+        </section>
+
+        <!-- S25 -->
+        <section class="slide" id="s20">
+          <div class="slide-header">
+            <h2>Funzioni Testo e Concatenazione</h2>
+            <p>Google Sheets aggiunge SPLIT() e JOIN() rispetto alle funzioni base di Excel</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card"><h3>MAIUSC() <small style="color:var(--gs-mid)">(UPPER)</small></h3><p>Converte tutto il testo in MAIUSCOLO.</p><div class="code-block" style="margin-top:.4rem">=MAIUSC("ciao")  →  CIAO</div></div>
+              <div class="card"><h3>MINUSC() <small style="color:var(--gs-mid)">(LOWER)</small></h3><p>Converte tutto il testo in minuscolo.</p><div class="code-block" style="margin-top:.4rem">=MINUSC("CIAO")  →  ciao</div></div>
+              <div class="card"><h3>MAIUSC.INIZ() <small style="color:var(--gs-mid)">(PROPER)</small></h3><p>Prima lettera di ogni parola in maiuscolo.</p><div class="code-block" style="margin-top:.4rem">=MAIUSC.INIZ("ciao mondo")  →  Ciao Mondo</div></div>
+              <div class="card"><h3>Operatore &amp; e CONCAT()</h3><p>Unisce stringhe rapidamente.</p><div class="code-block" style="margin-top:.4rem">=A1 &amp; " " &amp; B1</div><div class="code-block" style="margin-top:.3rem">=CONCAT(A1; " "; B1)</div></div>
+            </div>
+            <div class="new" style="margin-top:1rem">
+              <strong>✚ Funzioni esclusive Google Sheets</strong>
+              <ul>
+                <li><strong>SPLIT(testo; separatore)</strong>: divide una stringa in più celle.
+                  <div class="code-block" style="margin:.3rem 0">=SPLIT("Mario Rossi"; " ")  →  Mario | Rossi</div>
+                </li>
+                <li><strong>JOIN(separatore; intervallo)</strong>: unisce celle con un separatore.
+                  <div class="code-block" style="margin:.3rem 0">=JOIN(", "; A1:A5)  →  Nord, Sud, Est, Ovest, Centro</div>
+                </li>
+                <li>In Excel: SPLIT non esiste (si usa "Dati > Testo in colonne"); JOIN si chiama <code>TEXTJOIN(sep; ignora_vuoti; intervallo)</code>.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- S26 -->
+        <section class="slide" id="s21">
+          <div class="slide-header">
+            <h2>Funzioni CONFRONTA() e INDICE()</h2>
+            <p>Ricerche bidirezionali e dinamiche — sintassi identica a Excel</p>
+          </div>
+          <div class="slide-body">
+            <div class="grid-2">
+              <div class="card">
+                <h3>CONFRONTA() — Trova la posizione</h3>
+                <p>Restituisce il numero di riga o colonna di un elemento in un intervallo.</p>
+                <div class="code-block" style="margin:.5rem 0">=CONFRONTA(valore_cercato; matrice_ricerca; [tipo])</div>
+                <ul style="font-size:.84rem">
+                  <li><code>tipo 0</code> = corrispondenza esatta (il più usato)</li>
+                  <li><code>tipo 1</code> = valori minori (matrice ordinata crescente)</li>
+                  <li><code>tipo -1</code> = valori maggiori (matrice ordinata decrescente)</li>
+                </ul>
+                <div class="code-block" style="margin-top:.5rem">=CONFRONTA("Mario"; A1:A100; 0)</div>
+              </div>
+              <div class="card">
+                <h3>INDICE() — Recupera il valore</h3>
+                <p>Restituisce il valore in una tabella specificando riga e colonna.</p>
+                <div class="code-block" style="margin:.5rem 0">=INDICE(matrice; num_riga; [num_colonna])</div>
+                <p style="font-size:.84rem;color:var(--gs-mid)">Una volta che CONFRONTA() dice la posizione, INDICE() preleva il dato.</p>
+                <div class="code-block" style="margin-top:.5rem">=INDICE(B1:B100; 5)  →  valore alla riga 5</div>
+              </div>
+            </div>
+            <div class="card" style="margin-top:1rem">
+              <h3>Combinazione INDICE + CONFRONTA: Ricerca Bidirezionale</h3>
+              <p>La combinazione supera i limiti di CERCA.VERT() che cerca solo a destra:</p>
+              <div class="code-block" style="margin:.5rem 0">=INDICE(matrice; CONFRONTA(val_cercato; col_ricerca; 0); CONFRONTA(intestazione; riga_intest.; 0))</div>
+              <p style="font-size:.84rem;color:var(--gs-mid)">Permette ricerche verticali <em>e</em> orizzontali, anche quando la colonna chiave è a destra dei risultati.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- S27 -->
+        <section class="slide" id="s22">
+          <div class="slide-header">
+            <h2>Funzione CERCA.X() — XLOOKUP</h2>
+            <p>Disponibile in Google Sheets dal 2022 — stessa sintassi di Excel 365</p>
+          </div>
+          <div class="slide-body">
+            <p style="color:var(--gs-mid);margin-bottom:.7rem">CERCA.X() combina la flessibilità di INDICE/CONFRONTA con la semplicità di CERCA.VERT(). Risolve le principali limitazioni delle funzioni di ricerca tradizionali.</p>
+            <div class="code-block" style="margin-bottom:1rem">=CERCA.X(valore_cercato; matrice_ricerca; matrice_risultato; [se_non_trovato]; [modalità_corrisp.]; [modalità_ricerca])</div>
+            <div class="grid-2">
+              <div class="card card-num"><div class="num">1</div><div class="content"><h3 style="color:var(--gs-blue)">Ricerca Bidirezionale</h3><p>Cerca a destra <em>o</em> a sinistra, in verticale <em>o</em> in orizzontale. Nessun limite di direzione come in CERCA.VERT().</p></div></div>
+              <div class="card card-num"><div class="num" style="background:var(--gs-green)">2</div><div class="content"><h3 style="color:var(--gs-green)">Gestione Errori Integrata</h3><p>L'argomento <code>[se_non_trovato]</code> specifica un valore se non c'è corrispondenza — elimina la necessità di annidare SE.ERRORE().</p></div></div>
+              <div class="card card-num"><div class="num" style="background:#9c27b0">3</div><div class="content"><h3 style="color:#9c27b0">Corrispondenza Esatta Default</h3><p>La corrispondenza esatta è il default — riduce errori comuni rispetto a CERCA.VERT() che usava l'approssimativa.</p></div></div>
+              <div class="card card-num"><div class="num" style="background:var(--gs-red)">4</div><div class="content"><h3 style="color:var(--gs-red)">Ricerca da Primo o Ultimo</h3><p>Con <code>[modalità_ricerca]</code>: <code>1</code> = dal primo, <code>-1</code> = dall'ultimo, <code>2/-2</code> = ricerca binaria per dataset ordinati.</p></div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S28 -->
+        <section class="slide" id="s23">
+          <div class="slide-header">
+            <h2>Gestione e Personalizzazione delle Tabelle in Google Sheets</h2>
+            <p>Inserisci > Tabella — Funzionalità aggiunta nel 2023, più semplice rispetto a Excel</p>
+          </div>
+          <div class="slide-body">
+            <div class="diff" style="margin-bottom:1rem;margin-top:0">
+              <strong>⚠ Differenza da Excel</strong>
+              <ul>
+                <li>In Excel: <code>CTRL+T</code> o Inserisci > Tabella, con la scheda "Progettazione Tabella" sulla Ribbon.</li>
+                <li>In Google Sheets: <strong>Inserisci > Tabella</strong> — non esiste la Ribbon; le opzioni si trovano nel menu contestuale (clic destro).</li>
+              </ul>
+            </div>
+            <div class="grid-2">
+              <div class="card"><h3>Creazione Tabella</h3><p>Seleziona il tuo intervallo dati e vai su <strong>Inserisci > Tabella</strong>. Sheets rileva automaticamente le intestazioni e aggiunge filtri.</p></div>
+              <div class="card"><h3>Filtri Automatici</h3><p>Ogni colonna ottiene frecce di filtro. Ordina e filtra per valore, colore o condizione. Alternativa rapida: <code>CTRL+SHIFT+L</code> aggiunge solo i filtri.</p></div>
+              <div class="card"><h3>Eliminare Duplicati</h3><p><strong>Dati > Pulizia dei dati > Rimuovi voci duplicate</strong>. Diverso da Excel (Dati > Rimuovi duplicati) ma stesso risultato.</p></div>
+              <div class="card"><h3>Stili e Colori</h3><p>Clic destro sulla tabella per personalizzare i colori. Meno stili predefiniti rispetto a Excel, ma personalizzabili.</p></div>
+              <div class="card"><h3>Convertire in Intervallo</h3><p>Clic destro > <em>Converti in intervallo</em> per tornare a un normale intervallo. Mantiene la formattazione ma rimuove le funzionalità tabella.</p></div>
+              <div class="card"><h3>Alternativa: Solo Filtri</h3><p>Per la maggior parte dei casi, <strong>Dati > Crea un filtro</strong> è sufficiente: più leggero e più comune in Sheets.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S29 -->
+        <section class="slide" id="s24">
+          <div class="slide-header">
+            <h2>Lavorare con le Tabelle: Menu e Opzioni</h2>
+            <p>In Google Sheets non c'è la barra Ribbon — le opzioni si trovano nel menu contestuale e nel menu Dati</p>
+          </div>
+          <div class="slide-body">
+            <div class="diff" style="margin-bottom:1rem;margin-top:0">
+              <strong>⚠ Differenza da Excel</strong>
+              <ul>
+                <li>In Excel, dopo aver creato la tabella compare la scheda <em>"Progettazione Tabella"</em> sulla Ribbon con tutte le opzioni.</li>
+                <li>In Google Sheets non esiste la Ribbon — accedi alle funzioni tramite menu <strong>Dati</strong>, clic destro o pulsanti sulla tabella stessa.</li>
+              </ul>
+            </div>
+            <div class="grid-2">
+              <div class="card">
+                <h3>Clic Destro sulla Tabella</h3>
+                <ul>
+                  <li><em>Converti in intervallo</em> — rimuove funzionalità tabella mantenendo formattazione.</li>
+                  <li><em>Elimina tabella</em> — rimuove anche i dati.</li>
+                  <li><em>Cambia colore</em> — personalizza il colore dell'intestazione.</li>
+                  <li><em>Inserisci riga/colonna</em> — aggiunge righe o colonne alla tabella.</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h3>Menu Dati — Le Funzioni Principali</h3>
+                <ul>
+                  <li><strong>Dati > Crea un filtro</strong> → filtri automatici su un intervallo</li>
+                  <li><strong>Dati > Ordina intervallo</strong> → ordina per una o più colonne</li>
+                  <li><strong>Dati > Pulizia dei dati > Rimuovi voci duplicate</strong></li>
+                  <li><strong>Dati > Convalida dati</strong> → limita i valori inseribili</li>
+                  <li><strong>Dati > Tabella pivot</strong> → analisi avanzata dei dati</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card" style="margin-top:1rem;background:#e8f0fe;border-color:var(--gs-blue)">
+              <h3 style="color:var(--gs-dark-blue)">💡 Suggerimento Pratico</h3>
+              <p>Per la maggior parte delle esigenze didattiche, usa <strong>Dati > Crea un filtro</strong> (<code>CTRL+SHIFT+L</code>) invece di Inserisci > Tabella. I filtri sono più leggeri, più compatibili e sufficienti per ordinare, filtrare e analizzare i dati. Le Tabelle di Sheets sono ancora in evoluzione rispetto a quelle più mature di Excel.</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <p>A cura di <strong>Luigi Distefano</strong> — Web Developer</p>
+      <p>Hai domande? Scrivimi a <a href="mailto:luigi.distefano69@gmail.com">luigi.distefano69@gmail.com</a></p>
+      <p class="footer-copy">&copy; 2026 Piattaforma Esercizi — Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+  <script>
+    // TOC active link via IntersectionObserver
+    const slides = document.querySelectorAll('.slide[id]');
+    const links  = document.querySelectorAll('.guide-toc a');
+    const map    = {};
+    links.forEach(a => { map[a.getAttribute('href').slice(1)] = a; });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(a => a.classList.remove('active'));
+          const lnk = map[e.target.id];
+          if (lnk) {
+            lnk.classList.add('active');
+            const toc = document.querySelector('.guide-toc');
+            toc.scrollTop = lnk.offsetTop - toc.offsetTop - toc.clientHeight / 2 + lnk.clientHeight / 2;
+          }
+        }
+      });
+    }, { rootMargin: '-10% 0px -80% 0px' });
+
+    slides.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>
