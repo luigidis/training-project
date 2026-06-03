@@ -91,11 +91,11 @@
         <h2>Parte B — SE() con E() — tutte le condizioni devono essere vere</h2>
         <p>Sintassi: <code>=SE(E(cond1;cond2); vero; falso)</code><br>E() restituisce VERO solo se <strong>tutte</strong> le condizioni sono vere contemporaneamente.</p>
         <ol start="4">
-          <li>Nella colonna <strong>Fascia</strong>: agente "Senior" se ha più di 5 anni di servizio E presenze &gt; 85:</li>
+          <li>Nella colonna <strong>Fascia</strong>: la cella deve mostrare "Senior" se l'agente ha più di 5 anni di servizio E le presenze sono maggiori di 85, altrimenti deve mostrare "Junior". Entrambe le condizioni devono essere vere contemporaneamente:</li>
         </ol>
         <div class="formula-block">=SE(E(E2&gt;5;D2&gt;85);"Senior";"Junior")</div>
         <ol start="5">
-          <li>Nella colonna <strong>Bonus</strong>: diritto al bonus se supera il target E presenze ≥ 80%:</li>
+          <li>Nella colonna <strong>Bonus</strong>: la cella deve mostrare "Sì" se l'agente supera il target E le presenze sono maggiori o uguali a 80, altrimenti deve mostrare "No". Entrambe le condizioni devono essere vere contemporaneamente:</li>
         </ol>
         <div class="formula-block">=SE(E(C2&gt;target_vendite;D2&gt;=80);"Sì";"No")</div>
         <ol start="6">
@@ -105,11 +105,11 @@
         <h2>Parte C — SE() con O() — almeno una condizione deve essere vera</h2>
         <p>Sintassi: <code>=SE(O(cond1;cond2); vero; falso)</code><br>O() restituisce VERO se <strong>almeno una</strong> condizione è vera.</p>
         <ol start="7">
-          <li>Nella colonna <strong>Promozione</strong>: candidato se vendite &gt; 18000 OPPURE anni di servizio &gt; 8:</li>
+          <li>Nella colonna <strong>Promozione</strong>: la cella deve mostrare "Candidato" se le vendite sono maggiori di 18000 OPPURE gli anni di servizio sono maggiori di 8, altrimenti deve mostrare "Non Candidato". Basta che anche una sola condizione sia vera:</li>
         </ol>
         <div class="formula-block">=SE(O(C2&gt;18000;E2&gt;8);"Candidato";"Non Candidato")</div>
         <ol start="8">
-          <li>Nella colonna <strong>Supporto</strong>: supporto necessario se presenze &lt; 80 OPPURE vendite &lt; 10000:</li>
+          <li>Nella colonna <strong>Supporto</strong>: la cella deve mostrare "Supporto Necessario" se le presenze sono minori di 80 OPPURE le vendite sono minori di 10000, altrimenti deve mostrare "OK". Basta che anche una sola condizione sia vera:</li>
         </ol>
         <div class="formula-block">=SE(O(D2&lt;80;C2&lt;10000);"Supporto Necessario";"OK")</div>
 
