@@ -88,62 +88,241 @@
         </table>
 
         <h2>Parte A — COUNTIF — un solo criterio</h2>
-        <p>Sintassi: <code>=COUNTIF(intervallo; criterio)</code></p>
-        <div class="formula-block">
-=COUNTIF(C2:C21;"Nord")         → quante vendite nella regione Nord (risultato: 7)
-=COUNTIF(D2:D21;"Telefonia")    → quante righe categoria Telefonia
-=COUNTIF(E2:E21;"&gt;4000")    → quante vendite superiori a 4000
-=COUNTIF(B2:B21;"Rossi")        → quante righe per l'agente Rossi
-        </div>
-        <p>Per il range 2000–4000 senza COUNTIFS: <code>=COUNTIF(E2:E21;"&lt;=4000")-COUNTIF(E2:E21;"&lt;2000")</code></p>
+        <p><strong>Sintassi:</strong> <code>=COUNTIF(intervallo; criterio)</code></p>
+        <p>La funzione COUNTIF conta quante celle in un intervallo soddisfano un determinato criterio. Ora creerai una sezione di analisi per rispondere a domande specifiche sui dati.</p>
+
+        <p><strong>Istruzioni:</strong> A partire dalla colonna <strong>G</strong> (lasciando una colonna vuota tra i dati e l'analisi), crea la seguente struttura:</p>
+
+        <p><strong>Task 1 — Contare vendite per regione</strong></p>
+        <ul>
+          <li>In cella <strong>G2</strong>, scrivi l'etichetta: <code>Vendite regione Nord</code></li>
+          <li>In cella <strong>H2</strong>, inserisci la formula per contare quante righe (vendite) sono della regione Nord</li>
+          <li>Formula da usare: <code>=COUNTIF(C2:C21;"Nord")</code></li>
+          <li>Risultato atteso: <strong>7</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai calcolando il numero totale di vendite che sono state effettuate nella regione Nord, permettendoti di capire quante transazioni commerciali sono avvenute in quella specifica area geografica.</p>
+
+        <p><strong>Task 2 — Contare vendite per categoria</strong></p>
+        <ul>
+          <li>In cella <strong>G3</strong>, scrivi: <code>Vendite categoria Telefonia</code></li>
+          <li>In cella <strong>H3</strong>, calcola quante vendite appartengono alla categoria "Telefonia"</li>
+          <li>Suggerimento: usa COUNTIF sull'intervallo D2:D21 (colonna Categoria)</li>
+          <li>Risultato atteso: <strong>7</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai contando quante transazioni riguardano prodotti di telefonia, aiutandoti a identificare quale categoria di prodotto genera più interesse e attività commerciale.</p>
+
+        <p><strong>Task 3 — Contare vendite sopra una soglia</strong></p>
+        <ul>
+          <li>In cella <strong>G4</strong>, scrivi: <code>Vendite superiori a 4000</code></li>
+          <li>In cella <strong>H4</strong>, conta quante vendite hanno un importo maggiore di 4000</li>
+          <li>Suggerimento: nel criterio usa <code>"&gt;4000"</code> (le virgolette sono necessarie)</li>
+          <li>Risultato atteso: <strong>9</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai identificando quante vendite di alto valore sono state realizzate, permettendoti di monitorare le transazioni più importanti per il fatturato dell'azienda.</p>
 
         <h2>Parte B — COUNTIFS — più criteri</h2>
-        <p>Sintassi: <code>=COUNTIFS(interv1;crit1;interv2;crit2;...)</code><br>Conta le righe dove <strong>tutti</strong> i criteri sono soddisfatti contemporaneamente.</p>
-        <div class="formula-block">
-=COUNTIFS(C2:C21;"Nord";D2:D21;"Informatica")
-=COUNTIFS(B2:B21;"Rossi";A2:A21;"Marzo")
-=COUNTIFS(E2:E21;"&gt;="&amp;2000;E2:E21;"&lt;="&amp;4000)
-=COUNTIFS(C2:C21;"Sud";A2:A21;"Gennaio";E2:E21;"&gt;2000")
-        </div>
+        <p><strong>Sintassi:</strong> <code>=COUNTIFS(interv1;crit1;interv2;crit2;...)</code></p>
+        <p>La funzione COUNTIFS conta le righe dove <strong>tutti</strong> i criteri sono soddisfatti <strong>contemporaneamente</strong>. È ideale per analisi incrociate (es. "quante vendite ha fatto Rossi nel mese di Marzo?").</p>
+
+        <p><strong>Istruzioni:</strong> Continua nella colonna G, sotto i task precedenti (lascia una riga vuota per chiarezza).</p>
+
+        <p><strong>Task 4 — Doppio criterio: regione + categoria</strong></p>
+        <ul>
+          <li>In cella <strong>G6</strong>, scrivi: <code>Vendite Nord - Informatica</code></li>
+          <li>In cella <strong>H6</strong>, conta quante vendite sono <strong>sia</strong> della regione Nord <strong>sia</strong> della categoria Informatica</li>
+          <li>Formula: <code>=COUNTIFS(C2:C21;"Nord";D2:D21;"Informatica")</code></li>
+          <li>Spiegazione: primo criterio sulla colonna C (Regione), secondo sulla colonna D (Categoria)</li>
+          <li>Risultato atteso: <strong>4</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai contando quante vendite soddisfano entrambe le condizioni contemporaneamente (Nord E Informatica), permettendoti di analizzare il comportamento di una specifica categoria di prodotto in una determinata area geografica.</p>
+
+        <p><strong>Task 5 — Doppio criterio: agente + mese</strong></p>
+        <ul>
+          <li>In cella <strong>G7</strong>, scrivi: <code>Vendite Rossi a Marzo</code></li>
+          <li>In cella <strong>H7</strong>, conta quante vendite ha fatto l'agente "Rossi" nel mese di "Marzo"</li>
+          <li>Suggerimento: combina la colonna B (Agente) con la colonna A (Mese)</li>
+          <li>Risultato atteso: <strong>1</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai misurando la performance di un singolo agente in un periodo specifico, utile per valutare l'andamento mensile delle vendite individuali e identificare eventuali trend o variazioni stagionali.</p>
+
+        <p><strong>Task 6 — Triplo criterio</strong></p>
+        <ul>
+          <li>In cella <strong>G8</strong>, scrivi: <code>Vendite Sud - Gennaio - sopra 2000</code></li>
+          <li>In cella <strong>H8</strong>, conta le vendite che soddisfano TUTTI e tre questi criteri:
+            <ul>
+              <li>Regione = "Sud"</li>
+              <li>Mese = "Gennaio"</li>
+              <li>Importo > 2000</li>
+            </ul>
+          </li>
+          <li>Formula: <code>=COUNTIFS(C2:C21;"Sud";A2:A21;"Gennaio";E2:E21;"&gt;2000")</code></li>
+          <li>Risultato atteso: <strong>2</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai identificando vendite di alto valore (oltre 2000) in una specifica regione e periodo, permettendoti di analizzare la qualità delle transazioni (non solo la quantità) e individuare quando e dove si concentrano le vendite più profittevoli.</p>
 
         <h2>Parte C — SUMIF — sommare con un criterio</h2>
-        <p>Sintassi: <code>=SUMIF(interv_criterio; criterio; interv_somma)</code><br>Nota: l'intervallo da sommare è il <strong>terzo</strong> argomento.</p>
-        <div class="formula-block">
-=SUMIF(C2:C21;"Nord";E2:E21)      → totale vendite regione Nord
-=SUMIF(D2:D21;"Accessori";E2:E21) → totale vendite Accessori
-=SUMIF(B2:B21;"Ferrari";E2:E21)   → totale vendite di Ferrari
-=SUMIF(E2:E21;"&gt;4000";E2:E21)  → somma vendite superiori a 4000
-        </div>
+        <p><strong>Sintassi:</strong> <code>=SUMIF(interv_criterio; criterio; interv_somma)</code></p>
+        <p>La funzione SUMIF somma i valori di un intervallo che corrispondono a un criterio. <strong>Attenzione:</strong> l'intervallo da sommare è il <strong>terzo</strong> argomento.</p>
+
+        <p><strong>Istruzioni:</strong> Continua nella colonna G (lascia una riga vuota dopo i task precedenti).</p>
+
+        <p><strong>Task 7 — Totale vendite per regione</strong></p>
+        <ul>
+          <li>In cella <strong>G10</strong>, scrivi: <code>Totale vendite Nord</code></li>
+          <li>In cella <strong>H10</strong>, calcola la somma di tutte le vendite della regione "Nord"</li>
+          <li>Formula: <code>=SUMIF(C2:C21;"Nord";E2:E21)</code></li>
+          <li>Spiegazione: cerchi "Nord" nella colonna C (criterio), e sommi i valori corrispondenti dalla colonna E (vendite)</li>
+          <li>Risultato atteso: <strong>29600</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai calcolando il fatturato totale generato nella regione Nord, ottenendo una visione completa del valore economico prodotto da quell'area geografica e non solo del numero di transazioni.</p>
+
+        <p><strong>Task 8 — Totale vendite per categoria</strong></p>
+        <ul>
+          <li>In cella <strong>G11</strong>, scrivi: <code>Totale vendite Accessori</code></li>
+          <li>In cella <strong>H11</strong>, calcola il totale delle vendite per la categoria "Accessori"</li>
+          <li>Suggerimento: applica il criterio alla colonna D (Categoria)</li>
+          <li>Risultato atteso: <strong>14500</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai misurando il fatturato totale generato dalla categoria Accessori, permettendoti di confrontare il valore economico di diverse linee di prodotto e identificare quali categorie contribuiscono maggiormente al fatturato aziendale.</p>
+
+        <p><strong>Task 9 — Totale vendite per agente</strong></p>
+        <ul>
+          <li>In cella <strong>G12</strong>, scrivi: <code>Totale vendite Ferrari</code></li>
+          <li>In cella <strong>H12</strong>, calcola il fatturato totale generato dall'agente "Ferrari"</li>
+          <li>Suggerimento: cerca nella colonna B (Agente)</li>
+          <li>Risultato atteso: <strong>9600</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai valutando la performance commerciale individuale dell'agente Ferrari, utile per calcolare commissioni, stabilire obiettivi di vendita e identificare i venditori più produttivi del team.</p>
 
         <h2>Parte D — SUMIFS — sommare con più criteri</h2>
-        <p>Sintassi: <code>=SUMIFS(interv_somma; interv1;crit1; interv2;crit2;...)</code><br>Attenzione: l'intervallo da sommare è il <strong>primo</strong> argomento (diverso da SUMIF).</p>
-        <div class="formula-block">
-=SUMIFS(E2:E21;C2:C21;"Nord";D2:D21;"Telefonia")
-=SUMIFS(E2:E21;B2:B21;"Rossi";A2:A21;"Marzo")
-=SUMIFS(E2:E21;C2:C21;"Sud";A2:A21;"Gennaio")
-=SUMIFS(E2:E21;C2:C21;"Nord";D2:D21;"Informatica";E2:E21;"&gt;3000")
-        </div>
-        <p>Costruisci poi una <strong>tabella riepilogativa 3×3</strong> con righe Nord/Centro/Sud e colonne Telefonia/Informatica/Accessori. Riempi ogni cella con una SUMIFS (9 formule in totale).</p>
+        <p><strong>Sintassi:</strong> <code>=SUMIFS(interv_somma; interv1;crit1; interv2;crit2;...)</code></p>
+        <p>La funzione SUMIFS somma i valori quando <strong>tutti</strong> i criteri sono soddisfatti. <strong>Attenzione:</strong> a differenza di SUMIF, l'intervallo da sommare è il <strong>primo</strong> argomento.</p>
+
+        <p><strong>Istruzioni:</strong> Continua nella colonna G (lascia una riga vuota).</p>
+
+        <p><strong>Task 10 — Doppio criterio: regione + categoria</strong></p>
+        <ul>
+          <li>In cella <strong>G14</strong>, scrivi: <code>Totale Nord - Telefonia</code></li>
+          <li>In cella <strong>H14</strong>, somma le vendite che sono sia della regione "Nord" sia della categoria "Telefonia"</li>
+          <li>Formula: <code>=SUMIFS(E2:E21;C2:C21;"Nord";D2:D21;"Telefonia")</code></li>
+          <li>Nota: prima metti l'intervallo da sommare (E2:E21), poi le coppie intervallo-criterio</li>
+          <li>Risultato atteso: <strong>10700</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai calcolando il fatturato generato da una specifica combinazione di regione e categoria prodotto, permettendoti di identificare quali prodotti performano meglio in determinate aree geografiche e ottimizzare la distribuzione dell'inventario.</p>
+
+        <p><strong>Task 11 — Doppio criterio: agente + mese</strong></p>
+        <ul>
+          <li>In cella <strong>G15</strong>, scrivi: <code>Totale Rossi a Marzo</code></li>
+          <li>In cella <strong>H15</strong>, calcola il fatturato di "Rossi" nel mese di "Marzo"</li>
+          <li>Suggerimento: combina colonna B (Agente) e colonna A (Mese)</li>
+          <li>Risultato atteso: <strong>5800</strong></li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai analizzando la performance mensile di un singolo venditore, essenziale per il calcolo delle commissioni periodiche, la valutazione delle performance trimestrali e l'identificazione di tendenze stagionali nelle vendite individuali.</p>
+
+        <h3>Task 12 — Tabella riepilogativa 3×3</h3>
+        <p>Crea una <strong>tabella pivot manuale</strong> che incroci Regioni e Categorie per visualizzare i totali vendite. Costruiscila a partire dalla cella <strong>G17</strong>.</p>
+
+        <p><strong>Struttura della tabella:</strong></p>
+        <ul>
+          <li><strong>Riga 17:</strong> intestazioni
+            <ul>
+              <li>G17: lascia vuota (o scrivi "Regione/Categoria")</li>
+              <li>H17: <code>Telefonia</code></li>
+              <li>I17: <code>Informatica</code></li>
+              <li>J17: <code>Accessori</code></li>
+            </ul>
+          </li>
+          <li><strong>Riga 18:</strong> Nord
+            <ul>
+              <li>G18: <code>Nord</code></li>
+              <li>H18: formula SUMIFS per totale vendite Nord + Telefonia</li>
+              <li>I18: formula SUMIFS per totale vendite Nord + Informatica</li>
+              <li>J18: formula SUMIFS per totale vendite Nord + Accessori</li>
+            </ul>
+          </li>
+          <li><strong>Riga 19:</strong> Centro
+            <ul>
+              <li>G19: <code>Centro</code></li>
+              <li>H19, I19, J19: formule SUMIFS per Centro con le tre categorie</li>
+            </ul>
+          </li>
+          <li><strong>Riga 20:</strong> Sud
+            <ul>
+              <li>G20: <code>Sud</code></li>
+              <li>H20, I20, J20: formule SUMIFS per Sud con le tre categorie</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Esempio formula per H18:</strong> <code>=SUMIFS(E2:E21;C2:C21;"Nord";D2:D21;"Telefonia")</code></p>
+        <p>Devi creare <strong>9 formule</strong> simili (una per ogni incrocio regione-categoria). Adatta la formula cambiando i criteri per regione e categoria.</p>
+        <p><strong>Risultati attesi tabella completa:</strong></p>
+        <table class="data-table" style="margin-top:12px;">
+          <thead><tr><th></th><th>Telefonia</th><th>Informatica</th><th>Accessori</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Nord</strong></td><td>10700</td><td>17600</td><td>5600</td></tr>
+            <tr><td><strong>Centro</strong></td><td>14300</td><td>3700</td><td>1800</td></tr>
+            <tr><td><strong>Sud</strong></td><td>7700</td><td>5900</td><td>5200</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai creando una dashboard di analisi incrociata che mostra il fatturato per ogni combinazione regione-categoria, permettendoti di identificare rapidamente quali prodotti vendono meglio in quali zone, dove concentrare gli sforzi commerciali e quali combinazioni necessitano di strategie di rilancio.</p>
 
         <h2>Parte E — AVERAGEIF — media con un criterio</h2>
-        <p>Sintassi: <code>=AVERAGEIF(interv_criterio; criterio; interv_media)</code><br>Struttura identica a SUMIF.</p>
-        <div class="formula-block">
-=AVERAGEIF(C2:C21;"Centro";E2:E21)    → media vendite regione Centro
-=AVERAGEIF(D2:D21;"Telefonia";E2:E21) → media vendite Telefonia
-=AVERAGEIF(E2:E21;"&gt;3000";E2:E21)  → media vendite superiori a 3000
-        </div>
-        <p>Confronta: <code>=AVERAGE(E2:E21)</code> vs <code>AVERAGEIF</code> per Nord e Sud. Rifletti su quale regione performa meglio e se il dato globale nasconde differenze importanti.</p>
+        <p><strong>Sintassi:</strong> <code>=AVERAGEIF(interv_criterio; criterio; interv_media)</code></p>
+        <p>La funzione AVERAGEIF calcola la media dei valori che soddisfano un criterio. La struttura è identica a SUMIF.</p>
+
+        <p><strong>Istruzioni:</strong> Continua nella colonna G (lascia una riga vuota).</p>
+
+        <p><strong>Task 13 — Media vendite per regione</strong></p>
+        <ul>
+          <li>In cella <strong>G22</strong>, scrivi: <code>Media vendite Centro</code></li>
+          <li>In cella <strong>H22</strong>, calcola la media delle vendite della regione "Centro"</li>
+          <li>Formula: <code>=AVERAGEIF(C2:C21;"Centro";E2:E21)</code></li>
+          <li>Spiegazione: trovi tutte le righe con regione "Centro" e fai la media dei loro importi</li>
+          <li>Risultato atteso: <strong>3980</strong> (circa)</li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai calcolando il valore medio di ogni transazione nella regione Centro, un indicatore più significativo del semplice totale perché ti mostra la qualità media delle vendite indipendentemente dal loro numero.</p>
+
+        <p><strong>Task 14 — Media vendite per categoria</strong></p>
+        <ul>
+          <li>In cella <strong>G23</strong>, scrivi: <code>Media vendite Telefonia</code></li>
+          <li>In cella <strong>H23</strong>, calcola la media delle vendite per la categoria "Telefonia"</li>
+          <li>Suggerimento: usa la colonna D (Categoria) come criterio</li>
+          <li>Risultato atteso: <strong>4671.43</strong> (circa)</li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai identificando il valore medio per transazione dei prodotti di telefonia, permettendoti di confrontare la redditività media tra diverse categorie di prodotto e capire quali generano vendite di maggior valore unitario.</p>
+
+        <p><strong>Task 15 — Analisi comparativa tra regioni</strong></p>
+        <p>Ora confronta la media generale con le medie per regione per scoprire quali regioni performano meglio.</p>
+        <ul>
+          <li>In cella <strong>G25</strong>, scrivi: <code>Media generale</code></li>
+          <li>In cella <strong>H25</strong>, calcola la media di tutte le vendite senza criteri</li>
+          <li>Formula: <code>=AVERAGE(E2:E21)</code></li>
+          <li>Risultato atteso: <strong>3670</strong></li>
+        </ul>
+        <ul>
+          <li>In cella <strong>G26</strong>, scrivi: <code>Media vendite Nord</code></li>
+          <li>In cella <strong>H26</strong>, calcola la media delle vendite per la regione "Nord"</li>
+          <li>Suggerimento: usa AVERAGEIF sulla colonna C</li>
+          <li>Risultato atteso: <strong>4228.57</strong> (circa)</li>
+        </ul>
+        <ul>
+          <li>In cella <strong>G27</strong>, scrivi: <code>Media vendite Sud</code></li>
+          <li>In cella <strong>H27</strong>, calcola la media delle vendite per la regione "Sud"</li>
+          <li>Risultato atteso: <strong>3157.14</strong> (circa)</li>
+        </ul>
+        <p style="margin-left:20px;color:#555;font-style:italic;">→ In questo modo stai confrontando le performance medie tra diverse regioni rispetto alla media aziendale complessiva. Osserva che il Nord supera la media generale (+15%), mentre il Sud è sotto (-14%). Questo tipo di analisi rivela disparità geografiche nascoste nei totali aggregati e permette di identificare quali zone necessitano di interventi strategici (formazione, supporto, campagne marketing mirate) per allineare le performance.</p>
 
       </div>
       <aside class="ex-sidebar">
         <div class="sidebar-box">
           <h3>Indice</h3>
           <ol>
-            <li>Parte A — COUNTIF</li>
-            <li>Parte B — COUNTIFS</li>
-            <li>Parte C — SUMIF</li>
-            <li>Parte D — SUMIFS + tabella 3×3</li>
-            <li>Parte E — AVERAGEIF</li>
+            <li>Parte A — COUNTIF (3 task)</li>
+            <li>Parte B — COUNTIFS (3 task)</li>
+            <li>Parte C — SUMIF (3 task)</li>
+            <li>Parte D — SUMIFS (3 task + tabella 3×3)</li>
+            <li>Parte E — AVERAGEIF (3 task)</li>
           </ol>
         </div>
         <div class="sidebar-box">
